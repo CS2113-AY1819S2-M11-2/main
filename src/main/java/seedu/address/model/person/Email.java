@@ -30,7 +30,7 @@ public class Email {
     public final String value;
 
     /**
-     * Constructs an {@code Email}.
+     * Constructs an {@code TaskDate}.
      *
      * @param email A valid email address.
      */

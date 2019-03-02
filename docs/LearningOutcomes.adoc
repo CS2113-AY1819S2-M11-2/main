@@ -40,7 +40,7 @@ The JavaFX event loop acts as an _event dispatcher_ to transmit events to event 
 
 == Use API Design `[LO-ApiDesign]`
 
-Note how components of AddressBook have well-defined APIs. For example, the API of the `Logic` component is given in the link:{repoURL}/src/main/java/seedu/address/logic/Logic.java[`Logic.java`]
+Note how components of AddressBook have well-defined APIs. For example, the API of the `Logic` component is given in the link:{repoURL}/src/main/java/seedu/priority/logic/Logic.java[`Logic.java`]
 image:LogicClassDiagram.png[width="800"]
 
 *Resources*
@@ -147,8 +147,8 @@ Note how our CI server <<UsingTravis#, Travis uses Coveralls to report code cove
 
 == Apply Test Case Design Heuristics `[LO-TestCaseDesignHeuristics]`
 
-The link:{repoURL}/src/test/java/seedu/address/commons/util/StringUtilTest.java[`StringUtilTest.java`]
-class gives some examples of how to use _Equivalence Partitions_, _Boundary Value Analysis_, and _Test Input Combination Heuristics_ to improve the efficiency and effectiveness of test cases testing the link:../src/main/java/seedu/address/commons/util/StringUtil.java[`StringUtil.java`] class.
+The link:{repoURL}/src/test/java/seedu/priority/commons/util/StringUtilTest.java[`StringUtilTest.java`]
+class gives some examples of how to use _Equivalence Partitions_, _Boundary Value Analysis_, and _Test Input Combination Heuristics_ to improve the efficiency and effectiveness of test cases testing the link:../src/main/java/seedu/priority/commons/util/StringUtil.java[`StringUtil.java`] class.
 
 *Resources*
 
@@ -162,12 +162,12 @@ class gives some examples of how to use _Equivalence Partitions_, _Boundary Valu
 
 == Write Integration Tests `[LO-IntegrationTests]`
 
-Consider the link:{repoURL}/src/test/java/seedu/address/storage/StorageManagerTest.java[`StorageManagerTest.java`] class.
+Consider the link:{repoURL}/src/test/java/seedu/priority/storage/StorageManagerTest.java[`StorageManagerTest.java`] class.
 
 * Test methods `prefsReadSave()` and `addressBookReadSave()` are integration tests. Note how they simply test if The `StorageManager` class is correctly wired to its dependencies.
 * Test method `handleAddressBookChangedEvent_exceptionThrown_eventRaised()` is a unit test because it uses _dependency injection_ to isolate the SUT `StorageManager#handleAddressBookChangedEvent(...)` from its dependencies.
 
-Compare the above with link:{repoURL}/src/test/java/seedu/address/logic/LogicManagerTest.java[`LogicManagerTest`]. Some of the tests in that class (e.g. `execute_*` methods) are neither integration nor unit tests. They are _integration + unit_ tests because they not only check if the LogicManager is correctly wired to its dependencies, but also checks the working of its dependencies. For example, the following two lines test the `LogicManager` but also the `Parser`.
+Compare the above with link:{repoURL}/src/test/java/seedu/priority/logic/LogicManagerTest.java[`LogicManagerTest`]. Some of the tests in that class (e.g. `execute_*` methods) are neither integration nor unit tests. They are _integration + unit_ tests because they not only check if the LogicManager is correctly wired to its dependencies, but also checks the working of its dependencies. For example, the following two lines test the `LogicManager` but also the `Parser`.
 
 [source,java]
 ----
@@ -218,9 +218,9 @@ Note how this project uses TextFX library to automate GUI testing, including <<D
 
 Here are some example design patterns used in the code base.
 
-* *Singleton Pattern* : link:{repoURL}/src/main/java/seedu/address/commons/core/EventsCenter.java[`EventsCenter.java`] is Singleton class. Its single instance can be accessed using the `EventsCenter.getInstance()` method.
-* *Facade Pattern* : link:{repoURL}/src/main/java/seedu/address/storage/StorageManager.java[`StorageManager.java`] is not only shielding the internals of the Storage component from outsiders, it is mostly redirecting method calls to its internal components (i.e. minimal logic in the class itself). Therefore, `StorageManager` can be considered a Facade class.
-* *Command Pattern* : The link:{repoURL}/src/main/java/seedu/address/logic/commands/Command.java[`Command.java`] and its sub classes implement the Command Pattern.
+* *Singleton Pattern* : link:{repoURL}/src/main/java/seedu/priority/commons/core/EventsCenter.java[`EventsCenter.java`] is Singleton class. Its single instance can be accessed using the `EventsCenter.getInstance()` method.
+* *Facade Pattern* : link:{repoURL}/src/main/java/seedu/priority/storage/StorageManager.java[`StorageManager.java`] is not only shielding the internals of the Storage component from outsiders, it is mostly redirecting method calls to its internal components (i.e. minimal logic in the class itself). Therefore, `StorageManager` can be considered a Facade class.
+* *Command Pattern* : The link:{repoURL}/src/main/java/seedu/priority/logic/commands/Command.java[`Command.java`] and its sub classes implement the Command Pattern.
 * *Observer Pattern*: The code base uses JavaFX's https://docs.oracle.com/javase/8/javafx/api/javafx/beans/value/ObservableValue.html[`ObservableValue`] interface to allow objects to watch for changes in data.
 This interface is an implementation of the Observer pattern.
 Objects that are interested in changes to an `ObservableValue` can register a listener via `ObservableValue#addListener(...)`.
@@ -228,7 +228,7 @@ When the value represented by the `ObservableValue` changes, it will notify all 
 * *MVC Pattern* :
 ** The 'View' part of the application is mostly in the `.fxml` files in the `src/main/resources/view` folder.
 ** `Model` component contains the 'Model'. However, note that it is possible to view the `Logic` as the model because it hides the `Model` behind it and the view has to go through the `Logic` to access the `Model`.
-** Sub classes of link:{repoURL}/src/main/java/seedu/address/ui/UiPart.java[`UiPart`] (e.g. `PersonListPanel` ) act as 'Controllers', each controlling some part of the UI and communicating with the 'Model' (via the `Logic` component which sits between the 'Controller' and the 'Model').
+** Sub classes of link:{repoURL}/src/main/java/seedu/priority/ui/UiPart.java[`UiPart`] (e.g. `PersonListPanel` ) act as 'Controllers', each controlling some part of the UI and communicating with the 'Model' (via the `Logic` component which sits between the 'Controller' and the 'Model').
 * *Abstraction Occurrence Pattern* : Not currently used in the app.
 
 *Resources*

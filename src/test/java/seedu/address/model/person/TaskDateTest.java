@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import seedu.address.testutil.Assert;
 
-public class EmailTest {
+public class TaskDateTest {
 
     @Test
     public void constructor_null_throwsNullPointerException() {

@@ -47,7 +47,7 @@ Creates the `addressbook.jar` file in the `build/jar` folder, _if the current fi
 e.g. `./gradlew shadowJar`
 
 ****
-To force Gradle to create the JAR file even if the current one is up-to-date, you can '`clean`' first. +
+To force Gradle to create the JAR file even if the current one is up-to-taskDate, you can '`clean`' first. +
 e.g. `./gradlew clean shadowJar`
 ****
 
@@ -83,9 +83,9 @@ The set of code style rules implemented can be found in `config/checkstyle/check
 * **`allTests`** +
 Runs all tests.
 * **`guiTests`** +
-Runs all tests in the `seedu.address.ui` and `systemtests` package
+Runs all tests in the `seedu.priority.ui` and `systemtests` package
 * **`nonGuiTests`** +
-Runs all non-GUI tests in the `seedu.address`
+Runs all non-GUI tests in the `seedu.priority`
 package
 * **`headless`** +
 Sets the test mode as _headless_. The mode is effective for that Gradle run only so it should be combined with other test tasks.

@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE module PUBLIC
+<!DOCTYPE taskModule PUBLIC
     "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
     "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
 
 <!--
-    This configuration file enforces rules for a modified version of the module's code standard at
+    This configuration file enforces rules for a modified version of the taskModule's code standard at
     https://oss-generic.github.io/process/codingstandards/coding-standards-java.html
 -->
 
-<module name="Checker">
+<taskModule taskName="Checker">
 
-  <module name="FileTabCharacter">
+  <taskModule taskName="FileTabCharacter">
     <!-- Checks that there are no tab characters in the file. -->
-  </module>
+  </taskModule>
 
-  <module name="NewlineAtEndOfFile">
+  <taskModule taskName="NewlineAtEndOfFile">
     <!-- Accept LF, CR or CRLF to accomodate devs who prefer different line endings -->
-    <property name="lineSeparator" value="lf_cr_crlf"/>
-  </module>
+    <property taskName="lineSeparator" value="lf_cr_crlf"/>
+  </taskModule>
 
-  <module name="RegexpSingleline">
+  <taskModule taskName="RegexpSingleline">
     <!-- Checks that FIXME is not used in comments.  TODO is preferred. -->
-    <property name="format" value="((//.*)|(\*.*))FIXME" />
-    <property name="message" value='TODO is preferred to FIXME."' />
-  </module>
+    <property taskName="format" value="((//.*)|(\*.*))FIXME" />
+    <property taskName="message" value='TODO is preferred to FIXME."' />
+  </taskModule>
 
-  <module name="SuppressionFilter">
-    <property name="file" value="config/checkstyle/suppressions.xml"/>
-  </module>
+  <taskModule taskName="SuppressionFilter">
+    <property taskName="file" value="config/checkstyle/suppressions.xml"/>
+  </taskModule>
 
 
-  <!-- All Java AST specific tests live under TreeWalker module. -->
-  <module name="TreeWalker">
+  <!-- All Java AST specific tests live under TreeWalker taskModule. -->
+  <taskModule taskName="TreeWalker">
 
     <!-- Required for SuppressionCommentFilter to work -->
-    <module name="FileContentsHolder"/>
+    <taskModule taskName="FileContentsHolder"/>
 
     <!-- Required to allow exceptions in code style -->
-    <module name="SuppressionCommentFilter">
-      <property name="offCommentFormat" value="CHECKSTYLE.OFF\: ([\w\|]+)"/>
-      <property name="onCommentFormat" value="CHECKSTYLE.ON\: ([\w\|]+)"/>
-      <property name="checkFormat" value="$1"/>
-    </module>
+    <taskModule taskName="SuppressionCommentFilter">
+      <property taskName="offCommentFormat" value="CHECKSTYLE.OFF\: ([\w\|]+)"/>
+      <property taskName="onCommentFormat" value="CHECKSTYLE.ON\: ([\w\|]+)"/>
+      <property taskName="checkFormat" value="$1"/>
+    </taskModule>
 
     <!--
     IMPORT CHECKS
@@ -54,13 +54,13 @@
       3. SPECIAL_IMPORTS: defined as org imports
       4. THIRD_PARTY_PACKAGE: defined as com imports
     -->
-    <module name="CustomImportOrder">
-        <property name="customImportOrderRules"
+    <taskModule taskName="CustomImportOrder">
+        <property taskName="customImportOrderRules"
             value="STATIC###STANDARD_JAVA_PACKAGE###SPECIAL_IMPORTS###THIRD_PARTY_PACKAGE"/>
-        <property name="specialImportsRegExp" value="^org\."/>
-        <property name="thirdPartyPackageRegExp" value="^com\."/>
-        <property name="sortImportsInGroupAlphabetically" value="true"/>
-    </module>
+        <property taskName="specialImportsRegExp" value="^org\."/>
+        <property taskName="thirdPartyPackageRegExp" value="^com\."/>
+        <property taskName="sortImportsInGroupAlphabetically" value="true"/>
+    </taskModule>
 
     <!-- Checks for redundant import statements.
     An import statement is redundant if:
@@ -68,81 +68,81 @@
       * The class non-statically imported is from the java.lang package, e.g. importing java.lang.String.
       * The class non-statically imported is from the same package as the current package.
     -->
-    <module name="RedundantImport"/>
+    <taskModule taskName="RedundantImport"/>
 
     <!-- Checks for unused import statements.
     An import statement is unused if:
       It's not referenced in the file.
     -->
-    <module name="UnusedImports"/>
+    <taskModule taskName="UnusedImports"/>
 
-    <module name="AvoidStarImport"/>
+    <taskModule taskName="AvoidStarImport"/>
 
     <!--
     NAMING CHECKS
     -->
 
-    <!-- Validate abbreviations (consecutive capital letters) length in identifier name -->
-    <module name="AbbreviationAsWordInName">
-      <property name="ignoreFinal" value="false"/>
-      <property name="allowedAbbreviationLength" value="1"/>
-    </module>
+    <!-- Validate abbreviations (consecutive capital letters) length in identifier taskName -->
+    <taskModule taskName="AbbreviationAsWordInName">
+      <property taskName="ignoreFinal" value="false"/>
+      <property taskName="allowedAbbreviationLength" value="1"/>
+    </taskModule>
 
-    <module name="PackageName">
+    <taskModule taskName="PackageName">
       <!-- Validates identifiers for package names against the supplied expression. -->
-      <property name="format" value="^[a-z]+(\.[a-z][a-z0-9]{1,})*$"/>
-      <property name="severity" value="warning"/>
-    </module>
+      <property taskName="format" value="^[a-z]+(\.[a-z][a-z0-9]{1,})*$"/>
+      <property taskName="severity" value="warning"/>
+    </taskModule>
 
-    <module name="TypeName">
+    <taskModule taskName="TypeName">
       <!-- Validates static, final fields against the expression "^[A-Z][a-zA-Z0-9]*$". -->
-      <metadata name="altname" value="TypeName"/>
-      <property name="severity" value="warning"/>
-    </module>
+      <metadata taskName="altname" value="TypeName"/>
+      <property taskName="severity" value="warning"/>
+    </taskModule>
 
-    <module name="ConstantName">
+    <taskModule taskName="ConstantName">
       <!-- Validates non-private, static, final fields against the expression "^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$". -->
-      <metadata name="altname" value="ConstantName"/>
-      <property name="applyToPrivate" value="false"/>
-      <message key="name.invalidPattern"
+      <metadata taskName="altname" value="ConstantName"/>
+      <property taskName="applyToPrivate" value="false"/>
+      <message key="taskName.invalidPattern"
                value="Variable ''{0}'' should be in ALL_CAPS (if it is a constant) or be private (otherwise)."/>
-      <property name="severity" value="warning"/>
-    </module>
+      <property taskName="severity" value="warning"/>
+    </taskModule>
 
-    <module name="StaticVariableName">
+    <taskModule taskName="StaticVariableName">
       <!-- Validates static, non-final fields against the supplied expression. -->
-      <metadata name="altname" value="StaticVariableName"/>
-      <property name="format" value="^[a-z][a-zA-Z0-9]*_?$"/>
-      <property name="severity" value="warning"/>
-    </module>
+      <metadata taskName="altname" value="StaticVariableName"/>
+      <property taskName="format" value="^[a-z][a-zA-Z0-9]*_?$"/>
+      <property taskName="severity" value="warning"/>
+    </taskModule>
 
-    <module name="MemberName">
+    <taskModule taskName="MemberName">
       <!-- Validates non-static members against the supplied expression. -->
-      <metadata name="altname" value="MemberName"/>
-      <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
-      <property name="severity" value="warning"/>
-    </module>
+      <metadata taskName="altname" value="MemberName"/>
+      <property taskName="format" value="^[a-z][a-zA-Z0-9]*$"/>
+      <property taskName="severity" value="warning"/>
+    </taskModule>
 
-    <module name="MethodName">
+    <taskModule taskName="MethodName">
       <!-- Validates identifiers for method names against the supplied expression. -->
-      <metadata name="altname" value="MethodName"/>
-      <property name="format" value="^[a-z][a-zA-Z0-9]*(_[a-z][a-zA-Z0-9]+){0,2}$"/>
-    </module>
+      <metadata taskName="altname" value="MethodName"/>
+      <property taskName="format" value="^[a-z][a-zA-Z0-9]*(_[a-z][a-zA-Z0-9]+){0,2}$"/>
+    </taskModule>
 
-    <module name="ParameterName">
+    <taskModule taskName="ParameterName">
       <!-- Validates identifiers for method parameters against the expression "^[a-z][a-zA-Z0-9]*$". -->
-      <property name="severity" value="warning"/>
-    </module>
+      <property taskName="severity" value="warning"/>
+    </taskModule>
 
-    <module name="LocalFinalVariableName">
+    <taskModule taskName="LocalFinalVariableName">
       <!-- Validates identifiers for local final variables against the expression "^[a-z][a-zA-Z0-9]*$". -->
-      <property name="severity" value="warning"/>
-    </module>
+      <property taskName="severity" value="warning"/>
+    </taskModule>
 
-    <module name="LocalVariableName">
+    <taskModule taskName="LocalVariableName">
       <!-- Validates identifiers for local variables against the expression "^[a-z][a-zA-Z0-9]*$". -->
-      <property name="severity" value="warning"/>
-    </module>
+      <property taskName="severity" value="warning"/>
+    </taskModule>
 
 
     <!--
@@ -153,22 +153,22 @@
       Java style: public static void main(String[] args) // Allowed
       C style:    public static void main(String args[]) // Not allowed
     -->
-    <module name="ArrayTypeStyle"/>
+    <taskModule taskName="ArrayTypeStyle"/>
 
     <!-- Checks if a catch block is empty and does not contain any comments. -->
-    <module name="EmptyCatchBlock"/>
+    <taskModule taskName="EmptyCatchBlock"/>
 
-    <module name="LineLength">
+    <taskModule taskName="LineLength">
       <!-- Checks if a line is too long. -->
-      <property name="max" value="120"/>
-    </module>
+      <property taskName="max" value="120"/>
+    </taskModule>
 
-    <module name="LeftCurly">
+    <taskModule taskName="LeftCurly">
       <!-- Checks for placement of the left curly brace ('{'). -->
-      <property name="severity" value="warning"/>
-    </module>
+      <property taskName="severity" value="warning"/>
+    </taskModule>
 
-    <module name="RightCurly">
+    <taskModule taskName="RightCurly">
       <!-- Checks right curlies on CATCH, ELSE, and TRY blocks are on
       the same line. e.g., the following example is fine:
       <pre>
@@ -185,11 +185,11 @@
         else
       </pre>
       -->
-      <property name="severity" value="warning"/>
-    </module>
+      <property taskName="severity" value="warning"/>
+    </taskModule>
 
     <!-- Checks for braces around loop blocks -->
-    <module name="NeedBraces">
+    <taskModule taskName="NeedBraces">
       <!--
       if (true) return 1; // Not allowed
 
@@ -202,34 +202,34 @@
       if (true)
         return 1; // Not allowed
       -->
-      <property name="allowEmptyLoopBody" value="true"/>
-    </module>
+      <property taskName="allowEmptyLoopBody" value="true"/>
+    </taskModule>
 
     <!-- Checks that each variable declaration is in its own statement and on its own line. -->
-    <module name="MultipleVariableDeclarations"/>
+    <taskModule taskName="MultipleVariableDeclarations"/>
 
-    <module name="OneStatementPerLine"/>
+    <taskModule taskName="OneStatementPerLine"/>
 
     <!-- Checks that long constants are defined with an upper ell.-->
-    <module name="UpperEll" />
+    <taskModule taskName="UpperEll" />
 
-    <module name="FallThrough">
+    <taskModule taskName="FallThrough">
       <!-- Warn about falling through to the next case statement.  Similar to
       javac -Xlint:fallthrough, but the check is suppressed if a single-line comment
       on the last non-blank line preceding the fallen-into case contains 'fall through' (or
       some other variants which we don't publicized to promote consistency).
       -->
-      <property name="reliefPattern"
+      <property taskName="reliefPattern"
        value="fall through|Fall through|fallthru|Fallthru|falls through|Falls through|fallthrough|Fallthrough|No break|NO break|no break|continue on"/>
-    </module>
+    </taskModule>
 
-    <module name="MissingSwitchDefault"/>
+    <taskModule taskName="MissingSwitchDefault"/>
 
     <!-- Checks that Class variables should never be declared public. -->
-    <module name="VisibilityModifier">
-      <property name="protectedAllowed" value="true"/>
-      <property name="allowPublicFinalFields" value="true"/>
-    </module>
+    <taskModule taskName="VisibilityModifier">
+      <property taskName="protectedAllowed" value="true"/>
+      <property taskName="allowPublicFinalFields" value="true"/>
+    </taskModule>
 
     <!--
     ORDER CHECKS
@@ -238,7 +238,7 @@
     <!-- Checks that the order of at-clauses follows the tagOrder default property value order.
          @author, @version, @param, @return, @throws, @exception, @see, @since, @serial, @serialField, @serialData, @deprecated
     -->
-    <module name="AtclauseOrder"/>
+    <taskModule taskName="AtclauseOrder"/>
 
     <!-- Checks if the Class and Interface declarations is organized in this order
       1. Class (static) variables. Order: public, protected, package level (no access modifier), private.
@@ -246,31 +246,31 @@
       3. Constructors
       4. Methods
     -->
-    <module name ="DeclarationOrder"/>
+    <taskModule taskName ="DeclarationOrder"/>
 
-    <module name="ModifierOrder">
+    <taskModule taskName="ModifierOrder">
       <!-- Warn if modifier order is inconsistent with JLS3 8.1.1, 8.3.1, and
            8.4.3.  The prescribed order is:
            public, protected, private, abstract, static, final, transient, volatile,
            synchronized, native, strictfp
         -->
-    </module>
+    </taskModule>
 
-    <module name="OverloadMethodsDeclarationOrder"/>
+    <taskModule taskName="OverloadMethodsDeclarationOrder"/>
 
     <!--
     WHITESPACE CHECKS
     -->
 
     <!-- Checks that comments are indented relative to their position in the code -->
-    <module name="CommentsIndentation"/>
+    <taskModule taskName="CommentsIndentation"/>
 
-    <module name="WhitespaceAround">
+    <taskModule taskName="WhitespaceAround">
       <!-- Checks that various tokens are surrounded by whitespace.
            This includes most binary operators and keywords followed
            by regular or curly braces.
       -->
-      <property name="tokens" value="ASSIGN, BAND, BAND_ASSIGN, BOR,
+      <property taskName="tokens" value="ASSIGN, BAND, BAND_ASSIGN, BOR,
         BOR_ASSIGN, BSR, BSR_ASSIGN, BXOR, BXOR_ASSIGN, COLON, DIV, DIV_ASSIGN,
         EQUAL, GE, GT, LAND, LCURLY, LE, LITERAL_CATCH, LITERAL_DO, LITERAL_ELSE,
         LITERAL_FINALLY, LITERAL_FOR, LITERAL_IF, LITERAL_RETURN,
@@ -278,37 +278,37 @@
         MINUS_ASSIGN, MOD, MOD_ASSIGN, NOT_EQUAL, PLUS, PLUS_ASSIGN, QUESTION,
         RCURLY, SL, SLIST, SL_ASSIGN, SR_ASSIGN, STAR, STAR_ASSIGN"/>
       <!-- Allow empty constructors e.g. MyClass() {} -->
-      <property name="allowEmptyConstructors" value="true" />
+      <property taskName="allowEmptyConstructors" value="true" />
       <!-- Allow empty methods e.g. void func() {} -->
-      <property name="allowEmptyMethods" value="true" />
+      <property taskName="allowEmptyMethods" value="true" />
       <!-- Allow empty types e.g. class Foo {}, enum Foo {} -->
-      <property name="allowEmptyTypes" value="true" />
+      <property taskName="allowEmptyTypes" value="true" />
       <!-- Allow empty loops e.g. for (int i = 1; i > 1; i++) {} -->
-      <property name="allowEmptyLoops" value="true" />
+      <property taskName="allowEmptyLoops" value="true" />
       <!-- Allow empty lambdas e.g. () -> {} -->
-      <property name="allowEmptyLambdas" value="true" />
-    </module>
+      <property taskName="allowEmptyLambdas" value="true" />
+    </taskModule>
 
-    <module name="WhitespaceAfter">
+    <taskModule taskName="WhitespaceAfter">
       <!-- Checks that commas, semicolons and typecasts are followed by whitespace. -->
-      <property name="tokens" value="COMMA, SEMI, TYPECAST"/>
-    </module>
+      <property taskName="tokens" value="COMMA, SEMI, TYPECAST"/>
+    </taskModule>
 
-    <module name="NoWhitespaceAfter">
+    <taskModule taskName="NoWhitespaceAfter">
       <!-- Checks that there is no whitespace after various unary operators. Linebreaks are allowed. -->
-      <property name="tokens" value="BNOT, DEC, DOT, INC, LNOT, UNARY_MINUS,
+      <property taskName="tokens" value="BNOT, DEC, DOT, INC, LNOT, UNARY_MINUS,
         UNARY_PLUS"/>
-      <property name="allowLineBreaks" value="true"/>
-    </module>
+      <property taskName="allowLineBreaks" value="true"/>
+    </taskModule>
 
     <!-- No trailing whitespace -->
-    <module name="Regexp">
-      <property name="format" value="[ \t]+$"/>
-      <property name="illegalPattern" value="true"/>
-      <property name="message" value="Trailing whitespace"/>
-    </module>
+    <taskModule taskName="Regexp">
+      <property taskName="format" value="[ \t]+$"/>
+      <property taskName="illegalPattern" value="true"/>
+      <property taskName="message" value="Trailing whitespace"/>
+    </taskModule>
 
-    <module name="OperatorWrap">
+    <taskModule taskName="OperatorWrap">
       <!-- Checks that the non-assignment type operator is at the next line in a line wrap.
            This includes "?", ":", "==", "!=", "/", "+", "-", "*", "%", ">>", ">>>",
            ">=", ">", "<<", "<=", "<", "^", "|", "||", "&", "&&", "instanceof",
@@ -317,50 +317,50 @@
            "::" when used as a reference to a method or constructor without arguments.
              e.g. String::compareToIgnoreCase
       -->
-      <property name="tokens" value="QUESTION, COLON, EQUAL, NOT_EQUAL, DIV, PLUS, MINUS, STAR, MOD, SR, BSR,
+      <property taskName="tokens" value="QUESTION, COLON, EQUAL, NOT_EQUAL, DIV, PLUS, MINUS, STAR, MOD, SR, BSR,
         GE, GT, SL, LE, LT, BXOR, BOR, LOR, BAND, LAND, LITERAL_INSTANCEOF, TYPE_EXTENSION_AND, METHOD_REF"/>
-      <property name="option" value="nl"/>
-    </module>
-    <module name="OperatorWrap">
+      <property taskName="option" value="nl"/>
+    </taskModule>
+    <taskModule taskName="OperatorWrap">
       <!-- Checks that the assignment type operator is at the previous end of line in a line wrap.
            This includes "=", "/=", "+=", "-=", "*=", "%=", ">>=", ">>>=", "<<=", "^=", "&=".
       -->
-      <property name="tokens" value="ASSIGN, DIV_ASSIGN, PLUS_ASSIGN, MINUS_ASSIGN, STAR_ASSIGN, MOD_ASSIGN,
+      <property taskName="tokens" value="ASSIGN, DIV_ASSIGN, PLUS_ASSIGN, MINUS_ASSIGN, STAR_ASSIGN, MOD_ASSIGN,
         SR_ASSIGN, BSR_ASSIGN, SL_ASSIGN, BXOR_ASSIGN, BOR_ASSIGN, BAND_ASSIGN"/>
-      <property name="option" value="eol"/>
-    </module>
+      <property taskName="option" value="eol"/>
+    </taskModule>
 
-    <module name="SeparatorWrap">
+    <taskModule taskName="SeparatorWrap">
       <!-- Checks that the ".", "@" is at the next line in a line wrap. -->
-      <property name="tokens" value="DOT, AT"/>
-      <property name="option" value="nl"/>
-    </module>
-    <module name="SeparatorWrap">
+      <property taskName="tokens" value="DOT, AT"/>
+      <property taskName="option" value="nl"/>
+    </taskModule>
+    <taskModule taskName="SeparatorWrap">
       <!-- Checks that the ",", "]", "[", "...", ";", "(" is at the previous end of line in a line wrap. -->
-      <property name="tokens" value="COMMA, RBRACK, ARRAY_DECLARATOR, ELLIPSIS, SEMI, LPAREN"/>
-      <property name="option" value="eol"/>
-    </module>
+      <property taskName="tokens" value="COMMA, RBRACK, ARRAY_DECLARATOR, ELLIPSIS, SEMI, LPAREN"/>
+      <property taskName="option" value="eol"/>
+    </taskModule>
 
-    <module name="Indentation">
-      <property name="caseIndent" value="0" />
-    </module>
+    <taskModule taskName="Indentation">
+      <property taskName="caseIndent" value="0" />
+    </taskModule>
 
-    <module name="NoWhitespaceBefore">
+    <taskModule taskName="NoWhitespaceBefore">
       <!-- Checks that there is no whitespace before various unary operators. Linebreaks are allowed. -->
-      <property name="tokens" value="SEMI, DOT, POST_DEC, POST_INC"/>
-      <property name="allowLineBreaks" value="true"/>
-    </module>
+      <property taskName="tokens" value="SEMI, DOT, POST_DEC, POST_INC"/>
+      <property taskName="allowLineBreaks" value="true"/>
+    </taskModule>
 
-    <module name="ParenPad">
+    <taskModule taskName="ParenPad">
       <!-- Checks that there is no whitespace before close parenthesis or after open parenthesis. -->
-      <property name="severity" value="warning"/>
-    </module>
+      <property taskName="severity" value="warning"/>
+    </taskModule>
 
     <!-- Checks that non-whitespace characters are separated by no more than one whitespace character.
          a = 1; // Allowed
          a  = 1; // Not allowed (more than one space before =)
     -->
-    <module name="SingleSpaceSeparator">
+    <taskModule taskName="SingleSpaceSeparator">
       <!-- Validate whitespace surrounding comments as well.
 
            a = 1; // Allowed (single space before start of comment)
@@ -372,52 +372,52 @@
 
            This doesn't validate whitespace within comments so a comment /* like  this */ is allowed.
       -->
-      <property name="validateComments" value="true"/>
-    </module>
+      <property taskName="validateComments" value="true"/>
+    </taskModule>
 
     <!--
     JAVADOC CHECKS
     -->
 
     <!-- Checks that every class, enumeration and interface have a header comment. -->
-    <module name="JavadocType">
-      <property name="allowMissingParamTags" value="true"/>
-    </module>
+    <taskModule taskName="JavadocType">
+      <property taskName="allowMissingParamTags" value="true"/>
+    </taskModule>
 
     <!-- Checks that every public method (excluding getters, setters and constructors) has a header comment. -->
-    <module name="JavadocMethod">
+    <taskModule taskName="JavadocMethod">
       <!-- Checks public methods that have more than 1 line of code.
         Single line of code methods are often due to refactor for readability.
       -->
-      <property name="minLineCount" value="1"/>
-      <property name="allowedAnnotations" value="Override, Test, Before, BeforeClass, After, AfterClass, Subscribe"/>
-      <property name="scope" value="public"/>
-      <property name="allowUndeclaredRTE" value="true"/>
-      <property name="allowThrowsTagsForSubclasses" value="true"/>
-      <property name="allowMissingParamTags" value="true"/>
-      <property name="allowMissingThrowsTags" value="true"/>
-      <property name="allowMissingReturnTag" value="true"/>
-      <property name="allowMissingPropertyJavadoc" value="true"/>
-      <property name="ignoreMethodNamesRegex" value="(set.*|get.*)"/>
-      <property name="tokens" value="METHOD_DEF, ANNOTATION_FIELD_DEF"/>
-    </module>
+      <property taskName="minLineCount" value="1"/>
+      <property taskName="allowedAnnotations" value="Override, Test, Before, BeforeClass, After, AfterClass, Subscribe"/>
+      <property taskName="scope" value="public"/>
+      <property taskName="allowUndeclaredRTE" value="true"/>
+      <property taskName="allowThrowsTagsForSubclasses" value="true"/>
+      <property taskName="allowMissingParamTags" value="true"/>
+      <property taskName="allowMissingThrowsTags" value="true"/>
+      <property taskName="allowMissingReturnTag" value="true"/>
+      <property taskName="allowMissingPropertyJavadoc" value="true"/>
+      <property taskName="ignoreMethodNamesRegex" value="(set.*|get.*)"/>
+      <property taskName="tokens" value="METHOD_DEF, ANNOTATION_FIELD_DEF"/>
+    </taskModule>
     <!-- Checks that every non-trivial private method (excluding getters, setters and constructors) has a header comment. -->
-    <module name="JavadocMethod">
+    <taskModule taskName="JavadocMethod">
       <!-- Checks private methods that have more than 3 lines of code.
         We define methods that have more than 3 lines of code as non-trivial.
       -->
-      <property name="minLineCount" value="3"/>
-      <property name="allowedAnnotations" value="Override, Test, Before, BeforeClass, After, AfterClass, Subscribe"/>
-      <property name="scope" value="private"/>
-      <property name="allowUndeclaredRTE" value="true"/>
-      <property name="allowThrowsTagsForSubclasses" value="true"/>
-      <property name="allowMissingParamTags" value="true"/>
-      <property name="allowMissingThrowsTags" value="true"/>
-      <property name="allowMissingReturnTag" value="true"/>
-      <property name="allowMissingPropertyJavadoc" value="true"/>
-      <property name="ignoreMethodNamesRegex" value="(set.*|get.*)"/>
-      <property name="tokens" value="METHOD_DEF, ANNOTATION_FIELD_DEF"/>
-    </module>
+      <property taskName="minLineCount" value="3"/>
+      <property taskName="allowedAnnotations" value="Override, Test, Before, BeforeClass, After, AfterClass, Subscribe"/>
+      <property taskName="scope" value="private"/>
+      <property taskName="allowUndeclaredRTE" value="true"/>
+      <property taskName="allowThrowsTagsForSubclasses" value="true"/>
+      <property taskName="allowMissingParamTags" value="true"/>
+      <property taskName="allowMissingThrowsTags" value="true"/>
+      <property taskName="allowMissingReturnTag" value="true"/>
+      <property taskName="allowMissingPropertyJavadoc" value="true"/>
+      <property taskName="ignoreMethodNamesRegex" value="(set.*|get.*)"/>
+      <property taskName="tokens" value="METHOD_DEF, ANNOTATION_FIELD_DEF"/>
+    </taskModule>
 
-  </module>
-</module>
+  </taskModule>
+</taskModule>

@@ -15,14 +15,16 @@ import seedu.address.logic.parser.AddressBookParser;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.Model;
 import seedu.address.model.ReadOnlyAddressBook;
+import seedu.address.model.ReadOnlyTaskManager;
 import seedu.address.model.person.Person;
+import seedu.address.model.task.Task;
 import seedu.address.storage.Storage;
 
 /**
  * The main LogicManager of the app.
  */
 public class LogicManager implements Logic {
-    public static final String FILE_OPS_ERROR_MESSAGE = "Could not save data to file: ";
+    private static final String FILE_OPS_ERROR_MESSAGE = "Could not save data to file: ";
     private final Logger logger = LogsCenter.getLogger(LogicManager.class);
 
     private final Model model;
@@ -55,7 +57,7 @@ public class LogicManager implements Logic {
         }
 
         if (addressBookModified) {
-            logger.info("Address book modified, saving to file.");
+            logger.info("Priority book modified, saving to file.");
             try {
                 storage.saveAddressBook(model.getAddressBook());
             } catch (IOException ioe) {
@@ -72,9 +74,15 @@ public class LogicManager implements Logic {
     }
 
     @Override
+    public ReadOnlyTaskManager getTaskManager() { return model.getTaskManager(); }
+
+    @Override
     public ObservableList<Person> getFilteredPersonList() {
         return model.getFilteredPersonList();
     }
+
+    @Override
+    public ObservableList<Task> getFilteredTaskList() { return model.getFilteredTaskList(); }
 
     @Override
     public ObservableList<String> getHistory() {
@@ -85,6 +93,9 @@ public class LogicManager implements Logic {
     public Path getAddressBookFilePath() {
         return model.getAddressBookFilePath();
     }
+
+    @Override
+    public Path getTaskManagerFilePath() { return model.getTaskManagerFilePath(); }
 
     @Override
     public GuiSettings getGuiSettings() {
@@ -102,7 +113,13 @@ public class LogicManager implements Logic {
     }
 
     @Override
+    public ReadOnlyProperty<Task> selectedTaskProperty() { return model.selectedTaskProperty(); }
+
+    @Override
     public void setSelectedPerson(Person person) {
         model.setSelectedPerson(person);
     }
+
+    @Override
+    public void setSelectedTask(Task task) { model.setSelectedTask(task); }
 }

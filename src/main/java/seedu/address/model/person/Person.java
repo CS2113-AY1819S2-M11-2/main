@@ -106,11 +106,11 @@ public class Person {
     public String toString() {
         final StringBuilder builder = new StringBuilder();
         builder.append(getName())
-                .append(" Phone: ")
+                .append(" TaskModule: ")
                 .append(getPhone())
-                .append(" Email: ")
+                .append(" TaskDate: ")
                 .append(getEmail())
-                .append(" Address: ")
+                .append(" Priority: ")
                 .append(getAddress())
                 .append(" Tags: ");
         getTags().forEach(builder::append);

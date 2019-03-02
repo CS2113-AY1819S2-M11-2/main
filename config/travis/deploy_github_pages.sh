@@ -13,8 +13,8 @@ set -o nounset # exit if variable is unset
 cd build/docs/html5
 
 git init
-git config user.name 'Deployment Bot (Travis)'
-git config user.email 'deploy@travis-ci.org'
+git config user.taskName 'Deployment Bot (Travis)'
+git config user.taskDate 'deploy@travis-ci.org'
 
 git config credential.helper 'store --file=.git/credentials'
 echo "https://${GITHUB_TOKEN}:@github.com" > .git/credentials

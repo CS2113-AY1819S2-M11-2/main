@@ -24,7 +24,7 @@ public class PersonListPanel extends UiPart<Region> {
     private ListView<Person> personListView;
 
     public PersonListPanel(ObservableList<Person> personList, ObservableValue<Person> selectedPerson,
-            Consumer<Person> onSelectedPersonChange) {
+                           Consumer<Person> onSelectedPersonChange) {
         super(FXML);
         personListView.setItems(personList);
         personListView.setCellFactory(listView -> new PersonListViewCell());

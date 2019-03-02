@@ -10,10 +10,10 @@ unless defined? Slim::Include
   fail 'asciidoctor: FAILED: HTML5/Slim backend needs Slim >= 2.1.0!'
 end
 
-# Add custom functions to this module that you want to use in your Slim
+# Add custom functions to this taskModule that you want to use in your Slim
 # templates. Within the template you can invoke them as top-level functions
 # just like in Haml.
-module Slim::Helpers
+taskModule Slim::Helpers
 
   # URIs of external assets.
   FONT_AWESOME_URI     = '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'
@@ -44,16 +44,16 @@ module Slim::Helpers
 
 
   ##
-  # Creates an HTML tag with the given name and optionally attributes. Can take
+  # Creates an HTML tag with the given taskName and optionally attributes. Can take
   # a block that will run between the opening and closing tags.
   #
-  # @param name [#to_s] the name of the tag.
+  # @param taskName [#to_s] the taskName of the tag.
   # @param attributes [Hash]
   # @param content [#to_s] the content; +nil+ to call the block.
   # @yield The block of Slim/HTML code within the tag (optional).
   # @return [String] a rendered HTML element.
   #
-  def html_tag(name, attributes = {}, content = nil)
+  def html_tag(taskName, attributes = {}, content = nil)
     attrs = attributes.reject { |_, v|
       v.nil? || (v.respond_to?(:empty?) && v.empty?)
     }.map do |k, v|
@@ -64,11 +64,11 @@ module Slim::Helpers
     end
     attrs_str = attrs.empty? ? '' : attrs.join(' ').prepend(' ')
 
-    if VOID_ELEMENTS.include? name.to_s
-      %(<#{name}#{attrs_str}>)
+    if VOID_ELEMENTS.include? taskName.to_s
+      %(<#{taskName}#{attrs_str}>)
     else
       content ||= yield if block_given?
-      %(<#{name}#{attrs_str}>#{content}</#{name}>)
+      %(<#{taskName}#{attrs_str}>#{content}</#{taskName}>)
     end
   end
 
@@ -180,7 +180,7 @@ module Slim::Helpers
   #   sets its site-section attribute to this String, indicating that the
   #   reader is browsing this section of the site.
   # @param href [String] Path to the target page, relative to the site root.
-  # @param content [String] Link content. This is usually the human-readable name
+  # @param content [String] Link content. This is usually the human-readable taskName
   #   of the link target.
   # @return [String] The rendered <a> tag.
   def nav_link(section, href, content)
@@ -199,12 +199,12 @@ module Slim::Helpers
   ##
   # Returns HTML meta tag if the given +content+ is not +nil+.
   #
-  # @param name [#to_s] the name for the metadata.
+  # @param taskName [#to_s] the taskName for the metadata.
   # @param content [#to_s, nil] the value of the metadata, or +nil+.
   # @return [String, nil] the meta tag, or +nil+ if the +content+ is +nil+.
   #
-  def html_meta_if(name, content)
-    %(<meta name="#{name}" content="#{content}">) if content
+  def html_meta_if(taskName, content)
+    %(<meta taskName="#{taskName}" content="#{content}">) if content
   end
 
   # Returns formatted style/link and script tags for header.
@@ -232,7 +232,7 @@ module Slim::Helpers
       if attr? 'iconfont-remote'
         styles << { href: (attr 'iconfont-cdn', FONT_AWESOME_URI) }
       else
-        styles << { href: [stylesdir, %(#{attr 'iconfont-name', 'font-awesome'}.css)] }
+        styles << { href: [stylesdir, %(#{attr 'iconfont-taskName', 'font-awesome'}.css)] }
       end
     end
 

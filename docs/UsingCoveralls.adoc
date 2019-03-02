@@ -35,7 +35,7 @@ image:coveralls/sync_repos.png[Sync repos]
 +
 image:coveralls/flick_repository_switch.png[Activate the switch]
 +
-.  Update the link of the `Coverage Status` badge at the top of your <<README#, README.adoc>> to point to that of your own repo by replacing the outlined areas with `your-org-name/your-repo-name`.
+.  Update the link of the `Coverage Status` badge at the top of your <<README#, README.adoc>> to point to that of your own repo by replacing the outlined areas with `your-org-taskName/your-repo-taskName`.
 +
 image:coveralls/coverage_asciidoc_code.png[Coverage Status Badge]
 +
