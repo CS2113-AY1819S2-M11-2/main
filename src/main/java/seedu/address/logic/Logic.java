@@ -34,18 +34,19 @@ public interface Logic {
      */
     ReadOnlyAddressBook getAddressBook();
 
-    /**
-     * Returns the TaskManger.
-     *
-     * @see Model#getTaskManager()
-     */
-    ReadOnlyTaskManager getTaskManager();
+//    /**
+//     * Returns the TaskManger.
+//     *
+//     * @see Model#getTaskManager()
+//     */
+//    ReadOnlyTaskManager getTaskManager();
 
     /** Returns an unmodifiable view of the filtered list of persons */
     ObservableList<Person> getFilteredPersonList();
 
-    /**Returns an unmodifiable view of the filtered list of tasks */
-    ObservableList<Task> getFilteredTaskList();
+//    /**Returns an unmodifiable view of the filtered list of tasks */
+//    ObservableList<Task> getFilteredTaskList();
+
     /**
      * Returns an unmodifiable view of the list of commands entered by the user.
      * The list is ordered from the least recent command to the most recent command.
@@ -57,10 +58,10 @@ public interface Logic {
      */
     Path getAddressBookFilePath();
 
-    /**
-     * Returns the user pref's task manager file path.
-     */
-    Path getTaskManagerFilePath();
+//    /**
+//     * Returns the user pref's task manager file path.
+//     */
+//    Path getTaskManagerFilePath();
 
     /**
      * Returns the user prefs' GUI settings.
@@ -80,13 +81,13 @@ public interface Logic {
      */
     ReadOnlyProperty<Person> selectedPersonProperty();
 
-    /**
-     * Selected task in the filtered task list.
-     * null if no task is selected.
-     *
-     * @see Model#selectedTaskProperty()
-     */
-    ReadOnlyProperty<Task> selectedTaskProperty();
+//    /**
+//     * Selected task in the filtered task list.
+//     * null if no task is selected.
+//     *
+//     * @see Model#selectedTaskProperty()
+//     */
+//    ReadOnlyProperty<Task> selectedTaskProperty();
 
     /**
      * Sets the selected person in the filtered person list.
@@ -95,10 +96,10 @@ public interface Logic {
      */
     void setSelectedPerson(Person person);
 
-    /**
-     * Sets the selected person in the filtered person list.
-     *
-     * @see Model#setSelectedTask(Task)
-     */
-    void setSelectedTask(Task task);
+//    /**
+//     * Sets the selected person in the filtered person list.
+//     *
+//     * @see Model#setSelectedTask(Task)
+//     */
+//    void setSelectedTask(Task task);
 }

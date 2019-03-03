@@ -73,16 +73,16 @@ public class LogicManager implements Logic {
         return model.getAddressBook();
     }
 
-    @Override
-    public ReadOnlyTaskManager getTaskManager() { return model.getTaskManager(); }
+//    @Override
+//    public ReadOnlyTaskManager getTaskManager() { return model.getTaskManager(); }
 
     @Override
     public ObservableList<Person> getFilteredPersonList() {
         return model.getFilteredPersonList();
     }
 
-    @Override
-    public ObservableList<Task> getFilteredTaskList() { return model.getFilteredTaskList(); }
+//    @Override
+//    public ObservableList<Task> getFilteredTaskList() { return model.getFilteredTaskList(); }
 
     @Override
     public ObservableList<String> getHistory() {
@@ -94,8 +94,8 @@ public class LogicManager implements Logic {
         return model.getAddressBookFilePath();
     }
 
-    @Override
-    public Path getTaskManagerFilePath() { return model.getTaskManagerFilePath(); }
+//    @Override
+//    public Path getTaskManagerFilePath() { return model.getTaskManagerFilePath(); }
 
     @Override
     public GuiSettings getGuiSettings() {
@@ -112,14 +112,14 @@ public class LogicManager implements Logic {
         return model.selectedPersonProperty();
     }
 
-    @Override
-    public ReadOnlyProperty<Task> selectedTaskProperty() { return model.selectedTaskProperty(); }
+//    @Override
+//    public ReadOnlyProperty<Task> selectedTaskProperty() { return model.selectedTaskProperty(); }
 
     @Override
     public void setSelectedPerson(Person person) {
         model.setSelectedPerson(person);
     }
 
-    @Override
-    public void setSelectedTask(Task task) { model.setSelectedTask(task); }
+//    @Override
+//    public void setSelectedTask(Task task) { model.setSelectedTask(task); }
 }

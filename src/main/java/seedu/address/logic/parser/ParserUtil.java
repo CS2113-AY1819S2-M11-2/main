@@ -14,10 +14,10 @@ import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Phone;
 import seedu.address.model.tag.Tag;
-import seedu.address.model.task.Priority;
-import seedu.address.model.task.TaskDate;
-import seedu.address.model.task.TaskModule;
-import seedu.address.model.task.TaskName;
+//import seedu.address.model.task.Priority;
+//import seedu.address.model.task.TaskDate;
+//import seedu.address.model.task.TaskModule;
+//import seedu.address.model.task.TaskName;
 
 /**
  * Contains utility methods used for parsing strings in the various *Parser classes.
@@ -60,14 +60,14 @@ public class ParserUtil {
      *
      * @throws ParseException if the given {@code name} is invalid.
      */
-    public static TaskName parseTaskName(String name) throws ParseException {
-        requireNonNull(name);
-        String trimmedName = name.trim();
-        if (!TaskName.isValidName(trimmedName)) {
-            throw new ParseException(TaskName.MESSAGE_CONSTRAINTS);
-        }
-        return new TaskName(trimmedName);
-    }
+//    public static TaskName parseTaskName(String name) throws ParseException {
+//        requireNonNull(name);
+//        String trimmedName = name.trim();
+//        if (!TaskName.isValidName(trimmedName)) {
+//            throw new ParseException(TaskName.MESSAGE_CONSTRAINTS);
+//        }
+//        return new TaskName(trimmedName);
+//    }
 
     /**
      * Parses a {@code String module} into a {@code TaskModule}.
@@ -75,44 +75,44 @@ public class ParserUtil {
      *
      * @throws ParseException if the given {@code module} is invalid.
      */
-    public static TaskModule parseTaskModule(String module) throws ParseException {
-        requireNonNull(module);
-        String trimmedModule = module.trim();
-        if (!TaskModule.isValidModule(trimmedModule)) {
-            throw new ParseException(TaskModule.MESSAGE_CONSTRAINTS);
-        }
-        return new TaskModule(trimmedModule);
-    }
+//    public static TaskModule parseTaskModule(String module) throws ParseException {
+//        requireNonNull(module);
+//        String trimmedModule = module.trim();
+//        if (!TaskModule.isValidModule(trimmedModule)) {
+//            throw new ParseException(TaskModule.MESSAGE_CONSTRAINTS);
+//        }
+//        return new TaskModule(trimmedModule);
+//    }
 
-    /**
-     * Parses a {@code String date} into a {@code TaskDate}.
-     * Leading and trailing whitespaces will be trimmed.
-     *
-     * @throws ParseException if the given {@code date} is invalid.
-     */
-    public static TaskDate parseTaskDate(String date) throws ParseException {
-        requireNonNull(date);
-        String trimmedDate = date.trim();
-        if (!TaskDate.isValidDate(trimmedDate)) {
-            throw new ParseException(TaskDate.MESSAGE_CONSTRAINTS);
-        }
-        return new TaskDate(trimmedDate);
-    }
+//    /**
+//     * Parses a {@code String date} into a {@code TaskDate}.
+//     * Leading and trailing whitespaces will be trimmed.
+//     *
+//     * @throws ParseException if the given {@code date} is invalid.
+//     */
+//    public static TaskDate parseTaskDate(String date) throws ParseException {
+//        requireNonNull(date);
+//        String trimmedDate = date.trim();
+//        if (!TaskDate.isValidDate(trimmedDate)) {
+//            throw new ParseException(TaskDate.MESSAGE_CONSTRAINTS);
+//        }
+//        return new TaskDate(trimmedDate);
+//    }
 
-    /**
-     * Parses a {@code String priority} into a {@code Priority}.
-     * Leading and trailing whitespaces will be trimmed.
-     *
-     * @throws ParseException if the given {@code priority} is invalid.
-     */
-    public static Priority parsePriority(String priority) throws ParseException {
-        requireNonNull(priority);
-        String trimmedPriority = priority.trim();
-        if (!Priority.isValidPriority(trimmedPriority)) {
-            throw new ParseException(Priority.MESSAGE_CONSTRAINTS);
-        }
-        return new Priority(priority);
-    }
+//    /**
+//     * Parses a {@code String priority} into a {@code Priority}.
+//     * Leading and trailing whitespaces will be trimmed.
+//     *
+//     * @throws ParseException if the given {@code priority} is invalid.
+//     */
+//    public static Priority parsePriority(String priority) throws ParseException {
+//        requireNonNull(priority);
+//        String trimmedPriority = priority.trim();
+//        if (!Priority.isValidPriority(trimmedPriority)) {
+//            throw new ParseException(Priority.MESSAGE_CONSTRAINTS);
+//        }
+//        return new Priority(priority);
+//    }
 
     /**
      * Parses a {@code String phone} into a {@code TaskModule}.

@@ -27,32 +27,32 @@ public class ModelManager implements Model {
     private static final Logger logger = LogsCenter.getLogger(ModelManager.class);
 
     private final VersionedAddressBook versionedAddressBook;
-    private final VersionedTaskManager versionedTaskManager;
+ //   private final VersionedTaskManager versionedTaskManager;
     private final UserPrefs userPrefs;
     private final FilteredList<Person> filteredPersons;
-    private final FilteredList<seedu.address.model.task.Task> filteredTasks;
+  //  private final FilteredList<seedu.address.model.task.Task> filteredTasks;
     private final SimpleObjectProperty<Person> selectedPerson = new SimpleObjectProperty<>();
-    private final SimpleObjectProperty<seedu.address.model.task.Task> selectedTask = new SimpleObjectProperty<>();
+ //   private final SimpleObjectProperty<seedu.address.model.task.Task> selectedTask = new SimpleObjectProperty<>();
 
     /**
      * Initializes a ModelManager with the given addressBook and userPrefs.
      */
-    public ModelManager(ReadOnlyAddressBook addressBook, ReadOnlyTaskManager taskManager,
+    public ModelManager(ReadOnlyAddressBook addressBook,
                         ReadOnlyUserPrefs userPrefs) {
         super();
-        requireAllNonNull(addressBook, taskManager, userPrefs);
+        requireAllNonNull(addressBook, userPrefs);
 
         logger.fine("Initializing with address book: " + addressBook + " and user prefs " + userPrefs);
 
         versionedAddressBook = new VersionedAddressBook(addressBook);
-        versionedTaskManager = new VersionedTaskManager(taskManager);
+   //     versionedTaskManager = new VersionedTaskManager(taskManager);
         this.userPrefs = new UserPrefs(userPrefs);
         filteredPersons = new FilteredList<>(versionedAddressBook.getPersonList());
-        filteredTasks = new FilteredList<>(versionedTaskManager.getTaskList());
+   //     filteredTasks = new FilteredList<>(versionedTaskManager.getTaskList());
         filteredPersons.addListener(this::ensureSelectedPersonIsValid);
     }
 
-    public ModelManager() { this(new AddressBook(), new TaskManager(), new UserPrefs()); }
+    public ModelManager() { this(new AddressBook(), new UserPrefs()); }
 
     //=========== UserPrefs ==================================================================================
 
@@ -83,8 +83,8 @@ public class ModelManager implements Model {
         return userPrefs.getAddressBookFilePath();
     }
 
-    @Override
-    public Path getTaskManagerFilePath() { return userPrefs.getTaskManagerFilePath(); }
+//    @Override
+//    public Path getTaskManagerFilePath() { return userPrefs.getTaskManagerFilePath(); }
 
     @Override
     public void setAddressBookFilePath(Path addressBookFilePath) {
@@ -92,11 +92,11 @@ public class ModelManager implements Model {
         userPrefs.setAddressBookFilePath(addressBookFilePath);
     }
 
-    @Override
-    public void setTaskManagerFilePath(Path taskManagerFilePath) {
-        requireNonNull(taskManagerFilePath);
-        userPrefs.setTaskManagerFilePath(taskManagerFilePath);
-    }
+//    @Override
+//    public void setTaskManagerFilePath(Path taskManagerFilePath) {
+//        requireNonNull(taskManagerFilePath);
+//        userPrefs.setTaskManagerFilePath(taskManagerFilePath);
+//    }
 
     //=========== AddressBook ================================================================================
 
@@ -105,16 +105,16 @@ public class ModelManager implements Model {
         versionedAddressBook.resetData(addressBook);
     }
 
-    @Override
-    public void setTaskManager(ReadOnlyTaskManager taskManager) { versionedTaskManager.resetData(taskManager); }
+//    @Override
+//    public void setTaskManager(ReadOnlyTaskManager taskManager) { versionedTaskManager.resetData(taskManager); }
 
     @Override
     public ReadOnlyAddressBook getAddressBook() {
         return versionedAddressBook;
     }
 
-    @Override
-    public ReadOnlyTaskManager getTaskManager() { return versionedTaskManager; }
+//    @Override
+//    public ReadOnlyTaskManager getTaskManager() { return versionedTaskManager; }
 
     @Override
     public boolean hasPerson(Person person) {
@@ -122,19 +122,19 @@ public class ModelManager implements Model {
         return versionedAddressBook.hasPerson(person);
     }
 
-    @Override
-    public boolean hasTask(seedu.address.model.task.Task task) {
-        requireNonNull(task);
-        return versionedTaskManager.hasTask(task);
-    }
+//    @Override
+//    public boolean hasTask(seedu.address.model.task.Task task) {
+//        requireNonNull(task);
+//        return versionedTaskManager.hasTask(task);
+//    }
 
     @Override
     public void deletePerson(Person target) {
         versionedAddressBook.removePerson(target);
     }
 
-    @Override
-    public void deleteTask (seedu.address.model.task.Task target) {versionedTaskManager.removeTask(target); }
+//    @Override
+//    public void deleteTask (seedu.address.model.task.Task target) {versionedTaskManager.removeTask(target); }
 
     @Override
     public void addPerson(Person person) {
@@ -142,11 +142,11 @@ public class ModelManager implements Model {
         updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
     }
 
-    @Override
-    public void addTask(seedu.address.model.task.Task task) {
-        versionedTaskManager.addTask(task);
-        updateFilteredTaskList(PREDICATE_SHOW_ALL_TASKS);
-    }
+//    @Override
+//    public void addTask(seedu.address.model.task.Task task) {
+//        versionedTaskManager.addTask(task);
+//        updateFilteredTaskList(PREDICATE_SHOW_ALL_TASKS);
+//    }
 
     @Override
     public void setPerson(Person target, Person editedPerson) {
@@ -155,13 +155,13 @@ public class ModelManager implements Model {
         versionedAddressBook.setPerson(target, editedPerson);
     }
 
-    @Override
-    public void setTask(seedu.address.model.task.Task target, seedu.address.model.task.Task editedTask) {
-        requireAllNonNull(target, editedTask);
-
-        versionedTaskManager.setTask(target, editedTask);
-    }
-    //=========== Filtered Person List Accessors =============================================================
+//    @Override
+//    public void setTask(seedu.address.model.task.Task target, seedu.address.model.task.Task editedTask) {
+//        requireAllNonNull(target, editedTask);
+//
+//        versionedTaskManager.setTask(target, editedTask);
+//    }
+//    //=========== Filtered Person List Accessors =============================================================
 
     /**
      * Returns an unmodifiable view of the list of {@code Person} backed by the internal list of
@@ -172,12 +172,12 @@ public class ModelManager implements Model {
         return filteredPersons;
     }
 
-    /**
-     * Returns an unmodifiable view of the list of {@code Person} backed by the internal list of
-     * {@code versionTaskManager}
-     */
-    @Override
-    public ObservableList<Task> getFilteredTaskList() { return filteredTasks; }
+//    /**
+//     * Returns an unmodifiable view of the list of {@code Person} backed by the internal list of
+//     * {@code versionTaskManager}
+//     */
+//    @Override
+//    public ObservableList<Task> getFilteredTaskList() { return filteredTasks; }
 
     @Override
     public void updateFilteredPersonList(Predicate<Person> predicate) {
@@ -185,11 +185,11 @@ public class ModelManager implements Model {
         filteredPersons.setPredicate(predicate);
     }
 
-    @Override
-    public void updateFilteredTaskList(Predicate<seedu.address.model.task.Task> predicate) {
-        requireNonNull(predicate);
-        filteredTasks.setPredicate(predicate);
-    }
+//    @Override
+//    public void updateFilteredTaskList(Predicate<seedu.address.model.task.Task> predicate) {
+//        requireNonNull(predicate);
+//        filteredTasks.setPredicate(predicate);
+//    }
 
     //=========== Undo/Redo =================================================================================
 
@@ -198,50 +198,50 @@ public class ModelManager implements Model {
         return versionedAddressBook.canUndo();
     }
 
-    @Override
-    public boolean canUndoTaskManager() {
-        return versionedTaskManager.canUndo();
-    }
+//    @Override
+//    public boolean canUndoTaskManager() {
+//        return versionedTaskManager.canUndo();
+//    }
 
     @Override
     public boolean canRedoAddressBook() {
         return versionedAddressBook.canRedo();
     }
 
-    @Override
-    public boolean canRedoTaskManager() {
-        return versionedTaskManager.canRedo();
-    }
+//    @Override
+//    public boolean canRedoTaskManager() {
+//        return versionedTaskManager.canRedo();
+//    }
 
     @Override
     public void undoAddressBook() {
         versionedAddressBook.undo();
     }
 
-    @Override
-    public void undoTaskManager() {
-        versionedTaskManager.undo();
-    }
+//    @Override
+//    public void undoTaskManager() {
+//        versionedTaskManager.undo();
+//    }
 
     @Override
     public void redoAddressBook() {
         versionedAddressBook.redo();
     }
 
-    @Override
-    public void redoTaskManager() {
-        versionedTaskManager.redo();
-    }
+//    @Override
+//    public void redoTaskManager() {
+//        versionedTaskManager.redo();
+//    }
 
     @Override
     public void commitAddressBook() {
         versionedAddressBook.commit();
     }
 
-    @Override
-    public void commitTaskManager() {
-        versionedTaskManager.commit();
-    }
+//    @Override
+//    public void commitTaskManager() {
+//        versionedTaskManager.commit();
+//    }
 
     //=========== Selected person ===========================================================================
 
@@ -250,20 +250,20 @@ public class ModelManager implements Model {
         return selectedPerson;
     }
 
-    @Override
-    public ReadOnlyProperty<Task> selectedTaskProperty() {
-        return selectedTask;
-    }
+//    @Override
+//    public ReadOnlyProperty<Task> selectedTaskProperty() {
+//        return selectedTask;
+//    }
 
     @Override
     public Person getSelectedPerson() {
         return selectedPerson.getValue();
     }
 
-    @Override
-    public Task getSelectedTask() {
-        return selectedTask.getValue();
-    }
+//    @Override
+//    public Task getSelectedTask() {
+//        return selectedTask.getValue();
+//    }
 
     @Override
     public void setSelectedPerson(Person person) {
@@ -273,13 +273,13 @@ public class ModelManager implements Model {
         selectedPerson.setValue(person);
     }
 
-    @Override
-    public void setSelectedTask(Task task) {
-        if (task != null && !filteredTasks.contains(task)) {
-            throw new TaskNotFoundException();
-        }
-        selectedTask.setValue(task);
-    }
+//    @Override
+//    public void setSelectedTask(Task task) {
+//        if (task != null && !filteredTasks.contains(task)) {
+//            throw new TaskNotFoundException();
+//        }
+//        selectedTask.setValue(task);
+//    }
 
     /**
      * Ensures {@code selectedPerson} is a valid person in {@code filteredPersons}.
@@ -310,31 +310,31 @@ public class ModelManager implements Model {
         }
     }
 
-    private void ensureSelectedTaskIsValid(ListChangeListener.Change<? extends seedu.address.model.task.Task> change) {
-        while (change.next()) {
-            if (selectedTask.getValue() == null) {
-                //null is always a valid selcted task, so we do not ned to check that it is valid anymore.
-                return;
-            }
-
-            boolean wasSelectedTaskReplaced = change.wasReplaced() && change.getAddedSize() == change.getRemovedSize()
-                    && change.getRemoved().contains(selectedTask.getValue());
-            if (wasSelectedTaskReplaced) {
-                //Update selectedTask to its new value.
-                int index = change.getRemoved().indexOf(selectedTask.getValue());
-                selectedTask.set(change.getAddedSubList().get(index));
-                continue;
-            }
-
-            boolean wasSelectedTaskRemoved = change.getRemoved().stream()
-                    .anyMatch(removedTask -> selectedTask.getValue().isSameTask(removedTask));
-            if (wasSelectedTaskRemoved) {
-                //Select the task that came before it in the list,
-                //or clear the selection if there is no such task.
-                selectedTask.setValue(change.getFrom() > 0 ? change.getList().get(change.getFrom() -1) :null);
-            }
-        }
-    }
+//    private void ensureSelectedTaskIsValid(ListChangeListener.Change<? extends seedu.address.model.task.Task> change) {
+//        while (change.next()) {
+//            if (selectedTask.getValue() == null) {
+//                //null is always a valid selcted task, so we do not ned to check that it is valid anymore.
+//                return;
+//            }
+//
+//            boolean wasSelectedTaskReplaced = change.wasReplaced() && change.getAddedSize() == change.getRemovedSize()
+//                    && change.getRemoved().contains(selectedTask.getValue());
+//            if (wasSelectedTaskReplaced) {
+//                //Update selectedTask to its new value.
+//                int index = change.getRemoved().indexOf(selectedTask.getValue());
+//                selectedTask.set(change.getAddedSubList().get(index));
+//                continue;
+//            }
+//
+//            boolean wasSelectedTaskRemoved = change.getRemoved().stream()
+//                    .anyMatch(removedTask -> selectedTask.getValue().isSameTask(removedTask));
+//            if (wasSelectedTaskRemoved) {
+//                //Select the task that came before it in the list,
+//                //or clear the selection if there is no such task.
+//                selectedTask.setValue(change.getFrom() > 0 ? change.getList().get(change.getFrom() -1) :null);
+//            }
+//        }
+//    }
 
     @Override
     public boolean equals(Object obj) {

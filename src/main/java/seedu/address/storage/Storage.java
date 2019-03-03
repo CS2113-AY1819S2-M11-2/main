@@ -13,7 +13,7 @@ import seedu.address.model.UserPrefs;
 /**
  * API of the Storage component
  */
-public interface Storage extends AddressBookStorage, TaskManagerStorage, UserPrefsStorage {
+public interface Storage extends AddressBookStorage, UserPrefsStorage {
 
     @Override
     Optional<UserPrefs> readUserPrefs() throws DataConversionException, IOException;
@@ -24,18 +24,18 @@ public interface Storage extends AddressBookStorage, TaskManagerStorage, UserPre
     @Override
     Path getAddressBookFilePath();
 
-    @Override
-    Path getTaskManagerFilePath();
+//    @Override
+//    Path getTaskManagerFilePath();
 
     @Override
     Optional<ReadOnlyAddressBook> readAddressBook() throws DataConversionException, IOException;
 
-    @Override
-    Optional<ReadOnlyTaskManager> readTaskManager() throws DataConversionException, IOException;
+//    @Override
+//    Optional<ReadOnlyTaskManager> readTaskManager() throws DataConversionException, IOException;
 
     @Override
     void saveAddressBook(ReadOnlyAddressBook addressBook) throws IOException;
 
-    @Override
-    void saveTaskManager(ReadOnlyTaskManager taskManager) throws IOException;
+//    @Override
+//    void saveTaskManager(ReadOnlyTaskManager taskManager) throws IOException;
 }

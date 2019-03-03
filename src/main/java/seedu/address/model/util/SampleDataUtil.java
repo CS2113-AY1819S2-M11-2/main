@@ -6,19 +6,19 @@ import java.util.stream.Collectors;
 
 import seedu.address.model.AddressBook;
 import seedu.address.model.ReadOnlyAddressBook;
-import seedu.address.model.ReadOnlyTaskManager;
-import seedu.address.model.TaskManager;
+//import seedu.address.model.ReadOnlyTaskManager;
+//import seedu.address.model.TaskManager;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
 import seedu.address.model.tag.Tag;
-import seedu.address.model.task.TaskDate;
-import seedu.address.model.task.TaskModule;
-import seedu.address.model.task.Priority;
-import seedu.address.model.task.Task;
-import seedu.address.model.task.TaskName;
+//import seedu.address.model.task.TaskDate;
+//import seedu.address.model.task.TaskModule;
+//import seedu.address.model.task.Priority;
+//import seedu.address.model.task.Task;
+//import seedu.address.model.task.TaskName;
 
 /**
  * Contains utility methods for populating {@code AddressBook} with sample data.
@@ -47,16 +47,16 @@ public class SampleDataUtil {
         };
     }
 
-    public static Task[] getSampleTasks() {
-        return new Task[] {
-            new Task(new TaskName("Project Ver 2.0"), new TaskModule("CS2113"),
-                    new TaskDate("02-03"), new Priority("1"), getTagSet("30%")),
-            new Task(new TaskName("Tutorial 3"), new TaskModule("CG2023"),
-                    new TaskDate("04-03"), new Priority("2"), getTagSet("0%")),
-            new Task(new TaskName("Reflections"), new TaskModule("CS2101"),
-                    new TaskDate("03-03"), new Priority("3"), getTagSet()),
-        };
-    }
+//    public static Task[] getSampleTasks() {
+//        return new Task[] {
+//            new Task(new TaskName("Project Ver 2.0"), new TaskModule("CS2113"),
+//                    new TaskDate("02-03"), new Priority("1"), getTagSet("30%")),
+//            new Task(new TaskName("Tutorial 3"), new TaskModule("CG2023"),
+//                    new TaskDate("04-03"), new Priority("2"), getTagSet("0%")),
+//            new Task(new TaskName("Reflections"), new TaskModule("CS2101"),
+//                    new TaskDate("03-03"), new Priority("3"), getTagSet()),
+//        };
+//    }
     public static ReadOnlyAddressBook getSampleAddressBook() {
         AddressBook sampleAb = new AddressBook();
         for (Person samplePerson : getSamplePersons()) {
@@ -65,13 +65,13 @@ public class SampleDataUtil {
         return sampleAb;
     }
 
-    public static ReadOnlyTaskManager getSampleTaskManager() {
-        TaskManager sampleTm = new TaskManager();
-        for (Task sampleTask : getSampleTasks()) {
-            sampleTm.addTask(sampleTask);
-        }
-        return sampleTm;
-    }
+//    public static ReadOnlyTaskManager getSampleTaskManager() {
+//        TaskManager sampleTm = new TaskManager();
+//        for (Task sampleTask : getSampleTasks()) {
+//            sampleTm.addTask(sampleTask);
+//        }
+//        return sampleTm;
+//    }
     /**
      * Returns a tag set containing the list of strings given.
      */
