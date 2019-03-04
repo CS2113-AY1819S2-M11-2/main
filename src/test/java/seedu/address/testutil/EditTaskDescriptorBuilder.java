@@ -6,8 +6,11 @@ import java.util.stream.Stream;
 
 import seedu.address.logic.commands.EditCommand;
 import seedu.address.logic.commands.EditCommand.EditTaskDescriptor;
+import seedu.address.model.person.Date;
 import seedu.address.model.person.Module;
-import seedu.address.model.person.*;
+import seedu.address.model.person.Name;
+import seedu.address.model.person.Priority;
+import seedu.address.model.person.Task;
 import seedu.address.model.tag.Tag;
 
 /**

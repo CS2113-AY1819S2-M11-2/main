@@ -1,6 +1,15 @@
 package seedu.address.testutil;
 
-import static seedu.address.logic.commands.CommandTestUtil.*;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_DATE_PROJECT;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_DATE_TUTORIAL;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_MODULE_PROJECT;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_MODULE_TUTORIAL;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_PROJECT;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_TUTORIAL;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_PRIORITY_PROJECT;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_PRIORITY_TUTORIAL;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_GRADED;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_UNGRADED;
 
 import java.util.ArrayList;
 import java.util.Arrays;

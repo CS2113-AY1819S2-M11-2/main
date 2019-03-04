@@ -3,7 +3,10 @@ package seedu.address.logic;
 import static org.junit.Assert.assertEquals;
 import static seedu.address.commons.core.Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX;
 import static seedu.address.commons.core.Messages.MESSAGE_UNKNOWN_COMMAND;
-import static seedu.address.logic.commands.CommandTestUtil.*;
+import static seedu.address.logic.commands.CommandTestUtil.DATE_DESC_PROJECT;
+import static seedu.address.logic.commands.CommandTestUtil.MODULE_DESC_PROJECT;
+import static seedu.address.logic.commands.CommandTestUtil.NAME_DESC_PROJECT;
+import static seedu.address.logic.commands.CommandTestUtil.PRIORITY_DESC_PROJECT;
 import static seedu.address.testutil.TypicalTasks.PROJECT;
 
 import java.io.IOException;

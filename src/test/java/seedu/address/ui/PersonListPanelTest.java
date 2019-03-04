@@ -12,8 +12,11 @@ import guitests.guihandles.PersonListPanelHandle;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import seedu.address.model.person.Date;
 import seedu.address.model.person.Module;
-import seedu.address.model.person.*;
+import seedu.address.model.person.Name;
+import seedu.address.model.person.Priority;
+import seedu.address.model.person.Task;
 
 public class PersonListPanelTest extends GuiUnitTest {
     private static final ObservableList<Task> TYPICAL_TASKS =
@@ -24,31 +27,32 @@ public class PersonListPanelTest extends GuiUnitTest {
     private final SimpleObjectProperty<Task> selectedTask = new SimpleObjectProperty<>();
     private PersonListPanelHandle personListPanelHandle;
 
-//    @Test
-//    public void display() {
-//        initUi(TYPICAL_TASKS);
-//
-//        for (int i = 0; i < TYPICAL_TASKS.size(); i++) {
-//            personListPanelHandle.navigateToCard(TYPICAL_TASKS.get(i));
-//            Task expectedTask = TYPICAL_TASKS.get(i);
-//            PersonCardHandle actualCard = personListPanelHandle.getPersonCardHandle(i);
-//
-//            assertCardDisplaysPerson(expectedTask, actualCard);
-//            assertEquals(Integer.toString(i + 1) + ". ", actualCard.getId());
-//        }
-//    }
+    /*
+    @Test
+    public void display() {
+    initUi(TYPICAL_TASKS);
 
-//    @Test
-//    public void selection_modelSelectedPersonChanged_selectionChanges() {
-//        initUi(TYPICAL_TASKS);
-//        Task secondTask = TYPICAL_TASKS.get(INDEX_SECOND_TASK.getZeroBased());
-//        guiRobot.interact(() -> selectedTask.set(secondTask));
-//        guiRobot.pauseForHuman();
-//
-//        PersonCardHandle expectedPerson = personListPanelHandle.getPersonCardHandle(INDEX_SECOND_TASK.getZeroBased());
-//        PersonCardHandle selectedPerson = personListPanelHandle.getHandleToSelectedCard();
-//        assertCardEquals(expectedPerson, selectedPerson);
-//    }
+    for (int i = 0; i < TYPICAL_TASKS.size(); i++) {
+    personListPanelHandle.navigateToCard(TYPICAL_TASKS.get(i));
+    Task expectedTask = TYPICAL_TASKS.get(i);
+    PersonCardHandle actualCard = personListPanelHandle.getPersonCardHandle(i);
+
+    assertCardDisplaysPerson(expectedTask, actualCard);
+    assertEquals(Integer.toString(i + 1) + ". ", actualCard.getId());
+    }
+    }
+    @Test
+    public void selection_modelSelectedPersonChanged_selectionChanges() {
+    initUi(TYPICAL_TASKS);
+    Task secondTask = TYPICAL_TASKS.get(INDEX_SECOND_TASK.getZeroBased());
+    guiRobot.interact(() -> selectedTask.set(secondTask));
+    guiRobot.pauseForHuman();
+
+    PersonCardHandle expectedPerson = personListPanelHandle.getPersonCardHandle(INDEX_SECOND_TASK.getZeroBased());
+    PersonCardHandle selectedPerson = personListPanelHandle.getHandleToSelectedCard();
+    assertCardEquals(expectedPerson, selectedPerson);
+    }
+    */
 
     /**
      * Verifies that creating and deleting large number of persons in {@code PersonListPanel} requires lesser than

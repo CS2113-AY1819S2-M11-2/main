@@ -1,6 +1,8 @@
 package seedu.address.logic.commands;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static seedu.address.commons.core.Messages.MESSAGE_TASKS_LISTED_OVERVIEW;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.testutil.TypicalTasks.getTypicalTaskManager;
@@ -61,15 +63,17 @@ public class FindCommandTest {
         assertEquals(Collections.emptyList(), model.getFilteredTaskList());
     }
 
-//    @Test
-//    public void execute_multipleKeywords_multiplePersonsFound() {
-//        String expectedMessage = String.format(MESSAGE_TASKS_LISTED_OVERVIEW, 2);
-//        NameContainsKeywordsPredicate predicate = preparePredicate("Lab Tutorial");
-//        FindCommand command = new FindCommand(predicate);
-//        expectedModel.updateFilteredTaskList(predicate);
-//        assertCommandSuccess(command, model, commandHistory, expectedMessage, expectedModel);
-//        assertEquals(Arrays.asList(LECTURE), model.getFilteredTaskList());
-//    }
+    /*
+    @Test
+    public void execute_multipleKeywords_multiplePersonsFound() {
+    String expectedMessage = String.format(MESSAGE_TASKS_LISTED_OVERVIEW, 2);
+    NameContainsKeywordsPredicate predicate = preparePredicate("Lab Tutorial");
+    FindCommand command = new FindCommand(predicate);
+    expectedModel.updateFilteredTaskList(predicate);
+    assertCommandSuccess(command, model, commandHistory, expectedMessage, expectedModel);
+    assertEquals(Arrays.asList(LECTURE), model.getFilteredTaskList());
+    }
+    */
 
     /**
      * Parses {@code userInput} into a {@code NameContainsKeywordsPredicate}.

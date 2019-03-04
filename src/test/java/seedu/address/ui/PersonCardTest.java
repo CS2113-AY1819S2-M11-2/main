@@ -1,6 +1,8 @@
 package seedu.address.ui;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static seedu.address.ui.testutil.GuiTestAssert.assertCardDisplaysPerson;
 
 import org.junit.Test;
@@ -11,20 +13,22 @@ import seedu.address.testutil.TaskBuilder;
 
 public class PersonCardTest extends GuiUnitTest {
 
-//    @Test
-//    public void display() {
-//        // no tags
-//        Task taskWithNoTags = new TaskBuilder().withTags(new String[0]).build();
-//        PersonCard personCard = new PersonCard(taskWithNoTags, 1);
-//        uiPartRule.setUiPart(personCard);
-//        assertCardDisplay(personCard, taskWithNoTags, 1);
-//
-//        // with tags
-//        Task taskWithTags = new TaskBuilder().build();
-//        personCard = new PersonCard(taskWithTags, 2);
-//        uiPartRule.setUiPart(personCard);
-//        assertCardDisplay(personCard, taskWithTags, 2);
-//    }
+    /*
+    @Test
+    public void display() {
+    // no tags
+    Task taskWithNoTags = new TaskBuilder().withTags(new String[0]).build();
+    PersonCard personCard = new PersonCard(taskWithNoTags, 1);
+    uiPartRule.setUiPart(personCard);
+    assertCardDisplay(personCard, taskWithNoTags, 1);
+
+    // with tags
+    Task taskWithTags = new TaskBuilder().build();
+    personCard = new PersonCard(taskWithTags, 2);
+    uiPartRule.setUiPart(personCard);
+    assertCardDisplay(personCard, taskWithTags, 2);
+    }
+    */
 
     @Test
     public void equals() {

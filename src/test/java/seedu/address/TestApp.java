@@ -9,7 +9,11 @@ import javafx.stage.Stage;
 import seedu.address.commons.core.Config;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.exceptions.DataConversionException;
-import seedu.address.model.*;
+import seedu.address.model.Model;
+import seedu.address.model.ModelManager;
+import seedu.address.model.ReadOnlyTaskManager;
+import seedu.address.model.TaskManager;
+import seedu.address.model.UserPrefs;
 import seedu.address.storage.JsonTaskManagerStorage;
 import seedu.address.storage.UserPrefsStorage;
 import seedu.address.testutil.TestUtil;
@@ -89,7 +93,7 @@ public class TestApp extends MainApp {
      */
     public Model getModel() {
         Model copy = new ModelManager((model.getTaskManager()), new UserPrefs());
-//        ModelHelper.setFilteredList(copy, model.getFilteredTaskList());
+        /* ModelHelper.setFilteredList(copy, model.getFilteredTaskList()); */
         return copy;
     }
 

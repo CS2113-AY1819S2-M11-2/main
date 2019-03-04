@@ -2,7 +2,13 @@ package seedu.address.logic.commands;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static seedu.address.logic.commands.CommandTestUtil.*;
+import static seedu.address.logic.commands.CommandTestUtil.DESC_PROJECT;
+import static seedu.address.logic.commands.CommandTestUtil.DESC_TUTORIAL;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_DATE_TUTORIAL;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_MODULE_TUTORIAL;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_TUTORIAL;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_PRIORITY_TUTORIAL;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_GRADED;
 
 import org.junit.Test;
 
@@ -14,7 +20,7 @@ public class EditTaskDescriptorTest {
     @Test
     public void equals() {
         // same values -> returns true
-        EditCommand.EditTaskDescriptor descriptorWithSameValues = new EditTaskDescriptor(DESC_PROJECT);
+        EditTaskDescriptor descriptorWithSameValues = new EditTaskDescriptor(DESC_PROJECT);
         assertTrue(DESC_PROJECT.equals(descriptorWithSameValues));
 
         // same object -> returns true
@@ -30,7 +36,8 @@ public class EditTaskDescriptorTest {
         assertFalse(DESC_PROJECT.equals(DESC_TUTORIAL));
 
         // different name -> returns false
-        EditCommand.EditTaskDescriptor editedAmy = new EditTaskDescriptorBuilder(DESC_PROJECT).withName(VALID_NAME_TUTORIAL).build();
+        EditTaskDescriptor editedAmy;
+        editedAmy = new EditTaskDescriptorBuilder(DESC_PROJECT).withName(VALID_NAME_TUTORIAL).build();
         assertFalse(DESC_PROJECT.equals(editedAmy));
 
         // different phone -> returns false

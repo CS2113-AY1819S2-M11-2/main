@@ -2,8 +2,12 @@ package seedu.address.logic.commands;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static seedu.address.logic.commands.CommandTestUtil.*;
-import static seedu.address.testutil.TypicalIndexes.*;
+import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
+import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
+import static seedu.address.logic.commands.CommandTestUtil.showTaskAtIndex;
+import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_TASK;
+import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_TASK;
+import static seedu.address.testutil.TypicalIndexes.INDEX_THIRD_TASK;
 import static seedu.address.testutil.TypicalTasks.getTypicalTaskManager;
 
 import org.junit.Test;
@@ -28,7 +32,7 @@ public class SelectCommandTest {
         Index lastPersonIndex = Index.fromOneBased(model.getFilteredTaskList().size());
 
         assertExecutionSuccess(INDEX_FIRST_TASK);
-        assertExecutionSuccess(INDEX_THIRD_PERSON);
+        assertExecutionSuccess(INDEX_THIRD_TASK);
         assertExecutionSuccess(lastPersonIndex);
     }
 

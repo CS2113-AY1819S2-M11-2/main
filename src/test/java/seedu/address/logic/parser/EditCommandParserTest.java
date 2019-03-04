@@ -1,11 +1,35 @@
 package seedu.address.logic.parser;
 
 import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.commands.CommandTestUtil.*;
+import static seedu.address.logic.commands.CommandTestUtil.DATE_DESC_PROJECT;
+import static seedu.address.logic.commands.CommandTestUtil.DATE_DESC_TUTORIAL;
+import static seedu.address.logic.commands.CommandTestUtil.INVALID_DATE_DESC;
+import static seedu.address.logic.commands.CommandTestUtil.INVALID_MODULE_DESC;
+import static seedu.address.logic.commands.CommandTestUtil.INVALID_NAME_DESC;
+import static seedu.address.logic.commands.CommandTestUtil.INVALID_PRIORITY_DESC;
+import static seedu.address.logic.commands.CommandTestUtil.INVALID_TAG_DESC;
+import static seedu.address.logic.commands.CommandTestUtil.MODULE_DESC_PROJECT;
+import static seedu.address.logic.commands.CommandTestUtil.MODULE_DESC_TUTORIAL;
+import static seedu.address.logic.commands.CommandTestUtil.NAME_DESC_PROJECT;
+import static seedu.address.logic.commands.CommandTestUtil.PRIORITY_DESC_PROJECT;
+import static seedu.address.logic.commands.CommandTestUtil.PRIORITY_DESC_TUTORIAL;
+import static seedu.address.logic.commands.CommandTestUtil.TAG_DESC_GRADED;
+import static seedu.address.logic.commands.CommandTestUtil.TAG_DESC_UNGRADED;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_DATE_PROJECT;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_DATE_TUTORIAL;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_MODULE_PROJECT;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_MODULE_TUTORIAL;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_PROJECT;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_PRIORITY_PROJECT;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_PRIORITY_TUTORIAL;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_GRADED;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_UNGRADED;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseFailure;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseSuccess;
-import static seedu.address.testutil.TypicalIndexes.*;
+import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_TASK;
+import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_TASK;
+import static seedu.address.testutil.TypicalIndexes.INDEX_THIRD_TASK;
 
 import org.junit.Test;
 
@@ -109,9 +133,10 @@ public class EditCommandParserTest {
     @Test
     public void parse_oneFieldSpecified_success() {
         // name
-        Index targetIndex = INDEX_THIRD_PERSON;
+        Index targetIndex = INDEX_THIRD_TASK;
         String userInput = targetIndex.getOneBased() + NAME_DESC_PROJECT;
-        EditCommand.EditTaskDescriptor descriptor = new EditTaskDescriptorBuilder().withName(VALID_NAME_PROJECT).build();
+        EditCommand.EditTaskDescriptor descriptor;
+        descriptor = new EditTaskDescriptorBuilder().withName(VALID_NAME_PROJECT).build();
         EditCommand expectedCommand = new EditCommand(targetIndex, descriptor);
         assertParseSuccess(parser, userInput, expectedCommand);
 
@@ -148,7 +173,8 @@ public class EditCommandParserTest {
                 + MODULE_DESC_TUTORIAL + PRIORITY_DESC_TUTORIAL + DATE_DESC_TUTORIAL + TAG_DESC_UNGRADED;
 
         EditCommand.EditTaskDescriptor descriptor = new EditTaskDescriptorBuilder().withPhone(VALID_MODULE_TUTORIAL)
-                .withEmail(VALID_DATE_TUTORIAL).withAddress(VALID_PRIORITY_TUTORIAL).withTags(VALID_TAG_UNGRADED, VALID_TAG_GRADED)
+                .withEmail(VALID_DATE_TUTORIAL).withAddress(VALID_PRIORITY_TUTORIAL)
+                .withTags(VALID_TAG_UNGRADED, VALID_TAG_GRADED)
                 .build();
         EditCommand expectedCommand = new EditCommand(targetIndex, descriptor);
 
@@ -160,7 +186,8 @@ public class EditCommandParserTest {
         // no other valid values specified
         Index targetIndex = INDEX_FIRST_TASK;
         String userInput = targetIndex.getOneBased() + INVALID_MODULE_DESC + MODULE_DESC_TUTORIAL;
-        EditCommand.EditTaskDescriptor descriptor = new EditTaskDescriptorBuilder().withPhone(VALID_MODULE_TUTORIAL).build();
+        EditCommand.EditTaskDescriptor descriptor = new EditTaskDescriptorBuilder()
+                .withPhone(VALID_MODULE_TUTORIAL).build();
         EditCommand expectedCommand = new EditCommand(targetIndex, descriptor);
         assertParseSuccess(parser, userInput, expectedCommand);
 
@@ -175,7 +202,7 @@ public class EditCommandParserTest {
 
     @Test
     public void parse_resetTags_success() {
-        Index targetIndex = INDEX_THIRD_PERSON;
+        Index targetIndex = INDEX_THIRD_TASK;
         String userInput = targetIndex.getOneBased() + TAG_EMPTY;
 
         EditCommand.EditTaskDescriptor descriptor = new EditTaskDescriptorBuilder().withTags().build();

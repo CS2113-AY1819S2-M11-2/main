@@ -1,6 +1,8 @@
 package seedu.address.logic.commands;
 
-import static seedu.address.logic.commands.CommandTestUtil.*;
+import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
+import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
+import static seedu.address.logic.commands.CommandTestUtil.deleteFirstTask;
 import static seedu.address.testutil.TypicalTasks.getTypicalTaskManager;
 
 import org.junit.Before;

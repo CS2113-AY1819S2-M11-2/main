@@ -20,14 +20,16 @@ public class JsonSerializableTaskManagerTest {
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
-//    @Test
-//    public void toModelType_typicalTasksFile_success() throws Exception {
-//        JsonSerializableTaskManager dataFromFile = JsonUtil.readJsonFile(TYPICAL_TASKS_FILE,
-//                JsonSerializableTaskManager.class).get();
-//        TaskManager taskManagerFromFile = dataFromFile.toModelType();
-//        TaskManager typicalTasksTaskManager = TypicalTasks.getTypicalTaskManager();
-//        assertEquals(taskManagerFromFile, typicalTasksTaskManager);
-//    }
+    /*
+    @Test
+    public void toModelType_typicalTasksFile_success() throws Exception {
+    JsonSerializableTaskManager dataFromFile = JsonUtil.readJsonFile(TYPICAL_TASKS_FILE,
+    JsonSerializableTaskManager.class).get();
+    TaskManager taskManagerFromFile = dataFromFile.toModelType();
+    TaskManager typicalTasksTaskManager = TypicalTasks.getTypicalTaskManager();
+    assertEquals(taskManagerFromFile, typicalTasksTaskManager);
+    }
+    */
 
     @Test
     public void toModelType_invalidTaskFile_throwsIllegalValueException() throws Exception {
