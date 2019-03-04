@@ -24,7 +24,7 @@ import seedu.address.model.TaskManager;
 import seedu.address.model.Model;
 import seedu.address.model.ReadOnlyUserPrefs;
 import seedu.address.model.person.Task;
-import seedu.address.testutil.PersonBuilder;
+import seedu.address.testutil.TaskBuilder;
 
 public class AddCommandTest {
 
@@ -42,22 +42,22 @@ public class AddCommandTest {
     }
 
     @Test
-    public void execute_personAcceptedByModel_addSuccessful() throws Exception {
-        ModelStubAcceptingPersonAdded modelStub = new ModelStubAcceptingPersonAdded();
-        Task validTask = new PersonBuilder().build();
+    public void execute_taskAcceptedByModel_addSuccessful() throws Exception {
+        ModelStubAcceptingTaskAdded modelStub = new ModelStubAcceptingTaskAdded();
+        Task validTask = new TaskBuilder().build();
 
         CommandResult commandResult = new AddCommand(validTask).execute(modelStub, commandHistory);
 
         assertEquals(String.format(AddCommand.MESSAGE_SUCCESS, validTask), commandResult.getFeedbackToUser());
-        assertEquals(Arrays.asList(validTask), modelStub.personsAdded);
+        assertEquals(Arrays.asList(validTask), modelStub.tasksAdded);
         assertEquals(EMPTY_COMMAND_HISTORY, commandHistory);
     }
 
     @Test
-    public void execute_duplicatePerson_throwsCommandException() throws Exception {
-        Task validTask = new PersonBuilder().build();
+    public void execute_duplicateTask_throwsCommandException() throws Exception {
+        Task validTask = new TaskBuilder().build();
         AddCommand addCommand = new AddCommand(validTask);
-        ModelStub modelStub = new ModelStubWithPerson(validTask);
+        ModelStub modelStub = new ModelStubWithTask(validTask);
 
         thrown.expect(CommandException.class);
         thrown.expectMessage(AddCommand.MESSAGE_DUPLICATE_TASK);
@@ -66,26 +66,26 @@ public class AddCommandTest {
 
     @Test
     public void equals() {
-        Task alice = new PersonBuilder().withName("Alice").build();
-        Task bob = new PersonBuilder().withName("Bob").build();
-        AddCommand addAliceCommand = new AddCommand(alice);
-        AddCommand addBobCommand = new AddCommand(bob);
+        Task project = new TaskBuilder().withName("Project").build();
+        Task tutorial = new TaskBuilder().withName("Tutorial").build();
+        AddCommand addProjectCommand = new AddCommand(project);
+        AddCommand addTutorialCommand = new AddCommand(tutorial);
 
         // same object -> returns true
-        assertTrue(addAliceCommand.equals(addAliceCommand));
+        assertTrue(addProjectCommand.equals(addProjectCommand));
 
         // same values -> returns true
-        AddCommand addAliceCommandCopy = new AddCommand(alice);
-        assertTrue(addAliceCommand.equals(addAliceCommandCopy));
+        AddCommand addProjectCommandCopy = new AddCommand(project);
+        assertTrue(addProjectCommand.equals(addProjectCommandCopy));
 
         // different types -> returns false
-        assertFalse(addAliceCommand.equals(1));
+        assertFalse(addProjectCommand.equals(1));
 
         // null -> returns false
-        assertFalse(addAliceCommand.equals(null));
+        assertFalse(addProjectCommand.equals(null));
 
         // different task -> returns false
-        assertFalse(addAliceCommand.equals(addBobCommand));
+        assertFalse(addProjectCommand.equals(addTutorialCommand));
     }
 
     /**
@@ -206,10 +206,10 @@ public class AddCommandTest {
     /**
      * A Model stub that contains a single task.
      */
-    private class ModelStubWithPerson extends ModelStub {
+    private class ModelStubWithTask extends ModelStub {
         private final Task task;
 
-        ModelStubWithPerson(Task task) {
+        ModelStubWithTask(Task task) {
             requireNonNull(task);
             this.task = task;
         }
@@ -224,19 +224,19 @@ public class AddCommandTest {
     /**
      * A Model stub that always accept the task being added.
      */
-    private class ModelStubAcceptingPersonAdded extends ModelStub {
-        final ArrayList<Task> personsAdded = new ArrayList<>();
+    private class ModelStubAcceptingTaskAdded extends ModelStub {
+        final ArrayList<Task> tasksAdded = new ArrayList<>();
 
         @Override
         public boolean hasTask(Task task) {
             requireNonNull(task);
-            return personsAdded.stream().anyMatch(task::isSameTask);
+            return tasksAdded.stream().anyMatch(task::isSameTask);
         }
 
         @Override
         public void addTask(Task task) {
             requireNonNull(task);
-            personsAdded.add(task);
+            tasksAdded.add(task);
         }
 
         @Override

@@ -3,10 +3,10 @@ package seedu.address.model;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_ADDRESS_BOB;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
-import static seedu.address.testutil.TypicalPersons.ALICE;
-import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_PRIORITY_TUTORIAL;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_GRADED;
+import static seedu.address.testutil.TypicalTasks.SLIDES;
+import static seedu.address.testutil.TypicalTasks.getTypicalTaskManager;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -23,7 +23,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import seedu.address.model.person.Task;
 import seedu.address.model.person.exceptions.DuplicateTaskException;
-import seedu.address.testutil.PersonBuilder;
+import seedu.address.testutil.TaskBuilder;
 
 public class TaskManagerTest {
 
@@ -45,7 +45,7 @@ public class TaskManagerTest {
 
     @Test
     public void resetData_withValidReadOnlyAddressBook_replacesData() {
-        TaskManager newData = getTypicalAddressBook();
+        TaskManager newData = getTypicalTaskManager();
         taskManager.resetData(newData);
         assertEquals(newData, taskManager);
     }
@@ -53,9 +53,9 @@ public class TaskManagerTest {
     @Test
     public void resetData_withDuplicatePersons_throwsDuplicatePersonException() {
         // Two tasks with the same identity fields
-        Task editedAlice = new PersonBuilder(ALICE).withAddress(VALID_ADDRESS_BOB).withTags(VALID_TAG_HUSBAND)
+        Task editedAlice = new TaskBuilder(SLIDES).withPriority(VALID_PRIORITY_TUTORIAL).withTags(VALID_TAG_GRADED)
                 .build();
-        List<Task> newTasks = Arrays.asList(ALICE, editedAlice);
+        List<Task> newTasks = Arrays.asList(SLIDES, editedAlice);
         TaskManagerStub newData = new TaskManagerStub(newTasks);
 
         thrown.expect(DuplicateTaskException.class);
@@ -70,19 +70,19 @@ public class TaskManagerTest {
 
     @Test
     public void hasPerson_personNotInAddressBook_returnsFalse() {
-        assertFalse(taskManager.hasTask(ALICE));
+        assertFalse(taskManager.hasTask(SLIDES));
     }
 
     @Test
     public void hasPerson_personInAddressBook_returnsTrue() {
-        taskManager.addTask(ALICE);
-        assertTrue(taskManager.hasTask(ALICE));
+        taskManager.addTask(SLIDES);
+        assertTrue(taskManager.hasTask(SLIDES));
     }
 
     @Test
     public void hasPerson_personWithSameIdentityFieldsInAddressBook_returnsTrue() {
-        taskManager.addTask(ALICE);
-        Task editedAlice = new PersonBuilder(ALICE).withAddress(VALID_ADDRESS_BOB).withTags(VALID_TAG_HUSBAND)
+        taskManager.addTask(SLIDES);
+        Task editedAlice = new TaskBuilder(SLIDES).withPriority(VALID_PRIORITY_TUTORIAL).withTags(VALID_TAG_GRADED)
                 .build();
         assertTrue(taskManager.hasTask(editedAlice));
     }
@@ -98,7 +98,7 @@ public class TaskManagerTest {
         SimpleIntegerProperty counter = new SimpleIntegerProperty();
         InvalidationListener listener = observable -> counter.set(counter.get() + 1);
         taskManager.addListener(listener);
-        taskManager.addTask(ALICE);
+        taskManager.addTask(SLIDES);
         assertEquals(1, counter.get());
     }
 
@@ -108,7 +108,7 @@ public class TaskManagerTest {
         InvalidationListener listener = observable -> counter.set(counter.get() + 1);
         taskManager.addListener(listener);
         taskManager.removeListener(listener);
-        taskManager.addTask(ALICE);
+        taskManager.addTask(SLIDES);
         assertEquals(0, counter.get());
     }
 

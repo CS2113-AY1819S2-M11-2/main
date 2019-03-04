@@ -21,7 +21,7 @@ public class DateTest {
     }
 
     @Test
-    public void isValidEmail() {
+    public void isValidDate() {
         // null email
         Assert.assertThrows(NullPointerException.class, () -> Date.isValidDate(null));
 
@@ -30,33 +30,20 @@ public class DateTest {
         assertFalse(Date.isValidDate(" ")); // spaces only
 
         // missing parts
-        assertFalse(Date.isValidDate("@example.com")); // missing local part
-        assertFalse(Date.isValidDate("peterjackexample.com")); // missing '@' symbol
-        assertFalse(Date.isValidDate("peterjack@")); // missing domain name
+        assertFalse(Date.isValidDate("0110")); // missing '-' symbol
 
         // invalid parts
-        assertFalse(Date.isValidDate("peterjack@-")); // invalid domain name
-        assertFalse(Date.isValidDate("peterjack@exam_ple.com")); // underscore in domain name
-        assertFalse(Date.isValidDate("peter jack@example.com")); // spaces in local part
-        assertFalse(Date.isValidDate("peterjack@exam ple.com")); // spaces in domain name
-        assertFalse(Date.isValidDate(" peterjack@example.com")); // leading space
-        assertFalse(Date.isValidDate("peterjack@example.com ")); // trailing space
-        assertFalse(Date.isValidDate("peterjack@@example.com")); // double '@' symbol
-        assertFalse(Date.isValidDate("peter@jack@example.com")); // '@' symbol in local part
-        assertFalse(Date.isValidDate("peterjack@example@com")); // '@' symbol in domain name
-        assertFalse(Date.isValidDate("peterjack@.example.com")); // domain name starts with a period
-        assertFalse(Date.isValidDate("peterjack@example.com.")); // domain name ends with a period
-        assertFalse(Date.isValidDate("peterjack@-example.com")); // domain name starts with a hyphen
-        assertFalse(Date.isValidDate("peterjack@example.com-")); // domain name ends with a hyphen
+        assertFalse(Date.isValidDate("01-30")); // month greater than 12
+        assertFalse(Date.isValidDate("01-00")); // month less than 01
+        assertFalse(Date.isValidDate("32-01")); // date greater than 31 for month with 31 days
+        assertFalse(Date.isValidDate("31-04")); // date greater than 30 for month with 30 days
+        assertFalse(Date.isValidDate("30-02")); // date greater than 28 for Feb
+        assertFalse(Date.isValidDate("00-10")); // date less than 01
 
-        // valid email
-        assertTrue(Date.isValidDate("PeterJack_1190@example.com"));
-        assertTrue(Date.isValidDate("a@bc")); // minimal
-        assertTrue(Date.isValidDate("test@localhost")); // alphabets only
-        assertTrue(Date.isValidDate("!#$%&'*+/=?`{|}~^.-@example.org")); // special characters local part
-        assertTrue(Date.isValidDate("123@145")); // numeric local part and domain name
-        assertTrue(Date.isValidDate("a1+be!@example1.com")); // mixture of alphanumeric and special characters
-        assertTrue(Date.isValidDate("peter_jack@very-very-very-long-example.com")); // long domain name
-        assertTrue(Date.isValidDate("if.you.dream.it_you.can.do.it@example.com")); // long local part
+        // valid date
+        assertTrue(Date.isValidDate("01-01"));
+        assertTrue(Date.isValidDate("31-01"));
+        assertTrue(Date.isValidDate("30-04"));
+        assertTrue(Date.isValidDate("28-02"));
     }
 }

@@ -3,11 +3,11 @@ package seedu.address.model;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_EMAIL_BOB;
+import static seedu.address.logic.commands.CommandTestUtil.VALID_DATE_TUTORIAL;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_TASKS;
-import static seedu.address.testutil.TypicalPersons.ALICE;
-import static seedu.address.testutil.TypicalPersons.BENSON;
-import static seedu.address.testutil.TypicalPersons.BOB;
+import static seedu.address.testutil.TypicalTasks.SLIDES;
+import static seedu.address.testutil.TypicalTasks.LAB;
+import static seedu.address.testutil.TypicalTasks.TUTORIAL;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -22,8 +22,8 @@ import seedu.address.commons.core.GuiSettings;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
 import seedu.address.model.person.Task;
 import seedu.address.model.person.exceptions.TaskNotFoundException;
-import seedu.address.testutil.AddressBookBuilder;
-import seedu.address.testutil.PersonBuilder;
+import seedu.address.testutil.TaskManagerBuilder;
+import seedu.address.testutil.TaskBuilder;
 
 public class ModelManagerTest {
     @Rule
@@ -93,39 +93,39 @@ public class ModelManagerTest {
 
     @Test
     public void hasPerson_personNotInAddressBook_returnsFalse() {
-        assertFalse(modelManager.hasTask(ALICE));
+        assertFalse(modelManager.hasTask(SLIDES));
     }
 
     @Test
     public void hasPerson_personInAddressBook_returnsTrue() {
-        modelManager.addTask(ALICE);
-        assertTrue(modelManager.hasTask(ALICE));
+        modelManager.addTask(SLIDES);
+        assertTrue(modelManager.hasTask(SLIDES));
     }
 
     @Test
     public void deletePerson_personIsSelectedAndFirstPersonInFilteredPersonList_selectionCleared() {
-        modelManager.addTask(ALICE);
-        modelManager.setSelectedTask(ALICE);
-        modelManager.deleteTask(ALICE);
+        modelManager.addTask(SLIDES);
+        modelManager.setSelectedTask(SLIDES);
+        modelManager.deleteTask(SLIDES);
         assertEquals(null, modelManager.getSelectedTask());
     }
 
     @Test
     public void deletePerson_personIsSelectedAndSecondPersonInFilteredPersonList_firstPersonSelected() {
-        modelManager.addTask(ALICE);
-        modelManager.addTask(BOB);
-        assertEquals(Arrays.asList(ALICE, BOB), modelManager.getFilteredTaskList());
-        modelManager.setSelectedTask(BOB);
-        modelManager.deleteTask(BOB);
-        assertEquals(ALICE, modelManager.getSelectedTask());
+        modelManager.addTask(SLIDES);
+        modelManager.addTask(TUTORIAL);
+        assertEquals(Arrays.asList(SLIDES, TUTORIAL), modelManager.getFilteredTaskList());
+        modelManager.setSelectedTask(TUTORIAL);
+        modelManager.deleteTask(TUTORIAL);
+        assertEquals(SLIDES, modelManager.getSelectedTask());
     }
 
     @Test
     public void setPerson_personIsSelected_selectedPersonUpdated() {
-        modelManager.addTask(ALICE);
-        modelManager.setSelectedTask(ALICE);
-        Task updatedAlice = new PersonBuilder(ALICE).withEmail(VALID_EMAIL_BOB).build();
-        modelManager.setTask(ALICE, updatedAlice);
+        modelManager.addTask(SLIDES);
+        modelManager.setSelectedTask(SLIDES);
+        Task updatedAlice = new TaskBuilder(SLIDES).withDate(VALID_DATE_TUTORIAL).build();
+        modelManager.setTask(SLIDES, updatedAlice);
         assertEquals(updatedAlice, modelManager.getSelectedTask());
     }
 
@@ -138,20 +138,20 @@ public class ModelManagerTest {
     @Test
     public void setSelectedPerson_personNotInFilteredPersonList_throwsPersonNotFoundException() {
         thrown.expect(TaskNotFoundException.class);
-        modelManager.setSelectedTask(ALICE);
+        modelManager.setSelectedTask(SLIDES);
     }
 
     @Test
     public void setSelectedPerson_personInFilteredPersonList_setsSelectedPerson() {
-        modelManager.addTask(ALICE);
-        assertEquals(Collections.singletonList(ALICE), modelManager.getFilteredTaskList());
-        modelManager.setSelectedTask(ALICE);
-        assertEquals(ALICE, modelManager.getSelectedTask());
+        modelManager.addTask(SLIDES);
+        assertEquals(Collections.singletonList(SLIDES), modelManager.getFilteredTaskList());
+        modelManager.setSelectedTask(SLIDES);
+        assertEquals(SLIDES, modelManager.getSelectedTask());
     }
 
     @Test
     public void equals() {
-        TaskManager taskManager = new AddressBookBuilder().withPerson(ALICE).withPerson(BENSON).build();
+        TaskManager taskManager = new TaskManagerBuilder().withTask(SLIDES).withTask(LAB).build();
         TaskManager differentTaskManager = new TaskManager();
         UserPrefs userPrefs = new UserPrefs();
 
@@ -173,7 +173,7 @@ public class ModelManagerTest {
         assertFalse(modelManager.equals(new ModelManager(differentTaskManager, userPrefs)));
 
         // different filteredList -> returns false
-        String[] keywords = ALICE.getName().fullName.split("\\s+");
+        String[] keywords = SLIDES.getName().fullName.split("\\s+");
         modelManager.updateFilteredTaskList(new NameContainsKeywordsPredicate(Arrays.asList(keywords)));
         assertFalse(modelManager.equals(new ModelManager(taskManager, userPrefs)));
 

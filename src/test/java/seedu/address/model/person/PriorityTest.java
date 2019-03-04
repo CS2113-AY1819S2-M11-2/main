@@ -26,12 +26,13 @@ public class PriorityTest {
         Assert.assertThrows(NullPointerException.class, () -> Priority.isValidPriority(null));
 
         // invalid addresses
-        assertFalse(Priority.isValidPriority("")); // empty string
+        assertFalse(Priority.isValidPriority("4")); // greater than 3
         assertFalse(Priority.isValidPriority(" ")); // spaces only
+        assertFalse(Priority.isValidPriority("0"));
 
         // valid addresses
-        assertTrue(Priority.isValidPriority("Blk 456, Den Road, #01-355"));
-        assertTrue(Priority.isValidPriority("-")); // one character
-        assertTrue(Priority.isValidPriority("Leng Inc; 1234 Market St; San Francisco CA 2349879; USA")); // long address
+        assertTrue(Priority.isValidPriority("1"));
+        assertTrue(Priority.isValidPriority("2"));
+        assertTrue(Priority.isValidPriority("3"));
     }
 }

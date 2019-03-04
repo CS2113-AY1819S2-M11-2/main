@@ -26,16 +26,12 @@ public class ModuleTest {
         Assert.assertThrows(NullPointerException.class, () -> Module.isValidModule(null));
 
         // invalid phone numbers
-        assertFalse(Module.isValidModule("")); // empty string
-        assertFalse(Module.isValidModule(" ")); // spaces only
-        assertFalse(Module.isValidModule("91")); // less than 3 numbers
-        assertFalse(Module.isValidModule("phone")); // non-numeric
-        assertFalse(Module.isValidModule("9011p041")); // alphabets within digits
-        assertFalse(Module.isValidModule("9312 1534")); // spaces within digits
+        assertFalse(Module.isValidModule("2113CS")); // numbers before alphabet
+        assertFalse(Module.isValidModule("C2113")); // missing one alphabet
+        assertFalse(Module.isValidModule("CS211")); // missing one number
 
         // valid phone numbers
-        assertTrue(Module.isValidModule("911")); // exactly 3 numbers
-        assertTrue(Module.isValidModule("93121534"));
-        assertTrue(Module.isValidModule("124293842033123")); // long phone numbers
+        assertTrue(Module.isValidModule("CS2113"));
+        assertTrue(Module.isValidModule("CS2101"));
     }
 }

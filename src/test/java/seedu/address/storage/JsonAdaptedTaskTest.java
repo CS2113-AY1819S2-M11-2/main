@@ -2,7 +2,7 @@ package seedu.address.storage;
 
 import static org.junit.Assert.assertEquals;
 import static seedu.address.storage.JsonAdaptedTask.MISSING_FIELD_MESSAGE_FORMAT;
-import static seedu.address.testutil.TypicalPersons.BENSON;
+import static seedu.address.testutil.TypicalTasks.LAB;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,18 +24,18 @@ public class JsonAdaptedTaskTest {
     private static final String INVALID_EMAIL = "example.com";
     private static final String INVALID_TAG = "#friend";
 
-    private static final String VALID_NAME = BENSON.getName().toString();
-    private static final String VALID_PHONE = BENSON.getModule().toString();
-    private static final String VALID_EMAIL = BENSON.getDate().toString();
-    private static final String VALID_ADDRESS = BENSON.getPriority().toString();
-    private static final List<JsonAdaptedTag> VALID_TAGS = BENSON.getTags().stream()
+    private static final String VALID_NAME = LAB.getName().toString();
+    private static final String VALID_PHONE = LAB.getModule().toString();
+    private static final String VALID_EMAIL = LAB.getDate().toString();
+    private static final String VALID_ADDRESS = LAB.getPriority().toString();
+    private static final List<JsonAdaptedTag> VALID_TAGS = LAB.getTags().stream()
             .map(JsonAdaptedTag::new)
             .collect(Collectors.toList());
 
     @Test
     public void toModelType_validPersonDetails_returnsPerson() throws Exception {
-        JsonAdaptedTask person = new JsonAdaptedTask(BENSON);
-        assertEquals(BENSON, person.toModelType());
+        JsonAdaptedTask person = new JsonAdaptedTask(LAB);
+        assertEquals(LAB, person.toModelType());
     }
 
     @Test

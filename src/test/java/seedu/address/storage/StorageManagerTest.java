@@ -2,7 +2,7 @@ package seedu.address.storage;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static seedu.address.testutil.TypicalPersons.getTypicalAddressBook;
+import static seedu.address.testutil.TypicalTasks.getTypicalTaskManager;
 
 import java.nio.file.Path;
 
@@ -56,7 +56,7 @@ public class StorageManagerTest {
          * {@link JsonTaskManagerStorage} class.
          * More extensive testing of UserPref saving/reading is done in {@link JsonTaskManagerStorageTest} class.
          */
-        TaskManager original = getTypicalAddressBook();
+        TaskManager original = getTypicalTaskManager();
         storageManager.saveTaskManager(original);
         ReadOnlyTaskManager retrieved = storageManager.readTaskManager().get();
         assertEquals(original, new TaskManager(retrieved));

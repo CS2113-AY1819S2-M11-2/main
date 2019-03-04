@@ -16,22 +16,22 @@ import seedu.address.model.tag.Tag;
 /**
  * A utility class to help with building EditTaskDescriptor objects.
  */
-public class EditPersonDescriptorBuilder {
+public class EditTaskDescriptorBuilder {
 
     private EditCommand.EditTaskDescriptor descriptor;
 
-    public EditPersonDescriptorBuilder() {
+    public EditTaskDescriptorBuilder() {
         descriptor = new EditCommand.EditTaskDescriptor();
     }
 
-    public EditPersonDescriptorBuilder(EditCommand.EditTaskDescriptor descriptor) {
+    public EditTaskDescriptorBuilder(EditCommand.EditTaskDescriptor descriptor) {
         this.descriptor = new EditCommand.EditTaskDescriptor(descriptor);
     }
 
     /**
      * Returns an {@code EditTaskDescriptor} with fields containing {@code task}'s details
      */
-    public EditPersonDescriptorBuilder(Task task) {
+    public EditTaskDescriptorBuilder(Task task) {
         descriptor = new EditCommand.EditTaskDescriptor();
         descriptor.setName(task.getName());
         descriptor.setModule(task.getModule());
@@ -43,7 +43,7 @@ public class EditPersonDescriptorBuilder {
     /**
      * Sets the {@code Name} of the {@code EditTaskDescriptor} that we are building.
      */
-    public EditPersonDescriptorBuilder withName(String name) {
+    public EditTaskDescriptorBuilder withName(String name) {
         descriptor.setName(new Name(name));
         return this;
     }
@@ -51,7 +51,7 @@ public class EditPersonDescriptorBuilder {
     /**
      * Sets the {@code Module} of the {@code EditTaskDescriptor} that we are building.
      */
-    public EditPersonDescriptorBuilder withPhone(String phone) {
+    public EditTaskDescriptorBuilder withPhone(String phone) {
         descriptor.setModule(new Module(phone));
         return this;
     }
@@ -59,7 +59,7 @@ public class EditPersonDescriptorBuilder {
     /**
      * Sets the {@code Date} of the {@code EditTaskDescriptor} that we are building.
      */
-    public EditPersonDescriptorBuilder withEmail(String email) {
+    public EditTaskDescriptorBuilder withEmail(String email) {
         descriptor.setDate(new Date(email));
         return this;
     }
@@ -67,7 +67,7 @@ public class EditPersonDescriptorBuilder {
     /**
      * Sets the {@code Priority} of the {@code EditTaskDescriptor} that we are building.
      */
-    public EditPersonDescriptorBuilder withAddress(String address) {
+    public EditTaskDescriptorBuilder withAddress(String address) {
         descriptor.setPriority(new Priority(address));
         return this;
     }
@@ -76,7 +76,7 @@ public class EditPersonDescriptorBuilder {
      * Parses the {@code tags} into a {@code Set<Tag>} and set it to the {@code EditTaskDescriptor}
      * that we are building.
      */
-    public EditPersonDescriptorBuilder withTags(String... tags) {
+    public EditTaskDescriptorBuilder withTags(String... tags) {
         Set<Tag> tagSet = Stream.of(tags).map(Tag::new).collect(Collectors.toSet());
         descriptor.setTags(tagSet);
         return this;

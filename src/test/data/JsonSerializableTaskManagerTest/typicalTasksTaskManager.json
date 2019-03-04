@@ -1,0 +1,22 @@
+{
+  "_comment": "TaskManager save file which contains the same Task values as in TypicalTasks#getTypicalTaskManager()",
+  "tasks" : [ {
+    "name" : "Slides",
+    "module": "CS2113",
+    "date": "03-03",
+    "priority": "1",
+    "tagged" : [ "ungraded" ]
+  }, {
+    "name" : "Lab",
+    "module": "CG2023",
+    "date": "21-01",
+    "priority": "2",
+    "tagged" : [ "graded" ]
+  }, {
+    "name" : "Lecture",
+    "module": "CG2027",
+    "date": "05-03",
+    "priority": "3",
+    "tagged" : [ ]
+  } ]
+}

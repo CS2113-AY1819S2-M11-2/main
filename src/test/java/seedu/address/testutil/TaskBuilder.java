@@ -14,12 +14,12 @@ import seedu.address.model.util.SampleDataUtil;
 /**
  * A utility class to help with building Task objects.
  */
-public class PersonBuilder {
+public class TaskBuilder {
 
-    public static final String DEFAULT_NAME = "Alice Pauline";
-    public static final String DEFAULT_PHONE = "85355255";
-    public static final String DEFAULT_EMAIL = "alice@gmail.com";
-    public static final String DEFAULT_ADDRESS = "123, Jurong West Ave 6, #08-111";
+    public static final String DEFAULT_NAME = "Project";
+    public static final String DEFAULT_MODULE = "CS2113";
+    public static final String DEFAULT_DATE = "03-03";
+    public static final String DEFAULT_PRIORITY = "1";
 
     private Name name;
     private Module module;
@@ -27,18 +27,18 @@ public class PersonBuilder {
     private Priority priority;
     private Set<Tag> tags;
 
-    public PersonBuilder() {
+    public TaskBuilder() {
         name = new Name(DEFAULT_NAME);
-        module = new Module(DEFAULT_PHONE);
-        date = new Date(DEFAULT_EMAIL);
-        priority = new Priority(DEFAULT_ADDRESS);
+        module = new Module(DEFAULT_MODULE);
+        date = new Date(DEFAULT_DATE);
+        priority = new Priority(DEFAULT_PRIORITY);
         tags = new HashSet<>();
     }
 
     /**
-     * Initializes the PersonBuilder with the data of {@code taskToCopy}.
+     * Initializes the TaskBuilder with the data of {@code taskToCopy}.
      */
-    public PersonBuilder(Task taskToCopy) {
+    public TaskBuilder(Task taskToCopy) {
         name = taskToCopy.getName();
         module = taskToCopy.getModule();
         date = taskToCopy.getDate();
@@ -49,7 +49,7 @@ public class PersonBuilder {
     /**
      * Sets the {@code Name} of the {@code Task} that we are building.
      */
-    public PersonBuilder withName(String name) {
+    public TaskBuilder withName(String name) {
         this.name = new Name(name);
         return this;
     }
@@ -57,7 +57,7 @@ public class PersonBuilder {
     /**
      * Parses the {@code tags} into a {@code Set<Tag>} and set it to the {@code Task} that we are building.
      */
-    public PersonBuilder withTags(String ... tags) {
+    public TaskBuilder withTags(String ... tags) {
         this.tags = SampleDataUtil.getTagSet(tags);
         return this;
     }
@@ -65,7 +65,7 @@ public class PersonBuilder {
     /**
      * Sets the {@code Priority} of the {@code Task} that we are building.
      */
-    public PersonBuilder withAddress(String address) {
+    public TaskBuilder withPriority(String address) {
         this.priority = new Priority(address);
         return this;
     }
@@ -73,7 +73,7 @@ public class PersonBuilder {
     /**
      * Sets the {@code Module} of the {@code Task} that we are building.
      */
-    public PersonBuilder withPhone(String phone) {
+    public TaskBuilder withModule(String phone) {
         this.module = new Module(phone);
         return this;
     }
@@ -81,7 +81,7 @@ public class PersonBuilder {
     /**
      * Sets the {@code Date} of the {@code Task} that we are building.
      */
-    public PersonBuilder withEmail(String email) {
+    public TaskBuilder withDate(String email) {
         this.date = new Date(email);
         return this;
     }
