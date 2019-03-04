@@ -56,16 +56,6 @@ public abstract class UiPart<T> {
     }
 
     /**
-     * Returns the FXML file URL for the specified FXML file name within {@link #FXML_FILE_FOLDER}.
-     */
-    private static URL getFxmlFileUrl(String fxmlFileName) {
-        requireNonNull(fxmlFileName);
-        String fxmlFileNameWithFolder = FXML_FILE_FOLDER + fxmlFileName;
-        URL fxmlFileUrl = MainApp.class.getResource(fxmlFileNameWithFolder);
-        return requireNonNull(fxmlFileUrl);
-    }
-
-    /**
      * Returns the root object of the scene graph of this UiPart.
      */
     public T getRoot() {
@@ -88,6 +78,16 @@ public abstract class UiPart<T> {
         } catch (IOException e) {
             throw new AssertionError(e);
         }
+    }
+
+    /**
+     * Returns the FXML file URL for the specified FXML file name within {@link #FXML_FILE_FOLDER}.
+     */
+    private static URL getFxmlFileUrl(String fxmlFileName) {
+        requireNonNull(fxmlFileName);
+        String fxmlFileNameWithFolder = FXML_FILE_FOLDER + fxmlFileName;
+        URL fxmlFileUrl = MainApp.class.getResource(fxmlFileNameWithFolder);
+        return requireNonNull(fxmlFileUrl);
     }
 
 }

@@ -91,12 +91,12 @@ public class AddCommandTest {
      */
     private class ModelStub implements Model {
         @Override
-        public ReadOnlyUserPrefs getUserPrefs() {
+        public void setUserPrefs(ReadOnlyUserPrefs userPrefs) {
             throw new AssertionError("This method should not be called.");
         }
 
         @Override
-        public void setUserPrefs(ReadOnlyUserPrefs userPrefs) {
+        public ReadOnlyUserPrefs getUserPrefs() {
             throw new AssertionError("This method should not be called.");
         }
 
@@ -126,12 +126,12 @@ public class AddCommandTest {
         }
 
         @Override
-        public ReadOnlyTaskManager getTaskManager() {
+        public void setTaskManager(ReadOnlyTaskManager taskManager) {
             throw new AssertionError("This method should not be called.");
         }
 
         @Override
-        public void setTaskManager(ReadOnlyTaskManager taskManager) {
+        public ReadOnlyTaskManager getTaskManager() {
             throw new AssertionError("This method should not be called.");
         }
 

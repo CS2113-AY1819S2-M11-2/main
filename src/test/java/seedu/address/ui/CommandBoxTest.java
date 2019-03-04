@@ -17,9 +17,11 @@ public class CommandBoxTest extends GuiUnitTest {
 
     private static final String COMMAND_THAT_SUCCEEDS = ListCommand.COMMAND_WORD;
     private static final String COMMAND_THAT_FAILS = "invalid command";
-    private final ArrayList<String> history = new ArrayList<>();
+
     private ArrayList<String> defaultStyleOfCommandBox;
     private ArrayList<String> errorStyleOfCommandBox;
+    private final ArrayList<String> history = new ArrayList<>();
+
     private CommandBoxHandle commandBoxHandle;
 
     @Before

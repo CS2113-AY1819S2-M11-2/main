@@ -25,9 +25,10 @@ import seedu.address.testutil.TaskBuilder;
 
 public class TaskManagerTest {
 
-    private final TaskManager taskManager = new TaskManager();
     @Rule
     public ExpectedException thrown = ExpectedException.none();
+
+    private final TaskManager taskManager = new TaskManager();
 
     @Test
     public void constructor() {

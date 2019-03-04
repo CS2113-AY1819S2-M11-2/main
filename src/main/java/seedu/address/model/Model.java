@@ -18,14 +18,14 @@ public interface Model {
     Predicate<Task> PREDICATE_SHOW_ALL_TASKS = unused -> true;
 
     /**
-     * Returns the user prefs.
-     */
-    ReadOnlyUserPrefs getUserPrefs();
-
-    /**
      * Replaces user prefs data with the data in {@code userPrefs}.
      */
     void setUserPrefs(ReadOnlyUserPrefs userPrefs);
+
+    /**
+     * Returns the user prefs.
+     */
+    ReadOnlyUserPrefs getUserPrefs();
 
     /**
      * Returns the user prefs' GUI settings.
@@ -48,14 +48,14 @@ public interface Model {
     void setTaskManagerFilePath(Path taskManagerFilePath);
 
     /**
-     * Returns the TaskManager
-     */
-    ReadOnlyTaskManager getTaskManager();
-
-    /**
      * Replaces task manager data with the data in {@code taskManager}.
      */
     void setTaskManager(ReadOnlyTaskManager taskManager);
+
+    /**
+     * Returns the TaskManager
+     */
+    ReadOnlyTaskManager getTaskManager();
 
     /**
      * Returns true if a task with the same identity as {@code task} exists in the task manager.
