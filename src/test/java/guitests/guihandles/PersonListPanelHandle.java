@@ -25,7 +25,8 @@ public class PersonListPanelHandle extends NodeHandle<ListView<Task>> {
     /**
      * Returns a handle to the selected {@code PersonCardHandle}.
      * A maximum of 1 item can be selected at any time.
-     * @throws AssertionError if no card is selected, or more than 1 card is selected.
+     *
+     * @throws AssertionError        if no card is selected, or more than 1 card is selected.
      * @throws IllegalStateException if the selected card is currently not in the scene graph.
      */
     public PersonCardHandle getHandleToSelectedCard() {
@@ -99,6 +100,7 @@ public class PersonListPanelHandle extends NodeHandle<ListView<Task>> {
 
     /**
      * Returns the task card handle of a task associated with the {@code index} in the list.
+     *
      * @throws IllegalStateException if the selected card is currently not in the scene graph.
      */
     public PersonCardHandle getPersonCardHandle(int index) {

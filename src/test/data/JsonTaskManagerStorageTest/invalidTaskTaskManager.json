@@ -1,8 +1,10 @@
 {
-  "persons": [ {
-    "name": "Person with invalid name field: Ha!ns Mu@ster",
-    "module": "CS2113",
-    "date": "01-01",
-    "priority": "1"
-  } ]
+  "persons": [
+    {
+      "name": "Person with invalid name field: Ha!ns Mu@ster",
+      "module": "CS2113",
+      "date": "01-01",
+      "priority": "1"
+    }
+  ]
 }

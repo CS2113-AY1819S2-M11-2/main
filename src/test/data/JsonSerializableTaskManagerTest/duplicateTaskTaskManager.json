@@ -1,14 +1,19 @@
 {
-  "tasks": [ {
-    "name": "Tutorial",
-    "module": "CG2027",
-    "date": "01-01",
-    "priority": "1",
-    "tagged": [ "friends" ]
-  }, {
-    "name": "Tutorial",
-    "module": "CG2027",
-    "date": "01-08",
-    "priority": "3"
-  } ]
+  "tasks": [
+    {
+      "name": "Tutorial",
+      "module": "CG2027",
+      "date": "01-01",
+      "priority": "1",
+      "tagged": [
+        "friends"
+      ]
+    },
+    {
+      "name": "Tutorial",
+      "module": "CG2027",
+      "date": "01-08",
+      "priority": "3"
+    }
+  ]
 }

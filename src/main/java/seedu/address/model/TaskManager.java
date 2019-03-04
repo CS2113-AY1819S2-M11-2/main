@@ -25,12 +25,12 @@ public class TaskManager implements ReadOnlyTaskManager {
      *
      * Note that non-static init blocks are not recommended to use. There are other ways to avoid duplication
      *   among constructors.
-     */
-    {
+     */ {
         tasks = new UniqueTaskList();
     }
 
-    public TaskManager() {}
+    public TaskManager() {
+    }
 
     /**
      * Creates an TaskManager using the Tasks in the {@code toBeCopied}

@@ -5,8 +5,8 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_DATE_TUTORIAL;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_TASKS;
-import static seedu.address.testutil.TypicalTasks.SLIDES;
 import static seedu.address.testutil.TypicalTasks.LAB;
+import static seedu.address.testutil.TypicalTasks.SLIDES;
 import static seedu.address.testutil.TypicalTasks.TUTORIAL;
 
 import java.nio.file.Path;
@@ -22,8 +22,8 @@ import seedu.address.commons.core.GuiSettings;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
 import seedu.address.model.person.Task;
 import seedu.address.model.person.exceptions.TaskNotFoundException;
-import seedu.address.testutil.TaskManagerBuilder;
 import seedu.address.testutil.TaskBuilder;
+import seedu.address.testutil.TaskManagerBuilder;
 
 public class ModelManagerTest {
     @Rule

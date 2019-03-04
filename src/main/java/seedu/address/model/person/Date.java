@@ -47,10 +47,10 @@ public class Date {
             int month = Integer.parseInt(data[1]);
             int year = Calendar.getInstance().get(Calendar.YEAR);
 
-            if(month < MONTH_MIN || month > MONTH_MAX || day < DAY_MIN) {
+            if (month < MONTH_MIN || month > MONTH_MAX || day < DAY_MIN) {
                 return false;
             } else if (month == 2) {
-                if ( (year % 400 == 0) || ((year % 4 == 0 && year % 100 != 0))) {
+                if ((year % 400 == 0) || ((year % 4 == 0 && year % 100 != 0))) {
                     if (day > DAY_MAX_FEB_LEAP) {
                         return false;
                     }
@@ -62,7 +62,7 @@ public class Date {
                     return true;
                 }
             } else if (month == 1 || month == 3 || month == 5 || month == 7
-                    || month ==8 || month == 10 || month == 12) {
+                    || month == 8 || month == 10 || month == 12) {
                 if (day > DAY_MAX_31) {
                     return false;
                 }

@@ -6,7 +6,7 @@ import seedu.address.model.person.Task;
 /**
  * A utility class to help with building Addressbook objects.
  * Example usage: <br>
- *     {@code TaskManager ab = new TaskManagerBuilder().withTask("John", "Doe").build();}
+ * {@code TaskManager ab = new TaskManagerBuilder().withTask("John", "Doe").build();}
  */
 public class TaskManagerBuilder {
 

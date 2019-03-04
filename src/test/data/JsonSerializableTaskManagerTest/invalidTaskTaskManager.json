@@ -1,8 +1,10 @@
 {
-  "tasks": [ {
-    "name": "Project",
-    "module": "CS2101",
-    "date": "invalid@email!3e",
-    "priority": "1"
-  } ]
+  "tasks": [
+    {
+      "name": "Project",
+      "module": "CS2101",
+      "date": "invalid@email!3e",
+      "priority": "1"
+    }
+  ]
 }

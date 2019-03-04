@@ -4,9 +4,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static seedu.address.testutil.TypicalTasks.LECTURE;
 import static seedu.address.testutil.TypicalTasks.PROJECT;
 import static seedu.address.testutil.TypicalTasks.TUTORIAL;
-import static seedu.address.testutil.TypicalTasks.LECTURE;
 
 import java.util.Arrays;
 import java.util.Collections;

@@ -3,11 +3,11 @@ package seedu.address.testutil;
 import java.util.HashSet;
 import java.util.Set;
 
-import seedu.address.model.person.Priority;
 import seedu.address.model.person.Date;
-import seedu.address.model.person.Name;
-import seedu.address.model.person.Task;
 import seedu.address.model.person.Module;
+import seedu.address.model.person.Name;
+import seedu.address.model.person.Priority;
+import seedu.address.model.person.Task;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.util.SampleDataUtil;
 
@@ -57,7 +57,7 @@ public class TaskBuilder {
     /**
      * Parses the {@code tags} into a {@code Set<Tag>} and set it to the {@code Task} that we are building.
      */
-    public TaskBuilder withTags(String ... tags) {
+    public TaskBuilder withTags(String... tags) {
         this.tags = SampleDataUtil.getTagSet(tags);
         return this;
     }

@@ -1,13 +1,16 @@
 {
-  "persons": [ {
-    "name": "Task",
-    "module": "CS2113",
-    "date": "01-01",
-    "priority": "1"
-  }, {
-    "name": "Person With Invalid Module Field",
-    "module": "C2113S",
-    "date": "01-01",
-    "priority": "1"
-  } ]
+  "persons": [
+    {
+      "name": "Task",
+      "module": "CS2113",
+      "date": "01-01",
+      "priority": "1"
+    },
+    {
+      "name": "Person With Invalid Module Field",
+      "module": "C2113S",
+      "date": "01-01",
+      "priority": "1"
+    }
+  ]
 }
