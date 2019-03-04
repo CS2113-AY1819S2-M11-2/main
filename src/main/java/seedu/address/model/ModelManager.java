@@ -51,14 +51,14 @@ public class ModelManager implements Model {
     //=========== UserPrefs ==================================================================================
 
     @Override
-    public void setUserPrefs(ReadOnlyUserPrefs userPrefs) {
-        requireNonNull(userPrefs);
-        this.userPrefs.resetData(userPrefs);
+    public ReadOnlyUserPrefs getUserPrefs() {
+        return userPrefs;
     }
 
     @Override
-    public ReadOnlyUserPrefs getUserPrefs() {
-        return userPrefs;
+    public void setUserPrefs(ReadOnlyUserPrefs userPrefs) {
+        requireNonNull(userPrefs);
+        this.userPrefs.resetData(userPrefs);
     }
 
     @Override
@@ -86,13 +86,13 @@ public class ModelManager implements Model {
     //=========== TaskManager ================================================================================
 
     @Override
-    public void setTaskManager(ReadOnlyTaskManager taskManager) {
-        versionedTaskManager.resetData(taskManager);
+    public ReadOnlyTaskManager getTaskManager() {
+        return versionedTaskManager;
     }
 
     @Override
-    public ReadOnlyTaskManager getTaskManager() {
-        return versionedTaskManager;
+    public void setTaskManager(ReadOnlyTaskManager taskManager) {
+        versionedTaskManager.resetData(taskManager);
     }
 
     @Override

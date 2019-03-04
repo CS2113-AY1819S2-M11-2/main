@@ -51,27 +51,15 @@ public class Date {
                 return false;
             } else if (month == 2) {
                 if ((year % 400 == 0) || ((year % 4 == 0 && year % 100 != 0))) {
-                    if (day > DAY_MAX_FEB_LEAP) {
-                        return false;
-                    }
-                    return true;
+                    return day <= DAY_MAX_FEB_LEAP;
                 } else {
-                    if (day > DAY_MAX_FEB) {
-                        return false;
-                    }
-                    return true;
+                    return day <= DAY_MAX_FEB;
                 }
             } else if (month == 1 || month == 3 || month == 5 || month == 7
                     || month == 8 || month == 10 || month == 12) {
-                if (day > DAY_MAX_31) {
-                    return false;
-                }
-                return true;
+                return day <= DAY_MAX_31;
             } else {
-                if (day > DAY_MAX_30) {
-                    return false;
-                }
-                return true;
+                return day <= DAY_MAX_30;
             }
         }
         return false;

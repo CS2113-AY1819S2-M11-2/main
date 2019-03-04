@@ -65,7 +65,7 @@ public class ParserUtilTest {
 
     @Test
     public void parseName_null_throwsNullPointerException() {
-        Assert.assertThrows(NullPointerException.class, () -> ParserUtil.parseName((String) null));
+        Assert.assertThrows(NullPointerException.class, () -> ParserUtil.parseName(null));
     }
 
     @Test
@@ -88,7 +88,7 @@ public class ParserUtilTest {
 
     @Test
     public void parseModule_null_throwsNullPointerException() {
-        Assert.assertThrows(NullPointerException.class, () -> ParserUtil.parseModule((String) null));
+        Assert.assertThrows(NullPointerException.class, () -> ParserUtil.parseModule(null));
     }
 
     @Test
@@ -111,7 +111,7 @@ public class ParserUtilTest {
 
     @Test
     public void parsePriority_null_throwsNullPointerException() {
-        Assert.assertThrows(NullPointerException.class, () -> ParserUtil.parsePriority((String) null));
+        Assert.assertThrows(NullPointerException.class, () -> ParserUtil.parsePriority(null));
     }
 
     @Test
@@ -134,7 +134,7 @@ public class ParserUtilTest {
 
     @Test
     public void parseDate_null_throwsNullPointerException() {
-        Assert.assertThrows(NullPointerException.class, () -> ParserUtil.parseDate((String) null));
+        Assert.assertThrows(NullPointerException.class, () -> ParserUtil.parseDate(null));
     }
 
     @Test

@@ -5,7 +5,7 @@
 <?import javafx.scene.Scene?>
 <?import javafx.scene.web.WebView?>
 <?import javafx.stage.Stage?>
-<fx:root type="javafx.stage.Stage" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+<fx:root xmlns:fx="http://javafx.com/fxml/1" type="javafx.stage.Stage" xmlns="http://javafx.com/javafx/8"
          title="Help" maximized="true">
     <icons>
         <Image url="@/images/help_icon.png"/>

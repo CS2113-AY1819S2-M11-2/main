@@ -23,14 +23,6 @@ public class Index {
         this.zeroBasedIndex = zeroBasedIndex;
     }
 
-    public int getZeroBased() {
-        return zeroBasedIndex;
-    }
-
-    public int getOneBased() {
-        return zeroBasedIndex + 1;
-    }
-
     /**
      * Creates a new {@code Index} using a zero-based index.
      */
@@ -43,6 +35,14 @@ public class Index {
      */
     public static Index fromOneBased(int oneBasedIndex) {
         return new Index(oneBasedIndex - 1);
+    }
+
+    public int getZeroBased() {
+        return zeroBasedIndex;
+    }
+
+    public int getOneBased() {
+        return zeroBasedIndex + 1;
     }
 
     @Override

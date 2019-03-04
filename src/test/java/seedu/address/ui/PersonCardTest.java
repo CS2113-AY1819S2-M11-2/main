@@ -64,7 +64,7 @@ public class PersonCardTest extends GuiUnitTest {
         PersonCardHandle personCardHandle = new PersonCardHandle(personCard.getRoot());
 
         // verify id is displayed correctly
-        assertEquals(Integer.toString(expectedId) + ". ", personCardHandle.getId());
+        assertEquals(expectedId + ". ", personCardHandle.getId());
 
         // verify task details are displayed correctly
         assertCardDisplaysPerson(expectedTask, personCardHandle);

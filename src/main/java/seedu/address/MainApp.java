@@ -46,6 +46,10 @@ public class MainApp extends Application {
     protected Model model;
     protected Config config;
 
+    public static void main(String[] args) {
+        launch(args);
+    }
+
     @Override
     public void init() throws Exception {
         logger.info("=============================[ Initializing TaskManager ]===========================");
@@ -179,9 +183,5 @@ public class MainApp extends Application {
         } catch (IOException e) {
             logger.severe("Failed to save preferences " + StringUtil.getDetails(e));
         }
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 }

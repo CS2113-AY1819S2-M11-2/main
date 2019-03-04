@@ -66,6 +66,22 @@ public class EditCommand extends Command {
         this.editTaskDescriptor = new EditTaskDescriptor(editTaskDescriptor);
     }
 
+    /**
+     * Creates and returns a {@code Task} with the details of {@code taskToEdit}
+     * edited with {@code editTaskDescriptor}.
+     */
+    private static Task createEditedTask(Task taskToEdit, EditTaskDescriptor editTaskDescriptor) {
+        assert taskToEdit != null;
+
+        Name updatedName = editTaskDescriptor.getName().orElse(taskToEdit.getName());
+        Module updatedModule = editTaskDescriptor.getModule().orElse(taskToEdit.getModule());
+        Date updatedDate = editTaskDescriptor.getDate().orElse(taskToEdit.getDate());
+        Priority updatedPriority = editTaskDescriptor.getPriority().orElse(taskToEdit.getPriority());
+        Set<Tag> updatedTags = editTaskDescriptor.getTags().orElse(taskToEdit.getTags());
+
+        return new Task(updatedName, updatedModule, updatedDate, updatedPriority, updatedTags);
+    }
+
     @Override
     public CommandResult execute(Model model, CommandHistory history) throws CommandException {
         requireNonNull(model);
@@ -86,22 +102,6 @@ public class EditCommand extends Command {
         model.updateFilteredTaskList(PREDICATE_SHOW_ALL_TASKS);
         model.commitTaskManager();
         return new CommandResult(String.format(MESSAGE_EDIT_TASK_SUCCESS, editedTask));
-    }
-
-    /**
-     * Creates and returns a {@code Task} with the details of {@code taskToEdit}
-     * edited with {@code editTaskDescriptor}.
-     */
-    private static Task createEditedTask(Task taskToEdit, EditTaskDescriptor editTaskDescriptor) {
-        assert taskToEdit != null;
-
-        Name updatedName = editTaskDescriptor.getName().orElse(taskToEdit.getName());
-        Module updatedModule = editTaskDescriptor.getModule().orElse(taskToEdit.getModule());
-        Date updatedDate = editTaskDescriptor.getDate().orElse(taskToEdit.getDate());
-        Priority updatedPriority = editTaskDescriptor.getPriority().orElse(taskToEdit.getPriority());
-        Set<Tag> updatedTags = editTaskDescriptor.getTags().orElse(taskToEdit.getTags());
-
-        return new Task(updatedName, updatedModule, updatedDate, updatedPriority, updatedTags);
     }
 
     @Override
@@ -155,44 +155,36 @@ public class EditCommand extends Command {
             return CollectionUtil.isAnyNonNull(name, module, date, priority, tags);
         }
 
-        public void setName(Name name) {
-            this.name = name;
-        }
-
         public Optional<Name> getName() {
             return Optional.ofNullable(name);
         }
 
-        public void setModule(Module module) {
-            this.module = module;
+        public void setName(Name name) {
+            this.name = name;
         }
 
         public Optional<Module> getModule() {
             return Optional.ofNullable(module);
         }
 
-        public void setDate(Date date) {
-            this.date = date;
+        public void setModule(Module module) {
+            this.module = module;
         }
 
         public Optional<Date> getDate() {
             return Optional.ofNullable(date);
         }
 
-        public void setPriority(Priority priority) {
-            this.priority = priority;
+        public void setDate(Date date) {
+            this.date = date;
         }
 
         public Optional<Priority> getPriority() {
             return Optional.ofNullable(priority);
         }
 
-        /**
-         * Sets {@code tags} to this object's {@code tags}.
-         * A defensive copy of {@code tags} is used internally.
-         */
-        public void setTags(Set<Tag> tags) {
-            this.tags = (tags != null) ? new HashSet<>(tags) : null;
+        public void setPriority(Priority priority) {
+            this.priority = priority;
         }
 
         /**
@@ -202,6 +194,14 @@ public class EditCommand extends Command {
          */
         public Optional<Set<Tag>> getTags() {
             return (tags != null) ? Optional.of(Collections.unmodifiableSet(tags)) : Optional.empty();
+        }
+
+        /**
+         * Sets {@code tags} to this object's {@code tags}.
+         * A defensive copy of {@code tags} is used internally.
+         */
+        public void setTags(Set<Tag> tags) {
+            this.tags = (tags != null) ? new HashSet<>(tags) : null;
         }
 
         @Override

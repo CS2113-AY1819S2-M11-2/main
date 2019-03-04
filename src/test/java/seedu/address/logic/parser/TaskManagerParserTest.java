@@ -35,10 +35,9 @@ import seedu.address.testutil.PersonUtil;
 import seedu.address.testutil.TaskBuilder;
 
 public class TaskManagerParserTest {
+    private final TaskManagerParser parser = new TaskManagerParser();
     @Rule
     public ExpectedException thrown = ExpectedException.none();
-
-    private final TaskManagerParser parser = new TaskManagerParser();
 
     @Test
     public void parseCommand_add() throws Exception {
