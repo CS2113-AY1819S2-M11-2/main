@@ -1,8 +1,6 @@
 package seedu.address.model;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_PRIORITY_TUTORIAL;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_GRADED;
 import static seedu.address.testutil.TypicalTasks.SLIDES;

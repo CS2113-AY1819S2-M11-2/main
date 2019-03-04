@@ -12,11 +12,8 @@ import guitests.guihandles.PersonListPanelHandle;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import seedu.address.model.person.Date;
 import seedu.address.model.person.Module;
-import seedu.address.model.person.Name;
-import seedu.address.model.person.Priority;
-import seedu.address.model.person.Task;
+import seedu.address.model.person.*;
 
 public class PersonListPanelTest extends GuiUnitTest {
     private static final ObservableList<Task> TYPICAL_TASKS =

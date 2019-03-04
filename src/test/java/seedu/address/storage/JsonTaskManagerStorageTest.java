@@ -2,10 +2,7 @@ package seedu.address.storage;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static seedu.address.testutil.TypicalTasks.PRESENTATION;
-import static seedu.address.testutil.TypicalTasks.SEMINAR;
-import static seedu.address.testutil.TypicalTasks.SLIDES;
-import static seedu.address.testutil.TypicalTasks.getTypicalTaskManager;
+import static seedu.address.testutil.TypicalTasks.*;
 
 import java.io.IOException;
 import java.nio.file.Path;

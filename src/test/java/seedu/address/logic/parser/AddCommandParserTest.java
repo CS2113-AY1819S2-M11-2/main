@@ -1,29 +1,7 @@
 package seedu.address.logic.parser;
 
 import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.commands.CommandTestUtil.DATE_DESC_PROJECT;
-import static seedu.address.logic.commands.CommandTestUtil.DATE_DESC_TUTORIAL;
-import static seedu.address.logic.commands.CommandTestUtil.INVALID_DATE_DESC;
-import static seedu.address.logic.commands.CommandTestUtil.INVALID_MODULE_DESC;
-import static seedu.address.logic.commands.CommandTestUtil.INVALID_NAME_DESC;
-import static seedu.address.logic.commands.CommandTestUtil.INVALID_PRIORITY_DESC;
-import static seedu.address.logic.commands.CommandTestUtil.INVALID_TAG_DESC;
-import static seedu.address.logic.commands.CommandTestUtil.MODULE_DESC_PROJECT;
-import static seedu.address.logic.commands.CommandTestUtil.MODULE_DESC_TUTORIAL;
-import static seedu.address.logic.commands.CommandTestUtil.NAME_DESC_PROJECT;
-import static seedu.address.logic.commands.CommandTestUtil.NAME_DESC_TUTORIAL;
-import static seedu.address.logic.commands.CommandTestUtil.PREAMBLE_NON_EMPTY;
-import static seedu.address.logic.commands.CommandTestUtil.PREAMBLE_WHITESPACE;
-import static seedu.address.logic.commands.CommandTestUtil.PRIORITY_DESC_PROJECT;
-import static seedu.address.logic.commands.CommandTestUtil.PRIORITY_DESC_TUTORIAL;
-import static seedu.address.logic.commands.CommandTestUtil.TAG_DESC_GRADED;
-import static seedu.address.logic.commands.CommandTestUtil.TAG_DESC_UNGRADED;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_DATE_TUTORIAL;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_MODULE_TUTORIAL;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_TUTORIAL;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_PRIORITY_TUTORIAL;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_GRADED;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_UNGRADED;
+import static seedu.address.logic.commands.CommandTestUtil.*;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseFailure;
 import static seedu.address.logic.parser.CommandParserTestUtil.assertParseSuccess;
 import static seedu.address.testutil.TypicalTasks.PROJECT;
@@ -32,11 +10,8 @@ import static seedu.address.testutil.TypicalTasks.TUTORIAL;
 import org.junit.Test;
 
 import seedu.address.logic.commands.AddCommand;
-import seedu.address.model.person.Date;
 import seedu.address.model.person.Module;
-import seedu.address.model.person.Name;
-import seedu.address.model.person.Priority;
-import seedu.address.model.person.Task;
+import seedu.address.model.person.*;
 import seedu.address.model.tag.Tag;
 import seedu.address.testutil.TaskBuilder;
 

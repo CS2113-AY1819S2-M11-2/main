@@ -1,13 +1,9 @@
 package seedu.address.model;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import static seedu.address.logic.commands.CommandTestUtil.VALID_DATE_TUTORIAL;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_TASKS;
-import static seedu.address.testutil.TypicalTasks.LAB;
-import static seedu.address.testutil.TypicalTasks.SLIDES;
-import static seedu.address.testutil.TypicalTasks.TUTORIAL;
+import static seedu.address.testutil.TypicalTasks.*;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;

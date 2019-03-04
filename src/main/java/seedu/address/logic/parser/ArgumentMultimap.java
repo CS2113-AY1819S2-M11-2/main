@@ -1,10 +1,6 @@
 package seedu.address.logic.parser;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 /**
  * Stores mapping of prefixes to their respective arguments.

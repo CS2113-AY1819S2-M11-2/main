@@ -2,13 +2,7 @@ package seedu.address.logic.commands;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static seedu.address.logic.commands.CommandTestUtil.DESC_PROJECT;
-import static seedu.address.logic.commands.CommandTestUtil.DESC_TUTORIAL;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_DATE_TUTORIAL;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_MODULE_TUTORIAL;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_NAME_TUTORIAL;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_PRIORITY_TUTORIAL;
-import static seedu.address.logic.commands.CommandTestUtil.VALID_TAG_GRADED;
+import static seedu.address.logic.commands.CommandTestUtil.*;
 
 import org.junit.Test;
 

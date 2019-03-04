@@ -6,11 +6,8 @@ import java.util.stream.Collectors;
 
 import seedu.address.model.ReadOnlyTaskManager;
 import seedu.address.model.TaskManager;
-import seedu.address.model.person.Date;
 import seedu.address.model.person.Module;
-import seedu.address.model.person.Name;
-import seedu.address.model.person.Priority;
-import seedu.address.model.person.Task;
+import seedu.address.model.person.*;
 import seedu.address.model.tag.Tag;
 
 /**
