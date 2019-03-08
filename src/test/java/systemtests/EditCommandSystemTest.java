@@ -54,14 +54,15 @@
 //    public void edit() {
 //        Model model = getModel();
 //
-//        /* ----------------- Performing edit operation while an unfiltered list is being shown ---------------------- */
+//        /* ---------------- Performing edit operation while an unfiltered list is being shown --------------------- */
 //
 //        /* Case: edit all fields, command with leading spaces, trailing spaces and multiple spaces between each field
 //         * -> edited
 //         */
 //        Index index = INDEX_FIRST_TASK;
-//        String command = " " + EditCommand.COMMAND_WORD + "  " + index.getOneBased() + "  " + NAME_DESC_TUTORIAL + "  "
-//                + MODULE_DESC_TUTORIAL + " " + DATE_DESC_TUTORIAL + "  " + PRIORITY_DESC_TUTORIAL + " " + TAG_DESC_UNGRADED + " ";
+//        String command = " " + EditCommand.COMMAND_WORD + "  " + index.getOneBased() + "  "
+//                + NAME_DESC_TUTORIAL + "  " + MODULE_DESC_TUTORIAL + " " + DATE_DESC_TUTORIAL + "  "
+//                + PRIORITY_DESC_TUTORIAL + " " + TAG_DESC_UNGRADED + " ";
 //        Task editedTask = new TaskBuilder(TUTORIAL).withTags(VALID_TAG_GRADED).build();
 //        assertCommandSuccess(command, index, editedTask);
 //
@@ -77,16 +78,16 @@
 //        assertCommandSuccess(command, model, expectedResultMessage);
 //
 //        /* Case: edit a task with new values same as existing values -> edited */
-//        command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + NAME_DESC_TUTORIAL + MODULE_DESC_TUTORIAL + DATE_DESC_TUTORIAL
-//                + PRIORITY_DESC_TUTORIAL + TAG_DESC_GRADED + TAG_DESC_UNGRADED;
+//        command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + NAME_DESC_TUTORIAL + MODULE_DESC_TUTORIAL
+//                + DATE_DESC_TUTORIAL + PRIORITY_DESC_TUTORIAL + TAG_DESC_GRADED + TAG_DESC_UNGRADED;
 //        assertCommandSuccess(command, index, TUTORIAL);
 //
 //        /* Case: edit a task with new values same as another task's values but with different name -> edited */
 //        assertTrue(getModel().getTaskManager().getTaskList().contains(TUTORIAL));
 //        index = INDEX_SECOND_TASK;
 //        assertNotEquals(getModel().getFilteredTaskList().get(index.getZeroBased()), TUTORIAL);
-//        command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + NAME_DESC_PROJECT + MODULE_DESC_TUTORIAL + DATE_DESC_TUTORIAL
-//                + PRIORITY_DESC_TUTORIAL + TAG_DESC_GRADED + TAG_DESC_UNGRADED;
+//        command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + NAME_DESC_PROJECT + MODULE_DESC_TUTORIAL
+//              + DATE_DESC_TUTORIAL + PRIORITY_DESC_TUTORIAL + TAG_DESC_GRADED + TAG_DESC_UNGRADED;
 //        editedTask = new TaskBuilder(TUTORIAL).withName(VALID_NAME_PROJECT).build();
 //        assertCommandSuccess(command, index, editedTask);
 //
@@ -94,8 +95,8 @@
 //         * -> edited
 //         */
 //        index = INDEX_SECOND_TASK;
-//        command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + NAME_DESC_TUTORIAL + MODULE_DESC_PROJECT + DATE_DESC_PROJECT
-//                + PRIORITY_DESC_TUTORIAL + TAG_DESC_GRADED + TAG_DESC_UNGRADED;
+//        command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + NAME_DESC_TUTORIAL + MODULE_DESC_PROJECT
+//              + DATE_DESC_PROJECT + PRIORITY_DESC_TUTORIAL + TAG_DESC_GRADED + TAG_DESC_UNGRADED;
 //        editedTask = new TaskBuilder(TUTORIAL).withModule(VALID_MODULE_PROJECT).withDate(VALID_DATE_PROJECT).build();
 //        assertCommandSuccess(command, index, editedTask);
 //
@@ -106,7 +107,7 @@
 //        editedTask = new TaskBuilder(taskToEdit).withTags().build();
 //        assertCommandSuccess(command, index, editedTask);
 //
-//        /* ------------------ Performing edit operation while a filtered list is being shown ------------------------ */
+//        /* ----------------- Performing edit operation while a filtered list is being shown ----------------------- */
 //
 //        /* Case: filtered task list, edit index within bounds of address book and task list -> edited */
 //        showPersonsWithName(KEYWORD_MATCHING_MEIER);
@@ -133,13 +134,13 @@
 //        showAllPersons();
 //        index = INDEX_FIRST_TASK;
 //        selectPerson(index);
-//        command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + NAME_DESC_PROJECT + MODULE_DESC_PROJECT + DATE_DESC_PROJECT
-//                + PRIORITY_DESC_PROJECT + TAG_DESC_GRADED;
+//        command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + NAME_DESC_PROJECT + MODULE_DESC_PROJECT
+//              + DATE_DESC_PROJECT + PRIORITY_DESC_PROJECT + TAG_DESC_GRADED;
 //        // this can be misleading: card selection actually remains unchanged but the
 //        // browser's url is updated to reflect the new task's name
 //        assertCommandSuccess(command, index, PROJECT, index);
 //
-//        /* --------------------------------- Performing invalid edit operation -------------------------------------- */
+//        /* -------------------------------- Performing invalid edit operation ------------------------------------- */
 //
 //        /* Case: invalid index (0) -> rejected */
 //        assertCommandFailure(EditCommand.COMMAND_WORD + " 0" + NAME_DESC_TUTORIAL,
@@ -187,28 +188,28 @@
 //        assertTrue(getModel().getTaskManager().getTaskList().contains(TUTORIAL));
 //        index = INDEX_FIRST_TASK;
 //        assertFalse(getModel().getFilteredTaskList().get(index.getZeroBased()).equals(TUTORIAL));
-//        command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + NAME_DESC_TUTORIAL + MODULE_DESC_TUTORIAL + DATE_DESC_TUTORIAL
-//                + PRIORITY_DESC_TUTORIAL + TAG_DESC_GRADED + TAG_DESC_UNGRADED;
+//        command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + NAME_DESC_TUTORIAL + MODULE_DESC_TUTORIAL
+//              + DATE_DESC_TUTORIAL + PRIORITY_DESC_TUTORIAL + TAG_DESC_GRADED + TAG_DESC_UNGRADED;
 //        assertCommandFailure(command, EditCommand.MESSAGE_DUPLICATE_TASK);
 //
 //        /* Case: edit a task with new values same as another task's values but with different tags -> rejected */
-//        command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + NAME_DESC_TUTORIAL + MODULE_DESC_TUTORIAL + DATE_DESC_TUTORIAL
-//                + PRIORITY_DESC_TUTORIAL + TAG_DESC_UNGRADED;
+//        command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + NAME_DESC_TUTORIAL + MODULE_DESC_TUTORIAL
+//        + DATE_DESC_TUTORIAL + PRIORITY_DESC_TUTORIAL + TAG_DESC_UNGRADED;
 //        assertCommandFailure(command, EditCommand.MESSAGE_DUPLICATE_TASK);
 //
 //        /* Case: edit a task with new values same as another task's values but with different address -> rejected */
-//        command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + NAME_DESC_TUTORIAL + MODULE_DESC_TUTORIAL + DATE_DESC_TUTORIAL
-//                + PRIORITY_DESC_PROJECT + TAG_DESC_GRADED + TAG_DESC_UNGRADED;
+//        command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + NAME_DESC_TUTORIAL + MODULE_DESC_TUTORIAL
+//        + DATE_DESC_TUTORIAL + PRIORITY_DESC_PROJECT + TAG_DESC_GRADED + TAG_DESC_UNGRADED;
 //        assertCommandFailure(command, EditCommand.MESSAGE_DUPLICATE_TASK);
 //
 //        /* Case: edit a task with new values same as another task's values but with different phone -> rejected */
-//        command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + NAME_DESC_TUTORIAL + MODULE_DESC_PROJECT + DATE_DESC_TUTORIAL
-//                + PRIORITY_DESC_TUTORIAL + TAG_DESC_GRADED + TAG_DESC_UNGRADED;
+//        command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + NAME_DESC_TUTORIAL + MODULE_DESC_PROJECT
+//        + DATE_DESC_TUTORIAL + PRIORITY_DESC_TUTORIAL + TAG_DESC_GRADED + TAG_DESC_UNGRADED;
 //        assertCommandFailure(command, EditCommand.MESSAGE_DUPLICATE_TASK);
 //
 //        /* Case: edit a task with new values same as another task's values but with different email -> rejected */
-//        command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + NAME_DESC_TUTORIAL + MODULE_DESC_TUTORIAL + DATE_DESC_PROJECT
-//                + PRIORITY_DESC_TUTORIAL + TAG_DESC_GRADED + TAG_DESC_UNGRADED;
+//        command = EditCommand.COMMAND_WORD + " " + index.getOneBased() + NAME_DESC_TUTORIAL + MODULE_DESC_TUTORIAL
+//        + DATE_DESC_PROJECT + PRIORITY_DESC_TUTORIAL + TAG_DESC_GRADED + TAG_DESC_UNGRADED;
 //        assertCommandFailure(command, EditCommand.MESSAGE_DUPLICATE_TASK);
 //    }
 //
@@ -223,7 +224,7 @@
 //    }
 //
 //    /**
-//     * Performs the same verification as {@code assertCommandSuccess(String, Model, String, Index)} and in addition,<br>
+//     * Performs the same verification as {@code assertCommandSuccess(String, Model, String, Index)} and,<br>
 //     * 1. Asserts that result display box displays the success message of executing {@code EditCommand}.<br>
 //     * 2. Asserts that the model related components are updated to reflect the task at index {@code toEdit} being
 //     * updated to values specified {@code editedTask}.<br>

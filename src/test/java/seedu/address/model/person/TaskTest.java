@@ -36,7 +36,8 @@ public class TaskTest {
         assertFalse(SLIDES.isSameTask(null));
 
         // different phone and email -> returns false
-        Task editedAlice = new TaskBuilder(SLIDES).withModule(VALID_MODULE_TUTORIAL).withDate(VALID_DATE_TUTORIAL).build();
+        Task editedAlice =
+                new TaskBuilder(SLIDES).withModule(VALID_MODULE_TUTORIAL).withDate(VALID_DATE_TUTORIAL).build();
         assertFalse(SLIDES.isSameTask(editedAlice));
 
         // different name -> returns false

@@ -5,7 +5,6 @@ import java.util.Set;
 
 import seedu.address.model.person.Date;
 import seedu.address.model.person.Module;
-import seedu.address.model.person.Module;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Priority;
 import seedu.address.model.person.Task;

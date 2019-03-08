@@ -209,7 +209,8 @@ public class VersionedTaskManagerTest {
 
     @Test
     public void equals() {
-        VersionedTaskManager versionedAddressBook = prepareTaskManagerList(taskManagerWithProject, taskManagerWithTutorial);
+        VersionedTaskManager versionedAddressBook;
+        versionedAddressBook = prepareTaskManagerList(taskManagerWithProject, taskManagerWithTutorial);
 
         // same values -> returns true
         VersionedTaskManager copy = prepareTaskManagerList(taskManagerWithProject, taskManagerWithTutorial);
@@ -225,7 +226,8 @@ public class VersionedTaskManagerTest {
         assertFalse(versionedAddressBook.equals(1));
 
         // different state list -> returns false
-        VersionedTaskManager differentAddressBookList = prepareTaskManagerList(taskManagerWithTutorial, taskManagerWithLecture);
+        VersionedTaskManager differentAddressBookList;
+        differentAddressBookList = prepareTaskManagerList(taskManagerWithTutorial, taskManagerWithLecture);
         assertFalse(versionedAddressBook.equals(differentAddressBookList));
 
         // different current pointer index -> returns false

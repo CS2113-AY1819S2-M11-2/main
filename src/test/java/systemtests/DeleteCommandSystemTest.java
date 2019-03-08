@@ -27,7 +27,7 @@
 //
 //    @Test
 //    public void delete() {
-//        /* ----------------- Performing delete operation while an unfiltered list is being shown -------------------- */
+//        /* ---------------- Performing delete operation while an unfiltered list is being shown ------------------- */
 //
 //        /* Case: delete the first task in the list, command with leading spaces and trailing spaces -> deleted */
 //        Model expectedModel = getModel();
@@ -56,7 +56,7 @@
 //        Index middlePersonIndex = getMidIndex(getModel());
 //        assertCommandSuccess(middlePersonIndex);
 //
-//        /* ------------------ Performing delete operation while a filtered list is being shown ---------------------- */
+//        /* ----------------- Performing delete operation while a filtered list is being shown --------------------- */
 //
 //        /* Case: filtered task list, delete index within bounds of address book and task list -> deleted */
 //        showPersonsWithName(KEYWORD_MATCHING_MEIER);
@@ -85,7 +85,7 @@
 //        expectedResultMessage = String.format(MESSAGE_DELETE_TASK_SUCCESS, deletedTask);
 //        assertCommandSuccess(command, expectedModel, expectedResultMessage, expectedIndex);
 //
-//        /* --------------------------------- Performing invalid delete operation ------------------------------------ */
+//        /* -------------------------------- Performing invalid delete operation ----------------------------------- */
 //
 //        /* Case: invalid index (0) -> rejected */
 //        command = DeleteCommand.COMMAND_WORD + " 0";
@@ -151,8 +151,9 @@
 //    }
 //
 //    /**
-//     * Performs the same verification as {@code assertCommandSuccess(String, Model, String)} except that the browser url
-//     * and selected card are expected to update accordingly depending on the card at {@code expectedSelectedCardIndex}.
+//     * Performs the same verification as {@code assertCommandSuccess(String, Model, String)} except that the
+//     * browser url and selected card are expected to update accordingly depending on the card
+//     * at {@code expectedSelectedCardIndex}.
 //     * @see DeleteCommandSystemTest#assertCommandSuccess(String, Model, String)
 //     * @see TaskManagerSystemTest#assertSelectedCardChanged(Index)
 //     */

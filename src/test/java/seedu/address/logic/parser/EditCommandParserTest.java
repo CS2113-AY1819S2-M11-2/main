@@ -100,8 +100,8 @@ public class EditCommandParserTest {
         assertParseFailure(parser, "1" + TAG_EMPTY + TAG_DESC_GRADED + TAG_DESC_UNGRADED, Tag.MESSAGE_CONSTRAINTS);
 
         // multiple invalid values, but only the first invalid value is captured
-        assertParseFailure(parser, "1" + INVALID_NAME_DESC + INVALID_DATE_DESC + VALID_PRIORITY_PROJECT + VALID_MODULE_PROJECT,
-                Name.MESSAGE_CONSTRAINTS);
+        assertParseFailure(parser, "1" + INVALID_NAME_DESC + INVALID_DATE_DESC + VALID_PRIORITY_PROJECT
+                + VALID_MODULE_PROJECT, Name.MESSAGE_CONSTRAINTS);
     }
 
     @Test

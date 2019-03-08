@@ -2,7 +2,11 @@ package seedu.address.logic.commands;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static seedu.address.logic.parser.CliSyntax.*;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_DATE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_MODULE;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_PRIORITY;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -45,7 +49,8 @@ public class CommandTestUtil {
     public static final String TAG_DESC_UNGRADED = " " + PREFIX_TAG + VALID_TAG_GRADED;
 
     public static final String INVALID_NAME_DESC = " " + PREFIX_NAME + "James&"; // '&' not allowed in names
-    public static final String INVALID_MODULE_DESC = " " + PREFIX_MODULE + "CS21a3"; // Module must be in the form AAXXXX
+    public static final String INVALID_MODULE_DESC = " " + PREFIX_MODULE + "CS21a3";
+    // Module must be in the form AAXXXX
     public static final String INVALID_DATE_DESC = " " + PREFIX_DATE + "01-20"; // Month must between 1 to 12
     public static final String INVALID_PRIORITY_DESC = " " + PREFIX_PRIORITY; // empty string not allowed for priority
     public static final String INVALID_TAG_DESC = " " + PREFIX_TAG + "hubby*"; // '*' not allowed in tags

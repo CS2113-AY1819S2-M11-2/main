@@ -52,7 +52,7 @@
 //    public void add() {
 //        Model model = getModel();
 //
-//        /* ------------------------ Perform add operations on the shown unfiltered list ----------------------------- */
+//        /* ----------------------- Perform add operations on the shown unfiltered list --------------------------- */
 //
 //        /* Case: add a task without tags to a non-empty address book, command with leading spaces and trailing spaces
 //         * -> added
@@ -75,7 +75,8 @@
 //
 //        /* Case: add a task with all fields same as another task in the task manager except name -> added */
 //        toAdd = new TaskBuilder(PROJECT).withName(VALID_NAME_TUTORIAL).build();
-//        command = AddCommand.COMMAND_WORD + NAME_DESC_TUTORIAL + MODULE_DESC_PROJECT + DATE_DESC_PROJECT + PRIORITY_DESC_PROJECT
+//        command = AddCommand.COMMAND_WORD + NAME_DESC_TUTORIAL + MODULE_DESC_PROJECT
+//              + DATE_DESC_PROJECT + PRIORITY_DESC_PROJECT
 //                + TAG_DESC_GRADED;
 //        assertCommandSuccess(command, toAdd);
 //
@@ -92,14 +93,15 @@
 //
 //        /* Case: add a task with tags, command with parameters in random order -> added */
 //        toAdd = TUTORIAL;
-//        command = AddCommand.COMMAND_WORD + TAG_DESC_GRADED + MODULE_DESC_TUTORIAL + PRIORITY_DESC_TUTORIAL + NAME_DESC_TUTORIAL
+//        command = AddCommand.COMMAND_WORD + TAG_DESC_GRADED + MODULE_DESC_TUTORIAL
+//              + PRIORITY_DESC_TUTORIAL + NAME_DESC_TUTORIAL
 //                + TAG_DESC_UNGRADED + DATE_DESC_TUTORIAL;
 //        assertCommandSuccess(command, toAdd);
 //
 //        /* Case: add a task, missing tags -> added */
 //        assertCommandSuccess(PRESENTATION);
 //
-//        /* -------------------------- Perform add operation on the shown filtered list ------------------------------ */
+//        /* ------------------------- Perform add operation on the shown filtered list ----------------------------- */
 //
 //        /* Case: filters the task list before adding -> added */
 //        showPersonsWithName(KEYWORD_MATCHING_MEIER);
@@ -111,7 +113,7 @@
 //        selectPerson(Index.fromOneBased(1));
 //        assertCommandSuccess(LECTURE);
 //
-//        /* ----------------------------------- Perform invalid add operations --------------------------------------- */
+//        /* ---------------------------------- Perform invalid add operations -------------------------------------- */
 //
 //        /* Case: add a duplicate task -> rejected */
 //        command = PersonUtil.getAddCommand(PRESENTATION);
@@ -157,23 +159,28 @@
 //        assertCommandFailure(command, Messages.MESSAGE_UNKNOWN_COMMAND);
 //
 //        /* Case: invalid name -> rejected */
-//        command = AddCommand.COMMAND_WORD + INVALID_NAME_DESC + MODULE_DESC_PROJECT + DATE_DESC_PROJECT + PRIORITY_DESC_PROJECT;
+//        command = AddCommand.COMMAND_WORD + INVALID_NAME_DESC + MODULE_DESC_PROJECT
+//              + DATE_DESC_PROJECT + PRIORITY_DESC_PROJECT;
 //        assertCommandFailure(command, Name.MESSAGE_CONSTRAINTS);
 //
 //        /* Case: invalid phone -> rejected */
-//        command = AddCommand.COMMAND_WORD + NAME_DESC_PROJECT + INVALID_MODULE_DESC + DATE_DESC_PROJECT + PRIORITY_DESC_PROJECT;
+//        command = AddCommand.COMMAND_WORD + NAME_DESC_PROJECT + INVALID_MODULE_DESC
+//              + DATE_DESC_PROJECT + PRIORITY_DESC_PROJECT;
 //        assertCommandFailure(command, Module.MESSAGE_CONSTRAINTS);
 //
 //        /* Case: invalid email -> rejected */
-//        command = AddCommand.COMMAND_WORD + NAME_DESC_PROJECT + MODULE_DESC_PROJECT + INVALID_DATE_DESC + PRIORITY_DESC_PROJECT;
+//        command = AddCommand.COMMAND_WORD + NAME_DESC_PROJECT + MODULE_DESC_PROJECT
+//              + INVALID_DATE_DESC + PRIORITY_DESC_PROJECT;
 //        assertCommandFailure(command, Date.MESSAGE_CONSTRAINTS);
 //
 //        /* Case: invalid address -> rejected */
-//        command = AddCommand.COMMAND_WORD + NAME_DESC_PROJECT + MODULE_DESC_PROJECT + DATE_DESC_PROJECT + INVALID_PRIORITY_DESC;
+//        command = AddCommand.COMMAND_WORD + NAME_DESC_PROJECT + MODULE_DESC_PROJECT
+//              + DATE_DESC_PROJECT + INVALID_PRIORITY_DESC;
 //        assertCommandFailure(command, Priority.MESSAGE_CONSTRAINTS);
 //
 //        /* Case: invalid tag -> rejected */
-//        command = AddCommand.COMMAND_WORD + NAME_DESC_PROJECT + MODULE_DESC_PROJECT + DATE_DESC_PROJECT + PRIORITY_DESC_PROJECT
+//        command = AddCommand.COMMAND_WORD + NAME_DESC_PROJECT + MODULE_DESC_PROJECT
+//              + DATE_DESC_PROJECT + PRIORITY_DESC_PROJECT
 //                + INVALID_TAG_DESC;
 //        assertCommandFailure(command, Tag.MESSAGE_CONSTRAINTS);
 //    }

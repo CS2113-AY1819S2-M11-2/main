@@ -33,7 +33,8 @@ public class BrowserPanelTest extends GuiUnitTest {
 
         // associated web page of a task
         guiRobot.interact(() -> selectedPerson.set(SLIDES));
-        URL expectedPersonUrl = new URL(BrowserPanel.SEARCH_PAGE_URL + SLIDES.getName().fullName.replaceAll(" ", "%20"));
+        URL expectedPersonUrl = new URL(BrowserPanel.SEARCH_PAGE_URL
+                + SLIDES.getName().fullName.replaceAll(" ", "%20"));
 
         waitUntilBrowserLoaded(browserPanelHandle);
         assertEquals(expectedPersonUrl, browserPanelHandle.getLoadedUrl());
