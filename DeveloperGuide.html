@@ -781,22 +781,25 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p>Given below is an example usage scenario.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user keys in username and password, the <code>LoginCommandParser</code> or <code>SignupCommandParser</code> will trim the command to get the string of username and password.</p>
+<p>Step 1. The user signs up and keys in username and password, using the command <code>signup u/USERNAME p/PASSWORD</code>. The <code>TaskManagerParser</code> recognises the command as a signup and calls <code>SignupCommand</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 2. If the attribute is valid, username and password is stored in a User class, it will then pass the attribute to <code>loginEvent</code>.</p>
+<p>Step 2. In SignupCommand, <code>newUser(user)</code> will be called in <code>ModelManager</code>. This method is also connected to <code>LoginEvent</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 3. <code>loginEvent</code> will then call <code>JsonLoginStorage</code> with attributes to read and write Json files or set Json properties.</p>
+<p>Step 2. <code>LoginEvent</code> will use the username to check if there is such account. If there is, <code>userExists(user)</code> will be triggered in <code>ModelManager</code>.
+If there is no such account, the username and hashed password will be stored in a User class, it will then pass the User object to <code>JsonLoginStorage</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 4. It will then return to <code>loginEvent</code> where it will return the user account details.</p>
+<p>Step 3. <code>JsonLoginStorage</code> retrieves the User object to read and write Json files with the correct Json properties.</p>
 </div>
 <div class="paragraph">
-<p>Step 5. Then we convert the relevant attributes of the user information to string to compare. This is used in login and signup. Here, <code>loginEvent</code> is able to check if the user exists, if user information matches or logs out of account.</p>
+<p>Step 4. It will then return to <code>loginEvent</code> then to <code>SignupCommand</code> and returns the user a successful signup output.</p>
 </div>
-<div class="paragraph">
-<p>Step 6. After returning the user information, the user is then logged into or logged out of Task Manager.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/SignUpSequenceDiagram.png" alt="SignUpSequenceDiagram" width="900">
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -2766,4 +2769,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-24 10:33:04 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-24 12:15:32 UTC</div></div></div></body></html>
