@@ -73,7 +73,14 @@
 </li>
 <li><a href="#product-scope">Appendix B: Product Scope</a></li>
 <li><a href="#user-stories">Appendix C: User Stories</a></li>
-<li><a href="#use-cases">Appendix D: Use Cases</a></li>
+<li><a href="#use-cases">Appendix D: Use Cases</a>
+<ul class="sectlevel2">
+<li><a href="#use-case-find-task-by-module">D.1. Use case: Find task by module</a></li>
+<li><a href="#use-case-find-task-by-date">D.2. Use case: Find task by date</a></li>
+<li><a href="#use-case-find-task-by-priority">D.3. Use case: Find task by priority</a></li>
+<li><a href="#use-case-sort-tasks">D.4. Use case: Sort tasks</a></li>
+</ul>
+</li>
 <li><a href="#non-functional-requirements">Appendix E: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix F: Glossary</a></li>
 <li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
@@ -168,7 +175,7 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 This will generate all resources required by the application and tests.</p>
 </li>
 <li>
-<p>Open <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow.java</code></a> and check for any code errors</p>
+<p>Open <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow.java</code></a> and check for any code errors</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -181,7 +188,7 @@ This will generate all resources required by the application and tests.</p>
 </div>
 </li>
 <li>
-<p>Repeat this for the test folder as well (e.g. check <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/test/java/seedu/address/ui/HelpWindowTest.java"><code>HelpWindowTest.java</code></a> for code errors, and if so, resolve it the same way)</p>
+<p>Repeat this for the test folder as well (e.g. check <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/test/java/seedu/address/ui/HelpWindowTest.java"><code>HelpWindowTest.java</code></a> for code errors, and if so, resolve it the same way)</p>
 </li>
 </ol>
 </div>
@@ -244,10 +251,10 @@ This will generate all resources required by the application and tests.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Configure the <a href="#Docs-SiteWideDocSettings">site-wide documentation settings</a> in <a href="https://github.com/CS2113-AY1819S2-M11-2/main//build.gradle"><code>build.gradle</code></a>, such as the <code>site-name</code>, to suit your own project.</p>
+<p>Configure the <a href="#Docs-SiteWideDocSettings">site-wide documentation settings</a> in <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/build.gradle"><code>build.gradle</code></a>, such as the <code>site-name</code>, to suit your own project.</p>
 </li>
 <li>
-<p>Replace the URL in the attribute <code>repoURL</code> in <a href="https://github.com/CS2113-AY1819S2-M11-2/main//docs/DeveloperGuide.adoc"><code>DeveloperGuide.adoc</code></a> and <a href="https://github.com/CS2113-AY1819S2-M11-2/main//docs/UserGuide.adoc"><code>UserGuide.adoc</code></a> with the URL of your fork.</p>
+<p>Replace the URL in the attribute <code>repoURL</code> in <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/docs/DeveloperGuide.adoc"><code>DeveloperGuide.adoc</code></a> and <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/docs/UserGuide.adoc"><code>UserGuide.adoc</code></a> with the URL of your fork.</p>
 </li>
 </ol>
 </div>
@@ -328,13 +335,13 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The <code>.pptx</code> files used to create diagrams in this document can be found in the <a href="https://github.com/CS2113-AY1819S2-M11-2/main//docs/diagrams/">diagrams</a> folder. To update a diagram, modify the diagram in the pptx file, select the objects of the diagram, and choose <code>Save as picture</code>.
+The <code>.pptx</code> files used to create diagrams in this document can be found in the <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/docs/diagrams/">diagrams</a> folder. To update a diagram, modify the diagram in the pptx file, select the objects of the diagram, and choose <code>Save as picture</code>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p><code>Main</code> has only one class called <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+<p><code>Main</code> has only one class called <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -421,13 +428,13 @@ The following class plays an important role at the architecture level:</p>
 <div class="title">Figure 4. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code>, <code>BrowserPanel</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>TaskListPanel</code>, <code>StatusBarFooter</code>, <code>CalendarPanel</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component,</p>
@@ -453,18 +460,18 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
-<a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
+<a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>Logic</code> uses the <code>AddressBookParser</code> class to parse the user command.</p>
+<p><code>Logic</code> uses the <code>TaskManagerParser</code> class to parse the user command.</p>
 </li>
 <li>
 <p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
 </li>
 <li>
-<p>The command execution can affect the <code>Model</code> (e.g. adding a person).</p>
+<p>The command execution can affect the <code>Model</code> (e.g. adding a task).</p>
 </li>
 <li>
 <p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
@@ -493,7 +500,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="title">Figure 7. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Model</code>,</p>
@@ -504,10 +511,10 @@ The following class plays an important role at the architecture level:</p>
 <p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
 </li>
 <li>
-<p>stores the Address Book data.</p>
+<p>stores the Task Manager data.</p>
 </li>
 <li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Person&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
+<p>exposes an unmodifiable <code>ObservableList&lt;Task&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
 </li>
 <li>
 <p>does not depend on any of the other three components.</p>
@@ -521,7 +528,7 @@ The following class plays an important role at the architecture level:</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book</code>, which <code>Person</code> can reference. This would allow <code>Address Book</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Person</code> needing their own <code>Tag</code> object. An example of how such a model may look like is given below.<br>
+As a more OOP model, we can store a <code>Tag</code> list in <code>Task Manager</code>, which <code>Task</code> can reference. This would allow <code>Task Manager</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>Task</code> needing their own <code>Tag</code> object. An example of how such a model may look like is given below.<br>
 <br>
 <span class="image"><img src="images/ModelClassBetterOopDiagram.png" alt="ModelClassBetterOopDiagram" width="800"></span>
 </td>
@@ -538,7 +545,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="title">Figure 8. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> component,</p>
@@ -549,7 +556,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <p>can save <code>UserPref</code> objects in json format and read it back.</p>
 </li>
 <li>
-<p>can save the Address Book data in json format and read it back.</p>
+<p>can save the Task Manager data in json format and read it back.</p>
 </li>
 </ul>
 </div>
@@ -557,7 +564,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="sect2">
 <h3 id="Design-Commons"><a class="link" href="#Design-Commons">2.6. Common classes</a></h3>
 <div class="paragraph">
-<p>Classes used by multiple components are in the <code>seedu.addressbook.commons</code> package.</p>
+<p>Classes used by multiple components are in the <code>seedu.address.commons</code> package.</p>
 </div>
 </div>
 </div>
@@ -573,31 +580,31 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="sect3">
 <h4 id="current-implementation"><a class="link" href="#current-implementation">3.1.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
-It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
+<p>The undo/redo mechanism is facilitated by <code>VersionedTaskManager</code>.
+It extends <code>TaskManager</code> with an undo/redo history, stored internally as an <code>taskManagerStateList</code> and <code>currentStatePointer</code>.
 Additionally, it implements the following operations:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>VersionedAddressBook#commit()</code>&#8201;&#8212;&#8201;Saves the current address book state in its history.</p>
+<p><code>VersionedTaskManager#commit()</code>&#8201;&#8212;&#8201;Saves the current task manager state in its history.</p>
 </li>
 <li>
-<p><code>VersionedAddressBook#undo()</code>&#8201;&#8212;&#8201;Restores the previous address book state from its history.</p>
+<p><code>VersionedTaskManager#undo()</code>&#8201;&#8212;&#8201;Restores the previous task manager state from its history.</p>
 </li>
 <li>
-<p><code>VersionedAddressBook#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone address book state from its history.</p>
+<p><code>VersionedTaskManager#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone task manager state from its history.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> and <code>Model#redoAddressBook()</code> respectively.</p>
+<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitTaskManager()</code>, <code>Model#undoTaskManager()</code> and <code>Model#redoTaskManager()</code> respectively.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedAddressBook</code> will be initialized with the initial address book state, and the <code>currentStatePointer</code> pointing to that single address book state.</p>
+<p>Step 1. The user launches the application for the first time. The <code>VersionedTaskManager</code> will be initialized with the initial task manager state, and the <code>currentStatePointer</code> pointing to that single task manager state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -605,7 +612,7 @@ Additionally, it implements the following operations:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th person in the address book. The <code>delete</code> command calls <code>Model#commitAddressBook()</code>, causing the modified state of the address book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted address book state.</p>
+<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th task in the task manager. The <code>delete</code> command calls <code>Model#commitTaskManager()</code>, causing the modified state of the task manager after the <code>delete 5</code> command executes to be saved in the <code>taskManagerStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted task manager state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -613,7 +620,7 @@ Additionally, it implements the following operations:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new person. The <code>add</code> command also calls <code>Model#commitAddressBook()</code>, causing another modified address book state to be saved into the <code>addressBookStateList</code>.</p>
+<p>Step 3. The user executes <code>add n/Project &#8230;&#8203;</code> to add a new task. The <code>add</code> command also calls <code>Model#commitTaskManager()</code>, causing another modified task manager state to be saved into the <code>taskManagerStateList</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -627,13 +634,13 @@ Additionally, it implements the following operations:</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If a command fails its execution, it will not call <code>Model#commitAddressBook()</code>, so the address book state will not be saved into the <code>addressBookStateList</code>.
+If a command fails its execution, it will not call <code>Model#commitTaskManager()</code>, so the task manager state will not be saved into the <code>taskManagerStateList</code>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous address book state, and restores the address book to that state.</p>
+<p>Step 4. The user now decides that adding the task was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoTaskManager()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous task manager state, and restores the task manager to that state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -647,7 +654,7 @@ If a command fails its execution, it will not call <code>Model#commitAddressBook
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial address book state, then there are no previous address book states to restore. The <code>undo</code> command uses <code>Model#canUndoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
+If the <code>currentStatePointer</code> is at index 0, pointing to the initial task manager state, then there are no previous task manager states to restore. The <code>undo</code> command uses <code>Model#canUndoTaskManager()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
 </td>
 </tr>
 </table>
@@ -661,7 +668,7 @@ If the <code>currentStatePointer</code> is at index 0, pointing to the initial a
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoAddressBook()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the address book to that state.</p>
+<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoTaskManager()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the task manager to that state.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -670,13 +677,13 @@ If the <code>currentStatePointer</code> is at index 0, pointing to the initial a
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the <code>currentStatePointer</code> is at index <code>addressBookStateList.size() - 1</code>, pointing to the latest address book state, then there are no undone address book states to restore. The <code>redo</code> command uses <code>Model#canRedoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
+If the <code>currentStatePointer</code> is at index <code>taskManagerStateList.size() - 1</code>, pointing to the latest task manager state, then there are no undone task manager states to restore. The <code>redo</code> command uses <code>Model#canRedoTaskManager()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the address book, such as <code>list</code>, will usually not call <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> or <code>Model#redoAddressBook()</code>. Thus, the <code>addressBookStateList</code> remains unchanged.</p>
+<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the task manager, such as <code>list</code>, will usually not call <code>Model#commitTaskManager()</code>, <code>Model#undoTaskManager()</code> or <code>Model#redoTaskManager()</code>. Thus, the <code>taskManagerStateList</code> remains unchanged.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -684,7 +691,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>addressBookStateList</code>, all address book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
+<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitTaskManager()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>taskManagerStateList</code>, all task manager states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/Project &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -707,7 +714,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire address book.</p>
+<p><strong>Alternative 1 (current choice):</strong> Saves the entire task manager.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -724,7 +731,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the person being deleted).</p>
+<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the task being deleted).</p>
 </li>
 <li>
 <p>Cons: We must ensure that the implementation of each individual command are correct.</p>
@@ -740,14 +747,14 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of address book states.</p>
+<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of task manager states.</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
 </li>
 <li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedAddressBook</code>.</p>
+<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedTaskManager</code>.</p>
 </li>
 </ul>
 </div>
@@ -772,29 +779,105 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 <div class="sect2">
 <h3 id="login-feature"><a class="link" href="#login-feature">3.2. Login Feature</a></h3>
+<div class="paragraph">
+<p><strong>Current Implementation</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The login mechanism is facilitated by <code>TaskManager</code>, <code>SignupCommand</code>, <code>LoginCommand</code>, <code>LogoutCommand</code>, <code>DeleteAccountCommand</code>, <code>LoginEvent</code>, <code>GenerateHash</code>, <code>JsonLoginStorage</code>.</p>
+</li>
+<li>
+<p>The login feature is mainly supported by the <code>Command</code> class and <code>account</code> class.<br>
+There are two types of accounts in login feature which are implemented in the <code>account</code> class:<br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A normal user account<br></p>
+</li>
+<li>
+<p>An admin account.<br>
+The username and hashed password are stored in a JSON file.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The class diagram below illustrates the <code>account</code> class.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AccountClassDiagram.png" alt="AccountClassDiagram" width="450">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In <code>model</code> class, there are methods to check for<br>
+<code>loginStatus</code> (if the user is logged in),<br>
+<code>adminStatus</code> (if the admin is logged in),<br>
+<code>userExists</code> (if the username is already taken),<br>
+<code>accountExists</code> (if there is already an account created).</p>
+</li>
+<li>
+<p>In this feature, there are 4 main commands.
+The flow on how the commands are executed and their respective sequence diagrams will be further elaborated below:<br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Section 3.2.1, Signup Command<br></p>
+</li>
+<li>
+<p><a href="#login-command">Section 3.2.2, &#8220;Login Command&#8221;</a><br></p>
+</li>
+<li>
+<p><a href="#logout-command">Section 3.2.3, &#8220;Logout Command&#8221;</a><br></p>
+</li>
+<li>
+<p><a href="#deleteacc-command">Section 3.2.4, &#8220;DeleteAcc Command&#8221;</a></p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
 <div class="sect3">
-<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">3.2.1. Current Implementation</a></h4>
-<div class="paragraph">
-<p>The login mechanism is facilitated by <code>TaskManager</code>, <code>SignupCommand</code>, <code>LoginCommand</code>, <code>LogoutCommand</code>, <code>loginEvent</code>, <code>JsonLoginStorage</code>, .</p>
+<h4 id="signup-command"><a class="link" href="#signup-command">3.2.1. Signup Command</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Signup Command creates an account for the user and stores their username and password in a JSON file.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Given below is an example usage scenario.</p>
+<p>Given below is an example usage scenario of <code>signup</code>.</p>
 </div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 1. The user signs up and keys in username and password using the command <code>signup u/USERNAME p/PASSWORD</code>.</p>
+<p class="tableblock">Step 2. The <code>TaskManagerParser</code> recognises the command word as a signup from <code>SignupCommand</code> and calls <code>SignupCommand</code>.</p>
+<p class="tableblock">Step 3. <code>SignupCommandParser</code> will parse the arguments to <code>SignupCommand</code>.
+ <code>SignupCommand</code> will call the following commands which are linked to <code>LoginEvent</code>.</p>
+<p class="tableblock"><code>getLoginStatus</code> to check if the user is already logged in.<br>
+<code>userExists</code> to check if there is already an account with the same username.<br>
+<code>accountExists</code> to check if an account has already been created.<br></p>
+<p class="tableblock">If the arguments passes all the commands, <code>newUser(user)</code> will be called to store
+the username and hashed password in a User class.
+It will then pass the User object to <code>JsonLoginStorage</code>.</p>
+<p class="tableblock">Step 4. <code>JsonLoginStorage</code> retrieves the User object to read and write Json files with the correct Json properties.</p>
+<p class="tableblock">Step 5. It will then return to <code>loginEvent</code> then to <code>SignupCommand</code> and returns the user a successful signup output.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
-<p>Step 1. The user signs up and keys in username and password, using the command <code>signup u/USERNAME p/PASSWORD</code>. The <code>TaskManagerParser</code> recognises the command as a signup and calls <code>SignupCommand</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 2. In SignupCommand, <code>newUser(user)</code> will be called in <code>ModelManager</code>. This method is also connected to <code>LoginEvent</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 2. <code>LoginEvent</code> will use the username to check if there is such account. If there is, <code>userExists(user)</code> will be triggered in <code>ModelManager</code>.
-If there is no such account, the username and hashed password will be stored in a User class, it will then pass the User object to <code>JsonLoginStorage</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 3. <code>JsonLoginStorage</code> retrieves the User object to read and write Json files with the correct Json properties.</p>
-</div>
-<div class="paragraph">
-<p>Step 4. It will then return to <code>loginEvent</code> then to <code>SignupCommand</code> and returns the user a successful signup output.</p>
+<p>The sequence diagram below shows the flow of <code>signup</code> from Step 1 to Step 5 above.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -803,39 +886,171 @@ If there is no such account, the username and hashed password will be stored in 
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.2. Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-how-loginevent-executes"><a class="link" href="#aspect-how-loginevent-executes">Aspect: How loginEvent executes</a></h5>
+<h4 id="login-command"><a class="link" href="#login-command">3.2.2. Login Command</a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p>Write a class separately for handling the Json file reading of user information.</p>
+<p>Login Command logs in the account for the user by checking the username and password stored in the JSON file.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario of <code>login</code>.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 1. The user logs in by keying in username and password using the command <code>login u/USERNAME p/PASSWORD</code>.</p>
+<p class="tableblock">Step 2. The <code>TaskManagerParser</code> recognises the command word as a login from <code>LoginCommand</code> and calls <code>LoginCommand</code>.</p>
+<p class="tableblock">Step 3. <code>LoginCommandParser</code> will parse the arguments to <code>LoginCommand</code>
+ <code>LoginCommand</code> will call the following command which is linked to <code>LoginEvent</code>.</p>
+<p class="tableblock"><code>getLoginStatus</code> to check if the user is already logged in.<br></p>
+<p class="tableblock">If the arguments passes <code>getLoginStatus</code>, <code>logUser(user)</code> will be called in <code>LoginEvent</code> to
+check for username and password match.</p>
+<p class="tableblock">Step 4. In`LoginEvent`, <code>JsonLoginStorage</code> retrieves the username and hashed password from the Json file.</p>
+<p class="tableblock">Step 5. <code>loginEvent</code> will then check if the user inputs matches the username and password stored and
+will then return to <code>LoginCommand</code> and returns the user a successful login output.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The sequence diagram below shows the flow of <code>login</code> from Step to Step above.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/LoginSequenceDiagram.png" alt="LoginSequenceDiagram" width="900">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="logout-command"><a class="link" href="#logout-command">3.2.3. Logout Command</a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy to read and debug, Follows OOP coding and thus easier for other coders to modify.</p>
+<p>Logout Command logs the user out of their account.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario of <code>logout</code>.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 1. The user logs out by keying in the command <code>logout</code>.</p>
+<p class="tableblock">Step 2. The <code>TaskManagerParser</code> recognises the command word as a logout from <code>LogoutCommand</code> and calls <code>LogoutCommand</code>.</p>
+<p class="tableblock">Step 3. <code>LogoutCommand</code> will call the following command which is linked to <code>LoginEvent</code>.</p>
+<p class="tableblock"><code>getLoginStatus</code> to check if the user is already logged out.<br>
+<code>getAdminStatus</code> to check if the admin is already logged out.<br></p>
+<p class="tableblock">If the arguments passes <code>getLoginStatus</code> and <code>getAdminStatus</code>, <code>logout</code> will be called in <code>LoginEvent</code>.</p>
+<p class="tableblock">Step 4. In`LoginEvent`, <code>getLoginStatus</code> and <code>getAdminStatus</code> will be set to false and will then
+return to <code>LoginCommand</code> to return the user a successful logout output.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The sequence diagram below shows the flow of <code>logout</code> from Step to Step above.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/LogoutSequenceDiagram.png" alt="LogoutSequenceDiagram" width="900">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleteacc-command"><a class="link" href="#deleteacc-command">3.2.4. DeleteAcc Command</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>DeleteAcc Command is only accessible to admins. DeleteAcc deletes the entire account.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario of <code>DeleteAcc</code>.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 1. The admin logs in by keying in username and password using the command <code>login u/USERNAME p/PASSWORD</code>.</p>
+<p class="tableblock">Step 2. The admin keys in <code>DeleteAcc</code> to delete the account.</p>
+<p class="tableblock">Step 3. The <code>TaskManagerParser</code> recognises the command word as delete account
+from <code>DeleteAccountCommand</code> and calls <code>DeleteAccountCommand</code>.</p>
+<p class="tableblock">Step 4. <code>DeleteAccountCommand</code> will call the following command which is linked to <code>LoginEvent</code>.</p>
+<p class="tableblock"><code>getAdminStatus</code> to check if an admin is logged in.<br></p>
+<p class="tableblock">If the arguments passes <code>getAdminStatus</code>, <code>deleteAccount()</code> will be called in <code>LoginEvent</code>.</p>
+<p class="tableblock">Step 5. In`LoginEvent`, JsonLoginStorage&#8217;s <code>deleteAccount()</code> will be called to delete the JSON file.</p>
+<p class="tableblock">Step 6. <code>LoginEvent</code> will then call <code>reinitialise()</code> to create the Json file
+without any username and password stored in it. <code>reinitialise()</code> is assisted by <code>JsonLoginStorage</code> and <code>writeJson()</code>.</p>
+<p class="tableblock">Step 7. <code>LoginEvent</code> will return to <code>DeleteAccountCommand</code> and returns the user a successful login output.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The sequence diagram below shows the flow of <code>deleteacc</code> from Step to Step above.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteAccountSequenceDiagram.png" alt="DeleteAccountSequenceDiagram" width="900">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.5. Design Considerations</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Combine the classes for <code>LoginEvent</code> and <code>JsonLoginStorage</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to read and debug, all codes are in one file and thus easier for other coders to modify.</p>
 </li>
 <li>
-<p>Cons: Difficult to implement.</p>
+<p>Cons: Does not follow OOP coding. The codes in the file will look messy.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Write a class separately for passing Json file attributes and follow OOP coding in loginEvent.</p>
+<p>To use encryption library instead of creating my own hashing function.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Able to debug easily if any error occurs. Most of the login function happens within this 2 files.</p>
+<p>Pros: Do not need to code much. Most of the function are one lines. Easy to implement.</p>
 </li>
 <li>
-<p>Cons: Difficult to implement. Does not follow OOP coding.</p>
+<p>Cons: Encryption is a two-way function. Encrypted strings can be decrypted with a proper key.
+Hashing was chosen because it is a one way function. With a proper hashing design, there is no way to reverse
+the hasing process to reveal the original password.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>To have the <code>LoginEvent</code> being a component of its own without having to implement into logic.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: It would be easier to visualise and could still run the entire Taskmanager.</p>
+</li>
+<li>
+<p>Cons: There would be a lot of repeated and redundant codes. Most of the functions in the <code>logic</code> componenet
+will be repeated. This will violate Single Responsibility Principle and Separation of Concerns.</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
-</div>
 </div>
 </div>
 </div>
@@ -844,8 +1059,16 @@ If there is no such account, the username and hashed password will be stored in 
 <div class="paragraph">
 <p>This feature allow users to add and view notes regarding miscellaneous matters.</p>
 </div>
+<div class="paragraph">
+<p>The class diagram below illustrates the <code>Notes</code> class.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/NotesClassDiagram.png" alt="NotesClassDiagram" width="450">
+</div>
+</div>
 <div class="sect3">
-<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">3.3.1. Current Implementation</a></h4>
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">3.3.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The Notes mechanism is facilitated by AddNotesCommand. A Notes object is instantiated which contains of Heading and Content.</p>
 </div>
@@ -853,7 +1076,7 @@ If there is no such account, the username and hashed password will be stored in 
 <p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user enters the in a note with its associated parameters. e.g note h/popular c/buy pilot G-2 blue pens.</p>
+<p>Step 1. The user enters the in a note with its associated parameters. e.g <code>note h/popular c/buy pilot G-2 blue pens</code>.</p>
 </div>
 <div class="paragraph">
 <p>Step 2. The LogicManager calls ParseCommand with that input.</p>
@@ -868,10 +1091,18 @@ If there is no such account, the username and hashed password will be stored in 
 <p>Step 5. ModelManager is then called and will check if the note already exists.</p>
 </div>
 <div class="paragraph">
-<p>Step 6. If note already exists, DuplicateNotesException will be called.</p>
+<p>Step 6. If note already exists, <code>DuplicateNotesException</code> will be thrown. This will return a string message "This note already exists in the task manager".</p>
 </div>
 <div class="paragraph">
-<p>Step 7. Else, addNotes notes method is called and note is added.</p>
+<p>Step 7. Else, addNotes(notes) method is called and note is added.</p>
+</div>
+<div class="paragraph">
+<p>The sequence diagram below illustrates how the AddNotes mechanism function.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddNotesSequenceDiagram.png" alt="AddNotesSequenceDiagram" width="800">
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -882,7 +1113,7 @@ If there is no such account, the username and hashed password will be stored in 
 <div class="ulist">
 <ul>
 <li>
-<p>Alternative 1(current choice): IsSameNotes</p>
+<p><strong>Alternative 1(current choice):</strong> IsSameNotes</p>
 <div class="ulist">
 <ul>
 <li>
@@ -894,6 +1125,19 @@ If there is no such account, the username and hashed password will be stored in 
 </ul>
 </div>
 </li>
+<li>
+<p><strong>Alternative 2:</strong> Implement a method to check for similarity of notes. If similarity is more than 95%, notes is classified as same notes and cannot be added.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Can reduce the amount of duplicate notes that are added.</p>
+</li>
+<li>
+<p>Cons: Difficult to implement and cannot eliminate duplicate notes completely.</p>
+</li>
+</ul>
+</div>
+</li>
 </ul>
 </div>
 </div>
@@ -901,7 +1145,7 @@ If there is no such account, the username and hashed password will be stored in 
 <div class="sect2">
 <h3 id="sort-task-list-feature"><a class="link" href="#sort-task-list-feature">3.4. Sort Task List Feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">3.4.1. Current Implementation</a></h4>
+<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">3.4.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The sorting mechanism is facilitated by <code>TaskManager</code>, <code>Model</code> and <code>SortTaskList</code>.</p>
 </div>
@@ -912,18 +1156,26 @@ If there is no such account, the username and hashed password will be stored in 
 <p>Step 1. The user keys in <code>sort ATTRIBUTE</code>, the <code>SortCommandParser</code> will trim the command to get the attribute.</p>
 </div>
 <div class="paragraph">
-<p>Step 2. If the attribute is valid, it will then pass the attribute to <code>SortCommand</code>.</p>
+<p>Step 2. If the attribute is valid, it will then create a new <code>SortCommand</code> and execute with the given attribute.</p>
 </div>
 <div class="paragraph">
-<p>Step 3. <code>SortCommand</code> will then call <code>ModelManager#sortTask(attribute)</code>.</p>
+<p>Step 3. <code>SortCommand</code> will then call <code>ModelManager#sortTask(toSortBy)</code>.</p>
 </div>
 <div class="paragraph">
 <p>Step 4. It will then call <code>TaskManager#sortTask(attribute)</code>.
 Then we convert the relevant attributes of the tasks in the Task List to string to compare using <code>string#compareTo()</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 5. This will sort <code>ObservableList&lt;Task&gt; sortedList</code>.
+<p>Step 5. Then, we use <code>setTasks()</code> in `UniqueTaskList`to update the Task List.
 After returning the sorted Task List, the Task Manager is then committed.</p>
+</div>
+<div class="paragraph">
+<p>The Sequence Diagram below illustrates how the sort mechanism functions. More specifically, sorting by module code.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SortSequenceDiagram.png" alt="SortSequenceDiagram" width="900">
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -966,21 +1218,33 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 <div class="sect2">
 <h3 id="calendar-feature"><a class="link" href="#calendar-feature">3.5. Calendar feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">3.5.1. Current Implementation</a></h4>
+<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">3.5.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p>The Calendar extends the <code>TaskManager</code> GUI with an easy to read interface for tracking task deadlines. It is composed of two classes, <code>CalendarPanel</code> and <code>CalendarCell</code>.</p>
+<p>The Calendar extends the <code>TaskManager</code> GUI with an easy to read interface for tracking task deadlines. It is composed of three classes, <code>CalendarPanel</code>, <code>CalendarCell</code> and <code>CalendarCellTask</code>.</p>
 </div>
 <div class="paragraph">
-<p><code>CalendarPanel</code> is the pane on which is drawn the headers and grid of the Calendar.
-<code>CalendarCell</code> represents each individual cell of the grid in the Calendar.</p>
+<p><code>CalendarPanel</code> is the pane on which the headers and grid of the Calendar are drawn.
+<code>CalendarCell</code> represents each individual cell of the grid in the <code>CalendarPanel</code>.
+<code>CalendarCellTask</code> represents each individual task inside each <code>CalendarCell</code>.</p>
 </div>
 <div class="paragraph">
-<p>The following sequence diagram shows how the Calendar is built:</p>
+<p>The following class diagram illustrates the relationships between <code>CalendarPanel</code>, <code>CalendarCell</code> and <code>CalendarCellTask</code>:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/CalendarBuildSequenceDiagram.png" alt="CalendarBuildSequenceDiagram" width="698">
+<img src="images/CalendarClassDiagram.png" alt="CalendarClassDiagram" width="1000">
 </div>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the Calendar is built on startup:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/CalendarBuildSequenceDiagram.png" alt="CalendarBuildSequenceDiagram" width="1000">
+</div>
+</div>
+<div class="paragraph">
+<p>Whenever the task list is updated, or the selected task is changed, the function <code>createCalendarCells(taskList)</code> is called, which replaces the <code>CalendarCell</code> and <code>CalendarCellTask</code> instances in the <code>CalendarPanel</code>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -990,7 +1254,7 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Separate the calendar cells into their own class.</p>
+<p><strong>Alternative 1 (current choice):</strong> Separate the calendar panel, calendar cells and tasks into their own classes.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1003,7 +1267,7 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Separate each component of the Calendar into their own classes (e.g. into CalendarPane, CalendarGrid, HeaderCell, ContentCell, etc).</p>
+<p><strong>Alternative 2:</strong> Separate every component of the Calendar into their own classes (e.g. into CalendarPane, CalendarGrid, HeaderCell, ContentCell, etc).</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1023,7 +1287,7 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 <p>Pros: No need to navigate between different classes.</p>
 </li>
 <li>
-<p>Cons: The class will be very long and complex, possibly making the code difficult to read and understand for future maintainers. Violates the principles of Single Responsibility Principle and Separation of Concerns.</p>
+<p>Cons: The class will be very long and complex, making the code difficult for future maintainers to read, understand and change. Violates the principles of Single Responsibility Principle and Separation of Concerns.</p>
 </li>
 </ul>
 </div>
@@ -1036,7 +1300,7 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Replace the old calendar with a newly built calendar when task list changes.</p>
+<p><strong>Alternative 1 (current choice):</strong> Replace the previous <code>CalendarCell</code> and <code>CalendarCellTask</code> instances with with new instances when the task list changes.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1049,11 +1313,11 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Implement a separate class to handle the contents of each Calendar cell.</p>
+<p><strong>Alternative 2:</strong> Have <code>CalendarCellTask</code> instances automatically update as the task list changes.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: We do not need to rebuild the entire calendar when the task list changes, instead only updating the cell that is affected.</p>
+<p>Pros: No need to rebuild the entire calendar when the task list changes, instead only updating the cell that is affected.</p>
 </li>
 <li>
 <p>Cons: Adds another layer of abstraction, which can cause difficulty in understanding how the Calendar works.</p>
@@ -1479,7 +1743,7 @@ e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Update the version number in <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/MainApp.java"><code>MainApp.java</code></a>.</p>
+<p>Update the version number in <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/MainApp.java"><code>MainApp.java</code></a>.</p>
 </li>
 <li>
 <p>Generate a JAR file <a href="UsingGradle.html#creating-the-jar-file">using Gradle</a>.</p>
@@ -1496,7 +1760,7 @@ e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 <div class="sect2">
 <h3 id="managing-dependencies"><a class="link" href="#managing-dependencies">6.6. Managing Dependencies</a></h3>
 <div class="paragraph">
-<p>A project often depends on third-party libraries. For example, Address Book depends on the <a href="https://github.com/FasterXML/jackson">Jackson library</a> for JSON parsing. Managing these <em>dependencies</em> can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives:</p>
+<p>A project often depends on third-party libraries. For example, Task Manager depends on the <a href="https://github.com/FasterXML/jackson">Jackson library</a> for JSON parsing. Managing these <em>dependencies</em> can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives:</p>
 </div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
@@ -1551,7 +1815,7 @@ Do take a look at <a href="#Design-Logic">Section 2.3, &#8220;Logic component&#8
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a shorthand equivalent alias for each of the individual commands. For example, besides typing <code>clear</code>, the user can also type <code>c</code> to remove all persons in the list.</p>
+<p>Add a shorthand equivalent alias for each of the individual commands. For example, besides typing <code>clear</code>, the user can also type <code>c</code> to remove all tasks in the list.</p>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
@@ -1561,10 +1825,10 @@ Do take a look at <a href="#Design-Logic">Section 2.3, &#8220;Logic component&#8
 <div class="ulist">
 <ul>
 <li>
-<p>Just like we store each individual command word constant <code>COMMAND_WORD</code> inside <code>*Command.java</code> (e.g.  <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/logic/commands/FindCommand.java"><code>FindCommand#COMMAND_WORD</code></a>, <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/logic/commands/DeleteCommand.java"><code>DeleteCommand#COMMAND_WORD</code></a>), you need a new constant for aliases as well (e.g. <code>FindCommand#COMMAND_ALIAS</code>).</p>
+<p>Just like we store each individual command word constant <code>COMMAND_WORD</code> inside <code>*Command.java</code> (e.g.  <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/logic/commands/FindNameCommand.java"><code>FindNameCommand#COMMAND_WORD</code></a>, <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/logic/commands/DeleteCommand.java"><code>DeleteCommand#COMMAND_WORD</code></a>), you need a new constant for aliases as well (e.g. <code>FindCommand#COMMAND_ALIAS</code>).</p>
 </li>
 <li>
-<p><a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/logic/parser/AddressBookParser.java"><code>AddressBookParser</code></a> is responsible for analyzing command words.</p>
+<p><a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/logic/parser/TaskManagerParser.java"><code>TaskManagerParser</code></a> is responsible for analyzing command words.</p>
 </li>
 </ul>
 </div>
@@ -1574,7 +1838,7 @@ Do take a look at <a href="#Design-Logic">Section 2.3, &#8220;Logic component&#8
 <div class="ulist">
 <ul>
 <li>
-<p>Modify the switch statement in <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/logic/parser/AddressBookParser.java"><code>AddressBookParser#parseCommand(String)</code></a> such that both the proper command word and alias can be used to execute the same intended command.</p>
+<p>Modify the switch statement in <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/logic/parser/TaskManagerParser.java"><code>TaskManagerParser#parseCommand(String)</code></a> such that both the proper command word and alias can be used to execute the same intended command.</p>
 </li>
 <li>
 <p>Add new tests for each of the aliases that you have added.</p>
@@ -1597,7 +1861,7 @@ Do take a look at <a href="#Design-Logic">Section 2.3, &#8220;Logic component&#8
 </div>
 <h4 id="code-model-code-component" class="discrete"><code>Model</code> component</h4>
 <div class="paragraph">
-<p><strong>Scenario:</strong> You are in charge of <code>model</code>. One day, the <code>logic</code>-in-charge approaches you for help. He wants to implement a command such that the user is able to remove a particular tag from everyone in the address book, but the model API does not support such a functionality at the moment. Your job is to implement an API method, so that your teammate can use your API to implement his command.</p>
+<p><strong>Scenario:</strong> You are in charge of <code>model</code>. One day, the <code>logic</code>-in-charge approaches you for help. He wants to implement a command such that the user is able to remove a particular tag from every task in the task manager, but the model API does not support such a functionality at the moment. Your job is to implement an API method, so that your teammate can use your API to implement his command.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1614,7 +1878,7 @@ Do take a look at <a href="#Design-Model">Section 2.4, &#8220;Model component&#8
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a <code>removeTag(Tag)</code> method. The specified tag will be removed from everyone in the address book.</p>
+<p>Add a <code>removeTag(Tag)</code> method. The specified tag will be removed from every task in the task manager.</p>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
@@ -1624,13 +1888,13 @@ Do take a look at <a href="#Design-Model">Section 2.4, &#8220;Model component&#8
 <div class="ulist">
 <ul>
 <li>
-<p>The <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/model/Model.java"><code>Model</code></a> and the <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/model/AddressBook.java"><code>AddressBook</code></a> API need to be updated.</p>
+<p>The <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/model/Model.java"><code>Model</code></a> and the <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/model/TaskManager.java"><code>TaskManager</code></a> API need to be updated.</p>
 </li>
 <li>
 <p>Think about how you can use SLAP to design the method. Where should we place the main logic of deleting tags?</p>
 </li>
 <li>
-<p>Find out which of the existing API methods in  <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/model/AddressBook.java"><code>AddressBook</code></a> and <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/model/person/Person.java"><code>Person</code></a> classes can be used to implement the tag removal logic. <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/model/AddressBook.java"><code>AddressBook</code></a> allows you to update a person, and <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/model/person/Person.java"><code>Person</code></a> allows you to update the tags.</p>
+<p>Find out which of the existing API methods in  <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/model/TaskManager.java"><code>TaskManager</code></a> and <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/model/task/Task.java"><code>Task</code></a> classes can be used to implement the tag removal logic. <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/model/TaskManager.java"><code>TaskManager</code></a> allows you to update a task, and <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/model/task/Task.java"><code>Task</code></a> allows you to update the tags.</p>
 </li>
 </ul>
 </div>
@@ -1640,10 +1904,10 @@ Do take a look at <a href="#Design-Model">Section 2.4, &#8220;Model component&#8
 <div class="ulist">
 <ul>
 <li>
-<p>Implement a <code>removeTag(Tag)</code> method in <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/model/AddressBook.java"><code>AddressBook</code></a>. Loop through each person, and remove the <code>tag</code> from each person.</p>
+<p>Implement a <code>removeTag(Tag)</code> method in <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/model/TaskManager.java"><code>TaskManager</code></a>. Loop through each task, and remove the <code>tag</code> from each task.</p>
 </li>
 <li>
-<p>Add a new API method <code>deleteTag(Tag)</code> in <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/model/ModelManager.java"><code>ModelManager</code></a>. Your <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/model/ModelManager.java"><code>ModelManager</code></a> should call <code>AddressBook#removeTag(Tag)</code>.</p>
+<p>Add a new API method <code>deleteTag(Tag)</code> in <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/model/ModelManager.java"><code>ModelManager</code></a>. Your <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/model/ModelManager.java"><code>ModelManager</code></a> should call <code>TaskManager#removeTag(Tag)</code>.</p>
 </li>
 <li>
 <p>Add new tests for each of the new public methods that you have added.</p>
@@ -1663,7 +1927,7 @@ Do take a look at <a href="#Design-Model">Section 2.4, &#8220;Model component&#8
 </div>
 <h4 id="code-ui-code-component" class="discrete"><code>Ui</code> component</h4>
 <div class="paragraph">
-<p><strong>Scenario:</strong> You are in charge of <code>ui</code>. During a beta testing session, your team is observing how the users use your address book application. You realize that one of the users occasionally tries to delete non-existent tags from a contact, because the tags all look the same visually, and the user got confused. Another user made a typing mistake in his command, but did not realize he had done so because the error message wasn&#8217;t prominent enough. A third user keeps scrolling down the list, because he keeps forgetting the index of the last person in the list. Your job is to implement improvements to the UI to solve all these problems.</p>
+<p><strong>Scenario:</strong> You are in charge of <code>ui</code>. During a beta testing session, your team is observing how the users use your task manager application. You realize that one of the users occasionally tries to delete non-existent tags from a contact, because the tags all look the same visually, and the user got confused. Another user made a typing mistake in his command, but did not realize he had done so because the error message wasn&#8217;t prominent enough. A third user keeps scrolling down the list, because he keeps forgetting the index of the last task in the list. Your job is to implement improvements to the UI to solve all these problems.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1680,7 +1944,7 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Use different colors for different tags inside person cards. For example, <code>friends</code> tags can be all in brown, and <code>colleagues</code> tags can be all in yellow.</p>
+<p>Use different colors for different tags inside task cards. For example, <code>ungraded</code> tags can be all in brown, and <code>graded</code> tags can be all in yellow.</p>
 <div class="paragraph">
 <p><strong>Before</strong></p>
 </div>
@@ -1706,13 +1970,13 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <div class="ulist">
 <ul>
 <li>
-<p>The tag labels are created inside <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/ui/PersonCard.java">the <code>PersonCard</code> constructor</a> (<code>new Label(tag.tagName)</code>). <a href="https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Label.html">JavaFX&#8217;s <code>Label</code> class</a> allows you to modify the style of each Label, such as changing its color.</p>
+<p>The tag labels are created inside <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/ui/TaskCard.java">the <code>TaskCard</code> constructor</a> (<code>new Label(tag.tagName)</code>). <a href="https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Label.html">JavaFX&#8217;s <code>Label</code> class</a> allows you to modify the style of each Label, such as changing its color.</p>
 </li>
 <li>
 <p>Use the .css attribute <code>-fx-background-color</code> to add a color.</p>
 </li>
 <li>
-<p>You may wish to modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/resources/view/DarkTheme.css"><code>DarkTheme.css</code></a> to include some pre-defined colors using css, especially if you have experience with web-based css.</p>
+<p>You may wish to modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/resources/view/DarkTheme.css"><code>DarkTheme.css</code></a> to include some pre-defined colors using css, especially if you have experience with web-based css.</p>
 </li>
 </ul>
 </div>
@@ -1722,7 +1986,7 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <div class="ulist">
 <ul>
 <li>
-<p>You can modify the existing test methods for <code>PersonCard</code> 's to include testing the tag&#8217;s color as well.</p>
+<p>You can modify the existing test methods for <code>TaskCard</code> 's to include testing the tag&#8217;s color as well.</p>
 </li>
 <li>
 <p>See this <a href="https://github.com/se-edu/addressbook-level4/pull/798">PR</a> for the full solution.</p>
@@ -1743,7 +2007,7 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 </div>
 </li>
 <li>
-<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/commons/events/ui/NewResultAvailableEvent.java"><code>NewResultAvailableEvent</code></a> such that <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/ui/ResultDisplay.java"><code>ResultDisplay</code></a> can show a different style on error (currently it shows the same regardless of errors).</p>
+<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/commons/events/ui/NewResultAvailableEvent.java"><code>NewResultAvailableEvent</code></a> such that <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/ui/ResultDisplay.java"><code>ResultDisplay</code></a> can show a different style on error (currently it shows the same regardless of errors).</p>
 <div class="paragraph">
 <p><strong>Before</strong></p>
 </div>
@@ -1769,10 +2033,10 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/commons/events/ui/NewResultAvailableEvent.java"><code>NewResultAvailableEvent</code></a> is raised by <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/ui/CommandBox.java"><code>CommandBox</code></a> which also knows whether the result is a success or failure, and is caught by <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/ui/ResultDisplay.java"><code>ResultDisplay</code></a> which is where we want to change the style to.</p>
+<p><a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/commons/events/ui/NewResultAvailableEvent.java"><code>NewResultAvailableEvent</code></a> is raised by <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/ui/CommandBox.java"><code>CommandBox</code></a> which also knows whether the result is a success or failure, and is caught by <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/ui/ResultDisplay.java"><code>ResultDisplay</code></a> which is where we want to change the style to.</p>
 </li>
 <li>
-<p>Refer to <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/ui/CommandBox.java"><code>CommandBox</code></a> for an example on how to display an error.</p>
+<p>Refer to <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/ui/CommandBox.java"><code>CommandBox</code></a> for an example on how to display an error.</p>
 </li>
 </ul>
 </div>
@@ -1782,10 +2046,10 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <div class="ulist">
 <ul>
 <li>
-<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/commons/events/ui/NewResultAvailableEvent.java"><code>NewResultAvailableEvent</code></a> 's constructor so that users of the event can indicate whether an error has occurred.</p>
+<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/commons/events/ui/NewResultAvailableEvent.java"><code>NewResultAvailableEvent</code></a> 's constructor so that users of the event can indicate whether an error has occurred.</p>
 </li>
 <li>
-<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/ui/ResultDisplay.java"><code>ResultDisplay#handleNewResultAvailableEvent(NewResultAvailableEvent)</code></a> to react to this event appropriately.</p>
+<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/ui/ResultDisplay.java"><code>ResultDisplay#handleNewResultAvailableEvent(NewResultAvailableEvent)</code></a> to react to this event appropriately.</p>
 </li>
 <li>
 <p>You can write two different kinds of tests to ensure that the functionality works:</p>
@@ -1795,7 +2059,7 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <p>The unit tests for <code>ResultDisplay</code> can be modified to include verification of the color.</p>
 </li>
 <li>
-<p>The system tests <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/test/java/systemtests/AddressBookSystemTest.java"><code>AddressBookSystemTest#assertCommandBoxShowsDefaultStyle() and AddressBookSystemTest#assertCommandBoxShowsErrorStyle()</code></a> to include verification for <code>ResultDisplay</code> as well.</p>
+<p>The system tests <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/test/java/systemtests/TaskManagerSystemTest.java"><code>TaskManagerSystemTest#assertCommandBoxShowsDefaultStyle() and TaskManagerSystemTest#assertCommandBoxShowsErrorStyle()</code></a> to include verification for <code>ResultDisplay</code> as well.</p>
 </li>
 </ul>
 </div>
@@ -1819,7 +2083,7 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 </div>
 </li>
 <li>
-<p>Modify the <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/ui/StatusBarFooter.java"><code>StatusBarFooter</code></a> to show the total number of people in the address book.</p>
+<p>Modify the <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/ui/StatusBarFooter.java"><code>StatusBarFooter</code></a> to show the total number of tasks in the task manager.</p>
 <div class="paragraph">
 <p><strong>Before</strong></p>
 </div>
@@ -1845,10 +2109,10 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/resources/view/StatusBarFooter.fxml"><code>StatusBarFooter.fxml</code></a> will need a new <code>StatusBar</code>. Be sure to set the <code>GridPane.columnIndex</code> properly for each <code>StatusBar</code> to avoid misalignment!</p>
+<p><a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/resources/view/StatusBarFooter.fxml"><code>StatusBarFooter.fxml</code></a> will need a new <code>StatusBar</code>. Be sure to set the <code>GridPane.columnIndex</code> properly for each <code>StatusBar</code> to avoid misalignment!</p>
 </li>
 <li>
-<p><a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/ui/StatusBarFooter.java"><code>StatusBarFooter</code></a> needs to initialize the status bar on application start, and to update it accordingly whenever the address book is updated.</p>
+<p><a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/ui/StatusBarFooter.java"><code>StatusBarFooter</code></a> needs to initialize the status bar on application start, and to update it accordingly whenever the task manager is updated.</p>
 </li>
 </ul>
 </div>
@@ -1858,16 +2122,16 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <div class="ulist">
 <ul>
 <li>
-<p>Modify the constructor of <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/ui/StatusBarFooter.java"><code>StatusBarFooter</code></a> to take in the number of persons when the application just started.</p>
+<p>Modify the constructor of <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/ui/StatusBarFooter.java"><code>StatusBarFooter</code></a> to take in the number of tasks when the application just started.</p>
 </li>
 <li>
-<p>Use <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/ui/StatusBarFooter.java"><code>StatusBarFooter#handleAddressBookChangedEvent(AddressBookChangedEvent)</code></a> to update the number of persons whenever there are new changes to the addressbook.</p>
+<p>Use <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/ui/StatusBarFooter.java"><code>StatusBarFooter#handleAddressBookChangedEvent(AddressBookChangedEvent)</code></a> to update the number of tasks whenever there are new changes to the task manager.</p>
 </li>
 <li>
-<p>For tests, modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/test/java/guitests/guihandles/StatusBarFooterHandle.java"><code>StatusBarFooterHandle</code></a> by adding a state-saving functionality for the total number of people status, just like what we did for save location and sync status.</p>
+<p>For tests, modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/test/java/guitests/guihandles/StatusBarFooterHandle.java"><code>StatusBarFooterHandle</code></a> by adding a state-saving functionality for the total number of people status, just like what we did for save location and sync status.</p>
 </li>
 <li>
-<p>For system tests, modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/test/java/systemtests/AddressBookSystemTest.java"><code>AddressBookSystemTest</code></a> to also verify the new total number of persons status bar.</p>
+<p>For system tests, modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/test/java/systemtests/TaskManagerSystemTest.java"><code>TaskManagerSystemTest</code></a> to also verify the new total number of tasks status bar.</p>
 </li>
 <li>
 <p>See this <a href="https://github.com/se-edu/addressbook-level4/pull/803">PR</a> for the full solution.</p>
@@ -1884,7 +2148,7 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 </div>
 <h4 id="code-storage-code-component" class="discrete"><code>Storage</code> component</h4>
 <div class="paragraph">
-<p><strong>Scenario:</strong> You are in charge of <code>storage</code>. For your next project milestone, your team plans to implement a new feature of saving the address book to the cloud. However, the current implementation of the application constantly saves the address book after the execution of each command, which is not ideal if the user is working on limited internet connection. Your team decided that the application should instead save the changes to a temporary local backup file first, and only upload to the cloud after the user closes the application. Your job is to implement a backup API for the address book storage.</p>
+<p><strong>Scenario:</strong> You are in charge of <code>storage</code>. For your next project milestone, your team plans to implement a new feature of saving the task manager to the cloud. However, the current implementation of the application constantly saves the task manager after the execution of each command, which is not ideal if the user is working on limited internet connection. Your team decided that the application should instead save the changes to a temporary local backup file first, and only upload to the cloud after the user closes the application. Your job is to implement a backup API for the task manager storage.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1901,7 +2165,7 @@ Do take a look at <a href="#Design-Storage">Section 2.5, &#8220;Storage componen
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a new method <code>backupAddressBook(ReadOnlyAddressBook)</code>, so that the address book can be saved in a fixed temporary location.</p>
+<p>Add a new method <code>backupTaskManger(ReadOnlyTaskManager)</code>, so that the task manager can be saved in a fixed temporary location.</p>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
@@ -1911,18 +2175,11 @@ Do take a look at <a href="#Design-Storage">Section 2.5, &#8220;Storage componen
 <div class="ulist">
 <ul>
 <li>
-<p>Add the API method in <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/storage/AddressBookStorage.java"><code>AddressBookStorage</code></a> interface.</p>
+<p>Add the API method in <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/storage/TaskManagerStorage.java"><code>TaskManagerStorage</code></a> interface.</p>
 </li>
 <li>
-<p>Implement the logic in <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/storage/StorageManager.java"><code>StorageManager</code></a> and <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/storage/JsonAddressBookStorage.java"><code>JsonAddressBookStorage</code></a> class.</p>
+<p>Implement the logic in <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/storage/StorageManager.java"><code>StorageManager</code></a> and <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/storage/JsonTaskManagerStorage.java"><code>JsonTaskManagerStorage</code></a> class.</p>
 </li>
-</ul>
-</div>
-</li>
-<li>
-<p>Solution</p>
-<div class="ulist">
-<ul>
 <li>
 <p>See this <a href="https://github.com/se-edu/addressbook-level4/pull/594">PR</a> for the full solution.</p>
 </li>
@@ -1943,12 +2200,12 @@ Do take a look at <a href="#Design-Storage">Section 2.5, &#8220;Storage componen
 <p>By creating this command, you will get a chance to learn how to implement a feature end-to-end, touching all major components of the app.</p>
 </div>
 <div class="paragraph">
-<p><strong>Scenario:</strong> You are a software maintainer for <code>addressbook</code>, as the former developer team has moved on to new projects. The current users of your application have a list of new feature requests that they hope the software will eventually have. The most popular request is to allow adding additional comments/notes about a particular contact, by providing a flexible <code>remark</code> field for each contact, rather than relying on tags alone. After designing the specification for the <code>remark</code> command, you are convinced that this feature is worth implementing. Your job is to implement the <code>remark</code> command.</p>
+<p><strong>Scenario:</strong> As a software maintainer for <code>TaskManager</code>, after the former developer team has moved on, you are. The current users of your application have a list of new feature requests that they hope the software will eventually have. The most popular request is to allow adding additional comments/notes about a particular task, by providing a flexible <code>remark</code> field for each contact, rather than relying on tags alone. After designing the specification for the <code>remark</code> command, you are convinced that this feature is worth implementing. Your job is to implement the <code>remark</code> command.</p>
 </div>
 <div class="sect3">
 <h4 id="description"><a class="link" href="#description">A.2.1. Description</a></h4>
 <div class="paragraph">
-<p>Edits the remark for a person specified in the <code>INDEX</code>.<br>
+<p>Edits the remark for a task specified in the <code>INDEX</code>.<br>
 Format: <code>remark INDEX r/[REMARK]</code></p>
 </div>
 <div class="paragraph">
@@ -1957,12 +2214,12 @@ Format: <code>remark INDEX r/[REMARK]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>remark 1 r/Likes to drink coffee.</code><br>
-Edits the remark for the first person to <code>Likes to drink coffee.</code></p>
+<p><code>remark 1 r/Need to contact John for further details.</code><br>
+Edits the remark for the first task to <code>Need to contact John for further details.</code></p>
 </li>
 <li>
 <p><code>remark 1 r/</code><br>
-Removes the remark for the first person.</p>
+Removes the remark for the first task.</p>
 </li>
 </ul>
 </div>
@@ -1970,9 +2227,9 @@ Removes the remark for the first person.</p>
 <div class="sect3">
 <h4 id="step-by-step-instructions"><a class="link" href="#step-by-step-instructions">A.2.2. Step-by-step Instructions</a></h4>
 <div class="sect4">
-<h5 id="step-1-logic-teach-the-app-to-accept-remark-which-does-nothing"><a class="link" href="#step-1-logic-teach-the-app-to-accept-remark-which-does-nothing">[Step 1] Logic: Teach the app to accept 'remark' which does nothing</a></h5>
+<h5 id="step-1-logic-teach-the-app-to-accept-remark-as-a-command"><a class="link" href="#step-1-logic-teach-the-app-to-accept-remark-as-a-command">[Step 1] Logic: Teach the app to accept 'remark' as a command</a></h5>
 <div class="paragraph">
-<p>Let&#8217;s start by teaching the application how to parse a <code>remark</code> command. We will add the logic of <code>remark</code> later.</p>
+<p>Teach the application how to parse a <code>remark</code> command. The logic of <code>remark</code> will be added later.</p>
 </div>
 <div class="paragraph">
 <p><strong>Main:</strong></p>
@@ -1980,10 +2237,10 @@ Removes the remark for the first person.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a <code>RemarkCommand</code> that extends <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/logic/commands/Command.java"><code>Command</code></a>. Upon execution, it should just throw an <code>Exception</code>.</p>
+<p>Add a <code>RemarkCommand</code> that extends <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/logic/commands/Command.java"><code>Command</code></a>. Upon execution, it should throw an <code>Exception</code>.</p>
 </li>
 <li>
-<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/logic/parser/AddressBookParser.java"><code>AddressBookParser</code></a> to accept a <code>RemarkCommand</code>.</p>
+<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/logic/parser/TaskManagerParser.java"><code>TaskManagerParser</code></a> to accept a <code>RemarkCommand</code>.</p>
 </li>
 </ol>
 </div>
@@ -1993,10 +2250,10 @@ Removes the remark for the first person.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add <code>RemarkCommandTest</code> that tests that <code>execute()</code> throws an Exception.</p>
+<p>Add a <code>RemarkCommandTest</code> that tests that <code>execute()</code> throws an Exception.</p>
 </li>
 <li>
-<p>Add new test method to <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/test/java/seedu/address/logic/parser/AddressBookParserTest.java"><code>AddressBookParserTest</code></a>, which tests that typing "remark" returns an instance of <code>RemarkCommand</code>.</p>
+<p>Add a new test method to <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/test/java/seedu/address/logic/parser/TaskManagerParserTest.java"><code>TaskManagerParserTest</code></a>, which tests that typing "remark" returns an instance of <code>RemarkCommand</code>.</p>
 </li>
 </ol>
 </div>
@@ -2004,7 +2261,7 @@ Removes the remark for the first person.</p>
 <div class="sect4">
 <h5 id="step-2-logic-teach-the-app-to-accept-remark-arguments"><a class="link" href="#step-2-logic-teach-the-app-to-accept-remark-arguments">[Step 2] Logic: Teach the app to accept 'remark' arguments</a></h5>
 <div class="paragraph">
-<p>Let&#8217;s teach the application to parse arguments that our <code>remark</code> command will accept. E.g. <code>1 r/Likes to drink coffee.</code></p>
+<p>Teach the application to parse arguments that our <code>remark</code> command will accept. E.g. <code>1 r/Need to contact John for further details.</code></p>
 </div>
 <div class="paragraph">
 <p><strong>Main:</strong></p>
@@ -2018,7 +2275,7 @@ Removes the remark for the first person.</p>
 <p>Add <code>RemarkCommandParser</code> that knows how to parse two arguments, one index and one with prefix 'r/'.</p>
 </li>
 <li>
-<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/logic/parser/AddressBookParser.java"><code>AddressBookParser</code></a> to use the newly implemented <code>RemarkCommandParser</code>.</p>
+<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/logic/parser/TaskManagerParser.java"><code>TaskManagerParser</code></a> to use the newly implemented <code>RemarkCommandParser</code>.</p>
 </li>
 </ol>
 </div>
@@ -2031,19 +2288,18 @@ Removes the remark for the first person.</p>
 <p>Modify <code>RemarkCommandTest</code> to test the <code>RemarkCommand#equals()</code> method.</p>
 </li>
 <li>
-<p>Add <code>RemarkCommandParserTest</code> that tests different boundary values
-for <code>RemarkCommandParser</code>.</p>
+<p>Add <code>RemarkCommandParserTest</code> that tests different boundary values for <code>RemarkCommandParser</code>.</p>
 </li>
 <li>
-<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/test/java/seedu/address/logic/parser/AddressBookParserTest.java"><code>AddressBookParserTest</code></a> to test that the correct command is generated according to the user input.</p>
+<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/test/java/seedu/address/logic/parser/TaskManagerParserTest.java"><code>TaskManagerParserTest</code></a> to test that the correct command is generated according to the user input.</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect4">
-<h5 id="step-3-ui-add-a-placeholder-for-remark-in-code-personcard-code"><a class="link" href="#step-3-ui-add-a-placeholder-for-remark-in-code-personcard-code">[Step 3] Ui: Add a placeholder for remark in <code>PersonCard</code></a></h5>
+<h5 id="step-3-ui-add-a-placeholder-for-remarks-in-code-taskcard-code"><a class="link" href="#step-3-ui-add-a-placeholder-for-remarks-in-code-taskcard-code">[Step 3] Ui: Add a placeholder for remarks in <code>TaskCard</code></a></h5>
 <div class="paragraph">
-<p>Let&#8217;s add a placeholder on all our <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/ui/PersonCard.java"><code>PersonCard</code></a> s to display a remark for each person later.</p>
+<p>Add a placeholder on all <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/ui/TaskCard.java"><code>TaskCard</code></a>s to display a remark for each task later.</p>
 </div>
 <div class="paragraph">
 <p><strong>Main:</strong></p>
@@ -2051,10 +2307,10 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a <code>Label</code> with any random text inside <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/resources/view/PersonListCard.fxml"><code>PersonListCard.fxml</code></a>.</p>
+<p>Add a <code>Label</code> with placeholder text inside <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/resources/view/TaskListCard.fxml"><code>TaskListCard.fxml</code></a>.</p>
 </li>
 <li>
-<p>Add FXML annotation in <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/ui/PersonCard.java"><code>PersonCard</code></a> to tie the variable to the actual label.</p>
+<p>Add FXML annotation in <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/ui/TaskCard.java"><code>TaskCard</code></a> to tie the variable to the actual label.</p>
 </li>
 </ol>
 </div>
@@ -2064,15 +2320,15 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/test/java/guitests/guihandles/PersonCardHandle.java"><code>PersonCardHandle</code></a> so that future tests can read the contents of the remark label.</p>
+<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/test/java/guitests/guihandles/TaskCardHandle.java"><code>TaskCardHandle</code></a> so that future tests can read the contents of the remark label.</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect4">
-<h5 id="step-4-model-add-code-remark-code-class"><a class="link" href="#step-4-model-add-code-remark-code-class">[Step 4] Model: Add <code>Remark</code> class</a></h5>
+<h5 id="step-4-model-add-a-code-remark-code-class"><a class="link" href="#step-4-model-add-a-code-remark-code-class">[Step 4] Model: Add a <code>Remark</code> class</a></h5>
 <div class="paragraph">
-<p>We have to properly encapsulate the remark in our <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/model/person/Person.java"><code>Person</code></a> class. Instead of just using a <code>String</code>, let&#8217;s follow the conventional class structure that the codebase already uses by adding a <code>Remark</code> class.</p>
+<p>Practice proper encapsulation when adding the remark in the <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/model/task/Task.java"><code>Task</code></a> class. Instead of a <code>String</code>, follow the conventional class structure that the codebase uses by adding a <code>Remark</code> class.</p>
 </div>
 <div class="paragraph">
 <p><strong>Main:</strong></p>
@@ -2080,10 +2336,10 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add <code>Remark</code> to model component (you can copy from <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/model/person/Address.java"><code>Address</code></a>, remove the regex and change the names accordingly).</p>
+<p>Add <code>Remark</code> to the model (you can copy from <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/model/task/Name.java"><code>Name</code></a>, remove the regex and change the names accordingly).</p>
 </li>
 <li>
-<p>Modify <code>RemarkCommand</code> to now take in a <code>Remark</code> instead of a <code>String</code>.</p>
+<p>Modify <code>RemarkCommand</code> to take in a <code>Remark</code> instead of a <code>String</code>.</p>
 </li>
 </ol>
 </div>
@@ -2093,15 +2349,15 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add test for <code>Remark</code>, to test the <code>Remark#equals()</code> method.</p>
+<p>Add a test for <code>Remark</code>, to test the <code>Remark#equals()</code> method.</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect4">
-<h5 id="step-5-model-modify-code-person-code-to-support-a-code-remark-code-field"><a class="link" href="#step-5-model-modify-code-person-code-to-support-a-code-remark-code-field">[Step 5] Model: Modify <code>Person</code> to support a <code>Remark</code> field</a></h5>
+<h5 id="step-5-model-modify-code-task-code-to-support-a-code-remark-code-field"><a class="link" href="#step-5-model-modify-code-task-code-to-support-a-code-remark-code-field">[Step 5] Model: Modify <code>Task</code> to support a <code>Remark</code> field</a></h5>
 <div class="paragraph">
-<p>Now we have the <code>Remark</code> class, we need to actually use it inside <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/model/person/Person.java"><code>Person</code></a>.</p>
+<p>Implement <code>Remark</code> in <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/model/task/Task.java"><code>Task</code></a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Main:</strong></p>
@@ -2109,21 +2365,21 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add <code>getRemark()</code> in <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/model/person/Person.java"><code>Person</code></a>.</p>
+<p>Add <code>getRemark()</code> in <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/model/task/Task.java"><code>Task</code></a>.</p>
 </li>
 <li>
-<p>You may assume that the user will not be able to use the <code>add</code> and <code>edit</code> commands to modify the remarks field (i.e. the person will be created without a remark).</p>
+<p>Assume that the user will not be able to use the <code>add</code> and <code>edit</code> commands to modify the remarks field (i.e. the task will be created without a remark).</p>
 </li>
 <li>
-<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/model/util/SampleDataUtil.java/"><code>SampleDataUtil</code></a> to add remarks for the sample data (delete your <code>data/taskmanager.json</code> so that the application will load the sample data when you launch it.)</p>
+<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/model/util/SampleDataUtil.java/"><code>SampleDataUtil</code></a> to add remarks for the sample data (delete <code>data/taskmanager.json</code> so that the application will load the sample data when launched).</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect4">
-<h5 id="step-6-storage-add-code-remark-code-field-to-code-jsonadaptedperson-code-class"><a class="link" href="#step-6-storage-add-code-remark-code-field-to-code-jsonadaptedperson-code-class">[Step 6] Storage: Add <code>Remark</code> field to <code>JsonAdaptedPerson</code> class</a></h5>
+<h5 id="step-6-storage-add-code-remark-code-field-to-the-code-jsonadaptedtask-code-class"><a class="link" href="#step-6-storage-add-code-remark-code-field-to-the-code-jsonadaptedtask-code-class">[Step 6] Storage: Add <code>Remark</code> field to the <code>JsonAdaptedTask</code> class</a></h5>
 <div class="paragraph">
-<p>We now have <code>Remark</code> s for <code>Person</code> s, but they will be gone when we exit the application. Let&#8217;s modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/storage/JsonAdaptedPerson.java"><code>JsonAdaptedPerson</code></a> to include a <code>Remark</code> field so that it will be saved.</p>
+<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/storage/JsonAdaptedTask.java"><code>JsonAdaptedTask</code></a> to include a <code>Remark</code> field so that it will be saved when the application is exited.</p>
 </div>
 <div class="paragraph">
 <p><strong>Main:</strong></p>
@@ -2147,9 +2403,9 @@ for <code>RemarkCommandParser</code>.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="step-6b-test-add-withremark-for-code-personbuilder-code"><a class="link" href="#step-6b-test-add-withremark-for-code-personbuilder-code">[Step 6b] Test: Add withRemark() for <code>PersonBuilder</code></a></h5>
+<h5 id="step-6b-test-add-withremark-for-code-taskbuilder-code"><a class="link" href="#step-6b-test-add-withremark-for-code-taskbuilder-code">[Step 6b] Test: Add withRemark() for <code>TaskBuilder</code></a></h5>
 <div class="paragraph">
-<p>Since <code>Person</code> can now have a <code>Remark</code>, we should add a helper method to <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/test/java/seedu/address/testutil/PersonBuilder.java"><code>PersonBuilder</code></a>, so that users are able to create remarks when building a <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/model/person/Person.java"><code>Person</code></a>.</p>
+<p>Add a helper method to <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/test/java/seedu/address/testutil/TaskBuilder.java"><code>TaskBuilder</code></a>, so that users are able to create remarks when building a <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/model/task/Task.java"><code>Task</code></a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Tests:</strong></p>
@@ -2157,18 +2413,18 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a new method <code>withRemark()</code> for <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/test/java/seedu/address/testutil/PersonBuilder.java"><code>PersonBuilder</code></a>. This method will create a new <code>Remark</code> for the person that it is currently building.</p>
+<p>Add a new method <code>withRemark()</code> for <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/test/java/seedu/address/testutil/TaskBuilder.java"><code>TaskBuilder</code></a>. This method will create a new <code>Remark</code> for the <code>Task</code> that it is currently building.</p>
 </li>
 <li>
-<p>Try and use the method on any sample <code>Person</code> in <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/test/java/seedu/address/testutil/TypicalPersons.java"><code>TypicalPersons</code></a>.</p>
+<p>Try to use the method on any sample <code>Task</code> in <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/test/java/seedu/address/testutil/TypicalTasks.java"><code>TypicalTasks</code></a>.</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect4">
-<h5 id="step-7-ui-connect-code-remark-code-field-to-code-personcard-code"><a class="link" href="#step-7-ui-connect-code-remark-code-field-to-code-personcard-code">[Step 7] Ui: Connect <code>Remark</code> field to <code>PersonCard</code></a></h5>
+<h5 id="step-7-ui-connect-code-remark-code-field-to-code-taskcard-code"><a class="link" href="#step-7-ui-connect-code-remark-code-field-to-code-taskcard-code">[Step 7] Ui: Connect <code>Remark</code> field to <code>TaskCard</code></a></h5>
 <div class="paragraph">
-<p>Our remark label in <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/ui/PersonCard.java"><code>PersonCard</code></a> is still a placeholder. Let&#8217;s bring it to life by binding it with the actual <code>remark</code> field.</p>
+<p>Bind the remark label in <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/ui/TaskCard.java"><code>TaskCard</code></a> with the actual <code>remark</code> field.</p>
 </div>
 <div class="paragraph">
 <p><strong>Main:</strong></p>
@@ -2176,7 +2432,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/main/java/seedu/address/ui/PersonCard.java"><code>PersonCard</code></a>'s constructor to bind the <code>Remark</code> field to the <code>Person</code> 's remark.</p>
+<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/ui/TaskCard.java"><code>TaskCard</code></a>'s constructor to bind the <code>Remark</code> field to the `Task&#8217;s remark.</p>
 </li>
 </ol>
 </div>
@@ -2186,7 +2442,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main//src/test/java/seedu/address/ui/testutil/GuiTestAssert.java"><code>GuiTestAssert#assertCardDisplaysPerson(&#8230;&#8203;)</code></a> so that it will compare the now-functioning remark label.</p>
+<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/test/java/seedu/address/ui/testutil/GuiTestAssert.java"><code>GuiTestAssert#assertCardDisplaysTask(&#8230;&#8203;)</code></a> so that it will compare the now-functioning remark label.</p>
 </li>
 </ol>
 </div>
@@ -2194,7 +2450,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="sect4">
 <h5 id="step-8-logic-implement-code-remarkcommand-execute-code-logic"><a class="link" href="#step-8-logic-implement-code-remarkcommand-execute-code-logic">[Step 8] Logic: Implement <code>RemarkCommand#execute()</code> logic</a></h5>
 <div class="paragraph">
-<p>We now have everything set up&#8230;&#8203; but we still can&#8217;t modify the remarks. Let&#8217;s finish it up by adding in actual logic for our <code>remark</code> command.</p>
+<p>Add in actual logic for the <code>remark</code> command.</p>
 </div>
 <div class="paragraph">
 <p><strong>Main:</strong></p>
@@ -2202,7 +2458,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Replace the logic in <code>RemarkCommand#execute()</code> (that currently just throws an <code>Exception</code>), with the actual logic to modify the remarks of a person.</p>
+<p>Replace the logic in <code>RemarkCommand#execute()</code> (that currently just throws an <code>Exception</code>), with the actual logic to modify the remarks of a task.</p>
 </li>
 </ol>
 </div>
@@ -2221,7 +2477,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="sect3">
 <h4 id="full-solution"><a class="link" href="#full-solution">A.2.3. Full Solution</a></h4>
 <div class="paragraph">
-<p>See this <a href="https://github.com/se-edu/addressbook-level4/pull/599">PR</a> for the step-by-step solution.</p>
+<p>See this <a href="https://github.com/se-edu/addressbook-level4/pull/599">PR</a> for the step-by-step solution for a similar application.</p>
 </div>
 </div>
 </div>
@@ -2236,10 +2492,10 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>has a need to manage a significant number of contacts</p>
+<p>has a need to manage a significant number of tasks</p>
 </li>
 <li>
-<p>prefer desktop apps over other types</p>
+<p>prefer desktop apps over other apps on other platforms</p>
 </li>
 <li>
 <p>can type fast</p>
@@ -2253,7 +2509,7 @@ for <code>RemarkCommandParser</code>.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Value proposition</strong>: manage contacts faster than a typical mouse/GUI driven app</p>
+<p><strong>Value proposition</strong>: manage tasks faster than a typical mouse/GUI driven app</p>
 </div>
 </div>
 </div>
@@ -2288,32 +2544,104 @@ for <code>RemarkCommandParser</code>.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add a new event</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add a new task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of tasks and deadlines</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete a event</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">remove entries that I no longer need</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete a task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove tasks that I no longer need</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">edit an event</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep entries up to date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit an task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep tasks up to date</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find a event by name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find a task by name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">locate details of a task without having to go through the entire list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have an intuitive and easy-to-read calender</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view upcoming tasks quickly and easily</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have the calender update in real time as tasks are added or removed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">instantly view changes made to the list of tasks</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sort my tasks by the attributes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can view my tasks by urgency etc.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">secure my task manager via a username and password to keep my events safe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep my events and due dates private and secure to minimize the chances of someone deleting them</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have my password hashed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep my password safe without anyone easily retrieving them through my computer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have admins to be able to access over my account</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">allow them to add or edit any tasks</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have just one task manager account</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">make things simple and minimal</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">administrator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be able to delete an account</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">assist the user by resetting their account if they forget their password</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have an tasks on the calendar sorted in order of priority</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">easily see which tasks are the most urgent</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have an tasks on the calendar colour-coded in order of priority</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">easily see which tasks are the most urgent</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have the selected task highlighted on the calendar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">easily view the selected task&#8217;s deadline</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find a task by name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">locate details of event without having to go through the entire list</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">have multiple events with different tags for a single entry</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">combine duplicate events and prevent cofusion for multiple same events</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have multiple tasks with different tags for a single entry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">combine duplicate events and prevent confusion for multiple same events</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
@@ -2330,32 +2658,41 @@ for <code>RemarkCommandParser</code>.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">change the colours and sizes of the text</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">make things easier to read</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">store miscellaneous notes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of important events other than tasks</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">secure my task manager via a username and password to hide contacts by default</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep my events and due dates private and secure to minimize the chances of someone seeing them by accident</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have just one task manager account</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">make things simple and minimal</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">change the theme of the GUI</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">administrator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be able to use commands like the user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">assign task and deadlines to the user</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">have the program autocomplete my inputs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">change the theme of the GUI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">allow me to customise the app&#8217;s appearance to my liking</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have the program automatically complete my inputs</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">save time by not having to write out the entire command or search query</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">change the colours and sizes of the text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">make things easier to read</p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2451,7 +2788,7 @@ for <code>RemarkCommandParser</code>.</p>
 <p>User requests to delete a specific task in the list</p>
 </li>
 <li>
-<p>Task Manager deletes the person</p>
+<p>Task Manager deletes the task</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2558,14 +2895,14 @@ for <code>RemarkCommandParser</code>.</p>
 </li>
 </ul>
 </div>
-<h3 id="use-case-find-task" class="discrete">Use case: Find task</h3>
+<h3 id="use-case-find-task-by-name" class="discrete">Use case: Find task by name</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to find a task</p>
+<p>User requests to find a task by name</p>
 </li>
 <li>
 <p>Task Manager shows the tasks according to user&#8217;s input</p>
@@ -2605,8 +2942,194 @@ for <code>RemarkCommandParser</code>.</p>
 </li>
 </ul>
 </div>
+<div class="sect2">
+<h3 id="use-case-find-task-by-module"><a class="link" href="#use-case-find-task-by-module">D.1. Use case: Find task by module</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to find a task by module</p>
+</li>
+<li>
+<p>Task Manager shows the tasks according to user&#8217;s input</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b. The given index is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2bi. Task manager shows an error</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-find-task-by-date"><a class="link" href="#use-case-find-task-by-date">D.2. Use case: Find task by date</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to find a task by date</p>
+</li>
+<li>
+<p>Task Manager shows the tasks according to user&#8217;s input</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b. The given index is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2bi. Task manager shows an error</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-find-task-by-priority"><a class="link" href="#use-case-find-task-by-priority">D.3. Use case: Find task by priority</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to find a task by priority</p>
+</li>
+<li>
+<p>Task Manager shows the tasks according to user&#8217;s input</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b. The given index is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2bi. Task manager shows an error</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-sort-tasks"><a class="link" href="#use-case-sort-tasks">D.4. Use case: Sort tasks</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to sort tasks by an attribute</p>
+</li>
+<li>
+<p>Task Manager sorts the tasks according to user&#8217;s input</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b. The given index is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1ai. Task manager shows an error</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p><em>{More to be added}</em></p>
+</div>
 </div>
 </div>
 </div>
@@ -2619,7 +3142,7 @@ for <code>RemarkCommandParser</code>.</p>
 <p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>9</code> or higher installed.</p>
 </li>
 <li>
-<p>Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.</p>
+<p>Should be able to hold up to 1000 tasks without a noticeable sluggishness in performance for typical usage.</p>
 </li>
 <li>
 <p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
@@ -2769,4 +3292,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-26 13:33:54 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-03-31 12:06:25 UTC</div></div></div></body></html>
