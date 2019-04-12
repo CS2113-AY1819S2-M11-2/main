@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Task Manager - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Student Buddy - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">Task Manager</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2113-AY1819S2-M11-2/main/"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Task Manager - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">Student Buddy</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2113-AY1819S2-M11-2/main/"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Student Buddy - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>M11-02</code>      Since: <code>Feb 2019</code>      Licence: <code>MIT</code></p>
@@ -9,60 +9,62 @@
 <div id="toc" class="toc">
 <div id="toctitle"></div>
 <ul class="sectlevel1">
-<li><a href="#setting-up">1. Setting up</a>
+<li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#setting-up">2. Setting up</a>
 <ul class="sectlevel2">
-<li><a href="#prerequisites">1.1. Prerequisites</a></li>
-<li><a href="#setting-up-the-project-in-your-computer">1.2. Setting up the project in your computer</a></li>
-<li><a href="#verifying-the-setup">1.3. Verifying the setup</a></li>
-<li><a href="#configurations-to-do-before-writing-code">1.4. Configurations to do before writing code</a></li>
+<li><a href="#prerequisites">2.1. Prerequisites</a></li>
+<li><a href="#setting-up-the-project-in-your-computer">2.2. Setting up the project in your computer</a></li>
+<li><a href="#verifying-the-setup">2.3. Verifying the setup</a></li>
+<li><a href="#configurations-to-do-before-writing-code">2.4. Configurations to do before writing code</a></li>
 </ul>
 </li>
-<li><a href="#design">2. Design</a>
+<li><a href="#design">3. Design</a>
 <ul class="sectlevel2">
-<li><a href="#Design-Architecture">2.1. Architecture</a></li>
-<li><a href="#Design-Ui">2.2. UI component</a></li>
-<li><a href="#Design-Logic">2.3. Logic component</a></li>
-<li><a href="#Design-Model">2.4. Model component</a></li>
-<li><a href="#Design-Storage">2.5. Storage component</a></li>
-<li><a href="#Design-Commons">2.6. Common classes</a></li>
+<li><a href="#Design-Architecture">3.1. Architecture</a></li>
+<li><a href="#Design-Ui">3.2. UI component</a></li>
+<li><a href="#Design-Logic">3.3. Logic component</a></li>
+<li><a href="#Design-Model">3.4. Model component</a></li>
+<li><a href="#Design-Storage">3.5. Storage component</a></li>
+<li><a href="#Design-Commons">3.6. Common classes</a></li>
 </ul>
 </li>
-<li><a href="#implementation">3. Implementation</a>
+<li><a href="#implementation">4. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#undo-redo-feature">3.1. Undo/Redo feature</a></li>
-<li><a href="#login-feature">3.2. Login Feature</a></li>
-<li><a href="#notes-feature">3.3. Notes Feature</a></li>
-<li><a href="#sort-task-list-feature">3.4. Sort Task List Feature</a></li>
-<li><a href="#calendar-feature">3.5. Calendar feature</a></li>
-<li><a href="#logging">3.6. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.7. Configuration</a></li>
+<li><a href="#login-feature">4.1. Login Feature</a></li>
+<li><a href="#add-notes-feature">4.2. Add Notes Feature</a></li>
+<li><a href="#delete-notes-feature">4.3. Delete Notes Feature</a></li>
+<li><a href="#sort-task-list-feature">4.4. Sort Task List Feature</a></li>
+<li><a href="#calendar-feature">4.5. Calendar feature</a></li>
+<li><a href="#month-view-change-feature">4.6. Month view change feature</a></li>
+<li><a href="#logging">4.7. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.8. Configuration</a></li>
 </ul>
 </li>
-<li><a href="#documentation">4. Documentation</a>
+<li><a href="#documentation">5. Documentation</a>
 <ul class="sectlevel2">
-<li><a href="#editing-documentation">4.1. Editing Documentation</a></li>
-<li><a href="#publishing-documentation">4.2. Publishing Documentation</a></li>
-<li><a href="#converting-documentation-to-pdf-format">4.3. Converting Documentation to PDF format</a></li>
-<li><a href="#Docs-SiteWideDocSettings">4.4. Site-wide Documentation Settings</a></li>
-<li><a href="#Docs-PerFileDocSettings">4.5. Per-file Documentation Settings</a></li>
-<li><a href="#site-template">4.6. Site Template</a></li>
+<li><a href="#editing-documentation">5.1. Editing Documentation</a></li>
+<li><a href="#publishing-documentation">5.2. Publishing Documentation</a></li>
+<li><a href="#converting-documentation-to-pdf-format">5.3. Converting Documentation to PDF format</a></li>
+<li><a href="#Docs-SiteWideDocSettings">5.4. Site-wide Documentation Settings</a></li>
+<li><a href="#Docs-PerFileDocSettings">5.5. Per-file Documentation Settings</a></li>
+<li><a href="#site-template">5.6. Site Template</a></li>
 </ul>
 </li>
-<li><a href="#Testing">5. Testing</a>
+<li><a href="#Testing">6. Testing</a>
 <ul class="sectlevel2">
-<li><a href="#running-tests">5.1. Running Tests</a></li>
-<li><a href="#types-of-tests">5.2. Types of tests</a></li>
-<li><a href="#troubleshooting-testing">5.3. Troubleshooting Testing</a></li>
+<li><a href="#running-tests">6.1. Running Tests</a></li>
+<li><a href="#types-of-tests">6.2. Types of tests</a></li>
+<li><a href="#troubleshooting-testing">6.3. Troubleshooting Testing</a></li>
 </ul>
 </li>
-<li><a href="#dev-ops">6. Dev Ops</a>
+<li><a href="#dev-ops">7. Dev Ops</a>
 <ul class="sectlevel2">
-<li><a href="#build-automation">6.1. Build Automation</a></li>
-<li><a href="#continuous-integration">6.2. Continuous Integration</a></li>
-<li><a href="#coverage-reporting">6.3. Coverage Reporting</a></li>
-<li><a href="#documentation-previews">6.4. Documentation Previews</a></li>
-<li><a href="#making-a-release">6.5. Making a Release</a></li>
-<li><a href="#managing-dependencies">6.6. Managing Dependencies</a></li>
+<li><a href="#build-automation">7.1. Build Automation</a></li>
+<li><a href="#continuous-integration">7.2. Continuous Integration</a></li>
+<li><a href="#coverage-reporting">7.3. Coverage Reporting</a></li>
+<li><a href="#documentation-previews">7.4. Documentation Previews</a></li>
+<li><a href="#making-a-release">7.5. Making a Release</a></li>
+<li><a href="#managing-dependencies">7.6. Managing Dependencies</a></li>
 </ul>
 </li>
 <li><a href="#GetStartedProgramming">Appendix A: Suggested Programming Tasks to Get Started</a>
@@ -94,10 +96,18 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="setting-up"><a class="link" href="#setting-up">1. Setting up</a></h2>
+<h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Student Buddy is a desktop application tailored for users who are comfortable with using a Command Line Interface (CLI), while retaining a Graphical User Interface (GUI) for ease of use. The use of a CLI for user input allows users to manage their tasks more efficiently than when using a conventional user interface.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="setting-up"><a class="link" href="#setting-up">2. Setting up</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="prerequisites"><a class="link" href="#prerequisites">1.1. Prerequisites</a></h3>
+<h3 id="prerequisites"><a class="link" href="#prerequisites">2.1. Prerequisites</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -136,7 +146,7 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 </div>
 </div>
 <div class="sect2">
-<h3 id="setting-up-the-project-in-your-computer"><a class="link" href="#setting-up-the-project-in-your-computer">1.2. Setting up the project in your computer</a></h3>
+<h3 id="setting-up-the-project-in-your-computer"><a class="link" href="#setting-up-the-project-in-your-computer">2.2. Setting up the project in your computer</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -194,7 +204,7 @@ This will generate all resources required by the application and tests.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="verifying-the-setup"><a class="link" href="#verifying-the-setup">1.3. Verifying the setup</a></h3>
+<h3 id="verifying-the-setup"><a class="link" href="#verifying-the-setup">2.3. Verifying the setup</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -207,9 +217,9 @@ This will generate all resources required by the application and tests.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="configurations-to-do-before-writing-code"><a class="link" href="#configurations-to-do-before-writing-code">1.4. Configurations to do before writing code</a></h3>
+<h3 id="configurations-to-do-before-writing-code"><a class="link" href="#configurations-to-do-before-writing-code">2.4. Configurations to do before writing code</a></h3>
 <div class="sect3">
-<h4 id="configuring-the-coding-style"><a class="link" href="#configuring-the-coding-style">1.4.1. Configuring the coding style</a></h4>
+<h4 id="configuring-the-coding-style"><a class="link" href="#configuring-the-coding-style">2.4.1. Configuring the coding style</a></h4>
 <div class="paragraph">
 <p>This project follows <a href="https://github.com/oss-generic/process/blob/master/docs/CodingStandards.adoc">oss-generic coding standards</a>. IntelliJ&#8217;s default style is mostly compliant with ours but it uses a different import order from ours. To rectify,</p>
 </div>
@@ -241,7 +251,7 @@ This will generate all resources required by the application and tests.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="updating-documentation-to-match-your-fork"><a class="link" href="#updating-documentation-to-match-your-fork">1.4.2. Updating documentation to match your fork</a></h4>
+<h4 id="updating-documentation-to-match-your-fork"><a class="link" href="#updating-documentation-to-match-your-fork">2.4.2. Updating documentation to match your fork</a></h4>
 <div class="paragraph">
 <p>After forking the repo, the documentation will still have the SE-EDU branding and refer to the <code>se-edu/addressbook-level4</code> repo.</p>
 </div>
@@ -260,7 +270,7 @@ This will generate all resources required by the application and tests.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="setting-up-ci"><a class="link" href="#setting-up-ci">1.4.3. Setting up CI</a></h4>
+<h4 id="setting-up-ci"><a class="link" href="#setting-up-ci">2.4.3. Setting up CI</a></h4>
 <div class="paragraph">
 <p>Set up Travis to perform Continuous Integration (CI) for your fork. See <a href="UsingTravis.html">UsingTravis.adoc</a> to learn how to set it up.</p>
 </div>
@@ -296,14 +306,14 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 </div>
 </div>
 <div class="sect3">
-<h4 id="getting-started-with-coding"><a class="link" href="#getting-started-with-coding">1.4.4. Getting started with coding</a></h4>
+<h4 id="getting-started-with-coding"><a class="link" href="#getting-started-with-coding">2.4.4. Getting started with coding</a></h4>
 <div class="paragraph">
 <p>When you are ready to start coding,</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Get some sense of the overall design by reading <a href="#Design-Architecture">Section 2.1, &#8220;Architecture&#8221;</a>.</p>
+<p>Get some sense of the overall design by reading <a href="#Design-Architecture">Section 3.1, &#8220;Architecture&#8221;</a>.</p>
 </li>
 <li>
 <p>Take a look at <a href="#GetStartedProgramming">Appendix A, <em>Suggested Programming Tasks to Get Started</em></a>.</p>
@@ -315,10 +325,10 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 </div>
 </div>
 <div class="sect1">
-<h2 id="design"><a class="link" href="#design">2. Design</a></h2>
+<h2 id="design"><a class="link" href="#design">3. Design</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">2.1. Architecture</a></h3>
+<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">3.1. Architecture</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/Architecture.png" alt="Architecture" width="600">
@@ -420,7 +430,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">2.2. UI component</a></h3>
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">3.2. UI component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram" width="800">
@@ -451,7 +461,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Logic"><a class="link" href="#Design-Logic">2.3. Logic component</a></h3>
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">3.3. Logic component</a></h3>
 <div id="fig-LogicClassDiagram" class="imageblock">
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram" width="800">
@@ -492,7 +502,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">2.4. Model component</a></h3>
+<h3 id="Design-Model"><a class="link" href="#Design-Model">3.4. Model component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram" width="800">
@@ -511,7 +521,7 @@ The following class plays an important role at the architecture level:</p>
 <p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
 </li>
 <li>
-<p>stores the Task Manager data.</p>
+<p>stores the user&#8217;s data.</p>
 </li>
 <li>
 <p>exposes an unmodifiable <code>ObservableList&lt;Task&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
@@ -537,7 +547,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Task Manager<
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.5. Storage component</a></h3>
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram" width="800">
@@ -562,7 +572,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Task Manager<
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Commons"><a class="link" href="#Design-Commons">2.6. Common classes</a></h3>
+<h3 id="Design-Commons"><a class="link" href="#Design-Commons">3.6. Common classes</a></h3>
 <div class="paragraph">
 <p>Classes used by multiple components are in the <code>seedu.address.commons</code> package.</p>
 </div>
@@ -570,218 +580,15 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Task Manager<
 </div>
 </div>
 <div class="sect1">
-<h2 id="implementation"><a class="link" href="#implementation">3. Implementation</a></h2>
+<h2 id="implementation"><a class="link" href="#implementation">4. Implementation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">3.1. Undo/Redo feature</a></h3>
+<h3 id="login-feature"><a class="link" href="#login-feature">4.1. Login Feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">3.1.1. Current Implementation</a></h4>
-<div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedTaskManager</code>.
-It extends <code>TaskManager</code> with an undo/redo history, stored internally as an <code>taskManagerStateList</code> and <code>currentStatePointer</code>.
-Additionally, it implements the following operations:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>VersionedTaskManager#commit()</code>&#8201;&#8212;&#8201;Saves the current task manager state in its history.</p>
-</li>
-<li>
-<p><code>VersionedTaskManager#undo()</code>&#8201;&#8212;&#8201;Restores the previous task manager state from its history.</p>
-</li>
-<li>
-<p><code>VersionedTaskManager#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone task manager state from its history.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitTaskManager()</code>, <code>Model#undoTaskManager()</code> and <code>Model#redoTaskManager()</code> respectively.</p>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedTaskManager</code> will be initialized with the initial task manager state, and the <code>currentStatePointer</code> pointing to that single task manager state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoStartingStateListDiagram.png" alt="UndoRedoStartingStateListDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th task in the task manager. The <code>delete</code> command calls <code>Model#commitTaskManager()</code>, causing the modified state of the task manager after the <code>delete 5</code> command executes to be saved in the <code>taskManagerStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted task manager state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoNewCommand1StateListDiagram.png" alt="UndoRedoNewCommand1StateListDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 3. The user executes <code>add n/Project &#8230;&#8203;</code> to add a new task. The <code>add</code> command also calls <code>Model#commitTaskManager()</code>, causing another modified task manager state to be saved into the <code>taskManagerStateList</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoNewCommand2StateListDiagram.png" alt="UndoRedoNewCommand2StateListDiagram" width="800">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If a command fails its execution, it will not call <code>Model#commitTaskManager()</code>, so the task manager state will not be saved into the <code>taskManagerStateList</code>.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 4. The user now decides that adding the task was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoTaskManager()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous task manager state, and restores the task manager to that state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoExecuteUndoStateListDiagram.png" alt="UndoRedoExecuteUndoStateListDiagram" width="800">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial task manager state, then there are no previous task manager states to restore. The <code>undo</code> command uses <code>Model#canUndoTaskManager()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the undo operation works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoSequenceDiagram.png" alt="UndoRedoSequenceDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoTaskManager()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the task manager to that state.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index <code>taskManagerStateList.size() - 1</code>, pointing to the latest task manager state, then there are no undone task manager states to restore. The <code>redo</code> command uses <code>Model#canRedoTaskManager()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the task manager, such as <code>list</code>, will usually not call <code>Model#commitTaskManager()</code>, <code>Model#undoTaskManager()</code> or <code>Model#redoTaskManager()</code>. Thus, the <code>taskManagerStateList</code> remains unchanged.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoNewCommand3StateListDiagram.png" alt="UndoRedoNewCommand3StateListDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitTaskManager()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>taskManagerStateList</code>, all task manager states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/Project &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoNewCommand4StateListDiagram.png" alt="UndoRedoNewCommand4StateListDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a new command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoActivityDiagram.png" alt="UndoRedoActivityDiagram" width="650">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire task manager.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy to implement.</p>
-</li>
-<li>
-<p>Cons: May have performance issues in terms of memory usage.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the task being deleted).</p>
-</li>
-<li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of task manager states.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
-</li>
-<li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedTaskManager</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
-</li>
-<li>
-<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="login-feature"><a class="link" href="#login-feature">3.2. Login Feature</a></h3>
-<div class="paragraph">
-<p><strong>Current Implementation</strong></p>
-</div>
+<h4 id="current-implementation"><a class="link" href="#current-implementation">4.1.1. Current Implementation</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -809,7 +616,7 @@ The username and hashed password are stored in a JSON file.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/AccountClassDiagram.png" alt="AccountClassDiagram" width="450">
+<img src="images/AccountClassDiagram.png" alt="AccountClassDiagram" width="200">
 </div>
 </div>
 <div class="ulist">
@@ -827,24 +634,25 @@ The flow on how the commands are executed and their respective sequence diagrams
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Section 3.2.1, Signup Command<br></p>
+<p>Section 4.1.2, Signup Command<br></p>
 </li>
 <li>
-<p><a href="#login-command">Section 3.2.2, &#8220;Login Command&#8221;</a><br></p>
+<p><a href="#login-command">Section 4.1.3, &#8220;Login Command&#8221;</a><br></p>
 </li>
 <li>
-<p><a href="#logout-command">Section 3.2.3, &#8220;Logout Command&#8221;</a><br></p>
+<p><a href="#logout-command">Section 4.1.4, &#8220;Logout Command&#8221;</a><br></p>
 </li>
 <li>
-<p><a href="#deleteacc-command">Section 3.2.4, &#8220;DeleteAcc Command&#8221;</a></p>
+<p><a href="#deleteacc-command">Section 4.1.5, &#8220;DeleteAcc Command&#8221;</a></p>
 </li>
 </ol>
 </div>
 </li>
 </ul>
 </div>
+</div>
 <div class="sect3">
-<h4 id="signup-command"><a class="link" href="#signup-command">3.2.1. Signup Command</a></h4>
+<h4 id="signup-command"><a class="link" href="#signup-command">4.1.2. Signup Command</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -861,18 +669,26 @@ The flow on how the commands are executed and their respective sequence diagrams
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Step 1. The user signs up and keys in username and password using the command <code>signup u/USERNAME p/PASSWORD</code>.</p>
-<p class="tableblock">Step 2. The <code>TaskManagerParser</code> recognises the command word as a signup from <code>SignupCommand</code> and calls <code>SignupCommand</code>.</p>
-<p class="tableblock">Step 3. <code>SignupCommandParser</code> will parse the arguments to <code>SignupCommand</code>.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 1. The user signs up and keys in username and password using the command <code>signup u/USERNAME p/PASSWORD</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 2. The <code>TaskManagerParser</code> recognises the command word as a signup from <code>SignupCommand</code> and calls <code>SignupCommand</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 3. <code>SignupCommandParser</code> will parse the arguments to <code>SignupCommand</code>.
  <code>SignupCommand</code> will call the following commands which are linked to <code>LoginEvent</code>.</p>
 <p class="tableblock"><code>getLoginStatus</code> to check if the user is already logged in.<br>
 <code>userExists</code> to check if there is already an account with the same username.<br>
 <code>accountExists</code> to check if an account has already been created.<br></p>
 <p class="tableblock">If the arguments passes all the commands, <code>newUser(user)</code> will be called to store
 the username and hashed password in a User class.
-It will then pass the User object to <code>JsonLoginStorage</code>.</p>
-<p class="tableblock">Step 4. <code>JsonLoginStorage</code> retrieves the User object to read and write Json files with the correct Json properties.</p>
-<p class="tableblock">Step 5. It will then return to <code>loginEvent</code> then to <code>SignupCommand</code> and returns the user a successful signup output.</p></td>
+It will then pass the User object to <code>JsonLoginStorage</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 4. <code>JsonLoginStorage</code> retrieves the User object to read and write Json files with the correct Json properties.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 5. It will then return to <code>loginEvent</code> then to <code>SignupCommand</code> and returns the user a successful signup output.</p></td>
 </tr>
 </tbody>
 </table>
@@ -881,12 +697,12 @@ It will then pass the User object to <code>JsonLoginStorage</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SignUpSequenceDiagram.png" alt="SignUpSequenceDiagram" width="900">
+<img src="images/SignUpSequenceDiagram.png" alt="SignUpSequenceDiagram" width="500">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="login-command"><a class="link" href="#login-command">3.2.2. Login Command</a></h4>
+<h4 id="login-command"><a class="link" href="#login-command">4.1.3. Login Command</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -903,15 +719,23 @@ It will then pass the User object to <code>JsonLoginStorage</code>.</p>
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Step 1. The user logs in by keying in username and password using the command <code>login u/USERNAME p/PASSWORD</code>.</p>
-<p class="tableblock">Step 2. The <code>TaskManagerParser</code> recognises the command word as a login from <code>LoginCommand</code> and calls <code>LoginCommand</code>.</p>
-<p class="tableblock">Step 3. <code>LoginCommandParser</code> will parse the arguments to <code>LoginCommand</code>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 1. The user logs in by keying in username and password using the command <code>login u/USERNAME p/PASSWORD</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 2. The <code>TaskManagerParser</code> recognises the command word as a login from <code>LoginCommand</code> and calls <code>LoginCommand</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 3. <code>LoginCommandParser</code> will parse the arguments to <code>LoginCommand</code>
  <code>LoginCommand</code> will call the following command which is linked to <code>LoginEvent</code>.</p>
 <p class="tableblock"><code>getLoginStatus</code> to check if the user is already logged in.<br></p>
 <p class="tableblock">If the arguments passes <code>getLoginStatus</code>, <code>logUser(user)</code> will be called in <code>LoginEvent</code> to
-check for username and password match.</p>
-<p class="tableblock">Step 4. In`LoginEvent`, <code>JsonLoginStorage</code> retrieves the username and hashed password from the Json file.</p>
-<p class="tableblock">Step 5. <code>loginEvent</code> will then check if the user inputs matches the username and password stored and
+check for username and password match.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 4. In <code>LoginEvent</code>, <code>JsonLoginStorage</code> retrieves the username and hashed password from the Json file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 5. <code>loginEvent</code> will then check if the user inputs matches the username and password stored and
 will then return to <code>LoginCommand</code> and returns the user a successful login output.</p></td>
 </tr>
 </tbody>
@@ -921,12 +745,12 @@ will then return to <code>LoginCommand</code> and returns the user a successful 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/LoginSequenceDiagram.png" alt="LoginSequenceDiagram" width="900">
+<img src="images/LoginSequenceDiagram.png" alt="LoginSequenceDiagram" width="500">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="logout-command"><a class="link" href="#logout-command">3.2.3. Logout Command</a></h4>
+<h4 id="logout-command"><a class="link" href="#logout-command">4.1.4. Logout Command</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -943,13 +767,19 @@ will then return to <code>LoginCommand</code> and returns the user a successful 
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Step 1. The user logs out by keying in the command <code>logout</code>.</p>
-<p class="tableblock">Step 2. The <code>TaskManagerParser</code> recognises the command word as a logout from <code>LogoutCommand</code> and calls <code>LogoutCommand</code>.</p>
-<p class="tableblock">Step 3. <code>LogoutCommand</code> will call the following command which is linked to <code>LoginEvent</code>.</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 1. The user logs out by keying in the command <code>logout</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 2. The <code>TaskManagerParser</code> recognises the command word as a logout from <code>LogoutCommand</code> and calls <code>LogoutCommand</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 3. <code>LogoutCommand</code> will call the following command which is linked to <code>LoginEvent</code>.</p>
 <p class="tableblock"><code>getLoginStatus</code> to check if the user is already logged out.<br>
 <code>getAdminStatus</code> to check if the admin is already logged out.<br></p>
-<p class="tableblock">If the arguments passes <code>getLoginStatus</code> and <code>getAdminStatus</code>, <code>logout</code> will be called in <code>LoginEvent</code>.</p>
-<p class="tableblock">Step 4. In`LoginEvent`, <code>getLoginStatus</code> and <code>getAdminStatus</code> will be set to false and will then
+<p class="tableblock">If the arguments passes <code>getLoginStatus</code> and <code>getAdminStatus</code>, <code>logout</code> will be called in <code>LoginEvent</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 4. In <code>LoginEvent</code>, <code>getLoginStatus</code> and <code>getAdminStatus</code> will be set to false and will then
 return to <code>LoginCommand</code> to return the user a successful logout output.</p></td>
 </tr>
 </tbody>
@@ -959,12 +789,12 @@ return to <code>LoginCommand</code> to return the user a successful logout outpu
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/LogoutSequenceDiagram.png" alt="LogoutSequenceDiagram" width="900">
+<img src="images/LogoutSequenceDiagram.png" alt="LogoutSequenceDiagram" width="500">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleteacc-command"><a class="link" href="#deleteacc-command">3.2.4. DeleteAcc Command</a></h4>
+<h4 id="deleteacc-command"><a class="link" href="#deleteacc-command">4.1.5. DeleteAcc Command</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -981,17 +811,29 @@ return to <code>LoginCommand</code> to return the user a successful logout outpu
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Step 1. The admin logs in by keying in username and password using the command <code>login u/USERNAME p/PASSWORD</code>.</p>
-<p class="tableblock">Step 2. The admin keys in <code>DeleteAcc</code> to delete the account.</p>
-<p class="tableblock">Step 3. The <code>TaskManagerParser</code> recognises the command word as delete account
-from <code>DeleteAccountCommand</code> and calls <code>DeleteAccountCommand</code>.</p>
-<p class="tableblock">Step 4. <code>DeleteAccountCommand</code> will call the following command which is linked to <code>LoginEvent</code>.</p>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 1. The admin logs in by keying in username and password using the command <code>login u/USERNAME p/PASSWORD</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 2. The admin keys in <code>DeleteAcc</code> to delete the account.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 3. The <code>TaskManagerParser</code> recognises the command word as delete account
+from <code>DeleteAccountCommand</code> and calls <code>DeleteAccountCommand</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 4. <code>DeleteAccountCommand</code> will call the following command which is linked to <code>LoginEvent</code>.</p>
 <p class="tableblock"><code>getAdminStatus</code> to check if an admin is logged in.<br></p>
-<p class="tableblock">If the arguments passes <code>getAdminStatus</code>, <code>deleteAccount()</code> will be called in <code>LoginEvent</code>.</p>
-<p class="tableblock">Step 5. In`LoginEvent`, JsonLoginStorage&#8217;s <code>deleteAccount()</code> will be called to delete the JSON file.</p>
-<p class="tableblock">Step 6. <code>LoginEvent</code> will then call <code>reinitialise()</code> to create the Json file
-without any username and password stored in it. <code>reinitialise()</code> is assisted by <code>JsonLoginStorage</code> and <code>writeJson()</code>.</p>
-<p class="tableblock">Step 7. <code>LoginEvent</code> will return to <code>DeleteAccountCommand</code> and returns the user a successful login output.</p></td>
+<p class="tableblock">If the arguments passes <code>getAdminStatus</code>, <code>deleteAccount()</code> will be called in <code>LoginEvent</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 5. In <code>LoginEvent</code>, JsonLoginStorage&#8217;s <code>deleteAccount()</code> will be called to delete the JSON file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 6. <code>LoginEvent</code> will then call <code>reinitialise()</code> to create the Json file
+without any username and password stored in it. <code>reinitialise()</code> is assisted by <code>JsonLoginStorage</code> and <code>writeJson()</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 7. <code>LoginEvent</code> will return to <code>DeleteAccountCommand</code> and returns the user a successful login output.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1000,16 +842,31 @@ without any username and password stored in it. <code>reinitialise()</code> is a
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DeleteAccountSequenceDiagram.png" alt="DeleteAccountSequenceDiagram" width="900">
+<img src="images/DeleteAccountSequenceDiagram.png" alt="DeleteAccountSequenceDiagram" width="500">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.5. Design Considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.6. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-code-loginevent-code-and-code-jsonloginstorage-code-works-together"><a class="link" href="#aspect-how-code-loginevent-code-and-code-jsonloginstorage-code-works-together">Aspect: How <code>LoginEvent</code> and <code>JsonLoginStorage</code> works together</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p>Combine the classes for <code>LoginEvent</code> and <code>JsonLoginStorage</code></p>
+<p><strong> Alternative 1 (current choice): </strong> <code>LoginEvent</code> and <code>JsonLoginStorage</code> are in separate classes.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Follows OOP coding. The codes will look more organised and clean.</p>
+</li>
+<li>
+<p>Cons: Coders will have to look at both files to code or debug as both calls each other frequently.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong> Alternative 2: </strong> <code>LoginEvent</code> and <code>JsonLoginStorage</code> are in the same class.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1021,31 +878,76 @@ without any username and password stored in it. <code>reinitialise()</code> is a
 </ul>
 </div>
 </li>
-<li>
-<p>To use encryption library instead of creating my own hashing function.</p>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="aspect-how-code-loginevent-code-fits-into-the-code"><a class="link" href="#aspect-how-code-loginevent-code-fits-into-the-code">4.1.7. Aspect: How <code>LoginEvent</code> fits into the code</a></h4>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Do not need to code much. Most of the function are one lines. Easy to implement.</p>
+<p><strong> Alternative 1 (current choice): </strong> <code>LoginEvent</code> is implemented into the logic.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: The code will be efficient and effective. It will be neat and the flow will be well structured.
+Single Responsibility Principle and Separation of Concerns is maintained in the code.</p>
 </li>
 <li>
-<p>Cons: Encryption is a two-way function. Encrypted strings can be decrypted with a proper key.
-Hashing was chosen because it is a one way function. With a proper hashing design, there is no way to reverse
-the hasing process to reveal the original password.</p>
+<p>Cons: Might be confusing as <code>LoginEvent</code> is used frequently.
+Coders might need to fully understand how other classes work before looking at <code>LoginEvent</code>.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>To have the <code>LoginEvent</code> being a component of its own without having to implement into logic.</p>
+<p><strong> Alternative 2: </strong> <code>LoginEvent</code> is implemented on its own.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: It would be easier to visualise and could still run the entire Taskmanager.</p>
+<p>Pros: It would be easier for coders to visualise and debug. <code>LoginEvent</code> can still run the entire Taskmanager.</p>
 </li>
 <li>
-<p>Cons: There would be a lot of repeated and redundant codes. Most of the functions in the <code>logic</code> componenet
-will be repeated. This will violate Single Responsibility Principle and Separation of Concerns.</p>
+<p>Cons: There would be a lot of repeated and redundant codes.
+Most of the functions in the <code>logic</code> component will be repeated.
+This will violate Single Responsibility Principle and Separation of Concerns.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="aspect-how-the-securing-of-password-is-implemented"><a class="link" href="#aspect-how-the-securing-of-password-is-implemented">4.1.8. Aspect: How the securing of password is implemented</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong> Alternative 1 (current choice): </strong> Create my own hashing fuction to secure password</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Hashing is a one way function. With a proper hashing design, there is no way to reverse
+the hashing process to reveal the original password.</p>
+</li>
+<li>
+<p>Cons: Need to code out my own hashing function. More logic and function have to be written.
+The code will be mroe complex.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong> Alternative 2: </strong> Use encryption library to secure password</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Do not need to code much. Most of the function are one line. Easy to implement.</p>
+</li>
+<li>
+<p>Cons: Encryption is a two-way function. Encrypted strings can be decrypted with a proper key.
+The password will not be secure.</p>
 </li>
 </ul>
 </div>
@@ -1055,12 +957,12 @@ will be repeated. This will violate Single Responsibility Principle and Separati
 </div>
 </div>
 <div class="sect2">
-<h3 id="notes-feature"><a class="link" href="#notes-feature">3.3. Notes Feature</a></h3>
+<h3 id="add-notes-feature"><a class="link" href="#add-notes-feature">4.2. Add Notes Feature</a></h3>
 <div class="paragraph">
-<p>This feature allow users to add and view notes regarding miscellaneous matters.</p>
+<p>This feature allow users to add notes regarding miscellaneous matters.</p>
 </div>
 <div class="paragraph">
-<p>The class diagram below illustrates the <code>Notes</code> class.</p>
+<p>The class diagram below illustrates the <strong>Notes</strong> class.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1068,36 +970,36 @@ will be repeated. This will violate Single Responsibility Principle and Separati
 </div>
 </div>
 <div class="sect3">
-<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">3.3.1. Current Implementation</a></h4>
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">4.2.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p>The Notes mechanism is facilitated by AddNotesCommand. A Notes object is instantiated which contains of Heading and Content.</p>
+<p>The add notes mechanism is facilitated by <em>AddNotesCommand</em>. A <em>Notes</em> object is instantiated which contains of <em>Heading</em>, <em>Content</em> and <em>Priority</em>.</p>
 </div>
 <div class="paragraph">
-<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
+<p>Given below is an example usage scenario and how the add notes mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user enters the in a note with its associated parameters. e.g <code>note h/popular c/buy pilot G-2 blue pens</code>.</p>
+<p>Step 1. The user enters in a note with its <strong>associated parameters</strong>. e.g <code>note h/popular c/buy pilot G-2 blue pens p/2</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 2. The LogicManager calls ParseCommand with that input.</p>
+<p>Step 2. The <em>LogicManager</em> calls <em>ParseCommand</em> with that input.</p>
 </div>
 <div class="paragraph">
-<p>Step 3. The TaskManagerParser is called and returns a AddNotesCommand object to Logic Manager.</p>
+<p>Step 3. The <em>TaskManagerParser</em> is called and returns a <em>AddNotesCommand</em> object to <em>Logic Manager</em>.</p>
 </div>
 <div class="paragraph">
-<p>Step 4. The LogicManager will call execute method on the AddNotesCommand object.</p>
+<p>Step 4. The <em>LogicManager</em> will call <em>execute</em> method on the <em>AddNotesCommand</em> object.</p>
 </div>
 <div class="paragraph">
-<p>Step 5. ModelManager is then called and will check if the note already exists.</p>
+<p>Step 5. <em>ModelManager</em> is then called and will check if the note already exists.</p>
 </div>
 <div class="paragraph">
-<p>Step 6. If note already exists, <code>DuplicateNotesException</code> will be thrown. This will return a string message "This note already exists in the task manager".</p>
+<p>Step 6. If note already exists, <em>DuplicateNotesException</em> will be thrown. This will return a string message "This note already exists in the task list".</p>
 </div>
 <div class="paragraph">
-<p>Step 7. Else, addNotes(notes) method is called and note is added.</p>
+<p>Step 7. Else, <em>addNotes(notes)</em> method is called and note is added.</p>
 </div>
 <div class="paragraph">
-<p>The sequence diagram below illustrates how the AddNotes mechanism function.</p>
+<p>The sequence diagram below illustrates how the mechanism for adding notes function.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1106,46 +1008,142 @@ will be repeated. This will violate Single Responsibility Principle and Separati
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.3.2. Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.2. Design Considerations</a></h4>
 <div class="paragraph">
-<p>Aspect: Checking for duplicate notes</p>
+<p>Aspect: Checking for <strong>duplicate notes</strong></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1(current choice):</strong> IsSameNotes</p>
+<p><strong>Alternative 1(current choice):</strong> Implement a method to check new notes entered. If a new note added is exactly the same as exisitng notes in the Student Buddy, it will be classified as duplicate note and cannot be added.</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Pros: Easy to implement</p>
 </li>
 <li>
-<p>Cons: May neglect duplicate notes that mean the same because IsSameNotes check for the exact same heading and content. E.g 1. h/popular c/buy ring file 2.h/popular c/buy ring files</p>
+<p>Cons: May neglect duplicate notes that mean the same because the check is for the <strong>exact same heading and content</strong>. The following 2 examples shown below will be identified as different notes due to an additional <strong>s</strong> in example 2<br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>h/popular c/buy ring file</code><br></p>
+</li>
+<li>
+<p><code>h/popular c/buy ring files</code></p>
+</li>
+</ol>
+</div>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Implement a method to check for similarity of notes. If similarity is more than 95%, notes is classified as same notes and cannot be added.</p>
+<p><strong>Alternative 2:</strong> Implement a method to check for similarity of notes. If similarity is <strong>more than 90%</strong>, note is classified as same note and cannot be added.</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Pros: Can reduce the amount of duplicate notes that are added.</p>
 </li>
 <li>
-<p>Cons: Difficult to implement and cannot eliminate duplicate notes completely.</p>
+<p>Cons: Difficult to implement and <strong>cannot eliminate duplicate notes completely</strong>.</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Final decision: Alternative 1 was chosen due to the <strong>significantly easier</strong> implementation.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sort-task-list-feature"><a class="link" href="#sort-task-list-feature">3.4. Sort Task List Feature</a></h3>
+<h3 id="delete-notes-feature"><a class="link" href="#delete-notes-feature">4.3. Delete Notes Feature</a></h3>
+<div class="paragraph">
+<p>This feature allow users to delete notes that are no longer wanted.</p>
+</div>
 <div class="sect3">
-<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">3.4.1. Current Implementation</a></h4>
+<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">4.3.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>The Notes mechanism is facilitated by <em>DeleteNotesCommand</em> from the <em>Logic</em> component. Upon executing the <em>DeleteNotesCommand</em>, the unwanted note will be removed from the memory of the Student Buddy.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code>deletenote</code> mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user calls the <em>DeleteNotesCommand</em> with the note’s displayed index. e.g <code>deletenote 1</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The <em>LogicManager</em> calls <em>parseCommand</em> with the user input.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. The <em>TaskManagerParser</em> is called and it returns a <em>DeleteNotesCommand</em> object to the <em>LogicManager</em>.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. The <em>LogicManager</em> will call <em>execute()</em> on the <em>DeleteNotesCommand</em> object. If no note of the corresponding index is found, it would return a string of message <code>MESSAGE_INVALID_NOTES_DISPLAYED_INDEX</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. The <em>Logic</em> component then interacts with the <code>Model</code> component which then calls <code>TaskManager</code> component within it to execute <code>deleteNotes(target)</code> to remove the note.</p>
+</div>
+<div class="paragraph">
+<p>Step 6. The command result would then return the message <code>MESSAGE_DELETE_NOTE_SUCCESS</code> in a string.</p>
+</div>
+<div class="paragraph">
+<p>The following diagram illustrates how the <code>deletenote</code> operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteNotesSequenceDiagram.png" alt="DeleteNotesSequenceDiagram" width="800">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design Considerations</a></h4>
+<div class="paragraph">
+<p>Aspect: Weighing <strong>user experience</strong> to <strong>convenience</strong> of users</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1:</strong> Implement a method to <strong>strike off</strong> notes that are completed so that users can keep track of what notes they have added in as well as the ones they finished.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Better user experience</p>
+</li>
+<li>
+<p>Cons: May cause incovenience as users have to delete away completed notes every few days so as to allow easier viewing of latest notes.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2(current choice):</strong> <strong>Deleting</strong> completed notes away.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement</p>
+</li>
+<li>
+<p>Pros: Easy for users to manage completed notes.</p>
+</li>
+<li>
+<p>Cons: No sense of achievement as users are unable to view the amount of work completed.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Final decision: Alternative 2 was chosen due to it being <strong>more practical and convenient</strong> to users so that users will continue to use it in the future.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sort-task-list-feature"><a class="link" href="#sort-task-list-feature">4.4. Sort Task List Feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">4.4.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The sorting mechanism is facilitated by <code>TaskManager</code>, <code>Model</code> and <code>SortTaskList</code>.</p>
 </div>
@@ -1166,7 +1164,7 @@ will be repeated. This will violate Single Responsibility Principle and Separati
 Then we convert the relevant attributes of the tasks in the Task List to string to compare using <code>string#compareTo()</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 5. Then, we use <code>setTasks()</code> in `UniqueTaskList`to update the Task List.
+<p>Step 5. Then, we use <code>setTasks()</code> in <code>UniqueTaskList</code> to update the Task List.
 After returning the sorted Task List, the Task Manager is then committed.</p>
 </div>
 <div class="paragraph">
@@ -1179,7 +1177,7 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.4.2. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-sort-executes"><a class="link" href="#aspect-how-sort-executes">Aspect: How sort executes</a></h5>
 <div class="ulist">
@@ -1216,16 +1214,26 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="calendar-feature"><a class="link" href="#calendar-feature">3.5. Calendar feature</a></h3>
+<h3 id="calendar-feature"><a class="link" href="#calendar-feature">4.5. Calendar feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">3.5.1. Current Implementation</a></h4>
+<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">4.5.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p>The Calendar extends the <code>TaskManager</code> GUI with an easy to read interface for tracking task deadlines. It is composed of three classes, <code>CalendarPanel</code>, <code>CalendarCell</code> and <code>CalendarCellTask</code>.</p>
+<p>The Calendar extends the <code>Student Buddy</code> GUI with an easy to read interface for tracking task deadlines. It is composed of three classes, <code>CalendarPanel</code>, <code>CalendarCell</code> and <code>CalendarCellTask</code>. Furthermore, it uses the JavaFX files <code>CalendarPanel.fxml</code> and <code>CalendarCell.fxml</code> to format and structure the display.</p>
 </div>
 <div class="paragraph">
-<p><code>CalendarPanel</code> is the pane on which the headers and grid of the Calendar are drawn.
-<code>CalendarCell</code> represents each individual cell of the grid in the <code>CalendarPanel</code>.
-<code>CalendarCellTask</code> represents each individual task inside each <code>CalendarCell</code>.</p>
+<p><code>CalendarPanel</code> is the base class, which builds and fills the calendar grid.</p>
+</div>
+<div class="paragraph">
+<p><code>CalendarCell</code> represents an individual cell of the grid in <code>CalendarPanel</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>CalendarCellTask</code> represents an individual task inside each <code>CalendarCell</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>CalendarPanel.fxml</code> is a <code>ScrollPane</code> containing a <code>GridPane</code>. The <code>GridPane</code> acts as the calendar grid.</p>
+</div>
+<div class="paragraph">
+<p><code>CalendarCell.fxml</code> is a <code>VBox</code> containing a <code>Text</code>, and a <code>ScrollPane</code> containing another <code>VBox</code>. The <code>Text</code> is the date of a calendar cell, and the second <code>VBox</code> contains the list of tasks in a cell.</p>
 </div>
 <div class="paragraph">
 <p>The following class diagram illustrates the relationships between <code>CalendarPanel</code>, <code>CalendarCell</code> and <code>CalendarCellTask</code>:</p>
@@ -1236,7 +1244,59 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The following sequence diagram shows how the Calendar is built on startup:</p>
+<p>The following steps show how the Calendar is built on startup:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 1: The constructor of <code>CalendarPanel</code> is called, thereby creating a new instance of <code>CalendarPanel</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 2: <code>buildCalendarPane(taskList)</code> is called, which contains function calls to <code>buildGrid()</code>, <code>createHeaderCells()</code>, <code>writeMonthHeader()</code>, <code>writeDayHeaders()</code>, and <code>createCalendarCells(taskList)</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 3: <code>buildGrid()</code> populates the calendar grid with the correct number of rows and columns.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 4: <code>createHeaderCells()</code> fills the first two rows of the calendar with the month header cell and day header cells.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 5: <code>writeMonthHeader()</code> writes the current month of the user&#8217;s system clock to the month header cell.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 6: <code>writeDayHeaders()</code> writes the days of the week to the day header cells, using the enumeration HEADERS.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Step 7: <code>createCalendarCells(taskList)</code> fills in the remaining calendar cells with <code>CalendarCell</code> instances.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Step 7.1: <code>CalendarCell</code> calls <code>setDate(date)</code> and <code>setMonth(month)</code> to set the date and month of the cell.</p>
+</li>
+<li>
+<p>Step 7.2: <code>getTasks(taskList)</code> is called, which uses the task list stored in the app to create a list of <code>CalendarCellTask</code> s applicable for the cell according to the date and month.</p>
+</li>
+<li>
+<p>Step 7.3: <code>addTasksToCell()</code> sorts the list of <code>CalendarCellTask</code> s according to their priority, then adds them to the cell.</p>
+</li>
+<li>
+<p>Step 7.4: <code>setAppearance()</code> sets the background and border of the cell.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 8: Done.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The following sequence diagram illustrates the process outlined above:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1244,11 +1304,14 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Whenever the task list is updated, or the selected task is changed, the function <code>createCalendarCells(taskList)</code> is called, which replaces the <code>CalendarCell</code> and <code>CalendarCellTask</code> instances in the <code>CalendarPanel</code>.</p>
+<p>Whenever the task list is updated, the function <code>createCalendarCells(taskList)</code> is called, which replaces the <code>CalendarCell</code> and <code>CalendarCellTask</code> instances in the <code>CalendarPanel</code>.</p>
+</div>
+<div class="paragraph">
+<p>If the selected task is changed, or the month to be displayed changes (see <a href="#month-view-change-feature">Section 4.6, &#8220;Month view change feature&#8221;</a>), the function <code>resetCalendar()</code> is called, which clears the calendar grid and resets the row and column constraints. Then <code>buildCalendarPane(taskList)</code> is called to rebuild the calendar.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">3.5.2. Design Considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-the-calendar-is-built"><a class="link" href="#aspect-how-the-calendar-is-built">Aspect: How the Calendar is built</a></h5>
 <div class="ulist">
@@ -1292,6 +1355,16 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 </ul>
 </div>
 </li>
+<li>
+<p><strong>Rationale for choice:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>It is the middle ground between alternatives 2 and 3, and thus strikes a balance between readability, maintainability and following Object-Oriented Programming principles. While it does not strictly follow the principles of OOP, it is easy to read the code and understand the processes involved, and is maintainable. This is important, as it is likely that future maintainters will be new Computer Science student undergraduates.</p>
+</li>
+</ul>
+</div>
+</li>
 </ul>
 </div>
 </div>
@@ -1304,7 +1377,7 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
+<p>Pros: Easy to read and to understand, simpler and easier to implement.</p>
 </li>
 <li>
 <p>Cons: Potential performance issues. If the list of tasks is very large, rebuilding the Calendar at every step may result in degraded performance manifested as a loss of responsiveness to user commands.</p>
@@ -1313,14 +1386,24 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Have <code>CalendarCellTask</code> instances automatically update as the task list changes.</p>
+<p><strong>Alternative 2:</strong> Have <code>CalendarCell</code> and <code>CalendarCellTask</code> instances automatically update as the task list changes.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: No need to rebuild the entire calendar when the task list changes, instead only updating the cell that is affected.</p>
+<p>Pros: No need to rebuild the entire calendar when the task list changes, instead only updating the cells and tasks that are affected.</p>
 </li>
 <li>
 <p>Cons: Adds another layer of abstraction, which can cause difficulty in understanding how the Calendar works.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Rationale for choice:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>The choice of alternative 1 was made due to time constraints and lack of proper understanding of how to implement alternative 2. Ideally, alternative 2 will be implemented by future maintainers.</p>
 </li>
 </ul>
 </div>
@@ -1331,14 +1414,59 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.6. Logging</a></h3>
+<h3 id="month-view-change-feature"><a class="link" href="#month-view-change-feature">4.6. Month view change feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-6"><a class="link" href="#current-implementation-6">4.6.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>The <code>month</code> command allows a user to change what month they are currently viewing on the calendar. This is facilitated using the <code>currMonth</code> parameter in <code>Model</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario of <code>month</code>.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 1. The user types in <code>month</code> with its associated parameter, an integer between 1 and 12 inclusive.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 2. The <code>TaskManagerParser</code> recognises the command word and calls <code>MonthCommandParser</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 3. <code>MonthCommandParser</code> will parse the arguments and call <code>MonthCommand</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 4. <code>MonthCommand</code> will then return one the following results:</p>
+<p class="tableblock"> <code>CommandException(MESSAGE_DUPLICATE_MONTH)</code> if the requested month and the current month are the same.
+ <code>CommandException(MESSAGE_INVALID_MONTH)</code> if the requested month is invalid, for example "aaa" or "0".</p>
+<p class="tableblock">If the arguments pass all the checks, the <code>currMonth</code> parameter in <code>Model</code> will be changed, which will then cause the calendar to be updated.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 5. <code>MonthCommand</code> will then return a success message to the user.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The following diagram illustrates the operation of the <code>month</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/MonthCommandSequenceDiagram.png" alt="MonthCommandSequenceDiagram" width="1000">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logging"><a class="link" href="#logging">4.7. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.7, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.8, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1369,7 +1497,7 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.7. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.8. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1377,7 +1505,7 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="documentation"><a class="link" href="#documentation">4. Documentation</a></h2>
+<h2 id="documentation"><a class="link" href="#documentation">5. Documentation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>We use asciidoc for writing documentation.</p>
@@ -1395,20 +1523,20 @@ We chose asciidoc over Markdown because asciidoc, although a bit more complex th
 </table>
 </div>
 <div class="sect2">
-<h3 id="editing-documentation"><a class="link" href="#editing-documentation">4.1. Editing Documentation</a></h3>
+<h3 id="editing-documentation"><a class="link" href="#editing-documentation">5.1. Editing Documentation</a></h3>
 <div class="paragraph">
 <p>See <a href="UsingGradle.html#rendering-asciidoc-files">UsingGradle.adoc</a> to learn how to render <code>.adoc</code> files locally to preview the end result of your edits.
 Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows you to preview the changes you have made to your <code>.adoc</code> files in real-time.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="publishing-documentation"><a class="link" href="#publishing-documentation">4.2. Publishing Documentation</a></h3>
+<h3 id="publishing-documentation"><a class="link" href="#publishing-documentation">5.2. Publishing Documentation</a></h3>
 <div class="paragraph">
 <p>See <a href="UsingTravis.html#deploying-github-pages">UsingTravis.adoc</a> to learn how to deploy GitHub Pages using Travis.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="converting-documentation-to-pdf-format"><a class="link" href="#converting-documentation-to-pdf-format">4.3. Converting Documentation to PDF format</a></h3>
+<h3 id="converting-documentation-to-pdf-format"><a class="link" href="#converting-documentation-to-pdf-format">5.3. Converting Documentation to PDF format</a></h3>
 <div class="paragraph">
 <p>We use <a href="https://www.google.com/chrome/browser/desktop/">Google Chrome</a> for converting documentation to PDF format, as Chrome&#8217;s PDF engine preserves hyperlinks used in webpages.</p>
 </div>
@@ -1439,7 +1567,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 </div>
 </div>
 <div class="sect2">
-<h3 id="Docs-SiteWideDocSettings"><a class="link" href="#Docs-SiteWideDocSettings">4.4. Site-wide Documentation Settings</a></h3>
+<h3 id="Docs-SiteWideDocSettings"><a class="link" href="#Docs-SiteWideDocSettings">5.4. Site-wide Documentation Settings</a></h3>
 <div class="paragraph">
 <p>The <a href="https://github.com/CS2113-AY1819S2-M11-2/main//build.gradle"><code>build.gradle</code></a> file specifies some project-specific <a href="https://asciidoctor.org/docs/user-manual/#attributes">asciidoc attributes</a> which affects how all documentation files within this project are rendered.</p>
 </div>
@@ -1498,7 +1626,7 @@ This will render the SE-EDU navigation bar at the top of the page, and add some 
 </table>
 </div>
 <div class="sect2">
-<h3 id="Docs-PerFileDocSettings"><a class="link" href="#Docs-PerFileDocSettings">4.5. Per-file Documentation Settings</a></h3>
+<h3 id="Docs-PerFileDocSettings"><a class="link" href="#Docs-PerFileDocSettings">5.5. Per-file Documentation Settings</a></h3>
 <div class="paragraph">
 <p>Each <code>.adoc</code> file may also specify some file-specific <a href="https://asciidoctor.org/docs/user-manual/#attributes">asciidoc attributes</a> which affects how the file is rendered.</p>
 </div>
@@ -1555,7 +1683,7 @@ One of: <code>UserGuide</code>, <code>DeveloperGuide</code>, <code>LearningOutco
 </table>
 </div>
 <div class="sect2">
-<h3 id="site-template"><a class="link" href="#site-template">4.6. Site Template</a></h3>
+<h3 id="site-template"><a class="link" href="#site-template">5.6. Site Template</a></h3>
 <div class="paragraph">
 <p>The files in <a href="https://github.com/CS2113-AY1819S2-M11-2/main//docs/stylesheets"><code>docs/stylesheets</code></a> are the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS stylesheets</a> of the site.
 You can modify them to change some properties of the site&#8217;s design.</p>
@@ -1584,10 +1712,10 @@ The SE-EDU team does not provide support for modified template files.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="Testing"><a class="link" href="#Testing">5. Testing</a></h2>
+<h2 id="Testing"><a class="link" href="#Testing">6. Testing</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="running-tests"><a class="link" href="#running-tests">5.1. Running Tests</a></h3>
+<h3 id="running-tests"><a class="link" href="#running-tests">6.1. Running Tests</a></h3>
 <div class="paragraph">
 <p>There are three ways to run tests.</p>
 </div>
@@ -1649,7 +1777,7 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run 
 </div>
 </div>
 <div class="sect2">
-<h3 id="types-of-tests"><a class="link" href="#types-of-tests">5.2. Types of tests</a></h3>
+<h3 id="types-of-tests"><a class="link" href="#types-of-tests">6.2. Types of tests</a></h3>
 <div class="paragraph">
 <p>We have two types of tests:</p>
 </div>
@@ -1691,7 +1819,7 @@ e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="troubleshooting-testing"><a class="link" href="#troubleshooting-testing">5.3. Troubleshooting Testing</a></h3>
+<h3 id="troubleshooting-testing"><a class="link" href="#troubleshooting-testing">6.3. Troubleshooting Testing</a></h3>
 <div class="paragraph">
 <p><strong>Problem: <code>HelpWindowTest</code> fails with a <code>NullPointerException</code>.</strong></p>
 </div>
@@ -1709,34 +1837,34 @@ e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="dev-ops"><a class="link" href="#dev-ops">6. Dev Ops</a></h2>
+<h2 id="dev-ops"><a class="link" href="#dev-ops">7. Dev Ops</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="build-automation"><a class="link" href="#build-automation">6.1. Build Automation</a></h3>
+<h3 id="build-automation"><a class="link" href="#build-automation">7.1. Build Automation</a></h3>
 <div class="paragraph">
 <p>See <a href="UsingGradle.html">UsingGradle.adoc</a> to learn how to use Gradle for build automation.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="continuous-integration"><a class="link" href="#continuous-integration">6.2. Continuous Integration</a></h3>
+<h3 id="continuous-integration"><a class="link" href="#continuous-integration">7.2. Continuous Integration</a></h3>
 <div class="paragraph">
 <p>We use <a href="https://travis-ci.org/">Travis CI</a> and <a href="https://www.appveyor.com/">AppVeyor</a> to perform <em>Continuous Integration</em> on our projects. See <a href="UsingTravis.html">UsingTravis.adoc</a> and <a href="UsingAppVeyor.html">UsingAppVeyor.adoc</a> for more details.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="coverage-reporting"><a class="link" href="#coverage-reporting">6.3. Coverage Reporting</a></h3>
+<h3 id="coverage-reporting"><a class="link" href="#coverage-reporting">7.3. Coverage Reporting</a></h3>
 <div class="paragraph">
 <p>We use <a href="https://coveralls.io/">Coveralls</a> to track the code coverage of our projects. See <a href="UsingCoveralls.html">UsingCoveralls.adoc</a> for more details.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="documentation-previews"><a class="link" href="#documentation-previews">6.4. Documentation Previews</a></h3>
+<h3 id="documentation-previews"><a class="link" href="#documentation-previews">7.4. Documentation Previews</a></h3>
 <div class="paragraph">
 <p>When a pull request has changes to asciidoc files, you can use <a href="https://www.netlify.com/">Netlify</a> to see a preview of how the HTML version of those asciidoc files will look like when the pull request is merged. See <a href="UsingNetlify.html">UsingNetlify.adoc</a> for more details.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="making-a-release"><a class="link" href="#making-a-release">6.5. Making a Release</a></h3>
+<h3 id="making-a-release"><a class="link" href="#making-a-release">7.5. Making a Release</a></h3>
 <div class="paragraph">
 <p>Here are the steps to create a new release.</p>
 </div>
@@ -1758,9 +1886,9 @@ e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="managing-dependencies"><a class="link" href="#managing-dependencies">6.6. Managing Dependencies</a></h3>
+<h3 id="managing-dependencies"><a class="link" href="#managing-dependencies">7.6. Managing Dependencies</a></h3>
 <div class="paragraph">
-<p>A project often depends on third-party libraries. For example, Task Manager depends on the <a href="https://github.com/FasterXML/jackson">Jackson library</a> for JSON parsing. Managing these <em>dependencies</em> can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives:</p>
+<p>A project often depends on third-party libraries. For example, Student Buddy depends on the <a href="https://github.com/FasterXML/jackson">Jackson library</a> for JSON parsing. Managing these <em>dependencies</em> can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives:</p>
 </div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
@@ -1807,7 +1935,7 @@ e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Do take a look at <a href="#Design-Logic">Section 2.3, &#8220;Logic component&#8221;</a> before attempting to modify the <code>Logic</code> component.
+Do take a look at <a href="#Design-Logic">Section 3.3, &#8220;Logic component&#8221;</a> before attempting to modify the <code>Logic</code> component.
 </td>
 </tr>
 </table>
@@ -1870,7 +1998,7 @@ Do take a look at <a href="#Design-Logic">Section 2.3, &#8220;Logic component&#8
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Do take a look at <a href="#Design-Model">Section 2.4, &#8220;Model component&#8221;</a> before attempting to modify the <code>Model</code> component.
+Do take a look at <a href="#Design-Model">Section 3.4, &#8220;Model component&#8221;</a> before attempting to modify the <code>Model</code> component.
 </td>
 </tr>
 </table>
@@ -1936,7 +2064,7 @@ Do take a look at <a href="#Design-Model">Section 2.4, &#8220;Model component&#8
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</a> before attempting to modify the <code>UI</code> component.
+Do take a look at <a href="#Design-Ui">Section 3.2, &#8220;UI component&#8221;</a> before attempting to modify the <code>UI</code> component.
 </td>
 </tr>
 </table>
@@ -2157,7 +2285,7 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Do take a look at <a href="#Design-Storage">Section 2.5, &#8220;Storage component&#8221;</a> before attempting to modify the <code>Storage</code> component.
+Do take a look at <a href="#Design-Storage">Section 3.5, &#8220;Storage component&#8221;</a> before attempting to modify the <code>Storage</code> component.
 </td>
 </tr>
 </table>
@@ -2371,7 +2499,7 @@ Removes the remark for the first task.</p>
 <p>Assume that the user will not be able to use the <code>add</code> and <code>edit</code> commands to modify the remarks field (i.e. the task will be created without a remark).</p>
 </li>
 <li>
-<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/model/util/SampleDataUtil.java/"><code>SampleDataUtil</code></a> to add remarks for the sample data (delete <code>data/taskmanager.json</code> so that the application will load the sample data when launched).</p>
+<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/model/util/SampleDataUtil.java/"><code>SampleDataUtil</code></a> to add remarks for the sample data (delete <code>data/StudentBuddy.json</code> so that the application will load the sample data when launched).</p>
 </li>
 </ol>
 </div>
@@ -2432,7 +2560,7 @@ Removes the remark for the first task.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/ui/TaskCard.java"><code>TaskCard</code></a>'s constructor to bind the <code>Remark</code> field to the `Task&#8217;s remark.</p>
+<p>Modify <a href="https://github.com/CS2113-AY1819S2-M11-2/main/blob/master/src/main/java/seedu/address/ui/TaskCard.java"><code>TaskCard</code></a>'s constructor to bind the <code>Remark</code> field to the <code>Task</code> 's remark.</p>
 </li>
 </ol>
 </div>
@@ -2711,7 +2839,7 @@ Removes the remark for the first task.</p>
 <p>User requests for help</p>
 </li>
 <li>
-<p>Task Manger shows all the commands with the purpose of the command</p>
+<p>Student Buddy shows all the commands with the purpose of the command</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2728,7 +2856,7 @@ Removes the remark for the first task.</p>
 <p>User requests to add a new event with given fields</p>
 </li>
 <li>
-<p>Task Manager adds the event</p>
+<p>Student Buddy adds the event</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2745,7 +2873,7 @@ Removes the remark for the first task.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1ai. Task Manager shows an error message</p>
+<p>1ai. Student Buddy shows an error message</p>
 <div class="paragraph">
 <p>Use case resumes at step 1.</p>
 </div>
@@ -2762,7 +2890,7 @@ Removes the remark for the first task.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1bi. Task Manager shows an error message</p>
+<p>1bi. Student Buddy shows an error message</p>
 <div class="paragraph">
 <p>Use case resumes at step 1.</p>
 </div>
@@ -2782,13 +2910,13 @@ Removes the remark for the first task.</p>
 <p>User requests to list tasks</p>
 </li>
 <li>
-<p>Task Manager shows a list of tasks</p>
+<p>Student Buddy shows a list of tasks</p>
 </li>
 <li>
 <p>User requests to delete a specific task in the list</p>
 </li>
 <li>
-<p>Task Manager deletes the task</p>
+<p>Student Buddy deletes the task</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2815,7 +2943,7 @@ Removes the remark for the first task.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3ai. Task Manager shows an error message.</p>
+<p>3ai. Student Buddy shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -2835,13 +2963,13 @@ Removes the remark for the first task.</p>
 <p>User requests to list tasks</p>
 </li>
 <li>
-<p>Task Manager shows a list of tasks</p>
+<p>Student Buddy shows a list of tasks</p>
 </li>
 <li>
 <p>User requests to edit a specific task in the list with the given fields</p>
 </li>
 <li>
-<p>Task Manager edits the task</p>
+<p>Student Buddy edits the task</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2868,7 +2996,7 @@ Removes the remark for the first task.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3ai. Task manager shows an error</p>
+<p>3ai. Student Buddy returns an error</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -2885,7 +3013,7 @@ Removes the remark for the first task.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3bi. Task manager shows an error</p>
+<p>3bi. Student Buddy returns an error</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -2905,7 +3033,7 @@ Removes the remark for the first task.</p>
 <p>User requests to find a task by name</p>
 </li>
 <li>
-<p>Task Manager shows the tasks according to user&#8217;s input</p>
+<p>Student Buddy shows the tasks according to user&#8217;s input</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2932,7 +3060,7 @@ Removes the remark for the first task.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2bi. Task manager shows an error</p>
+<p>2bi. Student Buddy returns an error</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -2953,7 +3081,7 @@ Removes the remark for the first task.</p>
 <p>User requests to find a task by module</p>
 </li>
 <li>
-<p>Task Manager shows the tasks according to user&#8217;s input</p>
+<p>Student Buddy shows the tasks according to user&#8217;s input</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2980,7 +3108,7 @@ Removes the remark for the first task.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2bi. Task manager shows an error</p>
+<p>2bi. Student Buddy returns an error</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -3002,7 +3130,7 @@ Removes the remark for the first task.</p>
 <p>User requests to find a task by date</p>
 </li>
 <li>
-<p>Task Manager shows the tasks according to user&#8217;s input</p>
+<p>Student Buddy shows the tasks according to user&#8217;s input</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3029,7 +3157,7 @@ Removes the remark for the first task.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2bi. Task manager shows an error</p>
+<p>2bi. Student Buddy returns an error</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -3051,7 +3179,7 @@ Removes the remark for the first task.</p>
 <p>User requests to find a task by priority</p>
 </li>
 <li>
-<p>Task Manager shows the tasks according to user&#8217;s input</p>
+<p>Student Buddy shows the tasks according to user&#8217;s input</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3078,7 +3206,7 @@ Removes the remark for the first task.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2bi. Task manager shows an error</p>
+<p>2bi. Student Buddy returns an error</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
@@ -3100,7 +3228,7 @@ Removes the remark for the first task.</p>
 <p>User requests to sort tasks by an attribute</p>
 </li>
 <li>
-<p>Task Manager sorts the tasks according to user&#8217;s input</p>
+<p>Student Buddy sorts the tasks according to user&#8217;s input</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3117,7 +3245,7 @@ Removes the remark for the first task.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1ai. Task manager shows an error</p>
+<p>1ai. Student Buddy returns an error</p>
 <div class="paragraph">
 <p>Use case resumes at step 1.</p>
 </div>
@@ -3292,4 +3420,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 15:11:16 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-12 10:07:22 UTC</div></div></div></body></html>

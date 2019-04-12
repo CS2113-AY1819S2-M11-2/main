@@ -34,9 +34,10 @@
 <li><a href="#redoing-the-previously-undone-command-code-redo-code">3.19. Redoing the previously undone command : <code>redo</code></a></li>
 <li><a href="#clearing-all-entries-code-clear-code">3.20. Clearing all entries : <code>clear</code></a></li>
 <li><a href="#viewing-tasks-on-a-calendar">3.21. Viewing tasks on a calendar</a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.22. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.23. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.24. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#changing-the-calendar-month-code-month-code-code-m-code">3.22. Changing the calendar month : <code>month</code>, <code>m</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.23. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.24. Saving the data</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.25. Encrypting data files <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -48,9 +49,21 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Task Manager is for those who <strong>prefer to use a desktop app for managing tasks</strong>.
-More importantly, Task Manager is <strong>optimized for those who prefer to work with a keyboard rather than a mouse</strong>.
-Do you want to organise and prioritise your tasks and never miss a single deadline again? Then this app is perfect for you!</p>
+<p>Student Buddy is for tech-savvy students who <strong>prefer to use a desktop app for managing tasks</strong>.
+More importantly, Student Buddy is <strong>optimized for those who prefer to work with a keyboard rather than a mouse</strong>, but still has a <strong>graphical display</strong> for easy viewing.
+Do you want to organise, prioritise and never miss a deadline again? Then this app is perfect for you!</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Student Buddy works best with a screen resolution of at least 1280x800.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -58,7 +71,7 @@ Do you want to organise and prioritise your tasks and never miss a single deadli
 <h2 id="quick-start"><a class="link" href="#quick-start">2. Quick Start</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Here are the steps to get you started with the Task Manager.</p>
+<p>Here are the steps to get you started with the Student Buddy.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -69,13 +82,13 @@ Do you want to organise and prioritise your tasks and never miss a single deadli
 <p>Download the latest <code>TaskManager.jar</code> <a href="https://github.com/CS2113-AY1819S2-M11-2/main//releases">here</a>.</p>
 </li>
 <li>
-<p>Copy the file to the folder you want to use as the home folder for your Task Manager.</p>
+<p>Copy the file to the folder you want to use as the home folder for Student Buddy.</p>
 </li>
 <li>
 <p>Double-click the file to start the app. The GUI should appear in a few seconds. It should look like this:</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/TaskManager.png" alt="TaskManager" width="1000">
+<img src="images/StudentBuddy.png" alt="StudentBuddy" width="1000">
 </div>
 </div>
 </li>
@@ -88,10 +101,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>list</code></strong> : shows a list of all tasks in the Task Manager</p>
+<p><strong><code>list</code></strong> : shows a list of all tasks in the app</p>
 </li>
 <li>
-<p><strong><code>add n/Assignment m/CG2027 d/12-02 p/1</code></strong> : adds a task named <code>Assignment</code> of module <code>CG2023</code>, with submission date <code>12-02</code> and priority level <code>1</code> to the Task Manager.</p>
+<p><strong><code>add n/Assignment m/CG2027 d/12-02 p/1</code></strong> : adds a task named <code>Assignment</code> of module <code>CG2023</code>, with submission date <code>12-02</code> and priority level <code>1</code> to Student Buddy.</p>
 </li>
 <li>
 <p><strong><code>delete</code></strong><code>1</code> : deletes the 1st task shown in the current list</p>
@@ -141,8 +154,35 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="sect2">
 <h3 id="signing-up-for-an-account-code-signup-code"><a class="link" href="#signing-up-for-an-account-code-signup-code">3.1. Signing up for an account : <code>signup</code></a></h3>
 <div class="paragraph">
-<p>Creates an account for the user<br>
-Format: <code>signup u/USERNAME p/PASSWORD</code><br></p>
+<p>Creates an account for the user. To signup, there must be no existing account.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>signup u/USERNAME p/PASSWORD</code><br></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Only one account can be created per user.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Passwords should not have spaces and may only include the following special characters:<br>
+!#$%&amp;'*+/=?`{|}~^.@-
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -160,6 +200,10 @@ Signed up: nicholas</p>
 <div class="ulist">
 <ul>
 <li>
+<p>Possible Errors<br></p>
+<div class="ulist">
+<ul>
+<li>
 <p><code>Logged in: nicholas</code><br>
 You are already logged in and will need to logout in order to signup for a new account.<br></p>
 </li>
@@ -169,14 +213,19 @@ The username already exists, signup again with another username.</p>
 </li>
 </ul>
 </div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="logging-into-an-account-code-login-code"><a class="link" href="#logging-into-an-account-code-login-code">3.2. Logging into an account : <code>login</code></a></h3>
 <div class="paragraph">
-<p>Logs the user into their account<br>
-Format: <code>login u/USERNAME p/PASSWORD</code><br></p>
+<p>Logs the user into their account. An account has to be created before logging in.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>login u/USERNAME p/PASSWORD</code><br></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -194,6 +243,10 @@ Logged in as nicholas.</p>
 <div class="ulist">
 <ul>
 <li>
+<p>Possible Errors<br></p>
+<div class="ulist">
+<ul>
+<li>
 <p><code>You are already logged in!</code><br>
 You are already logged in and will need logout in order to login to another account.<br></p>
 </li>
@@ -203,14 +256,19 @@ You have inserted an incorrect username or password. The login command has to be
 </li>
 </ul>
 </div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="logging-out-of-an-account-code-logout-code"><a class="link" href="#logging-out-of-an-account-code-logout-code">3.3. Logging out of an account : <code>logout</code></a></h3>
 <div class="paragraph">
-<p>Logs user out of an account<br>
-Format: <code>logout</code></p>
+<p>Logs user out of an account.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>logout</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -228,8 +286,15 @@ Logged out of nicholas.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>Please Login!</code><br>
-You did not login into any account.</p>
+<p>Possible Errors<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>You have already logged out. Please Login!</code><br>
+You have already logged out or you did not login into any account.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -246,7 +311,7 @@ Format: <code>help</code></p>
 <div class="sect2">
 <h3 id="adding-a-task-code-add-code"><a class="link" href="#adding-a-task-code-add-code">3.5. Adding a task: <code>add</code></a></h3>
 <div class="paragraph">
-<p>Adds a task to the Task Manager.<br>
+<p>Adds a task to Student Buddy.<br>
 Format: <code>add n/NAME m/MODULE d/DATE p/PRIORITY [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="admonitionblock tip">
@@ -267,12 +332,12 @@ A task can have any number of tags (including 0)
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/Tutorial 3 m/CG1112 d/21-03 t/urgent</code><br>
-Adds a task with the name <code>Tutorial 3</code>, module code <code>CG1112</code>, date <code>21-03</code>, with the tag <code>urgent</code>.</p>
+<p><code>add n/Tutorial 3 m/CG1112 d/21-03 p/2 t/urgent</code><br>
+Adds a task with the name <code>Tutorial 3</code>, module code <code>CG1112</code>, date <code>21-03</code>, priority code <code>2</code>, with the tag <code>urgent</code>.</p>
 </li>
 <li>
-<p><code>add n/Project Version 1 m/CS2113T d/11-03</code><br>
-Adds a task with the name <code>Project Version 1</code>, module code <code>CS2113T</code> and date <code>11-03</code>.</p>
+<p><code>add n/Project Version 1 m/CS2113T d/11-03 p/1</code><br>
+Adds a task with the name <code>Project Version 1</code>, module code <code>CS2113T</code>, date <code>11-03</code> and priority code <code>2</code>.</p>
 </li>
 </ul>
 </div>
@@ -280,14 +345,14 @@ Adds a task with the name <code>Project Version 1</code>, module code <code>CS21
 <div class="sect2">
 <h3 id="listing-all-tasks-code-list-code"><a class="link" href="#listing-all-tasks-code-list-code">3.6. Listing all tasks : <code>list</code></a></h3>
 <div class="paragraph">
-<p>Shows a list of all tasks in the Task Manager.<br>
+<p>Shows a list of all tasks in Student Buddy.<br>
 Format: <code>list</code></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="editing-a-task-code-edit-code"><a class="link" href="#editing-a-task-code-edit-code">3.7. Editing a task : <code>edit</code></a></h3>
 <div class="paragraph">
-<p>Edits an existing task in the Task Manager.<br>
+<p>Edits an existing task in Student Buddy.<br>
 Format: <code>edit INDEX [n/NAME] [m/MODULE] [d/DATE] [p/PRIORITY] [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
@@ -364,12 +429,12 @@ Format: <code>findname KEYWORD [MORE_KEYWORDS]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>find CS2113 task</code><br>
-Returns all task with names containing <code>CS2113</code> or <code>task</code>.</p>
+<p><code>findname Project Tutorial</code><br>
+Returns all task with names containing <code>Project</code> or <code>Tutorial</code>.</p>
 </li>
 <li>
-<p><code>find CS2113 Hw Tutorial</code><br>
-Returns all task having names <code>CS2113</code>, <code>Hw</code>, or <code>Tutorial</code></p>
+<p><code>findname Project Lab Report</code><br>
+Returns all task having names <code>Project</code>, <code>Lab</code>, or <code>Report</code></p>
 </li>
 </ul>
 </div>
@@ -406,11 +471,11 @@ Format: <code>findmodule KEYWORD [MORE_KEYWORDS]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>find CS2113T</code><br>
+<p><code>findmodule CS2113T</code><br>
 Returns all tasks containing the module code <code>CS2113T</code>.</p>
 </li>
 <li>
-<p><code>find CS2113T CS2101</code><br>
+<p><code>findmodule CS2113T CS2101</code><br>
 Returns all tasks containing the module code <code>CS2113T</code> or <code>CS2101</code>.</p>
 </li>
 </ul>
@@ -485,7 +550,7 @@ Returns all task with priority code 1 or 3.</p>
 <div class="sect2">
 <h3 id="deleting-a-task-code-delete-code"><a class="link" href="#deleting-a-task-code-delete-code">3.12. Deleting a task : <code>delete</code></a></h3>
 <div class="paragraph">
-<p>Deletes the specified task from the Task Manager.<br>
+<p>Deletes the specified task from Student Buddy.<br>
 Format: <code>delete INDEX</code></p>
 </div>
 <div class="sidebarblock">
@@ -513,7 +578,7 @@ Format: <code>delete INDEX</code></p>
 <li>
 <p><code>list</code><br>
 <code>delete 2</code><br>
-Deletes the 2nd task in the Task Manager.</p>
+Deletes the 2nd task in Student Buddy.</p>
 </li>
 <li>
 <p><code>findname Project</code><br>
@@ -546,6 +611,18 @@ Format: <code>select INDEX</code></p>
 </div>
 </div>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Using <code>add</code>, <code>edit</code>, <code>delete</code>, <code>logout</code> or <code>month</code> will deselect the currently selected task.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
@@ -554,7 +631,7 @@ Format: <code>select INDEX</code></p>
 <li>
 <p><code>list</code><br>
 <code>select 2</code><br>
-Selects the 2nd task in the Task Manager.</p>
+Selects the 2nd task in Student Buddy.</p>
 </li>
 <li>
 <p><code>findmodule CS2113</code><br>
@@ -567,7 +644,7 @@ Selects the 1st task in the results of the <code>find</code> command.</p>
 <div class="sect2">
 <h3 id="sorting-the-task-list-code-sort-code"><a class="link" href="#sorting-the-task-list-code-sort-code">3.14. Sorting the task list : <code>sort</code></a></h3>
 <div class="paragraph">
-<p>Sorts the task list in the Task Manager according to an input parameter.
+<p>Sorts the task list in Student Buddy according to an input parameter.
 Format: <code>sort PARAMETER</code></p>
 </div>
 <div class="sidebarblock">
@@ -606,6 +683,23 @@ Sorts the task list in descending order by priority.</p>
 <p>Adds a note to Student Buddy.
 Format: <code>note h/HEADING c/CONTENT p/PRIORITY</code></p>
 </div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Adds the note with the given parameters.<br></p>
+</li>
+<li>
+<p><em>Priority</em> can <strong>only take numbers from 1 to 3</strong> with 1 being the most urgent.</p>
+</li>
+<li>
+<p>Notes with <em>Priority</em> 1 will be displayed in <strong>red</strong> colour followed by 2 in <strong>yellow</strong> and 3 in <strong>white</strong>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>Example:</p>
 </div>
@@ -613,26 +707,45 @@ Format: <code>note h/HEADING c/CONTENT p/PRIORITY</code></p>
 <ul>
 <li>
 <p><code>note h/Popular c/buy blue pens p/2</code><br>
-Add a note with heading <code>Popular</code>, content <code>buy blue pens</code> and priority <code>2</code>.</p>
+Add a note with <em>heading</em> Popular, <em>content</em> buy blue pens and <em>priority</em> 2.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>The following are 2 diagrams that demostrate the example shown above. One of the diagram shows the state before the command is executed and the other shows the state after command is executed.</p>
+</div>
+<div class="paragraph">
+<p><strong>Before:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddNotesBefore.png" alt="AddNotesBefore" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>After:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddNotesAfter.png" alt="AddNotesAfter" width="800">
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="deleting-miscellaneous-notes-code-deletenote-code"><a class="link" href="#deleting-miscellaneous-notes-code-deletenote-code">3.16. Deleting miscellaneous notes : <code>deletenote</code></a></h3>
 <div class="paragraph">
 <p>Deletes the specified note from Student Buddy.<br>
-Format: <code>delete INDEX</code></p>
+Format: <code>deletenote INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes the note at the specified <code>INDEX</code>.</p>
+<p>Deletes the note at the specified <em>INDEX</em>.</p>
 </li>
 <li>
-<p>The index refers to the index number shown in the displayed notes list.</p>
+<p>The index refers to the <em>index</em> number shown in the displayed notes list.</p>
 </li>
 <li>
 <p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
@@ -647,10 +760,29 @@ Format: <code>delete INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete 2</code><br>
+<p><code>deletenote 2</code><br>
 Deletes the 2nd note from the displayed notes list in Student Buddy.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>The following are 2 diagrams that demostrate the example shown above. One of the diagram shows the state before the command is executed and the other shows the state after command is executed.</p>
+</div>
+<div class="paragraph">
+<p><strong>Before:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteNoteBefore.png" alt="DeleteNoteBefore" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>After:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteNoteAfter.png" alt="DeleteNoteAfter" width="800">
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -677,7 +809,7 @@ Format: <code>history</code></p>
 <div class="sect2">
 <h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.18. Undoing previous command : <code>undo</code></a></h3>
 <div class="paragraph">
-<p>Restores the Task Manager to the state before the previous <em>undoable</em> command was executed.<br>
+<p>Restores Student Buddy to the state before the previous <em>undoable</em> command was executed.<br>
 Format: <code>undo</code></p>
 </div>
 <div class="admonitionblock note">
@@ -688,7 +820,7 @@ Format: <code>undo</code></p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Undoable commands: those commands that modify the Task Manager&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
+<p>Undoable commands: those commands that modify Student Buddy&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
 </div>
 </td>
 </tr>
@@ -756,14 +888,39 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 <div class="sect2">
 <h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.20. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
-<p>Clears all entries from the Task Manager.<br>
+<p>Clears all entries from Student Buddy.<br>
 Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="viewing-tasks-on-a-calendar"><a class="link" href="#viewing-tasks-on-a-calendar">3.21. Viewing tasks on a calendar</a></h3>
 <div class="paragraph">
-<p>Tasks displayed in the task list are automatically displayed on a calendar of the current month. If the task list is modified or filtered using <code>find</code>, the calendar will update accordingly. An example is displayed below:</p>
+<p>Tasks displayed in the task list are automatically displayed on a calendar of the current month.</p>
+</div>
+<div class="paragraph">
+<p>In addition, the calendar comes with the following features:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Tasks are automatically colour-coded, with high, medium and low priority tasks appearing red, orange and blue, respectively.</p>
+</li>
+<li>
+<p>Tasks are automatically listed in order of priority, from high to low.</p>
+</li>
+<li>
+<p>If the task list is modified with <code>add</code>, <code>delete</code> or <code>edit</code>, or it is filtered using <code>find</code>, the calendar will update accordingly.</p>
+</li>
+<li>
+<p>Selecting a task will highlight it on the calendar for easy viewing.</p>
+</li>
+<li>
+<p>Calendar cells are scrollable.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A showcase of the calendar&#8217;s features is displayed below:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -772,21 +929,60 @@ Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.22. Exiting the program : <code>exit</code></a></h3>
+<h3 id="changing-the-calendar-month-code-month-code-code-m-code"><a class="link" href="#changing-the-calendar-month-code-month-code-code-m-code">3.22. Changing the calendar month : <code>month</code>, <code>m</code></a></h3>
+<div class="paragraph">
+<p>Changes the month to be displayed by the calendar.<br>
+Format: <code>month MONTH</code> or <code>m MONTH</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Changes the displayed month to the specified <code>MONTH</code>.</p>
+</li>
+<li>
+<p>MONTH must be an integer between 1 and 12 inclusive.</p>
+</li>
+<li>
+<p>MONTH must not be the month already being displayed.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>month 2</code><br>
+Changes the month displayed to February.</p>
+</li>
+<li>
+<p><code>m 11</code><br>
+Changes the month displayed to November.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.23. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.23. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.24. Saving the data</a></h3>
 <div class="paragraph">
-<p>Task Manager data is saved in the hard disk automatically after any command that changes the data.<br>
+<p>Student Buddy&#8217;s data is saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.24. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.25. Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
@@ -798,7 +994,7 @@ There is no need to save manually.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
-<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Task Manager folder.</p>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Student Buddy folder.</p>
 </div>
 </div>
 </div>
@@ -855,6 +1051,10 @@ e.g. <code>login u/nicholas p/abcdefg</code></p>
 <p><strong>Logout</strong> : <code>logout</code></p>
 </li>
 <li>
+<p><strong>Month Change</strong> : <code>month MONTH</code><br>
+e.g. <code>month 11</code></p>
+</li>
+<li>
 <p><strong>Redo</strong> : <code>redo</code></p>
 </li>
 <li>
@@ -863,7 +1063,11 @@ e.g.<code>select 2</code></p>
 </li>
 <li>
 <p><strong>Sign-up</strong> : <code>signup u/USERNAME p/PASSWORD</code><br>
-e.g. `signup</p>
+e.g. <code>signup u/nicholas p/abcdefg</code></p>
+</li>
+<li>
+<p><strong>Sort</strong> : <code>sort KEYWORD</code><br>
+e.g <code>sort module</code></p>
 </li>
 <li>
 <p><strong>Undo</strong> : <code>undo</code></p>
@@ -871,4 +1075,4 @@ e.g. `signup</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 15:11:16 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-12 10:07:22 UTC</div></div></div></body></html>

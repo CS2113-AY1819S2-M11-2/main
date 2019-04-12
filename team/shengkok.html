@@ -1,72 +1,83 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Kayden - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>PROJECT: Student Buddy</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Task Manager</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2113-AY1819S2-M11-2/main/"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Kayden - Project Portfolio</h1></div><div id="content"><div class="sect1">
-<h2 id="project-addressbook-level-4"><a class="link" href="#project-addressbook-level-4">PROJECT: AddressBook - Level 4</a></h2>
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Student Buddy</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2113-AY1819S2-M11-2/main/"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>PROJECT: Student Buddy</h1></div><div id="content"><div class="sect1">
+<h2 id="kayden-project-portfolio"><a class="link" href="#kayden-project-portfolio">Kayden - Project Portfolio</a></h2>
 <div class="sectionbody">
-<hr>
+<div class="paragraph">
+<p>This portfolio serves to document my contributions in a team-based software enginnering project CS2113T. My team comprises of 4 memebers and we were tasked to morph a <strong>basic command line interface addressbook</strong> within <strong>8 weeks</strong>. After some discussion, we decided that we will work towards a Task Manager named <strong>Student Buddy</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Note the following symbols and formatting used in the project portfolio:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>command</code>: A grey highlight (called a mark-up) indicates that this is a command that can be inputted into the command line and executed by the application.</p>
+</li>
+<li>
+<p><strong>important</strong>: Bold mark-ups emphasize that this is a important word or phrase.</p>
+</li>
+<li>
+<p><em>method</em>: Italics mark-ups signify that this is a class or method name and one should take extra note as it will be useful in understanding the concepts or diagrams discussed.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>AddressBook - Level 4 is a desktop address book application used for teaching Software Engineering principles. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 10 kLoC.</p>
+<p>Our project&#8217;s ultimate aim is to <strong>help students organise their tasks and notes more efficiently and effectively</strong>. This is done through the following features. Student Buddy allows users to <code>add</code> and <code>delete</code> their tasks and miscellaneous notes; view tasks added easily via a calendar panel display; as well as incorporate a <code>signup</code> and <code>login</code> feature to strengthen the security of this application.</p>
+</div>
+<div class="paragraph">
+<p><strong>My role was to design and implement the <code>notes</code> feature</strong> which allows user to <code>add</code> and <code>delete</code> miscellaneous notes as well as display them in a clear and concise manner. The following sections will highlight my enhancements in more detail, as well as illustrating the relevant sections that I have contributed to the user and developer guide.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This section showcases the different aspects in which I have contributed to the project. These aspects include coding and the updating of user and developer guide.</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: added <strong>the ability to undo/redo previous commands</strong></p>
+<p><strong>Major enhancement</strong>: added <strong>the ability to <code>add notes</code> and <code>delete notes</code></strong>.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: allows the user to undo all previous commands one at a time. Preceding undo commands can be reversed by using the redo command.</p>
+<p>What it does: allows the user to add in new notes to help keep track and manage notes. Unwanted notes or notes that are already completed can be removed by deleting the note.</p>
 </li>
 <li>
-<p>Justification: This feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.</p>
+<p>Justification: This feature improves the product significantly because a user can now manage their miscellaneous activities other than school-related tasks which greatly enhances the useablility of Task Manager.</p>
 </li>
 <li>
-<p>Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.</p>
+<p>Highlights: This enhancement required an in-depth analysis and understanding of the design of Task Manager to know what are its restrictions and how it can be improved.</p>
 </li>
 <li>
-<p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
+<p>Credits: All the team members.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: added a history command that allows the user to navigate to previous commands using up/down keys.</p>
+<p><strong>Minor enhancement</strong>: Added colour codes to depict the importance of a note according to <code>priority</code> levels 1 to 3. The highest priority 1 being red-orange followed by yellow for 2 and white for 3.</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p><strong>Sample code contributed</strong>: [<a href="https://github.com/Shengkok/main/blob/master/src/main/java/seedu/address/logic/commands/AddNotesCommand.java">Functional code</a>] [<a href="https://github.com">Test code</a>]</p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Project management:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
 <p>Enhancements to existing features:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
-</li>
-<li>
-<p>Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+<p>Updated the GUI of the application by adding a panel to display notes: <a href="https://github.com/CS2113-AY1819S2-M11-2/main/pull/56">#56</a></p>
 </li>
 </ul>
 </div>
@@ -76,7 +87,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com/CS2113-AY1819S2-M11-2/main/pull/31">#31</a>, <a href="https://github.com/CS2113-AY1819S2-M11-2/main/pull/3">#3</a></p>
+</li>
+<li>
+<p>Added notes section into user and developer guides which comprises of add notes and delete notes feature: <a href="https://github.com/CS2113-AY1819S2-M11-2/main/pull/56">#56</a>, <a href="https://github.com/CS2113-AY1819S2-M11-2/main/pull/110">#110</a>, <a href="https://github.com/CS2113-AY1819S2-M11-2/main/pull/123">#123</a>, <a href="https://github.com/CS2113-AY1819S2-M11-2/main/pull/125">#125</a></p>
 </li>
 </ul>
 </div>
@@ -86,29 +100,23 @@
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
+<p>PRs reviewed: <a href="https://github.com/CS2113-AY1819S2-M11-2/main/pull/36">#36</a>, <a href="https://github.com/CS2113-AY1819S2-M11-2/main/pull/39">#39</a>, <a href="https://github.com/CS2113-AY1819S2-M11-2/main/pull/122">#122</a></p>
 </li>
 <li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
-</li>
-<li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
-</li>
-<li>
-<p>Some parts of the history feature I added was adopted by several other class mates (<a href="https://github.com">1</a>, <a href="https://github.com">2</a>)</p>
+<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com/CS2113-AY1819S2-T09-1/main/issues/189">1</a>, <a href="https://github.com/CS2113-AY1819S2-T09-1/main/issues/182">2</a>, <a href="https://github.com/CS2113-AY1819S2-T09-1/main/issues/176">3</a>)</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Tools:</p>
+<p>Project Management</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Integrated a third party library (Natty) to the project (<a href="https://github.com">#42</a>)</p>
+<p>Created new branch v1.4</p>
 </li>
 <li>
-<p>Integrated a new Github plugin (CircleCI) to the team repo</p>
+<p>Spearheaded the discussion of user stories under projects tab in Github: <a href="https://github.com/CS2113-AY1819S2-M11-2/main/projects/1">User_Stories</a></p>
 </li>
 </ul>
 </div>
@@ -117,9 +125,6 @@
 </div>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><em>{you can add/remove categories in the list above}</em></p>
 </div>
 </div>
 </div>
@@ -132,29 +137,89 @@
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>We had to morph the original user guide for address book to adapt to Student Buddy. This includes all the morphed features as well as the additional features that we had implemented. The following is an extract from our Student Buddy User Guide, showing the instructions that I have added for the <strong>notes</strong> feature.</em></p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>{Start of extract}</p>
+</div>
 <div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">Undoing previous command : <code>undo</code></a></h3>
+<h3 id="adding-miscellaneous-notes-code-note-code"><a class="link" href="#adding-miscellaneous-notes-code-note-code">Adding miscellaneous notes : <code>note</code></a></h3>
 <div class="paragraph">
-<p>Restores the Task Manager to the state before the previous <em>undoable</em> command was executed.<br>
-Format: <code>undo</code></p>
+<p>Adds a note to Student Buddy.
+Format: <code>note h/HEADING c/CONTENT p/PRIORITY</code></p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Adds the note with the given parameters.<br></p>
+</li>
+<li>
+<p><em>Priority</em> can <strong>only take numbers from 1 to 3</strong> with 1 being the most urgent.</p>
+</li>
+<li>
+<p>Notes with <em>Priority</em> 1 will be displayed in <strong>red</strong> colour followed by 2 in <strong>yellow</strong> and 3 in <strong>white</strong>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 <div class="paragraph">
-<p>Undoable commands: those commands that modify the Task Manager&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
+<p>Example:</p>
 </div>
-</td>
-</tr>
-</table>
+<div class="ulist">
+<ul>
+<li>
+<p><code>note h/Popular c/buy blue pens p/2</code><br>
+Add a note with <em>heading</em> Popular, <em>content</em> buy blue pens and <em>priority</em> 2.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following are 2 diagrams that demostrate the example shown above. One of the diagram shows the state before the command is executed and the other shows the state after command is executed.</p>
+</div>
+<div class="paragraph">
+<p><strong>Before:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AddNotesBefore.png" alt="AddNotesBefore" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>After:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AddNotesAfter.png" alt="AddNotesAfter" width="800">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-miscellaneous-notes-code-deletenote-code"><a class="link" href="#deleting-miscellaneous-notes-code-deletenote-code">Deleting miscellaneous notes : <code>deletenote</code></a></h3>
+<div class="paragraph">
+<p>Deletes the specified note from Student Buddy.<br>
+Format: <code>deletenote INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the note at the specified <em>INDEX</em>.</p>
+</li>
+<li>
+<p>The index refers to the <em>index</em> number shown in the displayed notes list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -162,63 +227,32 @@ Format: <code>undo</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete 1</code><br>
-<code>list</code><br>
-<code>undo</code><br>
-This reverses the <code>delete 1</code> command.</p>
-</li>
-<li>
-<p><code>select 1</code><br>
-<code>list</code><br>
-<code>undo</code><br>
-The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-This reverses the <code>clear</code> command and the <code>delete 1</code> command.</p>
+<p><code>deletenote 2</code><br>
+Deletes the 2nd note from the displayed notes list in Student Buddy.</p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">Redoing the previously undone command : <code>redo</code></a></h3>
 <div class="paragraph">
-<p>Reverses the most recent <code>undo</code> command.<br>
-Format: <code>redo</code></p>
+<p>The following are 2 diagrams that demostrate the example shown above. One of the diagram shows the state before the command is executed and the other shows the state after command is executed.</p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p><strong>Before:</strong></p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>delete 1</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>redo</code><br>
-The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
-</li>
-</ul>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeleteNoteBefore.png" alt="DeleteNoteBefore" width="800">
 </div>
 </div>
-<div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
-<p><em>{explain how the user can enable/disable data encryption}</em></p>
+<p><strong>After:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeleteNoteAfter.png" alt="DeleteNoteAfter" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>{End of extract}</p>
 </div>
 </div>
 </div>
@@ -232,220 +266,213 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>We were also tasked to morph the original Developer Guide for address book. Inside the developer guide contains all the <strong>technical information</strong> such as how a feature is implemented, class diagrams as well as sequence diagrams. Given below are sections I contributed to the Developer Guide. They showcase my <strong>ability to write technical documentation</strong> as well as the <strong>depth of my understanding</strong> of this project.</em></p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>{Start of extract}</p>
+</div>
 <div class="sect2">
-<h3 id="undo-redo-feature"><a class="link" href="#undo-redo-feature">Undo/Redo feature</a></h3>
+<h3 id="add-notes-feature"><a class="link" href="#add-notes-feature">Add Notes Feature</a></h3>
+<div class="paragraph">
+<p>This feature allow users to add notes regarding miscellaneous matters.</p>
+</div>
+<div class="paragraph">
+<p>The class diagram below illustrates the <strong>Notes</strong> class.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/NotesClassDiagram.png" alt="NotesClassDiagram" width="450">
+</div>
+</div>
 <div class="sect3">
 <h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
 <div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedTaskManager</code>.
-It extends <code>TaskManager</code> with an undo/redo history, stored internally as an <code>taskManagerStateList</code> and <code>currentStatePointer</code>.
-Additionally, it implements the following operations:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>VersionedTaskManager#commit()</code>&#8201;&#8212;&#8201;Saves the current task manager state in its history.</p>
-</li>
-<li>
-<p><code>VersionedTaskManager#undo()</code>&#8201;&#8212;&#8201;Restores the previous task manager state from its history.</p>
-</li>
-<li>
-<p><code>VersionedTaskManager#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone task manager state from its history.</p>
-</li>
-</ul>
+<p>The add notes mechanism is facilitated by <em>AddNotesCommand</em>. A <em>Notes</em> object is instantiated which contains of <em>Heading</em>, <em>Content</em> and <em>Priority</em>.</p>
 </div>
 <div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitTaskManager()</code>, <code>Model#undoTaskManager()</code> and <code>Model#redoTaskManager()</code> respectively.</p>
+<p>Given below is an example usage scenario and how the add notes mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
+<p>Step 1. The user enters in a note with its <strong>associated parameters</strong>. e.g <code>note h/popular c/buy pilot G-2 blue pens p/2</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedTaskManager</code> will be initialized with the initial task manager state, and the <code>currentStatePointer</code> pointing to that single task manager state.</p>
+<p>Step 2. The <em>LogicManager</em> calls <em>ParseCommand</em> with that input.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. The <em>TaskManagerParser</em> is called and returns a <em>AddNotesCommand</em> object to <em>Logic Manager</em>.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. The <em>LogicManager</em> will call <em>execute</em> method on the <em>AddNotesCommand</em> object.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. <em>ModelManager</em> is then called and will check if the note already exists.</p>
+</div>
+<div class="paragraph">
+<p>Step 6. If note already exists, <em>DuplicateNotesException</em> will be thrown. This will return a string message "This note already exists in the task list".</p>
+</div>
+<div class="paragraph">
+<p>Step 7. Else, <em>addNotes(notes)</em> method is called and note is added.</p>
+</div>
+<div class="paragraph">
+<p>The sequence diagram below illustrates how the mechanism for adding notes function.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/UndoRedoStartingStateListDiagram.png" alt="UndoRedoStartingStateListDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th task in the task manager. The <code>delete</code> command calls <code>Model#commitTaskManager()</code>, causing the modified state of the task manager after the <code>delete 5</code> command executes to be saved in the <code>taskManagerStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted task manager state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoNewCommand1StateListDiagram.png" alt="UndoRedoNewCommand1StateListDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 3. The user executes <code>add n/Project &#8230;&#8203;</code> to add a new task. The <code>add</code> command also calls <code>Model#commitTaskManager()</code>, causing another modified task manager state to be saved into the <code>taskManagerStateList</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoNewCommand2StateListDiagram.png" alt="UndoRedoNewCommand2StateListDiagram" width="800">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If a command fails its execution, it will not call <code>Model#commitTaskManager()</code>, so the task manager state will not be saved into the <code>taskManagerStateList</code>.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 4. The user now decides that adding the task was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoTaskManager()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous task manager state, and restores the task manager to that state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoExecuteUndoStateListDiagram.png" alt="UndoRedoExecuteUndoStateListDiagram" width="800">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial task manager state, then there are no previous task manager states to restore. The <code>undo</code> command uses <code>Model#canUndoTaskManager()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the undo operation works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoSequenceDiagram.png" alt="UndoRedoSequenceDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoTaskManager()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the task manager to that state.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index <code>taskManagerStateList.size() - 1</code>, pointing to the latest task manager state, then there are no undone task manager states to restore. The <code>redo</code> command uses <code>Model#canRedoTaskManager()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the task manager, such as <code>list</code>, will usually not call <code>Model#commitTaskManager()</code>, <code>Model#undoTaskManager()</code> or <code>Model#redoTaskManager()</code>. Thus, the <code>taskManagerStateList</code> remains unchanged.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoNewCommand3StateListDiagram.png" alt="UndoRedoNewCommand3StateListDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitTaskManager()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>taskManagerStateList</code>, all task manager states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/Project &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoNewCommand4StateListDiagram.png" alt="UndoRedoNewCommand4StateListDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a new command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoActivityDiagram.png" alt="UndoRedoActivityDiagram" width="650">
+<img src="../images/AddNotesSequenceDiagram.png" alt="AddNotesSequenceDiagram" width="800">
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire task manager.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy to implement.</p>
-</li>
-<li>
-<p>Cons: May have performance issues in terms of memory usage.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Aspect: Checking for <strong>duplicate notes</strong></p>
 </div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the task being deleted).</p>
+<p><strong>Alternative 1(current choice):</strong> Implement a method to check new notes entered. If a new note added is exactly the same as exisitng notes in the Student Buddy, it will be classified as duplicate note and cannot be added.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement</p>
 </li>
 <li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
+<p>Cons: May neglect duplicate notes that mean the same because the check is for the <strong>exact same heading and content</strong>. The following 2 examples shown below will be identified as different notes due to an additional <strong>s</strong> in example 2<br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>h/popular c/buy ring file</code><br></p>
 </li>
-</ul>
+<li>
+<p><code>h/popular c/buy ring files</code></p>
+</li>
+</ol>
 </div>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Implement a method to check for similarity of notes. If similarity is <strong>more than 90%</strong>, note is classified as same note and cannot be added.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of task manager states.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
+<p>Pros: Can reduce the amount of duplicate notes that are added.</p>
 </li>
 <li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedTaskManager</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
-</li>
-<li>
-<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p>
+<p>Cons: Difficult to implement and <strong>cannot eliminate duplicate notes completely</strong>.</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Final decision: Alternative 1 was chosen due to the <strong>significantly easier</strong> implementation.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-notes-feature"><a class="link" href="#delete-notes-feature">Delete Notes Feature</a></h3>
+<div class="paragraph">
+<p>This feature allow users to delete notes that are no longer wanted.</p>
+</div>
+<div class="sect3">
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">Current Implementation</a></h4>
+<div class="paragraph">
+<p>The Notes mechanism is facilitated by <em>DeleteNotesCommand</em> from the <em>Logic</em> component. Upon executing the <em>DeleteNotesCommand</em>, the unwanted note will be removed from the memory of the Student Buddy.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the <code>deletenote</code> mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user calls the <em>DeleteNotesCommand</em> with the note’s displayed index. e.g <code>deletenote 1</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The <em>LogicManager</em> calls <em>parseCommand</em> with the user input.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. The <em>TaskManagerParser</em> is called and it returns a <em>DeleteNotesCommand</em> object to the <em>LogicManager</em>.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. The <em>LogicManager</em> will call <em>execute()</em> on the <em>DeleteNotesCommand</em> object. If no note of the corresponding index is found, it would return a string of message <code>MESSAGE_INVALID_NOTES_DISPLAYED_INDEX</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. The <em>Logic</em> component then interacts with the <code>Model</code> component which then calls <code>TaskManager</code> component within it to execute <code>deleteNotes(target)</code> to remove the note.</p>
+</div>
+<div class="paragraph">
+<p>Step 6. The command result would then return the message <code>MESSAGE_DELETE_NOTE_SUCCESS</code> in a string.</p>
+</div>
+<div class="paragraph">
+<p>The following diagram illustrates how the <code>deletenote</code> operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeleteNotesSequenceDiagram.png" alt="DeleteNotesSequenceDiagram" width="800">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
+<div class="paragraph">
+<p>Aspect: Weighing <strong>user experience</strong> to <strong>convenience</strong> of users</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1:</strong> Implement a method to <strong>strike off</strong> notes that are completed so that users can keep track of what notes they have added in as well as the ones they finished.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Better user experience</p>
+</li>
+<li>
+<p>Cons: May cause incovenience as users have to delete away completed notes every few days so as to allow easier viewing of latest notes.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2(current choice):</strong> <strong>Deleting</strong> completed notes away.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement</p>
+</li>
+<li>
+<p>Pros: Easy for users to manage completed notes.</p>
+</li>
+<li>
+<p>Cons: No sense of achievement as users are unable to view the amount of work completed.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Final decision: Alternative 2 was chosen due to it being <strong>more practical and convenient</strong> to users so that users will continue to use it in the future.</p>
+</div>
+<div class="paragraph">
+<p>{End of extract}</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
+<h2 id="other-projects"><a class="link" href="#other-projects">Other Projects</a></h2>
 <div class="sectionbody">
-<hr>
+<div class="sect2">
+<h3 id="ee2026-fpga-design-project"><a class="link" href="#ee2026-fpga-design-project">EE2026 FPGA Design Project</a></h3>
 <div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
+<p>A project done by my partner Nicholas Lee and I on the Basys 3 FPGA board. It revolves around sound waves and how they can be displayed on various platforms such as on the monitor screen. Check out the link below to find out more.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/Nicholas-Kayden/EE2026">EE2026 FPGA Project</a></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-02 15:11:16 UTC</div></div></div></body></html>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-12 10:07:22 UTC</div></div></div></body></html>
