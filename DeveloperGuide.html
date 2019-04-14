@@ -34,10 +34,11 @@
 <li><a href="#add-notes-feature">4.2. Add Notes Feature</a></li>
 <li><a href="#delete-notes-feature">4.3. Delete Notes Feature</a></li>
 <li><a href="#sort-task-list-feature">4.4. Sort Task List Feature</a></li>
-<li><a href="#calendar-feature">4.5. Calendar feature</a></li>
-<li><a href="#month-view-change-feature">4.6. Month view change feature</a></li>
-<li><a href="#logging">4.7. Logging</a></li>
-<li><a href="#Implementation-Configuration">4.8. Configuration</a></li>
+<li><a href="#proposed-delete-overdue">4.5. [Proposed] Delete overdue</a></li>
+<li><a href="#calendar-feature">4.6. Calendar feature</a></li>
+<li><a href="#month-view-change-feature">4.7. Month view change feature</a></li>
+<li><a href="#logging">4.8. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.9. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a>
@@ -1052,9 +1053,16 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="calendar-feature"><a class="link" href="#calendar-feature">4.5. Calendar feature</a></h3>
+<h3 id="proposed-delete-overdue"><a class="link" href="#proposed-delete-overdue">4.5. [Proposed] Delete overdue</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">4.5.1. Current Implementation</a></h4>
+<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">4.5.1. Proposed Implementation</a></h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="calendar-feature"><a class="link" href="#calendar-feature">4.6. Calendar feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">4.6.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The Calendar extends the <code>Student Buddy</code> GUI with an easy to read interface for tracking task deadlines. It is composed of three classes, <code>CalendarPanel</code>, <code>CalendarCell</code> and <code>CalendarCellTask</code>. Furthermore, it uses the JavaFX files <code>CalendarPanel.fxml</code> and <code>CalendarCell.fxml</code> to format and structure the display.</p>
 </div>
@@ -1145,11 +1153,11 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 <p>Whenever the task list is updated, the function <code>createCalendarCells(taskList)</code> is called, which replaces the <code>CalendarCell</code> and <code>CalendarCellTask</code> instances in the <code>CalendarPanel</code>.</p>
 </div>
 <div class="paragraph">
-<p>If the selected task is changed, or the month to be displayed changes (see <a href="#month-view-change-feature">Section 4.6, &#8220;Month view change feature&#8221;</a>), the function <code>resetCalendar()</code> is called, which clears the calendar grid and resets the row and column constraints. Then <code>buildCalendarPane(taskList)</code> is called to rebuild the calendar.</p>
+<p>If the selected task is changed, or the month to be displayed changes (see <a href="#month-view-change-feature">Section 4.7, &#8220;Month view change feature&#8221;</a>), the function <code>resetCalendar()</code> is called, which clears the calendar grid and resets the row and column constraints. Then <code>buildCalendarPane(taskList)</code> is called to rebuild the calendar.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.2. Design Considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.6.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-the-calendar-is-built"><a class="link" href="#aspect-how-the-calendar-is-built">Aspect: How the Calendar is built</a></h5>
 <div class="ulist">
@@ -1252,9 +1260,9 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="month-view-change-feature"><a class="link" href="#month-view-change-feature">4.6. Month view change feature</a></h3>
+<h3 id="month-view-change-feature"><a class="link" href="#month-view-change-feature">4.7. Month view change feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-6"><a class="link" href="#current-implementation-6">4.6.1. Current Implementation</a></h4>
+<h4 id="current-implementation-6"><a class="link" href="#current-implementation-6">4.7.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>month</code> command allows a user to change what month they are currently viewing on the calendar. This is facilitated using the <code>currMonth</code> parameter in <code>Model</code>.</p>
 </div>
@@ -1297,14 +1305,14 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.7. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.8. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.8, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.9, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1335,7 +1343,7 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.8. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.9. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -3314,4 +3322,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 07:26:42 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 07:40:29 UTC</div></div></div></body></html>
