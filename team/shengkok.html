@@ -283,7 +283,7 @@ Deletes the 2nd note from the displayed notes list in Student Buddy.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/NotesClassDiagram.png" alt="NotesClassDiagram" width="450">
+<img src="../images/ClassDiagramForNotes.png" alt="ClassDiagramForNotes" width="450">
 </div>
 </div>
 <div class="sect3">
@@ -294,27 +294,34 @@ Deletes the 2nd note from the displayed notes list in Student Buddy.</p>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the add notes mechanism behaves at each step.</p>
 </div>
-<div class="paragraph">
-<p>Step 1. The user enters in a note with its <strong>associated parameters</strong>. e.g <code>note h/popular c/buy pilot G-2 blue pens p/2</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 2. The <em>LogicManager</em> calls <em>ParseCommand</em> with that input.</p>
-</div>
-<div class="paragraph">
-<p>Step 3. The <em>TaskManagerParser</em> is called and returns a <em>AddNotesCommand</em> object to <em>Logic Manager</em>.</p>
-</div>
-<div class="paragraph">
-<p>Step 4. The <em>LogicManager</em> will call <em>execute</em> method on the <em>AddNotesCommand</em> object.</p>
-</div>
-<div class="paragraph">
-<p>Step 5. <em>ModelManager</em> is then called and will check if the note already exists.</p>
-</div>
-<div class="paragraph">
-<p>Step 6. If note already exists, <em>DuplicateNotesException</em> will be thrown. This will return a string message "This note already exists in the task list".</p>
-</div>
-<div class="paragraph">
-<p>Step 7. Else, <em>addNotes(notes)</em> method is called and note is added.</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 1. The user enters in a note with its <strong>associated parameters</strong>. e.g <code>note h/popular c/buy pilot G-2 blue pens p/2</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 2. The <em>LogicManager</em> calls <em>ParseCommand</em> with that input.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 3. The <em>TaskManagerParser</em> is called and returns a <em>AddNotesCommand</em> object to <em>Logic Manager</em>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 4. The <em>LogicManager</em> will call <em>execute</em> method on the <em>AddNotesCommand</em> object.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 5. <em>ModelManager</em> is then called and will check if the note already exists.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 6. If note already exists, <em>DuplicateNotesException</em> will be thrown. This will return a string message "This note already exists in the task list".</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 7. Else, <em>addNotes(notes)</em> method is called and note is added.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>The sequence diagram below illustrates how the mechanism for adding notes function.</p>
 </div>
@@ -387,24 +394,37 @@ Deletes the 2nd note from the displayed notes list in Student Buddy.</p>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the <code>deletenote</code> mechanism behaves at each step.</p>
 </div>
-<div class="paragraph">
-<p>Step 1. The user calls the <em>DeleteNotesCommand</em> with the note’s displayed index. e.g <code>deletenote 1</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 2. The <em>LogicManager</em> calls <em>parseCommand</em> with the user input.</p>
-</div>
-<div class="paragraph">
-<p>Step 3. The <em>TaskManagerParser</em> is called and it returns a <em>DeleteNotesCommand</em> object to the <em>LogicManager</em>.</p>
-</div>
-<div class="paragraph">
-<p>Step 4. The <em>LogicManager</em> will call <em>execute()</em> on the <em>DeleteNotesCommand</em> object. If no note of the corresponding index is found, it would return a string of message <code>MESSAGE_INVALID_NOTES_DISPLAYED_INDEX</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 5. The <em>Logic</em> component then interacts with the <code>Model</code> component which then calls <code>TaskManager</code> component within it to execute <code>deleteNotes(target)</code> to remove the note.</p>
-</div>
-<div class="paragraph">
-<p>Step 6. The command result would then return the message <code>MESSAGE_DELETE_NOTE_SUCCESS</code> in a string.</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 1. The user calls the <em>DeleteNotesCommand</em> with the note’s displayed index. e.g <code>deletenote 1</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 2. The <em>LogicManager</em> calls <em>parseCommand</em> with the user input.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 3. The <em>TaskManagerParser</em> is called and it returns a <em>DeleteNotesCommand</em> object to the <em>LogicManager</em>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 4. The <em>LogicManager</em> will call <em>execute()</em> on the <em>DeleteNotesCommand</em> object. If no note of the corresponding index is found,</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">it would return a string of message <code>MESSAGE_INVALID_NOTES_DISPLAYED_INDEX</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 5. The <em>Logic</em> component then interacts with the <code>Model</code> component which then calls <code>TaskManager</code> component within it to execute</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>deleteNotes(target)</code> to remove the note.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 6. The command result would then return the message <code>MESSAGE_DELETE_NOTE_SUCCESS</code> in a string.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>The following diagram illustrates how the <code>deletenote</code> operation works:</p>
 </div>
@@ -475,4 +495,4 @@ Deletes the 2nd note from the displayed notes list in Student Buddy.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 12:12:30 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 12:21:30 UTC</div></div></div></body></html>
