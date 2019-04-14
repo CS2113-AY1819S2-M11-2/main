@@ -82,14 +82,16 @@
 <ul class="sectlevel2">
 <li><a href="#use-case-help">D.1. Use case: Help</a></li>
 <li><a href="#use-case-add-task">D.2. Use case: Add task</a></li>
-<li><a href="#use-case-delete-task">D.3. Use case: Delete task</a></li>
-<li><a href="#use-case-edit-task">D.4. Use case: Edit task</a></li>
-<li><a href="#use-case-find-task-by-name">D.5. Use case: Find task by name</a></li>
-<li><a href="#use-case-find-task-by-module">D.6. Use case: Find task by module</a></li>
-<li><a href="#use-case-find-task-by-date">D.7. Use case: Find task by date</a></li>
-<li><a href="#use-case-find-task-by-priority">D.8. Use case: Find task by priority</a></li>
-<li><a href="#use-case-sort-tasks">D.9. Use case: Sort tasks</a></li>
-<li><a href="#use-case-change-month">D.10. Use case: Change month</a></li>
+<li><a href="#use-case-add-notes">D.3. Use case: Add notes</a></li>
+<li><a href="#use-case-delete-task">D.4. Use case: Delete task</a></li>
+<li><a href="#use-case-delete-notes">D.5. Use case: Delete notes</a></li>
+<li><a href="#use-case-edit-task">D.6. Use case: Edit task</a></li>
+<li><a href="#use-case-find-task-by-name">D.7. Use case: Find task by name</a></li>
+<li><a href="#use-case-find-task-by-module">D.8. Use case: Find task by module</a></li>
+<li><a href="#use-case-find-task-by-date">D.9. Use case: Find task by date</a></li>
+<li><a href="#use-case-find-task-by-priority">D.10. Use case: Find task by priority</a></li>
+<li><a href="#use-case-sort-tasks">D.11. Use case: Sort tasks</a></li>
+<li><a href="#use-case-change-month">D.12. Use case: Change month</a></li>
 </ul>
 </li>
 <li><a href="#non-functional-requirements">Appendix E: Non Functional Requirements</a></li>
@@ -2940,7 +2942,46 @@ Removes the remark for the first task.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-delete-task"><a class="link" href="#use-case-delete-task">D.3. Use case: Delete task</a></h3>
+<h3 id="use-case-add-notes"><a class="link" href="#use-case-add-notes">D.3. Use case: Add notes</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to add a new event with given fields</p>
+</li>
+<li>
+<p>Student Buddy adds the event</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The given fields are invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1ai. Student Buddy shows an error message</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-delete-task"><a class="link" href="#use-case-delete-task">D.4. Use case: Delete task</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -2995,7 +3036,46 @@ Removes the remark for the first task.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-edit-task"><a class="link" href="#use-case-edit-task">D.4. Use case: Edit task</a></h3>
+<h3 id="use-case-delete-notes"><a class="link" href="#use-case-delete-notes">D.5. Use case: Delete notes</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to delete a specific note in the notes list by its index.</p>
+</li>
+<li>
+<p>Student Buddy deletes the note.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2ai. Student Buddy shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-edit-task"><a class="link" href="#use-case-edit-task">D.6. Use case: Edit task</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -3067,7 +3147,7 @@ Removes the remark for the first task.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-find-task-by-name"><a class="link" href="#use-case-find-task-by-name">D.5. Use case: Find task by name</a></h3>
+<h3 id="use-case-find-task-by-name"><a class="link" href="#use-case-find-task-by-name">D.7. Use case: Find task by name</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -3116,7 +3196,7 @@ Removes the remark for the first task.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-find-task-by-module"><a class="link" href="#use-case-find-task-by-module">D.6. Use case: Find task by module</a></h3>
+<h3 id="use-case-find-task-by-module"><a class="link" href="#use-case-find-task-by-module">D.8. Use case: Find task by module</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -3165,7 +3245,7 @@ Removes the remark for the first task.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-find-task-by-date"><a class="link" href="#use-case-find-task-by-date">D.7. Use case: Find task by date</a></h3>
+<h3 id="use-case-find-task-by-date"><a class="link" href="#use-case-find-task-by-date">D.9. Use case: Find task by date</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -3214,7 +3294,7 @@ Removes the remark for the first task.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-find-task-by-priority"><a class="link" href="#use-case-find-task-by-priority">D.8. Use case: Find task by priority</a></h3>
+<h3 id="use-case-find-task-by-priority"><a class="link" href="#use-case-find-task-by-priority">D.10. Use case: Find task by priority</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -3263,7 +3343,7 @@ Removes the remark for the first task.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-sort-tasks"><a class="link" href="#use-case-sort-tasks">D.9. Use case: Sort tasks</a></h3>
+<h3 id="use-case-sort-tasks"><a class="link" href="#use-case-sort-tasks">D.11. Use case: Sort tasks</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -3302,7 +3382,7 @@ Removes the remark for the first task.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-change-month"><a class="link" href="#use-case-change-month">D.10. Use case: Change month</a></h3>
+<h3 id="use-case-change-month"><a class="link" href="#use-case-change-month">D.12. Use case: Change month</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -3489,4 +3569,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 15:01:56 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 15:10:01 UTC</div></div></div></body></html>
