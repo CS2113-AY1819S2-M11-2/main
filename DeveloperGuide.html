@@ -29,18 +29,22 @@
 </ul>
 </li>
 <li><a href="#implementation">4. Implementation</a>
-<ul class="sectlevel2">
-<li><a href="#login-feature">4.1. Login Feature</a></li>
-<li><a href="#add-notes-feature">4.2. Add Notes Feature</a></li>
-<li><a href="#delete-notes-feature">4.3. Delete Notes Feature</a></li>
-<li><a href="#task-feature">4.4. Task Feature</a></li>
-<li><a href="#sort-task-list-feature">4.5. Sort Task List Feature</a></li>
-<li><a href="#proposed-delete-overdue">4.6. [Proposed] Delete overdue</a></li>
-<li><a href="#design-considerations-5">4.7. Design Considerations</a></li>
-<li><a href="#calendar-feature">4.8. Calendar feature</a></li>
-<li><a href="#month-view-change-feature">4.9. Month view change feature</a></li>
-<li><a href="#logging">4.10. Logging</a></li>
-<li><a href="#Implementation-Configuration">4.11. Configuration</a></li>
+<ul class="sectlevel3">
+<li><a href="#current-implementation">4.1. Current Implementation</a></li>
+<li><a href="#signup-and-login-command">4.2. Signup and Login Command</a></li>
+<li><a href="#logout-command">4.3. Logout Command</a></li>
+<li><a href="#deleteacc-command">4.4. DeleteAcc Command</a></li>
+<li><a href="#design-considerations">4.5. Design Considerations</a></li>
+<li><a href="#add-notes-feature">4.6. Add Notes Feature</a></li>
+<li><a href="#delete-notes-feature">4.7. Delete Notes Feature</a></li>
+<li><a href="#task-feature">4.8. Task Feature</a></li>
+<li><a href="#sort-task-list-feature">4.9. Sort Task List Feature</a></li>
+<li><a href="#proposed-delete-overdue">4.10. [Proposed] Delete overdue</a></li>
+<li><a href="#design-considerations-5">4.11. Design Considerations</a></li>
+<li><a href="#calendar-feature">4.12. Calendar feature</a></li>
+<li><a href="#month-view-change-feature">4.13. Month view change feature</a></li>
+<li><a href="#logging">4.14. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.15. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a>
@@ -587,12 +591,11 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Task Manager<
 <h2 id="implementation"><a class="link" href="#implementation">4. Implementation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section describes some noteworthy details on how certain features are implemented.</p>
+<p>This section describes some noteworthy details on how certain features are implemented.
+=== Login Feature</p>
 </div>
-<div class="sect2">
-<h3 id="login-feature"><a class="link" href="#login-feature">4.1. Login Feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">4.1.1. Current Implementation</a></h4>
+<h4 id="current-implementation"><a class="link" href="#current-implementation">4.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The login mechanism is facilitated by <code>TaskManager</code>, <code>SignupCommand</code>, <code>LoginCommand</code>, <code>LogoutCommand</code>, <code>DeleteAccountCommand</code>, <code>LoginEvent</code>, <code>GenerateHash</code>, <code>JsonLoginStorage</code>.
 The login feature is mainly supported by the <code>Command</code> class and <code>account</code> class.
@@ -601,11 +604,11 @@ A normal user account and an admin account. All username and hashed password are
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/AccountClassDiagram.png" alt="AccountClassDiagram" width="180">
+<img src="images/AccountClassDiagram.png" alt="AccountClassDiagram" width="350">
 </div>
 </div>
 <div class="paragraph">
-<p>The class diagram on the right illustrates the <code>account</code> class.<br></p>
+<p>The class diagram on the above illustrates the <code>account</code> class.<br></p>
 </div>
 <div class="paragraph">
 <p>In <code>model</code> class, there are methods to check for:
@@ -616,12 +619,12 @@ A normal user account and an admin account. All username and hashed password are
 <p>In this feature, there are 4 main commands.
 The flow on how the commands are executed and their respective sequence diagrams will be further elaborated below:<br>
 1. Signup and Login Command<br>
-2. <a href="#logout-command">Section 4.1.3, &#8220;Logout Command&#8221;</a><br>
-3. <a href="#deleteacc-command">Section 4.1.4, &#8220;DeleteAcc Command&#8221;</a></p>
+2. <a href="#logout-command">Section 4.3, &#8220;Logout Command&#8221;</a><br>
+3. <a href="#deleteacc-command">Section 4.4, &#8220;DeleteAcc Command&#8221;</a></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="signup-and-login-command"><a class="link" href="#signup-and-login-command">4.1.2. Signup and Login Command</a></h4>
+<h4 id="signup-and-login-command"><a class="link" href="#signup-and-login-command">4.2. Signup and Login Command</a></h4>
 <div class="paragraph">
 <p><strong><code>Signup Command</code> creates an account for the user and stores their username and password in a JSON file.</strong><br>
 <strong><code>Login Command</code> logs in the account for the user by checking the username and password stored in the JSON file.</strong><br>
@@ -661,17 +664,17 @@ It will then pass the User object to <code>JsonLoginStorage</code>.</p></td>
 </div>
 <div class="imageblock left">
 <div class="content">
-<img src="images/SignUpSequenceDiagram.png" alt="SignUpSequenceDiagram" width="400">
+<img src="images/SignUpSequenceDiagram.png" alt="SignUpSequenceDiagram" width="500">
 </div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/LoginSequenceDiagram.png" alt="LoginSequenceDiagram" width="400">
+<img src="images/LoginSequenceDiagram.png" alt="LoginSequenceDiagram" width="500">
 </div>
 </div>
 </div>
 <div class="sect3 right">
-<h4 id="logout-command"><a class="link" href="#logout-command">4.1.3. Logout Command</a></h4>
+<h4 id="logout-command"><a class="link" href="#logout-command">4.3. Logout Command</a></h4>
 <div class="paragraph">
 <p><strong>Logout Command logs the user out of their account.</strong> Given below is an example usage scenario of <code>logout</code>.</p>
 </div>
@@ -703,12 +706,12 @@ return to <code>LoginCommand</code> to return the user a successful logout outpu
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/LogoutSequenceDiagram.png" alt="LogoutSequenceDiagram" width="400">
+<img src="images/LogoutSequenceDiagram.png" alt="LogoutSequenceDiagram" width="500">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleteacc-command"><a class="link" href="#deleteacc-command">4.1.4. DeleteAcc Command</a></h4>
+<h4 id="deleteacc-command"><a class="link" href="#deleteacc-command">4.4. DeleteAcc Command</a></h4>
 <div class="paragraph">
 <p><strong><code>DeleteAcc</code> only accessible to admins. <code>DeleteAcc</code> deletes the entire account.</strong> Given below is an example usage scenario of <code>DeleteAcc</code>.</p>
 </div>
@@ -749,12 +752,12 @@ without any username and password stored in it. <code>reinitialise()</code> is a
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DeleteAccountSequenceDiagram.png" alt="DeleteAccountSequenceDiagram" width="400">
+<img src="images/DeleteAccountSequenceDiagram.png" alt="DeleteAccountSequenceDiagram" width="500">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.5. Design Considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.5. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-code-loginevent-code-and-code-jsonloginstorage-code-works-together"><a class="link" href="#aspect-how-code-loginevent-code-and-code-jsonloginstorage-code-works-together">Aspect: How <code>LoginEvent</code> and <code>JsonLoginStorage</code> works together</a></h5>
 <div class="paragraph">
@@ -796,9 +799,8 @@ Collisions exist with the algorithm, and there have been successful attacks agai
 </div>
 </div>
 </div>
-</div>
 <div class="sect2">
-<h3 id="add-notes-feature"><a class="link" href="#add-notes-feature">4.2. Add Notes Feature</a></h3>
+<h3 id="add-notes-feature"><a class="link" href="#add-notes-feature">4.6. Add Notes Feature</a></h3>
 <div class="paragraph">
 <p>This feature allow users to add notes regarding miscellaneous matters.</p>
 </div>
@@ -811,7 +813,7 @@ Collisions exist with the algorithm, and there have been successful attacks agai
 </div>
 </div>
 <div class="sect3">
-<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">4.2.1. Current Implementation</a></h4>
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">4.6.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The add notes mechanism is facilitated by <em>AddNotesCommand</em>. A <em>Notes</em> object is instantiated which contains of <em>Heading</em>, <em>Content</em> and <em>Priority</em>.</p>
 </div>
@@ -849,7 +851,7 @@ Collisions exist with the algorithm, and there have been successful attacks agai
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.2. Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.6.2. Design Considerations</a></h4>
 <div class="paragraph">
 <p>Aspect: Checking for <strong>duplicate notes</strong></p>
 </div>
@@ -899,12 +901,12 @@ Collisions exist with the algorithm, and there have been successful attacks agai
 </div>
 </div>
 <div class="sect2">
-<h3 id="delete-notes-feature"><a class="link" href="#delete-notes-feature">4.3. Delete Notes Feature</a></h3>
+<h3 id="delete-notes-feature"><a class="link" href="#delete-notes-feature">4.7. Delete Notes Feature</a></h3>
 <div class="paragraph">
 <p>This feature allow users to delete notes that are no longer wanted.</p>
 </div>
 <div class="sect3">
-<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">4.3.1. Current Implementation</a></h4>
+<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">4.7.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The Notes mechanism is facilitated by <em>DeleteNotesCommand</em> from the <em>Logic</em> component. Upon executing the <em>DeleteNotesCommand</em>, the unwanted note will be removed from the memory of the Student Buddy.</p>
 </div>
@@ -939,7 +941,7 @@ Collisions exist with the algorithm, and there have been successful attacks agai
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.2. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.7.2. Design Considerations</a></h4>
 <div class="paragraph">
 <p>Aspect: Weighing <strong>user experience</strong> to <strong>convenience</strong> of users</p>
 </div>
@@ -982,9 +984,9 @@ Collisions exist with the algorithm, and there have been successful attacks agai
 </div>
 </div>
 <div class="sect2">
-<h3 id="task-feature"><a class="link" href="#task-feature">4.4. Task Feature</a></h3>
+<h3 id="task-feature"><a class="link" href="#task-feature">4.8. Task Feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">4.4.1. Current Implementation</a></h4>
+<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">4.8.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The task list is created by refactoring the existing code in the <a href="https://github.com/se-edu/addressbook-level4">Address Book Level 4</a></p>
 </div>
@@ -999,9 +1001,9 @@ Collisions exist with the algorithm, and there have been successful attacks agai
 </div>
 </div>
 <div class="sect2">
-<h3 id="sort-task-list-feature"><a class="link" href="#sort-task-list-feature">4.5. Sort Task List Feature</a></h3>
+<h3 id="sort-task-list-feature"><a class="link" href="#sort-task-list-feature">4.9. Sort Task List Feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">4.5.1. Current Implementation</a></h4>
+<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">4.9.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The sorting mechanism is facilitated by <code>TaskManager</code>, <code>Model</code> and <code>SortTaskList</code>.</p>
 </div>
@@ -1042,7 +1044,7 @@ After returning the sorted Task List, the Task Manager is then committed.</p></t
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.5.2. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.9.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-sort-executes"><a class="link" href="#aspect-how-sort-executes">Aspect: How sort executes</a></h5>
 <div class="ulist">
@@ -1079,9 +1081,9 @@ After returning the sorted Task List, the Task Manager is then committed.</p></t
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-delete-overdue"><a class="link" href="#proposed-delete-overdue">4.6. [Proposed] Delete overdue</a></h3>
+<h3 id="proposed-delete-overdue"><a class="link" href="#proposed-delete-overdue">4.10. [Proposed] Delete overdue</a></h3>
 <div class="sect3">
-<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">4.6.1. Proposed Implementation</a></h4>
+<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">4.10.1. Proposed Implementation</a></h4>
 <div class="paragraph">
 <p>Using the existing <code>daysRemaining</code> variable, upon entering <code>DeleteOverdue</code> in the command line, the command will iterate through all the tasks and check the value of <code>daysRemaining</code>.
 If it is less than 0, the command will call the <code>DeleteCommand</code> to delete the overdue task.</p>
@@ -1089,9 +1091,9 @@ If it is less than 0, the command will call the <code>DeleteCommand</code> to de
 </div>
 </div>
 <div class="sect2">
-<h3 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.7. Design Considerations</a></h3>
+<h3 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.11. Design Considerations</a></h3>
 <div class="sect3">
-<h4 id="aspect-how-the-delete-overdue-command-executes"><a class="link" href="#aspect-how-the-delete-overdue-command-executes">4.7.1. Aspect: How the delete overdue command executes</a></h4>
+<h4 id="aspect-how-the-delete-overdue-command-executes"><a class="link" href="#aspect-how-the-delete-overdue-command-executes">4.11.1. Aspect: How the delete overdue command executes</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1125,9 +1127,9 @@ If it is less than 0, the command will call the <code>DeleteCommand</code> to de
 </div>
 </div>
 <div class="sect2">
-<h3 id="calendar-feature"><a class="link" href="#calendar-feature">4.8. Calendar feature</a></h3>
+<h3 id="calendar-feature"><a class="link" href="#calendar-feature">4.12. Calendar feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-6"><a class="link" href="#current-implementation-6">4.8.1. Current Implementation</a></h4>
+<h4 id="current-implementation-6"><a class="link" href="#current-implementation-6">4.12.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The Calendar extends the <code>Student Buddy</code> GUI with an easy to read interface for tracking task deadlines. It is composed of three classes, <code>CalendarPanel</code>, <code>CalendarCell</code> and <code>CalendarCellTask</code>. Furthermore, it uses the JavaFX files <code>CalendarPanel.fxml</code> and <code>CalendarCell.fxml</code> to format and structure the display.</p>
 </div>
@@ -1218,11 +1220,11 @@ If it is less than 0, the command will call the <code>DeleteCommand</code> to de
 <p>Whenever the task list is updated, the function <code>createCalendarCells(taskList)</code> is called, which replaces the <code>CalendarCell</code> and <code>CalendarCellTask</code> instances in the <code>CalendarPanel</code>.</p>
 </div>
 <div class="paragraph">
-<p>If the selected task is changed, or the month to be displayed changes (see <a href="#month-view-change-feature">Section 4.9, &#8220;Month view change feature&#8221;</a>), the function <code>resetCalendar()</code> is called, which clears the calendar grid and resets the row and column constraints. Then <code>buildCalendarPane(taskList)</code> is called to rebuild the calendar.</p>
+<p>If the selected task is changed, or the month to be displayed changes (see <a href="#month-view-change-feature">Section 4.13, &#8220;Month view change feature&#8221;</a>), the function <code>resetCalendar()</code> is called, which clears the calendar grid and resets the row and column constraints. Then <code>buildCalendarPane(taskList)</code> is called to rebuild the calendar.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">4.8.2. Design Considerations</a></h4>
+<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">4.12.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-the-calendar-is-built"><a class="link" href="#aspect-how-the-calendar-is-built">Aspect: How the Calendar is built</a></h5>
 <div class="ulist">
@@ -1325,9 +1327,9 @@ If it is less than 0, the command will call the <code>DeleteCommand</code> to de
 </div>
 </div>
 <div class="sect2">
-<h3 id="month-view-change-feature"><a class="link" href="#month-view-change-feature">4.9. Month view change feature</a></h3>
+<h3 id="month-view-change-feature"><a class="link" href="#month-view-change-feature">4.13. Month view change feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-7"><a class="link" href="#current-implementation-7">4.9.1. Current Implementation</a></h4>
+<h4 id="current-implementation-7"><a class="link" href="#current-implementation-7">4.13.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>month</code> command allows a user to change what month they are currently viewing on the calendar. This is facilitated using the <code>currMonth</code> parameter in <code>Model</code>.</p>
 </div>
@@ -1370,14 +1372,14 @@ If it is less than 0, the command will call the <code>DeleteCommand</code> to de
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.10. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.14. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.11, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.15, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1408,7 +1410,7 @@ If it is less than 0, the command will call the <code>DeleteCommand</code> to de
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.11. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.15. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -3387,4 +3389,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 09:01:59 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 09:31:17 UTC</div></div></div></body></html>
