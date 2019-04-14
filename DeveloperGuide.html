@@ -589,79 +589,39 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Task Manager<
 <h3 id="login-feature"><a class="link" href="#login-feature">4.1. Login Feature</a></h3>
 <div class="sect3">
 <h4 id="current-implementation"><a class="link" href="#current-implementation">4.1.1. Current Implementation</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>The login mechanism is facilitated by <code>TaskManager</code>, <code>SignupCommand</code>, <code>LoginCommand</code>, <code>LogoutCommand</code>, <code>DeleteAccountCommand</code>, <code>LoginEvent</code>, <code>GenerateHash</code>, <code>JsonLoginStorage</code>.</p>
-</li>
-<li>
-<p>The login feature is mainly supported by the <code>Command</code> class and <code>account</code> class.<br>
-There are two types of accounts in login feature which are implemented in the <code>account</code> class:<br></p>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>A normal user account<br></p>
-</li>
-<li>
-<p>An admin account.<br>
-The username and hashed password are stored in a JSON file.</p>
-</li>
-</ol>
-</div>
-</li>
-</ul>
-</div>
 <div class="paragraph">
-<p>The class diagram below illustrates the <code>account</code> class.</p>
+<p>The login mechanism is facilitated by <code>TaskManager</code>, <code>SignupCommand</code>, <code>LoginCommand</code>, <code>LogoutCommand</code>, <code>DeleteAccountCommand</code>, <code>LoginEvent</code>, <code>GenerateHash</code>, <code>JsonLoginStorage</code>.
+The login feature is mainly supported by the <code>Command</code> class and <code>account</code> class.
+There are two types of accounts in login feature which are implemented in the <code>account</code> class:<br>
+A normal user account and an admin account. All username and hashed password are stored in a JSON file.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/AccountClassDiagram.png" alt="AccountClassDiagram" width="200">
+<img src="images/AccountClassDiagram.png" alt="AccountClassDiagram" width="180">
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>In <code>model</code> class, there are methods to check for<br>
-<code>loginStatus</code> (if the user is logged in),<br>
-<code>adminStatus</code> (if the admin is logged in),<br>
-<code>userExists</code> (if the username is already taken),<br>
-<code>accountExists</code> (if there is already an account created).</p>
-</li>
-<li>
+<div class="paragraph">
+<p>The class diagram on the right illustrates the <code>account</code> class.<br></p>
+</div>
+<div class="paragraph">
+<p>In <code>model</code> class, there are methods to check for:
+<code>loginStatus</code> (if the user is logged in), <code>adminStatus</code> (if the admin is logged in),
+<code>userExists</code> (if the username is already taken), <code>accountExists</code> (if there is already an account created).</p>
+</div>
+<div class="paragraph">
 <p>In this feature, there are 4 main commands.
-The flow on how the commands are executed and their respective sequence diagrams will be further elaborated below:<br></p>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Section 4.1.2, Signup Command<br></p>
-</li>
-<li>
-<p><a href="#login-command">Section 4.1.3, &#8220;Login Command&#8221;</a><br></p>
-</li>
-<li>
-<p><a href="#logout-command">Section 4.1.4, &#8220;Logout Command&#8221;</a><br></p>
-</li>
-<li>
-<p><a href="#deleteacc-command">Section 4.1.5, &#8220;DeleteAcc Command&#8221;</a></p>
-</li>
-</ol>
-</div>
-</li>
-</ul>
+The flow on how the commands are executed and their respective sequence diagrams will be further elaborated below:<br>
+1. Signup and Login Command<br>
+2. <a href="#logout-command">Section 4.1.3, &#8220;Logout Command&#8221;</a><br>
+3. <a href="#deleteacc-command">Section 4.1.4, &#8220;DeleteAcc Command&#8221;</a></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="signup-command"><a class="link" href="#signup-command">4.1.2. Signup Command</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Signup Command creates an account for the user and stores their username and password in a JSON file.</p>
-</li>
-</ul>
-</div>
+<h4 id="signup-and-login-command"><a class="link" href="#signup-and-login-command">4.1.2. Signup and Login Command</a></h4>
 <div class="paragraph">
-<p>Given below is an example usage scenario of <code>signup</code>.</p>
+<p><strong><code>Signup Command</code> creates an account for the user and stores their username and password in a JSON file.</strong><br>
+<strong><code>Login Command</code> logs in the account for the user by checking the username and password stored in the JSON file.</strong><br>
+Given below is an example usage scenario of <code>signup</code>. The command word can be swapped for <code>login</code>.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -693,73 +653,23 @@ It will then pass the User object to <code>JsonLoginStorage</code>.</p></td>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The sequence diagram below shows the flow of <code>signup</code> from Step 1 to Step 5 above.</p>
+<p>The following sequence diagram below shows the flow of <code>signup</code> and <code>login</code> respectively from Step 1 to Step 5 above.</p>
+</div>
+<div class="imageblock left">
+<div class="content">
+<img src="images/SignUpSequenceDiagram.png" alt="SignUpSequenceDiagram" width="400">
+</div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SignUpSequenceDiagram.png" alt="SignUpSequenceDiagram" width="500">
+<img src="images/LoginSequenceDiagram.png" alt="LoginSequenceDiagram" width="400">
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="login-command"><a class="link" href="#login-command">4.1.3. Login Command</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Login Command logs in the account for the user by checking the username and password stored in the JSON file.</p>
-</li>
-</ul>
-</div>
+<div class="sect3 right">
+<h4 id="logout-command"><a class="link" href="#logout-command">4.1.3. Logout Command</a></h4>
 <div class="paragraph">
-<p>Given below is an example usage scenario of <code>login</code>.</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Step 1. The user logs in by keying in username and password using the command <code>login u/USERNAME p/PASSWORD</code>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Step 2. The <code>TaskManagerParser</code> recognises the command word as a login from <code>LoginCommand</code> and calls <code>LoginCommand</code>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Step 3. <code>LoginCommandParser</code> will parse the arguments to <code>LoginCommand</code>
- <code>LoginCommand</code> will call the following command which is linked to <code>LoginEvent</code>.</p>
-<p class="tableblock"><code>getLoginStatus</code> to check if the user is already logged in.<br></p>
-<p class="tableblock">If the arguments passes <code>getLoginStatus</code>, <code>logUser(user)</code> will be called in <code>LoginEvent</code> to
-check for username and password match.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Step 4. In <code>LoginEvent</code>, <code>JsonLoginStorage</code> retrieves the username and hashed password from the Json file.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Step 5. <code>loginEvent</code> will then check if the user inputs matches the username and password stored and
-will then return to <code>LoginCommand</code> and returns the user a successful login output.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>The sequence diagram below shows the flow of <code>login</code> from Step to Step above.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/LoginSequenceDiagram.png" alt="LoginSequenceDiagram" width="500">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="logout-command"><a class="link" href="#logout-command">4.1.4. Logout Command</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Logout Command logs the user out of their account.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario of <code>logout</code>.</p>
+<p><strong>Logout Command logs the user out of their account.</strong> Given below is an example usage scenario of <code>logout</code>.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -789,21 +699,14 @@ return to <code>LoginCommand</code> to return the user a successful logout outpu
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/LogoutSequenceDiagram.png" alt="LogoutSequenceDiagram" width="500">
+<img src="images/LogoutSequenceDiagram.png" alt="LogoutSequenceDiagram" width="400">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleteacc-command"><a class="link" href="#deleteacc-command">4.1.5. DeleteAcc Command</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>DeleteAcc Command is only accessible to admins. DeleteAcc deletes the entire account.</p>
-</li>
-</ul>
-</div>
+<h4 id="deleteacc-command"><a class="link" href="#deleteacc-command">4.1.4. DeleteAcc Command</a></h4>
 <div class="paragraph">
-<p>Given below is an example usage scenario of <code>DeleteAcc</code>.</p>
+<p><strong><code>DeleteAcc</code> only accessible to admins. <code>DeleteAcc</code> deletes the entire account.</strong> Given below is an example usage scenario of <code>DeleteAcc</code>.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -811,7 +714,7 @@ return to <code>LoginCommand</code> to return the user a successful logout outpu
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Step 1. The admin logs in by keying in username and password using the command <code>login u/USERNAME p/PASSWORD</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 1. The admin logs in by keying in username and password using the command <code>login u/admin p/admin</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Step 2. The admin keys in <code>DeleteAcc</code> to delete the account.</p></td>
@@ -842,117 +745,51 @@ without any username and password stored in it. <code>reinitialise()</code> is a
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DeleteAccountSequenceDiagram.png" alt="DeleteAccountSequenceDiagram" width="500">
+<img src="images/DeleteAccountSequenceDiagram.png" alt="DeleteAccountSequenceDiagram" width="400">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.6. Design Considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.5. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-code-loginevent-code-and-code-jsonloginstorage-code-works-together"><a class="link" href="#aspect-how-code-loginevent-code-and-code-jsonloginstorage-code-works-together">Aspect: How <code>LoginEvent</code> and <code>JsonLoginStorage</code> works together</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong> Alternative 1 (current choice): </strong> <code>LoginEvent</code> and <code>JsonLoginStorage</code> are in separate classes.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Follows OOP coding. The codes will look more organised and clean.</p>
-</li>
-<li>
-<p>Cons: Coders will have to look at both files to code or debug as both calls each other frequently.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong> Alternative 2: </strong> <code>LoginEvent</code> and <code>JsonLoginStorage</code> are in the same class.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy to read and debug, all codes are in one file and thus easier for other coders to modify.</p>
-</li>
-<li>
-<p>Cons: Does not follow OOP coding. The codes in the file will look messy.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<div class="paragraph">
+<p><strong>Alternative 1 (current choice): <code>LoginEvent</code> and <code>JsonLoginStorage</code> are in separate classes.</strong><br>
+Pros: Follows OOP coding. The codes will look more organised and clean.<br>
+Cons: Coders will have to look at both files to code or debug as both calls each other frequently.<br>
+<strong>Alternative 2: <code>LoginEvent</code> and <code>JsonLoginStorage</code> are in the same class.</strong><br>
+Pros: Easy to read and debug, all codes are in one file and thus easier for other coders to modify.<br>
+Cons: Does not follow OOP coding. The codes in the file will look messy.</p>
 </div>
 </div>
-</div>
-<div class="sect3">
-<h4 id="aspect-how-code-loginevent-code-fits-into-the-code"><a class="link" href="#aspect-how-code-loginevent-code-fits-into-the-code">4.1.7. Aspect: How <code>LoginEvent</code> fits into the code</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p><strong> Alternative 1 (current choice): </strong> <code>LoginEvent</code> is implemented into the logic.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: The code will be efficient and effective. It will be neat and the flow will be well structured.
-Single Responsibility Principle and Separation of Concerns is maintained in the code.</p>
-</li>
-<li>
-<p>Cons: Might be confusing as <code>LoginEvent</code> is used frequently.
-Coders might need to fully understand how other classes work before looking at <code>LoginEvent</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong> Alternative 2: </strong> <code>LoginEvent</code> is implemented on its own.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: It would be easier for coders to visualise and debug. <code>LoginEvent</code> can still run the entire Taskmanager.</p>
-</li>
-<li>
-<p>Cons: There would be a lot of repeated and redundant codes.
-Most of the functions in the <code>logic</code> component will be repeated.
-This will violate Single Responsibility Principle and Separation of Concerns.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<div class="sect4">
+<h5 id="aspect-how-code-loginevent-code-fits-into-the-code"><a class="link" href="#aspect-how-code-loginevent-code-fits-into-the-code">Aspect: How <code>LoginEvent</code> fits into the code</a></h5>
+<div class="paragraph">
+<p><strong>Alternative 1 (current choice): <code>LoginEvent</code> is implemented into the logic.</strong><br>
+Pros: The code will be efficient and effective. It will be neat and the flow will be well structured.
+Single Responsibility Principle and Separation of Concerns is maintained in the code.<br>
+Cons: Might be confusing as <code>LoginEvent</code> is used frequently.
+Coders might need to fully understand how other classes work before looking at <code>LoginEvent</code>.<br>
+<strong>Alternative 2: <code>LoginEvent</code> is implemented on its own.</strong><br>
+Pros: It would be easier for coders to visualise and debug. <code>LoginEvent</code> can still run the entire Taskmanager.<br>
+Cons: There would be a lot of repeated and redundant codes.
+Most of the functions in the <code>logic</code> component will be repeated. This will violate Single Responsibility Principle and Separation of Concerns.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="aspect-how-the-securing-of-password-is-implemented"><a class="link" href="#aspect-how-the-securing-of-password-is-implemented">4.1.8. Aspect: How the securing of password is implemented</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p><strong> Alternative 1 (current choice): </strong> Create my own hashing fuction to secure password</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Hashing is a one way function. With a proper hashing design, there is no way to reverse
-the hashing process to reveal the original password.</p>
-</li>
-<li>
-<p>Cons: Need to code out my own hashing function. More logic and function have to be written.
-The code will be mroe complex.</p>
-</li>
-</ul>
+<div class="sect4">
+<h5 id="aspect-how-the-securing-of-password-is-implemented"><a class="link" href="#aspect-how-the-securing-of-password-is-implemented">Aspect: How the securing of password is implemented</a></h5>
+<div class="paragraph">
+<p><strong>Alternative 1 (current choice): Create my own hashing function to secure password.</strong><br>
+Pros: Hashing is a one way function. With a proper hashing design, there is no way to reverse
+the hashing process to reveal the original password.<br>
+Cons: Need to code out my own hashing function. More logic and function have to be written.
+The code will be more complex.<br>
+<strong>Alternative 2: Use encryption library to secure password. Eg. MD5 hashing</strong><br>
+Pros: Do not need to code much. Most of the function are one line. Easy to implement.<br>
+Cons: Encryption is a two-way function. Encrypted strings can be decrypted with a proper key.
+The password will not be secure. MD5 is not suitable for sensitive information.
+Collisions exist with the algorithm, and there have been successful attacks against it.</p>
 </div>
-</li>
-<li>
-<p><strong> Alternative 2: </strong> Use encryption library to secure password</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Do not need to code much. Most of the function are one line. Easy to implement.</p>
-</li>
-<li>
-<p>Cons: Encryption is a two-way function. Encrypted strings can be decrypted with a proper key.
-The password will not be secure.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
 </div>
 </div>
 </div>
@@ -3420,4 +3257,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-12 10:07:22 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 03:40:39 UTC</div></div></div></body></html>
