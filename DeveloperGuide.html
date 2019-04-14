@@ -92,6 +92,10 @@
 <li><a href="#use-case-find-task-by-priority">D.10. Use case: Find task by priority</a></li>
 <li><a href="#use-case-sort-tasks">D.11. Use case: Sort tasks</a></li>
 <li><a href="#use-case-change-month">D.12. Use case: Change month</a></li>
+<li><a href="#use-case-signup">D.13. Use case: Signup</a></li>
+<li><a href="#use-case-login">D.14. Use case: Login</a></li>
+<li><a href="#use-case-logout">D.15. Use case: Logout</a></li>
+<li><a href="#use-case-deleteacc">D.16. Use case: Deleteacc</a></li>
 </ul>
 </li>
 <li><a href="#non-functional-requirements">Appendix E: Non Functional Requirements</a></li>
@@ -3430,8 +3434,182 @@ Removes the remark for the first task.</p>
 </li>
 </ul>
 </div>
+</div>
+<div class="sect2">
+<h3 id="use-case-signup"><a class="link" href="#use-case-signup">D.13. Use case: Signup</a></h3>
 <div class="paragraph">
-<p><em>{More to be added}</em></p>
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to sign up an account</p>
+</li>
+<li>
+<p>Student Buddy signs up user with an account</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The given username and password are invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1ai. Student Buddy shows an error message</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. The account exists</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1bi. Student Buddy shows an error message</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-login"><a class="link" href="#use-case-login">D.14. Use case: Login</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to login into account</p>
+</li>
+<li>
+<p>Student Buddy logs user in with account</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The given username and password are invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1ai. Student Buddy shows an error message</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. The user is logged in</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1bi. Student Buddy shows an error message</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-logout"><a class="link" href="#use-case-logout">D.15. Use case: Logout</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to logout of account</p>
+</li>
+<li>
+<p>Student Buddy logs user out of account</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The user is logged out</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1ai. Student Buddy shows an error message</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-deleteacc"><a class="link" href="#use-case-deleteacc">D.16. Use case: Deleteacc</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to delete account</p>
+</li>
+<li>
+<p>Student Buddy deletes account</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. User is not logged in</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1ai. Student Buddy shows an error message</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. User is not an admin</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1bi. Student Buddy shows an error message</p>
+<div class="paragraph">
+<p><em>{More to be added in V2.0}</em></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -3569,4 +3747,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 15:10:01 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 15:18:08 UTC</div></div></div></body></html>
