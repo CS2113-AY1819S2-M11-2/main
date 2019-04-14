@@ -81,6 +81,7 @@
 <li><a href="#use-case-find-task-by-date">D.2. Use case: Find task by date</a></li>
 <li><a href="#use-case-find-task-by-priority">D.3. Use case: Find task by priority</a></li>
 <li><a href="#use-case-sort-tasks">D.4. Use case: Sort tasks</a></li>
+<li><a href="#use-case-change-month">D.5. Use case: Change month</a></li>
 </ul>
 </li>
 <li><a href="#non-functional-requirements">Appendix E: Non Functional Requirements</a></li>
@@ -2551,110 +2552,116 @@ Removes the remark for the first task.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view all the months of the year on the calendar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">select a task to have it highlighted in the app for easy viewing</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">secure my task manager via a username and password to keep my events safe</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">keep my events and due dates private and secure to minimize the chances of someone deleting them</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">have my password hashed</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">keep my password safe without anyone easily retrieving them through my computer</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">have admins to be able to access over my account</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">allow them to add or edit any tasks</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">have just one task manager account</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">make things simple and minimal</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have just one task manager account</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">make things simple and minimal</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">administrator</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">be able to delete an account</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">assist the user by resetting their account if they forget their password</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">have an tasks on the calendar sorted in order of priority</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">easily see which tasks are the most urgent</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">have an tasks on the calendar colour-coded in order of priority</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">easily see which tasks are the most urgent</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">have the selected task highlighted on the calendar</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">easily view the selected task&#8217;s deadline</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">find a task by name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">locate details of event without having to go through the entire list</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">have multiple tasks with different tags for a single entry</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">combine duplicate events and prevent confusion for multiple same events</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">find tasks by due date, tags, etc.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">still find an important task if I forget their name</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">find a task even if I mistype (e.g. incorrect capitalisation)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">save time by not having to rewrite the query</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">store miscellaneous notes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">keep track of important events other than tasks</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">have just one task manager account</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">make things simple and minimal</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">administrator</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">be able to use commands like the user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">assign task and deadlines to the user</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">change the theme of the GUI</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">allow me to customise the app&#8217;s appearance to my liking</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">have the program automatically complete my inputs</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">save time by not having to write out the entire command or search query</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">change the colours and sizes of the text</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">make things easier to read</p></td>
 </tr>
 </tbody>
 </table>
@@ -2664,7 +2671,7 @@ Removes the remark for the first task.</p>
 <h2 id="use-cases"><a class="link" href="#use-cases">Appendix D: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(For all use cases below, the <strong>System</strong> is the <code>TaskManager</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+<p>(For all use cases below, the <strong>System</strong> is <code>Student Buddy</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
 <h3 id="use-case-help" class="discrete">Use case: Help</h3>
 <div class="paragraph">
@@ -3092,6 +3099,56 @@ Removes the remark for the first task.</p>
 </li>
 </ul>
 </div>
+</div>
+<div class="sect2">
+<h3 id="use-case-change-month"><a class="link" href="#use-case-change-month">D.5. Use case: Change month</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to change the month being displayed on the calendar</p>
+</li>
+<li>
+<p>Student Buddy displays a different month on the calendar according to the user&#8217;s input</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The given month is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1ai. Student Buddy returns an error</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b. The given month is already being displayed</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1bi. Student Buddy returns an error</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p><em>{More to be added}</em></p>
 </div>
@@ -3257,4 +3314,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 05:53:20 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 05:54:36 UTC</div></div></div></body></html>
