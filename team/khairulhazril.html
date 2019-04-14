@@ -10,7 +10,15 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Student Buddy is a task manager desktop application. It is a GUI app but most of its user interactions happen in the Command Line Interface (CLI). It is targeted to students who have difficulty keeping track of their tasks and additional notes.</p>
+<p>This portfolio serves to document my contributions in a team-based software engineering project for the module CS2113T.
+The team comprises of 4 members ad we were tasked to develop a working application within 8 weeks.
+We decided to morph the existing application into a task manager, called <strong>Student Buddy</strong>.</p>
+</div>
+<div class="paragraph">
+<p>To comply with the module requirements, the team is constrained to start from an existing code base – <a href="https://github.com/se-edu/addressbook-level4">Address Book Level 4</a> and the user must interact with the application via Command Line interface(CLI).</p>
+</div>
+<div class="paragraph">
+<p><strong>Student Buddy</strong> is a desktop application created for students to assist them in managing their schedule.</p>
 </div>
 </div>
 </div>
@@ -18,7 +26,7 @@
 <h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section shows a summary of my coding, documentation, and other helpful contributions to the team project.</p>
+<p>This section shows a summary of my coding, documentation, and other helpful contributions to <strong>Student Buddy</strong>.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -39,13 +47,16 @@
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: created a <code>daysLeft</code> function to find number of days remaining till the task is due and gave colour codes depending on how much days are left.</p>
+<p><strong>Minor enhancement</strong>: refactored the existing Address Book Level 4 and edited the code to make a basic task manager that was used as the base of Student Buddy.</p>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: created a <code>daysRemaining</code> function to find number of days remaining till the task is due and gave colour codes depending on how much days are left.</p>
 </li>
 <li>
 <p><strong>Minor enhancement</strong>: created <code>findname</code>, <code>findmodule</code>, <code>finddate</code> and <code>findpriority</code> commands to be able to search not only by task name but by other variables.</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p><strong>Code contributed</strong>: <a href="https://nuscs2113-ay1819s2.github.io/dashboard-beta/#search=Khairul">Reposense</a></p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -69,10 +80,23 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Update images in the Developer Guide</p>
+<p>Updated the content in the User and Developer Guides according to my contribution to the project (<a href="https://github.com/CS2113-AY1819S2-M11-2/main/pull/54">#54</a>, <a href="https://github.com/CS2113-AY1819S2-M11-2/main/pull/79">#79</a>)</p>
+</li>
+<li>
+<p>Updated the existing images in the Developer Guide to fit the project (<a href="https://github.com/CS2113-AY1819S2-M11-2/main/pull/110/files">#110</a>)</p>
 </li>
 <li>
 <p>Wrote use cases and user stories</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Reported bugs and suggestions for other teams in the class (examples: <a href="https://github.com/cs2113-ay1819s2-t08-2/main/issues/56">1</a>, <a href="https://github.com/cs2113-ay1819s2-t08-2/main/issues/63">2</a>, <a href="https://github.com/cs2113-ay1819s2-t08-2/main/issues/66">3</a>)</p>
 </li>
 </ul>
 </div>
@@ -93,29 +117,41 @@
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users with the aim of providing clear and concise instructions at a level that is easy for the end-user to follow.</em></p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>(Start of extract from the User Guide)</p>
+</div>
 <div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">Undoing previous command : <code>undo</code></a></h3>
+<h3 id="locating-tasks-by-name-code-findname-code"><a class="link" href="#locating-tasks-by-name-code-findname-code">Locating tasks by name: <code>findname</code></a></h3>
 <div class="paragraph">
-<p>Restores Student Buddy to the state before the previous <em>undoable</em> command was executed.<br>
-Format: <code>undo</code></p>
+<p>Finds tasks with names containing any of the given keywords.<br>
+Format: <code>findname KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Undoable commands: those commands that modify Student Buddy&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>HOMEWORK</code> will match <code>homework</code></p>
+</li>
+<li>
+<p>The order of the keywords does not matter. e.g. <code>CS2113 Tutorial</code> will match <code>Tutorial CS2113</code></p>
+</li>
+<li>
+<p>Only the name is searched.</p>
+</li>
+<li>
+<p>Only full words will be matched e.g. <code>Assignments</code> will not match <code>Assignment</code></p>
+</li>
+<li>
+<p>Tasks matching at least one of the keywords will be returned (i.e. <code>OR</code> search). e.g. <code>CS2113 Assignment</code> will return <code>CS2113 Homework</code>, <code>Assignment 2</code></p>
+</li>
+</ul>
 </div>
-</td>
-</tr>
-</table>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -123,32 +159,41 @@ Format: <code>undo</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete 1</code><br>
-<code>list</code><br>
-<code>undo</code><br>
-This reverses the <code>delete 1</code> command.</p>
+<p><code>findname Project Tutorial</code><br>
+Returns all task with names containing <code>Project</code> or <code>Tutorial</code>.</p>
 </li>
 <li>
-<p><code>select 1</code><br>
-<code>list</code><br>
-<code>undo</code><br>
-The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-This reverses the <code>clear</code> command and the <code>delete 1</code> command.</p>
+<p><code>findname Project Lab Report</code><br>
+Returns all task having names <code>Project</code>, <code>Lab</code>, or <code>Report</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">Redoing the previously undone command : <code>redo</code></a></h3>
+<h3 id="locating-tasks-by-module-code-code-findmodule-code"><a class="link" href="#locating-tasks-by-module-code-code-findmodule-code">Locating tasks by module code: <code>findmodule</code></a></h3>
 <div class="paragraph">
-<p>Reverses the most recent <code>undo</code> command.<br>
-Format: <code>redo</code></p>
+<p>Finds tasks with module codes containing any of the given keywords.<br>
+Format: <code>findmodule KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>CS2113T</code> will match <code>cs2113t</code></p>
+</li>
+<li>
+<p>The order of the keywords does not matter. e.g. <code>CS2113T CS2101</code> will match <code>CS2101 CS2113</code></p>
+</li>
+<li>
+<p>Only the module code is searched.</p>
+</li>
+<li>
+<p>Only full words will be matched e.g. <code>CS2113T</code> will not match <code>CS2113</code></p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -156,30 +201,119 @@ Format: <code>redo</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete 1</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
+<p><code>findmodule CS2113T</code><br>
+Returns all tasks containing the module code <code>CS2113T</code>.</p>
 </li>
 <li>
-<p><code>delete 1</code><br>
-<code>redo</code><br>
-The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
+<p><code>findmodule CS2113T CS2101</code><br>
+Returns all tasks containing the module code <code>CS2113T</code> or <code>CS2101</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="locating-tasks-by-date-code-finddate-code"><a class="link" href="#locating-tasks-by-date-code-finddate-code">Locating tasks by date: <code>finddate</code></a></h3>
 <div class="paragraph">
-<p><em>{explain how the user can enable/disable data encryption}</em></p>
+<p>Finds tasks with dates containing any of the given keywords.<br>
+Format: <code>finddate KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The order of the keywords does not matter. e.g. <code>03-03 21-03</code> will match <code>21-03 03-03</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>finddate 20-03</code><br>
+Returns all task with date 20-03.</p>
+</li>
+<li>
+<p><code>finddate 20-03 30-03</code><br>
+Returns all task with date 20-03 or 30-03.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="locating-tasks-by-priority-code-code-findpriority-code"><a class="link" href="#locating-tasks-by-priority-code-code-findpriority-code">Locating tasks by priority code: <code>findpriority</code></a></h3>
+<div class="paragraph">
+<p>Finds tasks with priority code containing any of the given keywords.<br>
+Format: <code>findpriority KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The order of the keywords does not matter. e.g. <code>1 2</code> will match <code>2 1</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>findpriority 1</code><br>
+Returns all task with priority code 1.</p>
+</li>
+<li>
+<p><code>findpriority 1 3</code><br>
+Returns all task with priority code 1 or 3.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sorting-the-task-list-code-sort-code"><a class="link" href="#sorting-the-task-list-code-sort-code">Sorting the task list : <code>sort</code></a></h3>
+<div class="paragraph">
+<p>Sorts the task list in Student Buddy according to an input parameter.
+Format: <code>sort PARAMETER</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Sorts the task list according to the <code>PARAMETER</code>.</p>
+</li>
+<li>
+<p>The parameter <strong>must be one of the following</strong> <code>name, module, date, priority</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sort module</code><br>
+Sorts the task list lexicographically by module code.</p>
+</li>
+<li>
+<p><code>sort priority</code><br>
+Sorts the task list in descending order by priority.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>(End of extract)</p>
 </div>
 </div>
 </div>
@@ -198,7 +332,83 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </tbody>
 </table>
 <div class="paragraph">
-<p>include::../DeveloperGuide.adoc</p>
+<p>(Start of extract from the Developer Guide)</p>
+</div>
+<div class="sect2">
+<h3 id="sort-task-list-feature"><a class="link" href="#sort-task-list-feature">Sort Task List Feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
+<div class="paragraph">
+<p>The sorting mechanism is facilitated by <code>TaskManager</code>, <code>Model</code> and <code>SortTaskList</code>.</p>
+</div>
+<div class="paragraph">
+<p>Given below is an example usage scenario.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user keys in <code>sort ATTRIBUTE</code>, the <code>SortCommandParser</code> will trim the command to get the attribute.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. If the attribute is valid, it will then create a new <code>SortCommand</code> and execute with the given attribute.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. <code>SortCommand</code> will then call <code>ModelManager#sortTask(toSortBy)</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. It will then call <code>TaskManager#sortTask(attribute)</code>.
+Then we convert the relevant attributes of the tasks in the Task List to string to compare using <code>string#compareTo()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. Then, we use <code>setTasks()</code> in <code>UniqueTaskList</code> to update the Task List.
+After returning the sorted Task List, the Task Manager is then committed.</p>
+</div>
+<div class="paragraph">
+<p>The Sequence Diagram below illustrates how the sort mechanism functions. More specifically, sorting by module code.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/SortSequenceDiagram.png" alt="SortSequenceDiagram" width="900">
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 03:40:39 UTC</div></div></div></body></html>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-sort-executes"><a class="link" href="#aspect-how-sort-executes">Aspect: How sort executes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Write a class separately for handling the sorting of the task list.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to read and debug, Follows OOP coding and thus easier for other coders to modify.</p>
+</li>
+<li>
+<p>Cons: Difficult to implement.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Write a method for each attribute in <code>TaskManager</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement.</p>
+</li>
+<li>
+<p>Cons: Does not follow OOP coding.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>(End of extract)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 05:53:21 UTC</div></div></div></body></html>
