@@ -335,32 +335,56 @@ Sorts the task list in descending order by priority.</p>
 <p>(Start of extract from the Developer Guide)</p>
 </div>
 <div class="sect2">
-<h3 id="sort-task-list-feature"><a class="link" href="#sort-task-list-feature">Sort Task List Feature</a></h3>
+<h3 id="task-feature"><a class="link" href="#task-feature">Task Feature</a></h3>
 <div class="sect3">
 <h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
+<div class="paragraph">
+<p>The task list is created by refactoring the existing code in the <a href="https://github.com/se-edu/addressbook-level4">Address Book Level 4</a></p>
+</div>
+<div class="paragraph">
+<p>The class diagram below illustrates the <strong>task</strong> class.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/TaskClassDiagram.png" alt="TaskClassDiagram" width="450">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sort-task-list-feature"><a class="link" href="#sort-task-list-feature">Sort Task List Feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">Current Implementation</a></h4>
 <div class="paragraph">
 <p>The sorting mechanism is facilitated by <code>TaskManager</code>, <code>Model</code> and <code>SortTaskList</code>.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario.</p>
 </div>
-<div class="paragraph">
-<p>Step 1. The user keys in <code>sort ATTRIBUTE</code>, the <code>SortCommandParser</code> will trim the command to get the attribute.</p>
-</div>
-<div class="paragraph">
-<p>Step 2. If the attribute is valid, it will then create a new <code>SortCommand</code> and execute with the given attribute.</p>
-</div>
-<div class="paragraph">
-<p>Step 3. <code>SortCommand</code> will then call <code>ModelManager#sortTask(toSortBy)</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 4. It will then call <code>TaskManager#sortTask(attribute)</code>.
-Then we convert the relevant attributes of the tasks in the Task List to string to compare using <code>string#compareTo()</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 5. Then, we use <code>setTasks()</code> in <code>UniqueTaskList</code> to update the Task List.
-After returning the sorted Task List, the Task Manager is then committed.</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 1. The user keys in <code>sort ATTRIBUTE</code>, the <code>SortCommandParser</code> will trim the command to get the attribute.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 2. If the attribute is valid, it will then create a new <code>SortCommand</code> and execute with the given attribute.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 3. <code>SortCommand</code> will then call <code>ModelManager#sortTask(toSortBy)</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 4. It will then call <code>TaskManager#sortTask(attribute)</code>.
+Then we convert the relevant attributes of the tasks in the Task List to string to compare using <code>string#compareTo()</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 5. Then, we use <code>setTasks()</code> in <code>UniqueTaskList</code> to update the Task List.
+After returning the sorted Task List, the Task Manager is then committed.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>The Sequence Diagram below illustrates how the sort mechanism functions. More specifically, sorting by module code.</p>
 </div>
@@ -404,11 +428,57 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-delete-overdue"><a class="link" href="#proposed-delete-overdue">[Proposed] Delete overdue</a></h3>
+<div class="sect3">
+<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">Proposed Implementation</a></h4>
+<div class="paragraph">
+<p>Using the existing <code>daysRemaining</code> variable, upon entering <code>DeleteOverdue</code> in the command line, the command will iterate through all the tasks and check the value of <code>daysRemaining</code>.
+If it is less than 0, the command will call the <code>DeleteCommand</code> to delete the overdue task.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h3>
+<div class="sect3">
+<h4 id="aspect-how-the-delete-overdue-command-executes"><a class="link" href="#aspect-how-the-delete-overdue-command-executes">Aspect: How the delete overdue command executes</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Write the command such that whenever there is an overdue task, it will call the <code>delete</code> command.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to use as it does not require changing the existing code much.</p>
+</li>
+<li>
+<p>Cons: Will need to iterate through all the tasks.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Create a new class to store all overdue tasks that updates itself whenever a task is overdue.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Faster as it does not require iterating through all tasks.</p>
+</li>
+<li>
+<p>Cons: Requires more space to store all the overdue tasks</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p>(End of extract)</p>
 </div>
 </div>
 </div>
 </div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 08:54:25 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 09:01:59 UTC</div></div></div></body></html>

@@ -33,12 +33,14 @@
 <li><a href="#login-feature">4.1. Login Feature</a></li>
 <li><a href="#add-notes-feature">4.2. Add Notes Feature</a></li>
 <li><a href="#delete-notes-feature">4.3. Delete Notes Feature</a></li>
-<li><a href="#sort-task-list-feature">4.4. Sort Task List Feature</a></li>
-<li><a href="#proposed-delete-overdue">4.5. [Proposed] Delete overdue</a></li>
-<li><a href="#calendar-feature">4.6. Calendar feature</a></li>
-<li><a href="#month-view-change-feature">4.7. Month view change feature</a></li>
-<li><a href="#logging">4.8. Logging</a></li>
-<li><a href="#Implementation-Configuration">4.9. Configuration</a></li>
+<li><a href="#task-feature">4.4. Task Feature</a></li>
+<li><a href="#sort-task-list-feature">4.5. Sort Task List Feature</a></li>
+<li><a href="#proposed-delete-overdue">4.6. [Proposed] Delete overdue</a></li>
+<li><a href="#design-considerations-5">4.7. Design Considerations</a></li>
+<li><a href="#calendar-feature">4.8. Calendar feature</a></li>
+<li><a href="#month-view-change-feature">4.9. Month view change feature</a></li>
+<li><a href="#logging">4.10. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.11. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a>
@@ -980,32 +982,56 @@ Collisions exist with the algorithm, and there have been successful attacks agai
 </div>
 </div>
 <div class="sect2">
-<h3 id="sort-task-list-feature"><a class="link" href="#sort-task-list-feature">4.4. Sort Task List Feature</a></h3>
+<h3 id="task-feature"><a class="link" href="#task-feature">4.4. Task Feature</a></h3>
 <div class="sect3">
 <h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">4.4.1. Current Implementation</a></h4>
+<div class="paragraph">
+<p>The task list is created by refactoring the existing code in the <a href="https://github.com/se-edu/addressbook-level4">Address Book Level 4</a></p>
+</div>
+<div class="paragraph">
+<p>The class diagram below illustrates the <strong>task</strong> class.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskClassDiagram.png" alt="TaskClassDiagram" width="450">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sort-task-list-feature"><a class="link" href="#sort-task-list-feature">4.5. Sort Task List Feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">4.5.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The sorting mechanism is facilitated by <code>TaskManager</code>, <code>Model</code> and <code>SortTaskList</code>.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario.</p>
 </div>
-<div class="paragraph">
-<p>Step 1. The user keys in <code>sort ATTRIBUTE</code>, the <code>SortCommandParser</code> will trim the command to get the attribute.</p>
-</div>
-<div class="paragraph">
-<p>Step 2. If the attribute is valid, it will then create a new <code>SortCommand</code> and execute with the given attribute.</p>
-</div>
-<div class="paragraph">
-<p>Step 3. <code>SortCommand</code> will then call <code>ModelManager#sortTask(toSortBy)</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 4. It will then call <code>TaskManager#sortTask(attribute)</code>.
-Then we convert the relevant attributes of the tasks in the Task List to string to compare using <code>string#compareTo()</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 5. Then, we use <code>setTasks()</code> in <code>UniqueTaskList</code> to update the Task List.
-After returning the sorted Task List, the Task Manager is then committed.</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 1. The user keys in <code>sort ATTRIBUTE</code>, the <code>SortCommandParser</code> will trim the command to get the attribute.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 2. If the attribute is valid, it will then create a new <code>SortCommand</code> and execute with the given attribute.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 3. <code>SortCommand</code> will then call <code>ModelManager#sortTask(toSortBy)</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 4. It will then call <code>TaskManager#sortTask(attribute)</code>.
+Then we convert the relevant attributes of the tasks in the Task List to string to compare using <code>string#compareTo()</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Step 5. Then, we use <code>setTasks()</code> in <code>UniqueTaskList</code> to update the Task List.
+After returning the sorted Task List, the Task Manager is then committed.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>The Sequence Diagram below illustrates how the sort mechanism functions. More specifically, sorting by module code.</p>
 </div>
@@ -1016,7 +1042,7 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.2. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.5.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-sort-executes"><a class="link" href="#aspect-how-sort-executes">Aspect: How sort executes</a></h5>
 <div class="ulist">
@@ -1053,16 +1079,55 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-delete-overdue"><a class="link" href="#proposed-delete-overdue">4.5. [Proposed] Delete overdue</a></h3>
+<h3 id="proposed-delete-overdue"><a class="link" href="#proposed-delete-overdue">4.6. [Proposed] Delete overdue</a></h3>
 <div class="sect3">
-<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">4.5.1. Proposed Implementation</a></h4>
-
+<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">4.6.1. Proposed Implementation</a></h4>
+<div class="paragraph">
+<p>Using the existing <code>daysRemaining</code> variable, upon entering <code>DeleteOverdue</code> in the command line, the command will iterate through all the tasks and check the value of <code>daysRemaining</code>.
+If it is less than 0, the command will call the <code>DeleteCommand</code> to delete the overdue task.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="calendar-feature"><a class="link" href="#calendar-feature">4.6. Calendar feature</a></h3>
+<h3 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.7. Design Considerations</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">4.6.1. Current Implementation</a></h4>
+<h4 id="aspect-how-the-delete-overdue-command-executes"><a class="link" href="#aspect-how-the-delete-overdue-command-executes">4.7.1. Aspect: How the delete overdue command executes</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Write the command such that whenever there is an overdue task, it will call the <code>delete</code> command.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to use as it does not require changing the existing code much.</p>
+</li>
+<li>
+<p>Cons: Will need to iterate through all the tasks.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Create a new class to store all overdue tasks that updates itself whenever a task is overdue.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Faster as it does not require iterating through all tasks.</p>
+</li>
+<li>
+<p>Cons: Requires more space to store all the overdue tasks</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="calendar-feature"><a class="link" href="#calendar-feature">4.8. Calendar feature</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-6"><a class="link" href="#current-implementation-6">4.8.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The Calendar extends the <code>Student Buddy</code> GUI with an easy to read interface for tracking task deadlines. It is composed of three classes, <code>CalendarPanel</code>, <code>CalendarCell</code> and <code>CalendarCellTask</code>. Furthermore, it uses the JavaFX files <code>CalendarPanel.fxml</code> and <code>CalendarCell.fxml</code> to format and structure the display.</p>
 </div>
@@ -1153,11 +1218,11 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 <p>Whenever the task list is updated, the function <code>createCalendarCells(taskList)</code> is called, which replaces the <code>CalendarCell</code> and <code>CalendarCellTask</code> instances in the <code>CalendarPanel</code>.</p>
 </div>
 <div class="paragraph">
-<p>If the selected task is changed, or the month to be displayed changes (see <a href="#month-view-change-feature">Section 4.7, &#8220;Month view change feature&#8221;</a>), the function <code>resetCalendar()</code> is called, which clears the calendar grid and resets the row and column constraints. Then <code>buildCalendarPane(taskList)</code> is called to rebuild the calendar.</p>
+<p>If the selected task is changed, or the month to be displayed changes (see <a href="#month-view-change-feature">Section 4.9, &#8220;Month view change feature&#8221;</a>), the function <code>resetCalendar()</code> is called, which clears the calendar grid and resets the row and column constraints. Then <code>buildCalendarPane(taskList)</code> is called to rebuild the calendar.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.6.2. Design Considerations</a></h4>
+<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">4.8.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-the-calendar-is-built"><a class="link" href="#aspect-how-the-calendar-is-built">Aspect: How the Calendar is built</a></h5>
 <div class="ulist">
@@ -1260,9 +1325,9 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="month-view-change-feature"><a class="link" href="#month-view-change-feature">4.7. Month view change feature</a></h3>
+<h3 id="month-view-change-feature"><a class="link" href="#month-view-change-feature">4.9. Month view change feature</a></h3>
 <div class="sect3">
-<h4 id="current-implementation-6"><a class="link" href="#current-implementation-6">4.7.1. Current Implementation</a></h4>
+<h4 id="current-implementation-7"><a class="link" href="#current-implementation-7">4.9.1. Current Implementation</a></h4>
 <div class="paragraph">
 <p>The <code>month</code> command allows a user to change what month they are currently viewing on the calendar. This is facilitated using the <code>currMonth</code> parameter in <code>Model</code>.</p>
 </div>
@@ -1305,14 +1370,14 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.8. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.10. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.9, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.11, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1343,7 +1408,7 @@ After returning the sorted Task List, the Task Manager is then committed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.9. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.11. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -3322,4 +3387,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 08:54:25 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-04-14 09:01:59 UTC</div></div></div></body></html>
